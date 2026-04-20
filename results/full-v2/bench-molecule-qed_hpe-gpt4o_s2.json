@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "hpe-gpt4o",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "Cc1ccc(C(=O)O)cc1"
+    },
+    "devScore": 0.6374596390700277,
+    "rawOutput": "```json\n{\n  \"smiles\": \"Cc1ccc(C(=O)O)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "c1cc2cc(c1)c(cn2)C(=O)O"
+      },
+      "devScore": -1e+30,
+      "rawOutput": "```json\n{ \"smiles\": \"c1cc2cc(c1)c(cn2)C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "Cc1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.6374596390700277,
+      "rawOutput": "```json\n{\n  \"smiles\": \"Cc1ccc(C(=O)O)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 9242,
+      "completion": 3590,
+      "total": 12832
+    },
+    "wallClockMs": 39632,
+    "evalCpuMs": 565,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:11:57.615Z",
+        "score": -1e+30,
+        "cpuMs": 257
+      },
+      {
+        "timestamp": "2026-04-14T04:12:19.515Z",
+        "score": 0.6374596390700277,
+        "cpuMs": 308
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_l4xh8bh8mz0khlzwipwe",
+  "hiddenScore": 0.626016048441822,
+  "timestamp": "2026-04-14T04:12:21.743Z"
+}

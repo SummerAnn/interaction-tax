@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(C)Cc1ccc(C(=O)NCCc2ccccc2)cc1"
+    },
+    "devScore": 0.8556468350243924,
+    "rawOutput": "Looking at this problem, I need to design a SMILES string that maximizes QED while being synthetically accessible. The QED score considers multiple drug-likeness descriptors including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, alerts, and hydrogen bond donors/acceptors.\n\nKey strategies for high QED:\n1. Moderate molecular weight (around 300-400 Da is often optimal)\n2. Balanced lipophilicity (LogP around 2-3)\n3. Appropriate polar surface area\n4. Limited rotatable bonds\n5. Presence of aromatic rings but not too many\n6. Avoid structural alerts\n7. Reasonable H-bond donors/acceptors\n\nI'll design a molecule that incorporates these principles while maintaining synthetic accessibility:\n\n```json\n{ \"smiles\": \"CC(C)Cc1ccc(C(=O)NCCc2ccccc2)cc1\" }\n```\n\nThis molecule features:\n- A phenylethylamine derivative with an amide linkage\n- Molecular weight around 295 Da (optimal range)\n- Contains aromatic rings for favorable interactions\n- Has H-bond acceptor (amide oxygen) and donor (amide NH)\n- Moderate flexibility with rotatable bonds\n- No obvious structural alerts\n- Synthetically accessible through standard amide coupling chemistry"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(=O)NCCc2ccccc2)cc1"
+      },
+      "devScore": 0.8556468350243924,
+      "rawOutput": "Looking at this problem, I need to design a SMILES string that maximizes QED while being synthetically accessible. The QED score considers multiple drug-likeness descriptors including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, alerts, and hydrogen bond donors/acceptors.\n\nKey strategies for high QED:\n1. Moderate molecular weight (around 300-400 Da is often optimal)\n2. Balanced lipophilicity (LogP around 2-3)\n3. Appropriate polar surface area\n4. Limited rotatable bonds\n5. Presence of aromatic rings but not too many\n6. Avoid structural alerts\n7. Reasonable H-bond donors/acceptors\n\nI'll design a molecule that incorporates these principles while maintaining synthetic accessibility:\n\n```json\n{ \"smiles\": \"CC(C)Cc1ccc(C(=O)NCCc2ccccc2)cc1\" }\n```\n\nThis molecule features:\n- A phenylethylamine derivative with an amide linkage\n- Molecular weight around 295 Da (optimal range)\n- Contains aromatic rings for favorable interactions\n- Has H-bond acceptor (amide oxygen) and donor (amide NH)\n- Moderate flexibility with rotatable bonds\n- No obvious structural alerts\n- Synthetically accessible through standard amide coupling chemistry"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1OC(=O)NC1c2ccccc2"
+      },
+      "devScore": 0.7105534267541528,
+      "rawOutput": "```json\n{ \"smiles\": \"CC1OC(=O)NC1c2ccccc2\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.7287360986569997,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 370,
+      "total": 1731
+    },
+    "wallClockMs": 9964,
+    "evalCpuMs": 1227,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-15T05:56:35.962Z",
+        "score": 0.8556468350243924,
+        "cpuMs": 446
+      },
+      {
+        "timestamp": "2026-04-15T05:56:38.933Z",
+        "score": 0.7105534267541528,
+        "cpuMs": 408
+      },
+      {
+        "timestamp": "2026-04-15T05:56:39.946Z",
+        "score": 0.7287360986569997,
+        "cpuMs": 373
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_eom4lghlr7kslje7r909",
+  "hiddenScore": 0.8079698491755747,
+  "timestamp": "2026-04-15T05:56:41.692Z"
+}

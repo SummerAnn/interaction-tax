@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "homo-chain-gpt4o",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCOc1cc2cc(C(=O)N(C)C)ccc2cc1O"
+    },
+    "devScore": 0.9214852557306512,
+    "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2cc(C(=O)N(C)C)ccc2cc1O\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCOc1cc2cc(C(=O)NC)ccc2cc1O"
+      },
+      "devScore": 0.8719380511069714,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2cc(C(=O)NC)ccc2cc1O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1cc2cc(C(=O)N(C)C)ccc2cc1OC"
+      },
+      "devScore": 0.8499760948958021,
+      "rawOutput": "```json\n{ \"smiles\": \"COc1cc2cc(C(=O)N(C)C)ccc2cc1OC\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1cc2cc(C(=O)N(C)C)ccc2cc1O"
+      },
+      "devScore": 0.9214852557306512,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2cc(C(=O)N(C)C)ccc2cc1O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1cc2cc(C(=O)NC)ccc2cc1O"
+      },
+      "devScore": 0.8719380511069714,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2cc(C(=O)NC)ccc2cc1O\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1941,
+      "completion": 126,
+      "total": 2067
+    },
+    "wallClockMs": 4456,
+    "evalCpuMs": 1102,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:06:38.697Z",
+        "score": 0.8719380511069714,
+        "cpuMs": 259
+      },
+      {
+        "timestamp": "2026-04-14T04:06:40.066Z",
+        "score": 0.8499760948958021,
+        "cpuMs": 272
+      },
+      {
+        "timestamp": "2026-04-14T04:06:41.123Z",
+        "score": 0.9214852557306512,
+        "cpuMs": 275
+      },
+      {
+        "timestamp": "2026-04-14T04:06:42.089Z",
+        "score": 0.8719380511069714,
+        "cpuMs": 296
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_ksibfo9bjnzac8pfibtx",
+  "hiddenScore": 0.8202018054164758,
+  "timestamp": "2026-04-14T04:06:47.259Z"
+}

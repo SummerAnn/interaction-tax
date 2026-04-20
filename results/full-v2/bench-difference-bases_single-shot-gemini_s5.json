@@ -1,0 +1,65 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "single-shot-gemini",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        42
+      ]
+    },
+    "devScore": 4.923076923076923,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 656,
+      "completion": 4137,
+      "total": 4793
+    },
+    "wallClockMs": 16055,
+    "evalCpuMs": 187,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-18T01:08:24.347Z",
+        "score": 4.923076923076923,
+        "cpuMs": 187
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_qmy6b7fw4mu5gou2s7qq",
+  "hiddenScore": 4.923076923076923,
+  "timestamp": "2026-04-18T01:08:24.819Z"
+}

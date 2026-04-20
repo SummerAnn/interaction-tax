@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "debate-gemini",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)NCCC1=CNc2c1cc(OC)cc2"
+    },
+    "devScore": 0.8449349532973587,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2c1cc(OC)cc2\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.717431530688905,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2c1cc(OC)cc2"
+      },
+      "devScore": 0.8449349532973587,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2c1cc(OC)cc2\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2c1cc(OC)cc2"
+      },
+      "devScore": 0.8449349532973587,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2c1cc(OC)cc2\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 4168,
+      "completion": 1761,
+      "total": 5929
+    },
+    "wallClockMs": 13841,
+    "evalCpuMs": 837,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:22:43.612Z",
+        "score": 0.717431530688905,
+        "cpuMs": 296
+      },
+      {
+        "timestamp": "2026-04-14T04:22:44.739Z",
+        "score": 0.8449349532973587,
+        "cpuMs": 264
+      },
+      {
+        "timestamp": "2026-04-14T04:22:56.440Z",
+        "score": 0.8449349532973587,
+        "cpuMs": 277
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_lkibp0vdzknpgc44aa2b",
+  "hiddenScore": 0.7596879452367776,
+  "timestamp": "2026-04-14T04:22:57.731Z"
+}

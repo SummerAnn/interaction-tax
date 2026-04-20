@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine-gpt4o",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCOc1cc2c(cc1OC)cccc2"
+    },
+    "devScore": 0.7602367223223702,
+    "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2c(cc1OC)cccc2\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCOc1cc2c(cc1OC)cccc2"
+      },
+      "devScore": 0.7602367223223702,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2c(cc1OC)cccc2\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1cc2ccccc2c1OC"
+      },
+      "devScore": -1e+30,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1cc2ccccc2c1OC\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1ccc2c(c1)ccc(c2)OC"
+      },
+      "devScore": 0.7602367223223702,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CCOc1ccc2c(c1)ccc(c2)OC\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Oc1ccccc1OC"
+      },
+      "devScore": 0.49436998136205745,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Oc1ccccc1OC\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1998,
+      "completion": 97,
+      "total": 2095
+    },
+    "wallClockMs": 3701,
+    "evalCpuMs": 1061,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:03:46.607Z",
+        "score": 0.7602367223223702,
+        "cpuMs": 263
+      },
+      {
+        "timestamp": "2026-04-14T04:03:47.501Z",
+        "score": -1e+30,
+        "cpuMs": 265
+      },
+      {
+        "timestamp": "2026-04-14T04:03:48.469Z",
+        "score": 0.7602367223223702,
+        "cpuMs": 264
+      },
+      {
+        "timestamp": "2026-04-14T04:03:49.334Z",
+        "score": 0.49436998136205745,
+        "cpuMs": 269
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_mgggiq3b1g9shit45u68",
+  "hiddenScore": 0.7183983744550071,
+  "timestamp": "2026-04-14T04:03:53.827Z"
+}

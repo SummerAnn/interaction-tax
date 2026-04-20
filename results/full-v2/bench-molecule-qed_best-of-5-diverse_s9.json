@@ -1,0 +1,95 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "best-of-5-diverse",
+  "runIndex": 8,
+  "seed": 9,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCOc1ccc(C(=O)Nc2ccc(OC)cc2)cc1"
+    },
+    "devScore": 0.9068259933239574,
+    "rawOutput": "```json\n{ \"smiles\": \"CCOc1ccc(C(=O)Nc2ccc(OC)cc2)cc1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CNC)cc1"
+      },
+      "devScore": 0.7049585113744314,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is that the hidden evaluator penalizes complex ring systems that are hard to synthesize, so I should focus on simple, drug-like scaffolds that are known to have high QED scores.\n\nLet me consider a molecule based on a simple benzene ring with optimal substituents:\n- A primary amine for hydrogen bonding\n- A methoxy group for moderate lipophilicity\n- A small alkyl chain for optimal molecular weight\n- Avoiding complex rings or reactive groups\n\nThis gives me 4-methoxy-N-methylbenzylamine, which has:\n- Simple aromatic core (easy to synthesize)\n- Good balance of hydrophilic/lipophilic groups\n- Appropriate molecular weight (~165 Da)\n- No structural alerts\n- Good drug-like properties\n\n```json\n{ \"smiles\": \"COc1ccc(CNC)cc1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1ccc(C(=O)Nc2ccc(OC)cc2)cc1"
+      },
+      "devScore": 0.9068259933239574,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1ccc(C(=O)Nc2ccc(OC)cc2)cc1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccccc1"
+      },
+      "devScore": 0.7309641888463293,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccccc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O"
+      },
+      "devScore": 0.5501217966938848,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)OC1=CC=CC=C1C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(C)C(=O)O)cc1"
+      },
+      "devScore": 0.8215995486924976,
+      "rawOutput": "{\n  \"smiles\": \"CC(C)Cc1ccc(C(C)C(=O)O)cc1\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2206,
+      "completion": 389,
+      "total": 2595
+    },
+    "wallClockMs": 15431,
+    "evalCpuMs": 1366,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T21:38:09.975Z",
+        "score": 0.7049585113744314,
+        "cpuMs": 266
+      },
+      {
+        "timestamp": "2026-04-19T21:38:11.510Z",
+        "score": 0.9068259933239574,
+        "cpuMs": 279
+      },
+      {
+        "timestamp": "2026-04-19T21:38:12.591Z",
+        "score": 0.7309641888463293,
+        "cpuMs": 265
+      },
+      {
+        "timestamp": "2026-04-19T21:38:15.557Z",
+        "score": 0.5501217966938848,
+        "cpuMs": 283
+      },
+      {
+        "timestamp": "2026-04-19T21:38:16.732Z",
+        "score": 0.8215995486924976,
+        "cpuMs": 273
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_qt0xcc793vs5eo4z91bc",
+  "hiddenScore": 0.8717765765887862,
+  "timestamp": "2026-04-19T21:38:18.167Z"
+}

@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 3,
+  "seed": 9,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCN(CC)c1nc(C)nc(N2CCOCC2)c1C"
+    },
+    "devScore": 0.8288765573553601,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, hydrogen bond donors/acceptors, and aromatic rings.\n\nLet me design a molecule that balances these factors optimally:\n\n- Moderate molecular weight (around 300-400 Da is often optimal for QED)\n- Good lipophilicity balance (LogP around 2-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Balanced H-bond donors/acceptors\n- Simple, synthetically accessible structure\n\nI'll design a molecule with a pyrimidine core (common in drugs) with strategically placed substituents:\n\n```json\n{\"smiles\": \"CCN(CC)c1nc(C)nc(N2CCOCC2)c1C\"}\n```\n\nThis molecule features:\n- A pyrimidine ring system (drug-like heterocycle)\n- Diethylamino group (contributes to activity, moderate lipophilicity)\n- Morpholine group (common drug fragment, adds polarity)\n- Methyl substituents (optimize molecular weight and lipophilicity)\n- All components are synthetically accessible\n- Molecular weight ~266 Da (optimal range)\n- Good balance of polar and lipophilic regions"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)c1nc(C)nc(N2CCOCC2)c1C"
+      },
+      "devScore": 0.8288765573553601,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, hydrogen bond donors/acceptors, and aromatic rings.\n\nLet me design a molecule that balances these factors optimally:\n\n- Moderate molecular weight (around 300-400 Da is often optimal for QED)\n- Good lipophilicity balance (LogP around 2-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Balanced H-bond donors/acceptors\n- Simple, synthetically accessible structure\n\nI'll design a molecule with a pyrimidine core (common in drugs) with strategically placed substituents:\n\n```json\n{\"smiles\": \"CCN(CC)c1nc(C)nc(N2CCOCC2)c1C\"}\n```\n\nThis molecule features:\n- A pyrimidine ring system (drug-like heterocycle)\n- Diethylamino group (contributes to activity, moderate lipophilicity)\n- Morpholine group (common drug fragment, adds polarity)\n- Methyl substituents (optimize molecular weight and lipophilicity)\n- All components are synthetically accessible\n- Molecular weight ~266 Da (optimal range)\n- Good balance of polar and lipophilic regions"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Nc1ccc2c(c1)OCO2"
+      },
+      "devScore": 0.7547790207386778,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)Nc1ccc2c(c1)OCO2\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccccc1"
+      },
+      "devScore": 0.7309641888463293,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccccc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 373,
+      "total": 1734
+    },
+    "wallClockMs": 7371,
+    "evalCpuMs": 794,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-16T21:30:24.098Z",
+        "score": 0.8288765573553601,
+        "cpuMs": 267
+      },
+      {
+        "timestamp": "2026-04-16T21:30:25.435Z",
+        "score": 0.7547790207386778,
+        "cpuMs": 260
+      },
+      {
+        "timestamp": "2026-04-16T21:30:26.247Z",
+        "score": 0.7309641888463293,
+        "cpuMs": 267
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_ir12ayc37cf92jh74gln",
+  "hiddenScore": 0.6851231470218504,
+  "timestamp": "2026-04-16T21:30:27.579Z"
+}

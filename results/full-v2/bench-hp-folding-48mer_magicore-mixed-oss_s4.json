@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "magicore-mixed-oss",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+    },
+    "devScore": 0,
+    "rawOutput": "{\"steps\":\"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+      },
+      "devScore": 0,
+      "rawOutput": "{\"steps\":\"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"}"
+    },
+    {
+      "solutionData": {
+        "steps": "RURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLD"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "{\n  \"steps\": \"RURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLDRURDLD\"\n}"
+    },
+    {
+      "solutionData": {
+        "steps": "RURDRDLURDLURDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "{\n  \"steps\": \"RURDRDLURDLURDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDRULDR\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 5966,
+      "completion": 9961,
+      "total": 15927
+    },
+    "wallClockMs": 271569,
+    "evalCpuMs": 1033,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T20:27:21.169Z",
+        "score": 0,
+        "cpuMs": 918
+      },
+      {
+        "timestamp": "2026-04-08T20:29:21.436Z",
+        "score": 1e+30,
+        "cpuMs": 57
+      },
+      {
+        "timestamp": "2026-04-08T20:31:47.402Z",
+        "score": 1e+30,
+        "cpuMs": 58
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_ac30obo38el2yikf1gek",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T20:31:49.177Z"
+}

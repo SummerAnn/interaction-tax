@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "magicore-mixed-oss",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "{ \"steps\": \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\" }"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "{ \"steps\": \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\" }"
+    },
+    {
+      "solutionData": {
+        "steps": "RRRUUUDDLLRRUUDDLLRRUUDDLLRRUUDDLLRRUUDDLL"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "{\n  \"steps\": \"RRRUUUDDLLRRUUDDLLRRUUDDLLRRUUDDLLRRUUDDLL\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 4908,
+      "completion": 9958,
+      "total": 14866
+    },
+    "wallClockMs": 245501,
+    "evalCpuMs": 95,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T20:16:02.850Z",
+        "score": 1e+30,
+        "cpuMs": 46
+      },
+      {
+        "timestamp": "2026-04-08T20:20:06.183Z",
+        "score": 1e+30,
+        "cpuMs": 49
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_lsqi4l9zrwv5c4rdg52l",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T20:20:07.428Z"
+}

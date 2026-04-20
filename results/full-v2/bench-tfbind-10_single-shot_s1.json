@@ -1,0 +1,47 @@
+{
+  "taskId": "bench-tfbind-10",
+  "protocolId": "single-shot",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "sequence": "AGGAAGTGAC"
+    },
+    "devScore": 0.9323636749339513,
+    "rawOutput": "{\"sequence\": \"AGGAAGTGAC\"}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "sequence": "AGGAAGTGAC"
+      },
+      "devScore": 0.9323636749339513,
+      "rawOutput": "{\"sequence\": \"AGGAAGTGAC\"}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 545,
+      "completion": 14,
+      "total": 559
+    },
+    "wallClockMs": 1887,
+    "evalCpuMs": 309,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-09T19:28:26.490Z",
+        "score": 0.9323636749339513,
+        "cpuMs": 309
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_pugs1hhr4dk4vyupwzgg",
+  "hiddenScore": 0.4780262521509584,
+  "timestamp": "2026-04-09T19:28:27.429Z"
+}

@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "debate-mixed-oss",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "```json\n{\n  \"steps\": \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{\n  \"steps\": \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "steps": "RRRRRRRRRUUUUUUUUUURRRRRRRRRRDDDDDDDDDDLLLLLLLLLLLUUUUUUUUUUURRRRRRRRRR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{\n  \"steps\": \"RRRRRRRRRUUUUUUUUUURRRRRRRRRRDDDDDDDDDDLLLLLLLLLLLUUUUUUUUUUURRRRRRRRRR\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3656,
+      "completion": 5798,
+      "total": 9454
+    },
+    "wallClockMs": 159976,
+    "evalCpuMs": 142,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T20:34:20.336Z",
+        "score": 1e+30,
+        "cpuMs": 72
+      },
+      {
+        "timestamp": "2026-04-08T20:34:23.569Z",
+        "score": 1e+30,
+        "cpuMs": 70
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_5980ryg73l845uycz8hl",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T20:36:59.210Z"
+}

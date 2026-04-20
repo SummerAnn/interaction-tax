@@ -1,0 +1,107 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "magicore-gemini",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        13,
+        21,
+        31
+      ]
+    },
+    "devScore": 4.923076923076923,
+    "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    2,\n    4,\n    8,\n    13,\n    21,\n    31\n  ]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          13,
+          21,
+          31
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    2,\n    4,\n    8,\n    13,\n    21,\n    31\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          16,
+          26,
+          37
+        ]
+      },
+      "devScore": 16,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    2,\n    4,\n    8,\n    16,\n    26,\n    37\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    42\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 9956,
+      "completion": 8346,
+      "total": 18302
+    },
+    "wallClockMs": 40490,
+    "evalCpuMs": 473,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-18T01:28:22.927Z",
+        "score": 4.923076923076923,
+        "cpuMs": 156
+      },
+      {
+        "timestamp": "2026-04-18T01:28:42.561Z",
+        "score": 16,
+        "cpuMs": 165
+      },
+      {
+        "timestamp": "2026-04-18T01:29:02.500Z",
+        "score": 4.923076923076923,
+        "cpuMs": 152
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_mo3uoaqzy7ahnr4guqxm",
+  "hiddenScore": 4.923076923076923,
+  "timestamp": "2026-04-18T01:29:04.183Z"
+}

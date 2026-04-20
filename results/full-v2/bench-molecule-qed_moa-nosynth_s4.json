@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CCN)cc1OC"
+    },
+    "devScore": 0.7588211284304427,
+    "rawOutput": "```json\n{ \"smiles\": \"COc1ccc(CCN)cc1OC\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN)cc1OC"
+      },
+      "devScore": 0.7588211284304427,
+      "rawOutput": "```json\n{ \"smiles\": \"COc1ccc(CCN)cc1OC\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN1CCC(CC1)C2=NC=CC(=N2)C3=C4C=CC=CC4=CC=C3"
+      },
+      "devScore": 0.7121726377021578,
+      "rawOutput": "```json\n{ \"smiles\": \"CCN1CCC(CC1)C2=NC=CC(=N2)C3=C4C=CC=CC4=CC=C3\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]c(C)cc21"
+      },
+      "devScore": 0.698044960937386,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]c(C)cc21\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 109,
+      "total": 1470
+    },
+    "wallClockMs": 5326,
+    "evalCpuMs": 1200,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-15T05:56:25.723Z",
+        "score": 0.7588211284304427,
+        "cpuMs": 450
+      },
+      {
+        "timestamp": "2026-04-15T05:56:26.970Z",
+        "score": 0.7121726377021578,
+        "cpuMs": 391
+      },
+      {
+        "timestamp": "2026-04-15T05:56:28.158Z",
+        "score": 0.698044960937386,
+        "cpuMs": 359
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_5tbgk52pvir4cdya2r9r",
+  "hiddenScore": 0.7116294798224136,
+  "timestamp": "2026-04-15T05:56:29.982Z"
+}

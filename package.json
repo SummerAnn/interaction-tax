@@ -1,0 +1,26 @@
+{
+  "name": "neurips-bench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent4Science-Bench experiment runner for NeurIPS 2026",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "pilot": "tsx src/runner/experiment-runner.ts --pilot",
+    "full": "tsx src/runner/experiment-runner.ts --full",
+    "run": "tsx src/runner/experiment-runner.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "firebase-admin": "^13.7.0",
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

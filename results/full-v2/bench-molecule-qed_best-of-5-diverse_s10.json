@@ -1,0 +1,95 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "best-of-5-diverse",
+  "runIndex": 9,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(C(=O)NCCc2ccccc2)cc1"
+    },
+    "devScore": 0.8916638360542769,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, alerts, and hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid overly complex structures that would be synthetically inaccessible. Based on the examples provided and knowledge of drug-like molecules, I should aim for:\n\n- Moderate molecular weight (150-500 Da)\n- Balanced lipophilicity (LogP 1-3)\n- Appropriate polar surface area\n- Some aromatic character\n- Reasonable number of rotatable bonds\n- Minimal structural alerts\n\nLet me design a molecule that incorporates these principles. I'll use a benzene ring as a core (common in drugs) with substituents that optimize the QED parameters:\n\n```json\n{ \"smiles\": \"COc1ccc(C(=O)NCCc2ccccc2)cc1\" }\n```\n\nThis molecule features:\n- A methoxy-substituted benzene ring\n- An amide linkage (common pharmacophore)\n- A phenethyl group\n- Molecular weight around 269 Da (drug-like range)\n- Good balance of polar and lipophilic regions\n- Synthetically accessible from readily available starting materials"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(=O)NCCc2ccccc2)cc1"
+      },
+      "devScore": 0.8916638360542769,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, alerts, and hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid overly complex structures that would be synthetically inaccessible. Based on the examples provided and knowledge of drug-like molecules, I should aim for:\n\n- Moderate molecular weight (150-500 Da)\n- Balanced lipophilicity (LogP 1-3)\n- Appropriate polar surface area\n- Some aromatic character\n- Reasonable number of rotatable bonds\n- Minimal structural alerts\n\nLet me design a molecule that incorporates these principles. I'll use a benzene ring as a core (common in drugs) with substituents that optimize the QED parameters:\n\n```json\n{ \"smiles\": \"COc1ccc(C(=O)NCCc2ccccc2)cc1\" }\n```\n\nThis molecule features:\n- A methoxy-substituted benzene ring\n- An amide linkage (common pharmacophore)\n- A phenethyl group\n- Molecular weight around 269 Da (drug-like range)\n- Good balance of polar and lipophilic regions\n- Synthetically accessible from readily available starting materials"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1ccccc1C(=O)NC"
+      },
+      "devScore": 0.7621476456446835,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOc1ccccc1C(=O)NC\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]ccc12"
+      },
+      "devScore": 0.6698172578643221,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]ccc12\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
+      },
+      "devScore": 0.5384628262372215,
+      "rawOutput": "```json\n{ \"smiles\": \"CN1C=NC2=C1C(=O)N(C(=O)N2C)C\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(C)C(=O)O)cc1"
+      },
+      "devScore": 0.8215995486924976,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)Cc1ccc(C(C)C(=O)O)cc1\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2206,
+      "completion": 440,
+      "total": 2646
+    },
+    "wallClockMs": 15727,
+    "evalCpuMs": 1344,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T21:38:25.847Z",
+        "score": 0.8916638360542769,
+        "cpuMs": 285
+      },
+      {
+        "timestamp": "2026-04-19T21:38:27.690Z",
+        "score": 0.7621476456446835,
+        "cpuMs": 262
+      },
+      {
+        "timestamp": "2026-04-19T21:38:28.717Z",
+        "score": 0.6698172578643221,
+        "cpuMs": 265
+      },
+      {
+        "timestamp": "2026-04-19T21:38:32.605Z",
+        "score": 0.5384628262372215,
+        "cpuMs": 274
+      },
+      {
+        "timestamp": "2026-04-19T21:38:33.895Z",
+        "score": 0.8215995486924976,
+        "cpuMs": 258
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_1eg1h0lmxw6u35uhy3l9",
+  "hiddenScore": 0.8602832003397441,
+  "timestamp": "2026-04-19T21:38:35.185Z"
+}

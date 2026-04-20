@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine",
+  "runIndex": 2,
+  "seed": 8,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(C(=O)NCc2ccc(O)c(OC)c2)cc1"
+    },
+    "devScore": 0.8854215079879852,
+    "rawOutput": "Looking at the current solution with QED score 0.8594, I need to identify what makes a molecule more drug-like according to QED parameters and optimize while maintaining synthetic accessibility.\n\nQED considers molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of rotatable bonds, number of aromatic rings, and structural alerts.\n\nThe current molecule has good features but I can optimize by:\n1. Reducing molecular weight slightly\n2. Optimizing the balance of polar and lipophilic regions\n3. Maintaining favorable ring systems\n4. Ensuring good hydrogen bonding potential\n\nHere's an improved structure that should score higher:\n\n```json\n{\n  \"smiles\": \"COc1ccc(C(=O)NCc2ccc(O)c(OC)c2)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C)cc1OC"
+      },
+      "devScore": 0.7378997125446431,
+      "rawOutput": "{\"smiles\": \"COc1ccc(CCN(C)C)cc1OC\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C(=O)c2ccncc2)cc1OC"
+      },
+      "devScore": 0.8218616260551111,
+      "rawOutput": "Looking at the current solution with QED score 0.7379, I need to identify ways to improve drug-likeness while maintaining synthetic accessibility.\n\nThe current molecule (COc1ccc(CCN(C)C)cc1OC) has:\n- Two methoxy groups on benzene\n- Ethyl chain with dimethylamino group\n- Molecular weight ~225 Da\n\nTo improve QED, I should optimize the key descriptors:\n1. **Molecular weight**: Current is good, but slightly higher MW (250-350 Da) often scores better\n2. **LogP**: Adding a fluorine can optimize lipophilicity\n3. **Rotatable bonds**: Current has 5, which is acceptable\n4. **Aromatic rings**: Adding a second ring system can help\n5. **Alerts**: Avoid problematic substructures\n\nMy strategy is to add a pyridine ring connected via an amide linkage, which:\n- Increases MW to optimal range (~280 Da)\n- Adds hydrogen bond acceptor (amide oxygen)\n- Maintains synthetic accessibility\n- Avoids structural alerts\n- Balances lipophilicity with the nitrogen atoms\n\n{\n  \"smiles\": \"COc1ccc(CCN(C)C(=O)c2ccncc2)cc1OC\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(=O)NCCc2ccc(OC)c(O)c2)cc1"
+      },
+      "devScore": 0.8593837532178641,
+      "rawOutput": "Looking at the current solution with QED score 0.8218, I need to identify areas for improvement while maintaining synthesizability.\n\nThe current molecule has good drug-like properties but may have some suboptimal features:\n- The pyridine ring might contribute to higher polarity\n- The dimethylamino group could be optimized\n- The methoxy substitution pattern could be refined\n\nLet me design a molecule that optimizes QED components:\n- Molecular weight: 150-500 Da (optimal ~300-400)\n- LogP: 1-3 (optimal ~2-3)\n- HBD: 0-5 (optimal 1-2)\n- HBA: 2-10 (optimal 4-6)\n- PSA: 20-130 Å² (optimal 40-80)\n- Rotatable bonds: 0-10 (optimal 4-8)\n- Aromatic rings: 1-4 (optimal 2-3)\n- Alerts: minimize structural alerts\n\nI'll create a molecule with:\n- Optimized MW around 350-400\n- Balanced lipophilicity\n- Strategic H-bond donors/acceptors\n- Minimal structural alerts\n- Good synthesizability\n\n{\n  \"smiles\": \"COc1ccc(C(=O)NCCc2ccc(OC)c(O)c2)cc1\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(=O)NCc2ccc(O)c(OC)c2)cc1"
+      },
+      "devScore": 0.8854215079879852,
+      "rawOutput": "Looking at the current solution with QED score 0.8594, I need to identify what makes a molecule more drug-like according to QED parameters and optimize while maintaining synthetic accessibility.\n\nQED considers molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of rotatable bonds, number of aromatic rings, and structural alerts.\n\nThe current molecule has good features but I can optimize by:\n1. Reducing molecular weight slightly\n2. Optimizing the balance of polar and lipophilic regions\n3. Maintaining favorable ring systems\n4. Ensuring good hydrogen bonding potential\n\nHere's an improved structure that should score higher:\n\n```json\n{\n  \"smiles\": \"COc1ccc(C(=O)NCc2ccc(O)c(OC)c2)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2333,
+      "completion": 860,
+      "total": 3193
+    },
+    "wallClockMs": 21944,
+    "evalCpuMs": 971,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-20T00:50:18.173Z",
+        "score": 0.7378997125446431,
+        "cpuMs": 241
+      },
+      {
+        "timestamp": "2026-04-20T00:50:26.334Z",
+        "score": 0.8218616260551111,
+        "cpuMs": 272
+      },
+      {
+        "timestamp": "2026-04-20T00:50:33.792Z",
+        "score": 0.8593837532178641,
+        "cpuMs": 234
+      },
+      {
+        "timestamp": "2026-04-20T00:50:37.409Z",
+        "score": 0.8854215079879852,
+        "cpuMs": 224
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_t2pgmipmdhhaukpfmwp1",
+  "hiddenScore": 0.8285857258763283,
+  "timestamp": "2026-04-20T00:50:41.967Z"
+}

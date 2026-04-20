@@ -1,0 +1,199 @@
+{
+  "taskId": "bench-3ap-free-100",
+  "protocolId": "best-of-3",
+  "runIndex": 5,
+  "seed": 6,
+  "bestArtifact": {
+    "solutionData": {
+      "subset": [
+        1,
+        2,
+        4,
+        5,
+        10,
+        11,
+        13,
+        14,
+        28,
+        29,
+        31,
+        32,
+        37,
+        38,
+        40,
+        41,
+        82,
+        83,
+        85,
+        86,
+        91,
+        92,
+        94,
+        95
+      ]
+    },
+    "devScore": 24,
+    "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nLet me use a construction based on the Behrend construction, which works well for avoiding arithmetic progressions. The key insight is to use numbers whose base-3 representations have a specific structure that prevents arithmetic progressions.\n\nI'll construct a set by selecting numbers based on their base-3 digit sum properties. Specifically, I'll take numbers where the sum of digits in base 3 has a particular remainder when divided by 3, as this tends to break arithmetic progression patterns.\n\nLet me build this systematically:\n\n```json\n{\n  \"subset\": [1, 2, 4, 5, 10, 11, 13, 14, 28, 29, 31, 32, 37, 38, 40, 41, 82, 83, 85, 86, 91, 92, 94, 95]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          8,
+          13,
+          16,
+          17,
+          25,
+          26,
+          29,
+          32,
+          34,
+          37,
+          38,
+          41,
+          49,
+          50,
+          52,
+          53,
+          58,
+          61,
+          64,
+          65,
+          68,
+          73,
+          74,
+          76,
+          82,
+          85,
+          89,
+          97,
+          100
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "{\"subset\": [1, 2, 4, 8, 13, 16, 17, 25, 26, 29, 32, 34, 37, 38, 41, 49, 50, 52, 53, 58, 61, 64, 65, 68, 73, 74, 76, 82, 85, 89, 97, 100]}"
+    },
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          5,
+          10,
+          11,
+          13,
+          14,
+          28,
+          29,
+          31,
+          32,
+          37,
+          38,
+          40,
+          41,
+          82,
+          83,
+          85,
+          86,
+          91,
+          92,
+          94,
+          95
+        ]
+      },
+      "devScore": 24,
+      "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nLet me use a construction based on the Behrend construction, which works well for avoiding arithmetic progressions. The key insight is to use numbers whose base-3 representations have a specific structure that prevents arithmetic progressions.\n\nI'll construct a set by selecting numbers based on their base-3 digit sum properties. Specifically, I'll take numbers where the sum of digits in base 3 has a particular remainder when divided by 3, as this tends to break arithmetic progression patterns.\n\nLet me build this systematically:\n\n```json\n{\n  \"subset\": [1, 2, 4, 5, 10, 11, 13, 14, 28, 29, 31, 32, 37, 38, 40, 41, 82, 83, 85, 86, 91, 92, 94, 95]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          5,
+          10,
+          11,
+          13,
+          14,
+          16,
+          17,
+          19,
+          20,
+          28,
+          29,
+          31,
+          32,
+          37,
+          38,
+          40,
+          41,
+          43,
+          44,
+          46,
+          47,
+          55,
+          56,
+          58,
+          59,
+          64,
+          65,
+          67,
+          68,
+          73,
+          74,
+          76,
+          77,
+          82,
+          83,
+          85,
+          86,
+          91,
+          92,
+          94,
+          95
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "{\"subset\": [1, 2, 4, 5, 10, 11, 13, 14, 16, 17, 19, 20, 28, 29, 31, 32, 37, 38, 40, 41, 43, 44, 46, 47, 55, 56, 58, 59, 64, 65, 67, 68, 73, 74, 76, 77, 82, 83, 85, 86, 91, 92, 94, 95]}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2503,
+      "completion": 1569,
+      "total": 4072
+    },
+    "wallClockMs": 22888,
+    "evalCpuMs": 108,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T19:38:38.762Z",
+        "score": 0,
+        "cpuMs": 36
+      },
+      {
+        "timestamp": "2026-04-19T19:38:42.076Z",
+        "score": 24,
+        "cpuMs": 36
+      },
+      {
+        "timestamp": "2026-04-19T19:38:51.000Z",
+        "score": 0,
+        "cpuMs": 36
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_iy23x4xmpmo888hbsxo5",
+  "hiddenScore": 24,
+  "timestamp": "2026-04-19T19:38:51.238Z"
+}

@@ -1,0 +1,243 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "moa",
+  "runIndex": 4,
+  "seed": 15,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        41,
+        58,
+        72,
+        90,
+        109,
+        127,
+        149,
+        173,
+        194,
+        220
+      ]
+    },
+    "devScore": 20.642857142857142,
+    "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    41,\n    58,\n    72,\n    90,\n    109,\n    127,\n    149,\n    173,\n    194,\n    220\n  ]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          8,
+          13,
+          21,
+          34,
+          55,
+          89,
+          144,
+          233,
+          377,
+          610,
+          987,
+          1597,
+          2584,
+          4181,
+          6765,
+          10946,
+          17711,
+          28657,
+          46368,
+          75025,
+          121393,
+          196418,
+          317811,
+          514229,
+          832040
+        ]
+      },
+      "devScore": 112.5,
+      "rawOutput": "Looking at this problem, I need to find a set B that minimizes |B|²/v where v is the maximum integer such that all integers 1,2,...,v appear as pairwise differences.\n\nThis is related to Sidon sets and difference sets. I want to maximize the coverage v while keeping the set size |B| small.\n\nLet me construct a set using a systematic approach. I'll use a combination of:\n1. Small dense numbers for good low coverage\n2. Carefully chosen larger numbers to extend coverage efficiently\n\nStarting with powers of 2 and strategic additions:\n\n```json\n{\n  \"set\": [0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040]\n}\n```\n\nThis uses a Fibonacci-like progression which tends to give good difference coverage properties. The differences between consecutive Fibonacci numbers create many intermediate values, and the exponential growth helps maintain efficiency in the |B|²/v ratio."
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          10,
+          15,
+          21,
+          28,
+          36,
+          45,
+          55,
+          66,
+          78,
+          91,
+          105,
+          120,
+          136,
+          153,
+          171,
+          190,
+          210,
+          231,
+          253,
+          276,
+          300,
+          325,
+          351,
+          378,
+          406,
+          435,
+          465,
+          496,
+          528,
+          561,
+          595,
+          630,
+          666,
+          703,
+          741,
+          780,
+          820,
+          861,
+          903,
+          946,
+          990,
+          1035,
+          1081,
+          1128,
+          1176,
+          1225,
+          1275,
+          1326,
+          1378,
+          1431,
+          1485,
+          1540,
+          1596,
+          1653,
+          1711,
+          1770,
+          1830
+        ]
+      },
+      "devScore": 59.06349206349206,
+      "rawOutput": "```json\n{ \"set\": [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903, 946, 990, 1035, 1081, 1128, 1176, 1225, 1275, 1326, 1378, 1431, 1485, 1540, 1596, 1653, 1711, 1770, 1830] }\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          41,
+          58,
+          72,
+          90,
+          109,
+          127,
+          149,
+          173,
+          194,
+          220
+        ]
+      },
+      "devScore": 20.642857142857142,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    41,\n    58,\n    72,\n    90,\n    109,\n    127,\n    149,\n    173,\n    194,\n    220\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          41,
+          58,
+          72,
+          90,
+          109,
+          127,
+          149,
+          173,
+          194,
+          220,
+          248,
+          278,
+          310,
+          344,
+          380,
+          418,
+          458,
+          500,
+          544,
+          590,
+          638,
+          688,
+          740
+        ]
+      },
+      "devScore": 64.28571428571429,
+      "rawOutput": "Looking at the three agent solutions, I need to analyze their approaches and performance:\n\n- Agent 1 (score: 112.5): Uses Fibonacci sequence - exponential growth but poor efficiency\n- Agent 2 (score: 59.06): Uses triangular numbers - quadratic growth, better efficiency  \n- Agent 3 (score: 20.64): Uses a mixed approach with 17 elements achieving v=343\n\nAgent 3 has the best score by far. Let me analyze their approach and try to extend it optimally.\n\nAgent 3's set appears to use a combination of small consecutive integers (0,1,3,7) for covering small differences, then strategic larger gaps. The key insight is balancing set size against coverage - we want maximum coverage per element added.\n\nLet me build on Agent 3's approach by:\n1. Starting with their proven efficient base\n2. Adding elements that maximize new difference coverage\n3. Focusing on elements that create many new differences with existing elements\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 41, 58, 72, 90, 109, 127, 149, 173, 194, 220, 248, 278, 310, 344, 380, 418, 458, 500, 544, 590, 638, 688, 740]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3007,
+      "completion": 17316,
+      "total": 20323
+    },
+    "wallClockMs": 89197,
+    "evalCpuMs": 602,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T19:35:35.001Z",
+        "score": 112.5,
+        "cpuMs": 140
+      },
+      {
+        "timestamp": "2026-04-19T19:36:10.120Z",
+        "score": 59.06349206349206,
+        "cpuMs": 159
+      },
+      {
+        "timestamp": "2026-04-19T19:36:54.326Z",
+        "score": 20.642857142857142,
+        "cpuMs": 164
+      },
+      {
+        "timestamp": "2026-04-19T19:36:59.760Z",
+        "score": 64.28571428571429,
+        "cpuMs": 139
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_c34zmczxclznb9acdz1m",
+  "hiddenScore": 20.642857142857142,
+  "timestamp": "2026-04-19T19:37:00.368Z"
+}

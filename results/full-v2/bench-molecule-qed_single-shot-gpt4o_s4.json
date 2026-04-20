@@ -1,0 +1,47 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "single-shot-gpt4o",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)Nc1ccc(O)cc1"
+    },
+    "devScore": 0.5950261967780849,
+    "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(O)cc1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Nc1ccc(O)cc1"
+      },
+      "devScore": 0.5950261967780849,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(O)cc1\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 462,
+      "completion": 24,
+      "total": 486
+    },
+    "wallClockMs": 859,
+    "evalCpuMs": 267,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:03:31.826Z",
+        "score": 0.5950261967780849,
+        "cpuMs": 267
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_uv46pg6jupjb8cznytx5",
+  "hiddenScore": 0.5680980351527007,
+  "timestamp": "2026-04-14T04:03:33.073Z"
+}

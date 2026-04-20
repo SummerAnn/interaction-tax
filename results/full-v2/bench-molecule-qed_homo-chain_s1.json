@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "homo-chain",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CNc2nccc(C)n2)cc1OC"
+    },
+    "devScore": 0.893244822391221,
+    "rawOutput": "Looking at the previous solution with QED score 0.8873, I need to find a molecule that maintains high drug-likeness while potentially being more synthesizable.\n\nThe previous molecule has good properties but I can optimize further by:\n1. Maintaining optimal molecular weight (around 300-400 Da)\n2. Keeping good lipophilicity balance\n3. Ensuring proper hydrogen bonding capacity\n4. Using simpler, more synthesizable structural motifs\n\nLet me design a molecule with a pyrimidine core (common in drugs) with optimal substituents:\n\n```json\n{\n  \"smiles\": \"COc1ccc(CNc2nccc(C)n2)cc1OC\"\n}\n```\n\nThis molecule features:\n- Pyrimidine ring system (drug-like heterocycle)\n- Methoxy groups for optimal polarity\n- Amine linker for hydrogen bonding\n- Methyl group for lipophilicity balance\n- MW around 259 Da (optimal range)\n- Simple, synthesizable structure"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(=O)NCCc2ccccc2)cc1OC"
+      },
+      "devScore": 0.8873610863146895,
+      "rawOutput": "{ \"smiles\": \"COc1ccc(C(=O)NCCc2ccccc2)cc1OC\" }"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C(=O)c2ccccc2)cc1OC"
+      },
+      "devScore": 0.8227738702765484,
+      "rawOutput": "{\n  \"smiles\": \"COc1ccc(CCN(C)C(=O)c2ccccc2)cc1OC\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CNc2nccc(C)n2)cc1OC"
+      },
+      "devScore": 0.893244822391221,
+      "rawOutput": "Looking at the previous solution with QED score 0.8873, I need to find a molecule that maintains high drug-likeness while potentially being more synthesizable.\n\nThe previous molecule has good properties but I can optimize further by:\n1. Maintaining optimal molecular weight (around 300-400 Da)\n2. Keeping good lipophilicity balance\n3. Ensuring proper hydrogen bonding capacity\n4. Using simpler, more synthesizable structural motifs\n\nLet me design a molecule with a pyrimidine core (common in drugs) with optimal substituents:\n\n```json\n{\n  \"smiles\": \"COc1ccc(CNc2nccc(C)n2)cc1OC\"\n}\n```\n\nThis molecule features:\n- Pyrimidine ring system (drug-like heterocycle)\n- Methoxy groups for optimal polarity\n- Amine linker for hydrogen bonding\n- Methyl group for lipophilicity balance\n- MW around 259 Da (optimal range)\n- Simple, synthesizable structure"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCNc2nccc(C)n2)cc1"
+      },
+      "devScore": 0.875871663788577,
+      "rawOutput": "{\n  \"smiles\": \"COc1ccc(CCNc2nccc(C)n2)cc1\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2243,
+      "completion": 348,
+      "total": 2591
+    },
+    "wallClockMs": 12344,
+    "evalCpuMs": 1144,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:35:22.667Z",
+        "score": 0.8873610863146895,
+        "cpuMs": 280
+      },
+      {
+        "timestamp": "2026-04-14T02:35:26.364Z",
+        "score": 0.8227738702765484,
+        "cpuMs": 279
+      },
+      {
+        "timestamp": "2026-04-14T02:35:30.796Z",
+        "score": 0.893244822391221,
+        "cpuMs": 323
+      },
+      {
+        "timestamp": "2026-04-14T02:35:33.384Z",
+        "score": 0.875871663788577,
+        "cpuMs": 262
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_v14arir470dj64s415al",
+  "hiddenScore": 0.8070677969556638,
+  "timestamp": "2026-04-14T02:35:38.844Z"
+}

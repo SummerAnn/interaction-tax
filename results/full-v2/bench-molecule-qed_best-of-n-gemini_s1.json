@@ -1,0 +1,131 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "best-of-n-gemini",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)NCCC(=O)c1ccc(Cl)cc1"
+    },
+    "devScore": 0.7976327976016317,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccc(Cl)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(=O)N(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.7711883565264254,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)N(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)N(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.7711883565264254,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)N(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccc(Cl)cc1"
+      },
+      "devScore": 0.7976327976016317,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccc(Cl)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]ccc12"
+      },
+      "devScore": 0.6698172578643221,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]ccc12\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]ccc12"
+      },
+      "devScore": 0.6698172578643221,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]ccc12\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Oc1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.5501217966938848,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)Oc1ccc(C(=O)O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.717431530688905,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)CC(CCc1ccccc1)N(C)C(=O)c1ccc(Oc2ncccc2C)cc1"
+      },
+      "devScore": 0.39961739493294945,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)CC(CCc1ccccc1)N(C)C(=O)c1ccc(Oc2ncccc2C)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3672,
+      "completion": 285,
+      "total": 3957
+    },
+    "wallClockMs": 8323,
+    "evalCpuMs": 2170,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:15:27.055Z",
+        "score": 0.7711883565264254,
+        "cpuMs": 287
+      },
+      {
+        "timestamp": "2026-04-14T04:15:28.251Z",
+        "score": 0.7711883565264254,
+        "cpuMs": 275
+      },
+      {
+        "timestamp": "2026-04-14T04:15:29.165Z",
+        "score": 0.7976327976016317,
+        "cpuMs": 269
+      },
+      {
+        "timestamp": "2026-04-14T04:15:30.287Z",
+        "score": 0.6698172578643221,
+        "cpuMs": 264
+      },
+      {
+        "timestamp": "2026-04-14T04:15:31.289Z",
+        "score": 0.6698172578643221,
+        "cpuMs": 260
+      },
+      {
+        "timestamp": "2026-04-14T04:15:32.287Z",
+        "score": 0.5501217966938848,
+        "cpuMs": 261
+      },
+      {
+        "timestamp": "2026-04-14T04:15:33.226Z",
+        "score": 0.717431530688905,
+        "cpuMs": 288
+      },
+      {
+        "timestamp": "2026-04-14T04:15:34.342Z",
+        "score": 0.39961739493294945,
+        "cpuMs": 266
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_n0gw3c4pp1oynqwmu54j",
+  "hiddenScore": 0.7408132162001365,
+  "timestamp": "2026-04-14T04:15:35.727Z"
+}

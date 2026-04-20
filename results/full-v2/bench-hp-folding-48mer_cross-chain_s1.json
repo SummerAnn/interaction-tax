@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "cross-chain",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "Looking at this HP lattice protein folding problem, I need to find a sequence of 49 moves (R/L/U/D) that maximizes H-H contacts for the given sequence.\n\nThe sequence is: `HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH`\n\nLet me analyze the H positions: 0,2,5,6,8,10,12,13,15,17,19,20,22,25,27,29,30,32,34,35,37,39,40,42,45,47,48\n\nTo maximize H-H contacts, I need to create a compact folding pattern that brings non-consecutive H residues close together. A good strategy is to create a serpentine or spiral pattern that maximizes the number of adjacent positions occupied by H residues.\n\nLet me construct a folding pattern that creates multiple parallel segments to maximize contacts:\n\n```json\n{ \"steps\": \"RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "Looking at this HP lattice protein folding problem, I need to find a sequence of 49 moves (R/L/U/D) that maximizes H-H contacts for the given sequence.\n\nThe sequence is: `HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH`\n\nLet me analyze the H positions: 0,2,5,6,8,10,12,13,15,17,19,20,22,25,27,29,30,32,34,35,37,39,40,42,45,47,48\n\nTo maximize H-H contacts, I need to create a compact folding pattern that brings non-consecutive H residues close together. A good strategy is to create a serpentine or spiral pattern that maximizes the number of adjacent positions occupied by H residues.\n\nLet me construct a folding pattern that creates multiple parallel segments to maximize contacts:\n\n```json\n{ \"steps\": \"RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR\" }\n```"
+    },
+    {
+      "solutionData": {
+        "steps": "RRRRRRUULLLDDRRRUULLLDDRRRUULLLDDRRRUULLLDDRRRUUL"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{ \"steps\": \"RRRRRRUULLLDDRRRUULLLDDRRRUULLLDDRRRUULLLDDRRRUUL\" }\n```"
+    },
+    {
+      "solutionData": {
+        "steps": "RDRDRULURULURULURULURULURULURULURULURULURULURULURULURULURUL"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{\n  \"steps\": \"RDRDRULURULURULURULURULURULURULURULURULURULURULURULURULURUL\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1157,
+      "completion": 334,
+      "total": 1491
+    },
+    "wallClockMs": 8346,
+    "evalCpuMs": 221,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T17:22:22.166Z",
+        "score": 1e+30,
+        "cpuMs": 78
+      },
+      {
+        "timestamp": "2026-04-08T17:22:23.344Z",
+        "score": 1e+30,
+        "cpuMs": 69
+      },
+      {
+        "timestamp": "2026-04-08T17:22:24.200Z",
+        "score": 1e+30,
+        "cpuMs": 74
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_vycgpczygo4rem7jeyg8",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T17:22:25.835Z"
+}

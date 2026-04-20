@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc2nc(CC(=O)N(C)C)n(C)c2c1"
+    },
+    "devScore": 0.81881244489774,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is balancing high QED with synthetic accessibility. I'll aim for a molecule that:\n- Has optimal physicochemical properties for QED\n- Uses common, synthetically accessible fragments\n- Avoids complex ring systems that might hurt synthesizability\n\nLet me design a molecule based on successful drug scaffolds. I'll use a benzimidazole core (common in drugs) with carefully chosen substituents to optimize the QED parameters:\n\n```json\n{ \"smiles\": \"COc1ccc2nc(CC(=O)N(C)C)n(C)c2c1\" }\n```\n\nThis molecule features:\n- A methoxy-benzimidazole core (synthetically accessible, drug-like)\n- An N,N-dimethylacetamide side chain\n- Molecular weight in optimal range (~260)\n- Good balance of polar/nonpolar groups\n- Reasonable flexibility without excessive rotatable bonds\n- Common synthetic building blocks"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc2nc(CC(=O)N(C)C)n(C)c2c1"
+      },
+      "devScore": 0.81881244489774,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is balancing high QED with synthetic accessibility. I'll aim for a molecule that:\n- Has optimal physicochemical properties for QED\n- Uses common, synthetically accessible fragments\n- Avoids complex ring systems that might hurt synthesizability\n\nLet me design a molecule based on successful drug scaffolds. I'll use a benzimidazole core (common in drugs) with carefully chosen substituents to optimize the QED parameters:\n\n```json\n{ \"smiles\": \"COc1ccc2nc(CC(=O)N(C)C)n(C)c2c1\" }\n```\n\nThis molecule features:\n- A methoxy-benzimidazole core (synthetically accessible, drug-like)\n- An N,N-dimethylacetamide side chain\n- Molecular weight in optimal range (~260)\n- Good balance of polar/nonpolar groups\n- Reasonable flexibility without excessive rotatable bonds\n- Common synthetic building blocks"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1=CC2=C(C=C1)C(=O)C=C(O2)C3=CC=CC=C3"
+      },
+      "devScore": 0.6434517105063207,
+      "rawOutput": "```json\n{ \"smiles\": \"CC1=CC2=C(C=C1)C(=O)C=C(O2)C3=CC=CC=C3\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.717431530688905,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 363,
+      "total": 1724
+    },
+    "wallClockMs": 8272,
+    "evalCpuMs": 1029,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-15T05:55:47.663Z",
+        "score": 0.81881244489774,
+        "cpuMs": 348
+      },
+      {
+        "timestamp": "2026-04-15T05:55:49.174Z",
+        "score": 0.6434517105063207,
+        "cpuMs": 313
+      },
+      {
+        "timestamp": "2026-04-15T05:55:50.596Z",
+        "score": 0.717431530688905,
+        "cpuMs": 368
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_2wpwhr13st6c2mclcl1q",
+  "hiddenScore": 0.7092209438837928,
+  "timestamp": "2026-04-15T05:55:52.583Z"
+}

@@ -1,0 +1,188 @@
+{
+  "taskId": "bench-3ap-free-100",
+  "protocolId": "best-of-3",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "subset": [
+        1,
+        2,
+        4,
+        5,
+        10,
+        11,
+        13,
+        14,
+        28,
+        29,
+        31,
+        32,
+        37,
+        38,
+        40,
+        41,
+        82,
+        83,
+        85,
+        86,
+        91,
+        92,
+        94,
+        95
+      ]
+    },
+    "devScore": 24,
+    "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nLet me use a construction based on numbers whose base-3 representation has at most 2 distinct digits. This is a variant of the Salem-Spencer construction that works well for avoiding arithmetic progressions.\n\nI'll construct the set by taking numbers where the base-3 representation uses only digits from {0,1}, {0,2}, or {1,2}, which helps avoid arithmetic progressions due to the carry properties in base 3.\n\nAfter careful analysis, here's a large AP-free subset:\n\n```json\n{\n  \"subset\": [1, 2, 4, 5, 10, 11, 13, 14, 28, 29, 31, 32, 37, 38, 40, 41, 82, 83, 85, 86, 91, 92, 94, 95]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          5,
+          10,
+          11,
+          13,
+          14,
+          28,
+          29,
+          31,
+          32,
+          37,
+          38,
+          40,
+          41,
+          82,
+          83,
+          85,
+          86,
+          91,
+          92,
+          94,
+          95
+        ]
+      },
+      "devScore": 24,
+      "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nLet me use a construction based on numbers whose base-3 representation has at most 2 distinct digits. This is a variant of the Salem-Spencer construction that works well for avoiding arithmetic progressions.\n\nI'll construct the set by taking numbers where the base-3 representation uses only digits from {0,1}, {0,2}, or {1,2}, which helps avoid arithmetic progressions due to the carry properties in base 3.\n\nAfter careful analysis, here's a large AP-free subset:\n\n```json\n{\n  \"subset\": [1, 2, 4, 5, 10, 11, 13, 14, 28, 29, 31, 32, 37, 38, 40, 41, 82, 83, 85, 86, 91, 92, 94, 95]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          8,
+          13,
+          16,
+          17,
+          25,
+          26,
+          29,
+          32,
+          34,
+          37,
+          38,
+          41,
+          49,
+          50,
+          52,
+          53,
+          58,
+          61,
+          64,
+          65,
+          68,
+          73,
+          74,
+          76,
+          82,
+          85,
+          89,
+          97
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "```json\n{\n  \"subset\": [1, 2, 4, 8, 13, 16, 17, 25, 26, 29, 32, 34, 37, 38, 41, 49, 50, 52, 53, 58, 61, 64, 65, 68, 73, 74, 76, 82, 85, 89, 97]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          8,
+          13,
+          16,
+          17,
+          25,
+          26,
+          29,
+          32,
+          34,
+          37,
+          38,
+          41,
+          49,
+          50,
+          52,
+          53,
+          58,
+          61,
+          64,
+          65,
+          67,
+          68,
+          73,
+          74,
+          76,
+          81,
+          82,
+          85,
+          89,
+          97,
+          100
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "```json\n{\n  \"subset\": [1, 2, 4, 8, 13, 16, 17, 25, 26, 29, 32, 34, 37, 38, 41, 49, 50, 52, 53, 58, 61, 64, 65, 67, 68, 73, 74, 76, 81, 82, 85, 89, 97, 100]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3024,
+      "completion": 2401,
+      "total": 5425
+    },
+    "wallClockMs": 32980,
+    "evalCpuMs": 107,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T19:36:01.390Z",
+        "score": 24,
+        "cpuMs": 40
+      },
+      {
+        "timestamp": "2026-04-19T19:36:10.291Z",
+        "score": 0,
+        "cpuMs": 34
+      },
+      {
+        "timestamp": "2026-04-19T19:36:22.688Z",
+        "score": 0,
+        "cpuMs": 33
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_tn3tbk60hij94xwkx0j8",
+  "hiddenScore": 24,
+  "timestamp": "2026-04-19T19:36:23.087Z"
+}

@@ -1,0 +1,145 @@
+{
+  "taskId": "bench-heilbronn-n12",
+  "protocolId": "single-shot",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0.5,
+          0
+        ],
+        [
+          0,
+          0.5
+        ],
+        [
+          1,
+          0.5
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.25,
+          0.75
+        ],
+        [
+          0.75,
+          0.75
+        ]
+      ]
+    },
+    "devScore": 0,
+    "rawOutput": "{\n  \"points\": [\n    [0.0, 0.0],\n    [1.0, 0.0],\n    [0.0, 1.0],\n    [1.0, 1.0],\n    [0.5, 0.0],\n    [0.0, 0.5],\n    [1.0, 0.5],\n    [0.5, 1.0],\n    [0.25, 0.25],\n    [0.75, 0.25],\n    [0.25, 0.75],\n    [0.75, 0.75]\n  ]\n}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0.5,
+            0
+          ],
+          [
+            0,
+            0.5
+          ],
+          [
+            1,
+            0.5
+          ],
+          [
+            0.5,
+            1
+          ],
+          [
+            0.25,
+            0.25
+          ],
+          [
+            0.75,
+            0.25
+          ],
+          [
+            0.25,
+            0.75
+          ],
+          [
+            0.75,
+            0.75
+          ]
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "{\n  \"points\": [\n    [0.0, 0.0],\n    [1.0, 0.0],\n    [0.0, 1.0],\n    [1.0, 1.0],\n    [0.5, 0.0],\n    [0.0, 0.5],\n    [1.0, 0.5],\n    [0.5, 1.0],\n    [0.25, 0.25],\n    [0.75, 0.25],\n    [0.25, 0.75],\n    [0.75, 0.75]\n  ]\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 504,
+      "completion": 159,
+      "total": 663
+    },
+    "wallClockMs": 2725,
+    "evalCpuMs": 302,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-09T19:29:43.024Z",
+        "score": 0,
+        "cpuMs": 302
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_v62djgpzt4hhb5d1oy8b",
+  "hiddenScore": 0,
+  "timestamp": "2026-04-09T19:29:44.030Z"
+}

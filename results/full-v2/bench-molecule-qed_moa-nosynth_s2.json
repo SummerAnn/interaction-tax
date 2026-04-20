@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CC(C)C(=O)NCc2cccnc2)cc1"
+    },
+    "devScore": 0.8867356526452652,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, hydrogen bond donors/acceptors, rotatable bonds, and aromatic rings.\n\nKey insights:\n- QED favors moderate molecular weight (around 200-400 Da)\n- Balanced lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Some aromatic character but not excessive\n- The hidden evaluator penalizes complex, hard-to-synthesize structures\n\nI'll design a molecule that balances these factors while maintaining synthetic accessibility:\n\n```json\n{ \"smiles\": \"COc1ccc(CC(C)C(=O)NCc2cccnc2)cc1\" }\n```\n\nThis molecule features:\n- A methoxybenzene core (common, drug-like scaffold)\n- An amide linkage (hydrogen bonding capability)\n- A pyridine ring (nitrogen heterocycle, common in drugs)\n- Branched alkyl chain for appropriate lipophilicity\n- Moderate molecular weight (~312 Da)\n- Good balance of aromatic and aliphatic regions\n- Synthetically accessible from readily available starting materials"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)C(=O)NCc2cccnc2)cc1"
+      },
+      "devScore": 0.8867356526452652,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, hydrogen bond donors/acceptors, rotatable bonds, and aromatic rings.\n\nKey insights:\n- QED favors moderate molecular weight (around 200-400 Da)\n- Balanced lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Some aromatic character but not excessive\n- The hidden evaluator penalizes complex, hard-to-synthesize structures\n\nI'll design a molecule that balances these factors while maintaining synthetic accessibility:\n\n```json\n{ \"smiles\": \"COc1ccc(CC(C)C(=O)NCc2cccnc2)cc1\" }\n```\n\nThis molecule features:\n- A methoxybenzene core (common, drug-like scaffold)\n- An amide linkage (hydrogen bonding capability)\n- A pyridine ring (nitrogen heterocycle, common in drugs)\n- Branched alkyl chain for appropriate lipophilicity\n- Moderate molecular weight (~312 Da)\n- Good balance of aromatic and aliphatic regions\n- Synthetically accessible from readily available starting materials"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)OC(=O)C1=CC=CC=C1"
+      },
+      "devScore": 0.6177977324628453,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)(C)OC(=O)C1=CC=CC=C1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)c1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.7287360986569997,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)c1ccc(C(=O)O)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 360,
+      "total": 1721
+    },
+    "wallClockMs": 13052,
+    "evalCpuMs": 990,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-15T05:56:03.122Z",
+        "score": 0.8867356526452652,
+        "cpuMs": 326
+      },
+      {
+        "timestamp": "2026-04-15T05:56:04.554Z",
+        "score": 0.6177977324628453,
+        "cpuMs": 342
+      },
+      {
+        "timestamp": "2026-04-15T05:56:05.640Z",
+        "score": 0.7287360986569997,
+        "cpuMs": 322
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_3twsz12j4wcvnmyw5kvu",
+  "hiddenScore": 0.7639844801337399,
+  "timestamp": "2026-04-15T05:56:08.044Z"
+}

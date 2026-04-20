@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "homo-chain",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CCN(C)C)cc1OC"
+    },
+    "devScore": 0.7378997125446431,
+    "rawOutput": "{\"smiles\": \"COc1ccc(CCN(C)C)cc1OC\"}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C)cc1OC"
+      },
+      "devScore": 0.7378997125446431,
+      "rawOutput": "{\"smiles\": \"COc1ccc(CCN(C)C)cc1OC\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C)cc1"
+      },
+      "devScore": 0.6985022060592696,
+      "rawOutput": "{\n  \"smiles\": \"COc1ccc(CCN(C)C)cc1\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C)cc1"
+      },
+      "devScore": 0.6985022060592696,
+      "rawOutput": "{\n  \"smiles\": \"COc1ccc(CCN(C)C)cc1\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C)cc1"
+      },
+      "devScore": 0.6985022060592696,
+      "rawOutput": "{\n  \"smiles\": \"COc1ccc(CCN(C)C)cc1\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2226,
+      "completion": 113,
+      "total": 2339
+    },
+    "wallClockMs": 7138,
+    "evalCpuMs": 1135,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:35:41.820Z",
+        "score": 0.7378997125446431,
+        "cpuMs": 293
+      },
+      {
+        "timestamp": "2026-04-14T02:35:43.245Z",
+        "score": 0.6985022060592696,
+        "cpuMs": 291
+      },
+      {
+        "timestamp": "2026-04-14T02:35:44.646Z",
+        "score": 0.6985022060592696,
+        "cpuMs": 270
+      },
+      {
+        "timestamp": "2026-04-14T02:35:45.982Z",
+        "score": 0.6985022060592696,
+        "cpuMs": 281
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_vxwl1lspnwu1k3zq3xtt",
+  "hiddenScore": 0.6882350543854324,
+  "timestamp": "2026-04-14T02:35:50.977Z"
+}

@@ -1,0 +1,95 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "best-of-5-diverse",
+  "runIndex": 5,
+  "seed": 6,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)Nc1ccc(OCC(=O)N(C)C)cc1"
+    },
+    "devScore": 0.8516113517016949,
+    "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(OCC(=O)N(C)C)cc1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COC(=O)c1nc2ccccc2n1C"
+      },
+      "devScore": 0.6375634950606381,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-likeness descriptors including molecular weight, lipophilicity, solubility, topological polar surface area, number of heavy atoms, number of aromatic rings, number of rotatable bonds, and number of hydrogen bond acceptors/donors.\n\nThe key is to balance these properties optimally. Based on the QED algorithm and known high-scoring molecules, I'll design a molecule that:\n- Has moderate molecular weight (150-350 Da)\n- Contains aromatic rings for stability\n- Has appropriate polar surface area\n- Includes hydrogen bond donors/acceptors\n- Maintains synthetic accessibility\n\nI'll propose a benzimidazole derivative with a methyl ester group, which should score well on QED while remaining synthetically accessible:\n\n```json\n{ \"smiles\": \"COC(=O)c1nc2ccccc2n1C\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1=CC=CC=C1C(=O)O"
+      },
+      "devScore": 0.6374596390700277,
+      "rawOutput": "```json\n{ \"smiles\": \"CC1=CC=CC=C1C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccccc1"
+      },
+      "devScore": 0.7309641888463293,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccccc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Nc1ccc(OCC(=O)N(C)C)cc1"
+      },
+      "devScore": 0.8516113517016949,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(OCC(=O)N(C)C)cc1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(C)C(=O)O)cc1"
+      },
+      "devScore": 0.8215995486924976,
+      "rawOutput": "{\n  \"smiles\": \"CC(C)Cc1ccc(C(C)C(=O)O)cc1\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2206,
+      "completion": 331,
+      "total": 2537
+    },
+    "wallClockMs": 10361,
+    "evalCpuMs": 1411,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T21:37:23.352Z",
+        "score": 0.6375634950606381,
+        "cpuMs": 286
+      },
+      {
+        "timestamp": "2026-04-19T21:37:24.302Z",
+        "score": 0.6374596390700277,
+        "cpuMs": 282
+      },
+      {
+        "timestamp": "2026-04-19T21:37:25.225Z",
+        "score": 0.7309641888463293,
+        "cpuMs": 272
+      },
+      {
+        "timestamp": "2026-04-19T21:37:28.808Z",
+        "score": 0.8516113517016949,
+        "cpuMs": 267
+      },
+      {
+        "timestamp": "2026-04-19T21:37:30.039Z",
+        "score": 0.8215995486924976,
+        "cpuMs": 304
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_nmh8dgogdfup9qbdfs3q",
+  "hiddenScore": 0.7901220980946904,
+  "timestamp": "2026-04-19T21:37:31.574Z"
+}

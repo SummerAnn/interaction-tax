@@ -1,0 +1,129 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "hpe",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        5,
+        15,
+        17,
+        51,
+        85,
+        91,
+        93,
+        95,
+        99,
+        108,
+        112,
+        118,
+        125,
+        129,
+        132
+      ]
+    },
+    "devScore": 19.058823529411764,
+    "rawOutput": "Looking at the three executor contributions, I need to synthesize the best approach:\n\n1. **Executor 1** provided optimal small-scale solutions and identified that Singer difference sets and quadratic residue patterns are key\n2. **Executor 2** developed large-scale constructions using Singer difference sets, with the q=11 Singer set showing excellent performance (|B|²/v ≈ 1.20)\n3. **Executor 3** provided refinement algorithms for gap-filling and optimization\n\nThe most promising approach is to use the Singer difference set construction from Executor 2, specifically the q=11 case, which provides strong theoretical foundations and excellent ratio performance.\n\nFrom Executor 2's analysis, the q=11 Singer difference set in Z₁₃₃ gives:\n- Base set: [0, 1, 3, 5, 15, 17, 51, 85, 91, 93, 95, 99]\n- Coverage: v ≈ 120\n- |B|²/v ≈ 1.20\n\nHowever, I should also consider the smaller but highly optimized solutions from Executor 1 for comparison. The q=7 Singer set mentioned by Executor 2 with extensions could also be viable.\n\nLet me construct the q=11 Singer difference set properly. For q=11, we work in the finite field of order q²+q+1 = 133. The Singer difference set construction gives us a base that should provide excellent coverage.\n\nBased on the mathematical foundations provided and the need for a practical solution, I'll use a hybrid approach starting with a proven Singer-like construction and applying some of the refinement principles:\n\n```json\n{\n  \"set\": [0, 1, 3, 5, 15, 17, 51, 85, 91, 93, 95, 99, 108, 112, 118, 125, 129, 132]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          5,
+          15,
+          17,
+          51,
+          85,
+          91,
+          93,
+          95,
+          99,
+          108,
+          112,
+          118,
+          125,
+          129,
+          132
+        ]
+      },
+      "devScore": 19.058823529411764,
+      "rawOutput": "Looking at the three executor contributions, I need to synthesize the best approach:\n\n1. **Executor 1** provided optimal small-scale solutions and identified that Singer difference sets and quadratic residue patterns are key\n2. **Executor 2** developed large-scale constructions using Singer difference sets, with the q=11 Singer set showing excellent performance (|B|²/v ≈ 1.20)\n3. **Executor 3** provided refinement algorithms for gap-filling and optimization\n\nThe most promising approach is to use the Singer difference set construction from Executor 2, specifically the q=11 case, which provides strong theoretical foundations and excellent ratio performance.\n\nFrom Executor 2's analysis, the q=11 Singer difference set in Z₁₃₃ gives:\n- Base set: [0, 1, 3, 5, 15, 17, 51, 85, 91, 93, 95, 99]\n- Coverage: v ≈ 120\n- |B|²/v ≈ 1.20\n\nHowever, I should also consider the smaller but highly optimized solutions from Executor 1 for comparison. The q=7 Singer set mentioned by Executor 2 with extensions could also be viable.\n\nLet me construct the q=11 Singer difference set properly. For q=11, we work in the finite field of order q²+q+1 = 133. The Singer difference set construction gives us a base that should provide excellent coverage.\n\nBased on the mathematical foundations provided and the need for a practical solution, I'll use a hybrid approach starting with a proven Singer-like construction and applying some of the refinement principles:\n\n```json\n{\n  \"set\": [0, 1, 3, 5, 15, 17, 51, 85, 91, 93, 95, 99, 108, 112, 118, 125, 129, 132]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          15,
+          31,
+          63,
+          127,
+          255,
+          511,
+          1023,
+          2047,
+          4095,
+          8191,
+          16383,
+          32767,
+          65535,
+          131071,
+          262143,
+          524287,
+          1048575,
+          2097151,
+          4194303,
+          8388607,
+          16777215,
+          33554431,
+          67108863,
+          134217727,
+          268435455,
+          536870911,
+          1073741823
+        ]
+      },
+      "devScore": 240.25,
+      "rawOutput": "Looking at the three executor contributions, I need to synthesize the best theoretical insights, mathematical constructions, and optimization techniques into one optimal difference base.\n\nFrom the analysis:\n- Executor 1 found that optimal small bases follow patterns like {0,1,3,7,15,31,...} (powers of 2 minus 1)\n- Executor 2 provided Singer difference sets and systematic constructions\n- Executor 3 outlined optimization strategies for refinement\n\nThe key insight is that we need a base that balances set size with coverage. The theoretical analysis shows ratios approaching 1.0 are achievable, and the mathematical constructions provide good starting points.\n\nCombining the best elements:\n1. Start with the proven efficient structure from powers of 2 minus 1\n2. Add strategic elements based on quadratic residue patterns\n3. Include elements that fill coverage gaps efficiently\n4. Apply the optimization principles to achieve maximum coverage\n\nBased on the analysis showing optimal performance around v=28 with ratio ≈1.29, and considering the mathematical structures identified, I'll construct a set that extends this pattern while maintaining efficiency:\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287, 1048575, 2097151, 4194303, 8388607, 16777215, 33554431, 67108863, 134217727, 268435455, 536870911, 1073741823]\n}\n```\n\nWait, this approach creates too large numbers and likely poor coverage ratio. Let me reconsider based on the small-scale optimal solutions and build a more practical set.\n\nLooking at the optimal small cases and applying the hybrid optimization approach:\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96, 108, 126, 150, 165, 189, 204, 228, 245, 273, 292, 324, 350, 364, 390, 420, 440, 468, 495, 516, 546, 570, 600, 624, 660, 684, 714, 750, 780, 819, 855, 888, 924, 966, 1008, 1044, 1089, 1134, 1170, 1215]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 12955,
+      "completion": 9043,
+      "total": 21998
+    },
+    "wallClockMs": 184332,
+    "evalCpuMs": 614,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T05:04:56.242Z",
+        "score": 19.058823529411764,
+        "cpuMs": 272
+      },
+      {
+        "timestamp": "2026-04-08T05:06:26.856Z",
+        "score": 240.25,
+        "cpuMs": 342
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_uiulxem4y6ka3911t7gx",
+  "hiddenScore": 15.428571428571429,
+  "timestamp": "2026-04-08T05:06:58.046Z"
+}

@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "debate-mixed-oss",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(C)(C)c1ccc(cc1)C(C)(C)C(=O)Nc1ccc(cc1)C(=O)O"
+    },
+    "devScore": 0.8553713085471699,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(cc1)C(C)(C)C(=O)Nc1ccc(cc1)C(=O)O\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CN1C(=O)N(C)C(=O)C2=C1N=CN2C"
+      },
+      "devScore": 0.5384628262372215,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CN1C(=O)N(C)C(=O)C2=C1N=CN2C\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)c1ccc(cc1)C(C)(C)C(=O)Nc1ccc(cc1)C(=O)O"
+      },
+      "devScore": 0.8553713085471699,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(cc1)C(C)(C)C(=O)Nc1ccc(cc1)C(=O)O\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)c1ccc(cc1)C(C)(C)C(=O)Nc1ccc(cc1)C(=O)O"
+      },
+      "devScore": 0.8553713085471699,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(cc1)C(C)(C)C(=O)Nc1ccc(cc1)C(=O)O\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 4635,
+      "completion": 2127,
+      "total": 6762
+    },
+    "wallClockMs": 60929,
+    "evalCpuMs": 811,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T03:14:04.283Z",
+        "score": 0.5384628262372215,
+        "cpuMs": 273
+      },
+      {
+        "timestamp": "2026-04-14T03:14:06.432Z",
+        "score": 0.8553713085471699,
+        "cpuMs": 271
+      },
+      {
+        "timestamp": "2026-04-14T03:15:02.551Z",
+        "score": 0.8553713085471699,
+        "cpuMs": 267
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_xcjqykxhbytak35f0ie0",
+  "hiddenScore": 0.7622786676792794,
+  "timestamp": "2026-04-14T03:15:03.984Z"
+}

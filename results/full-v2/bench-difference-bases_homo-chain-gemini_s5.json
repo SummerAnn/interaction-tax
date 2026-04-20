@@ -1,0 +1,175 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "homo-chain-gemini",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        44,
+        66,
+        81
+      ]
+    },
+    "devScore": 6.666666666666667,
+    "rawOutput": "```json\n{\"set\": [0, 1, 3, 7, 12, 20, 30, 44, 66, 81]}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          66,
+          81
+        ]
+      },
+      "devScore": 6.666666666666667,
+      "rawOutput": "```json\n{\"set\": [0, 1, 3, 7, 12, 20, 30, 44, 66, 81]}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          66,
+          81,
+          100
+        ]
+      },
+      "devScore": 8.066666666666666,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    44,\n    66,\n    81,\n    100\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          66,
+          81,
+          100
+        ]
+      },
+      "devScore": 8.066666666666666,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    44,\n    66,\n    81,\n    100\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          66,
+          81,
+          100,
+          121,
+          144,
+          169,
+          196,
+          225,
+          256,
+          289,
+          324,
+          361,
+          400,
+          441,
+          484,
+          529,
+          576,
+          625,
+          676,
+          729,
+          784,
+          841,
+          900,
+          961,
+          1024,
+          1089,
+          1156,
+          1225,
+          1296,
+          1369,
+          1444,
+          1521,
+          1600,
+          1681,
+          1764,
+          1849,
+          1936
+        ]
+      },
+      "devScore": 135,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    44,\n    66,\n    81,\n    100,\n    121,\n    144,\n    169,\n    196,\n    225,\n    256,\n    289,\n    324,\n    361,\n    400,\n    441,\n    484,\n    529,\n    576,\n    625,\n    676,\n    729,\n    784,\n    841,\n    900,\n    961,\n    1024,\n    1089,\n    1156,\n    1225,\n    1296,\n    1369,\n    1444,\n    1521,\n    1600,\n    1681,\n    1764,\n    1849,\n    1936\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1455,
+      "completion": 465,
+      "total": 1920
+    },
+    "wallClockMs": 5211,
+    "evalCpuMs": 633,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-18T01:23:57.371Z",
+        "score": 6.666666666666667,
+        "cpuMs": 152
+      },
+      {
+        "timestamp": "2026-04-18T01:23:58.244Z",
+        "score": 8.066666666666666,
+        "cpuMs": 181
+      },
+      {
+        "timestamp": "2026-04-18T01:23:59.164Z",
+        "score": 8.066666666666666,
+        "cpuMs": 152
+      },
+      {
+        "timestamp": "2026-04-18T01:24:00.665Z",
+        "score": 135,
+        "cpuMs": 148
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_ut5xeh8axqm2kvwx4jdw",
+  "hiddenScore": 5,
+  "timestamp": "2026-04-18T01:24:02.914Z"
+}

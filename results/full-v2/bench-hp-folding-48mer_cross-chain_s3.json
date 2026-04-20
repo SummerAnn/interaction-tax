@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "cross-chain",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "I need to find a folding pattern for the 50-residue HP sequence that maximizes H-H contacts. Let me analyze the sequence and design a compact folding strategy.\n\nThe sequence is: `HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH`\n\nTo maximize H-H contacts, I need to create a compact structure that brings non-consecutive H residues close together. A good strategy is to create a spiral or serpentine pattern that folds back on itself multiple times.\n\nLet me design a folding pattern that creates multiple layers and turns to maximize contacts:\n\n```json\n{ \"steps\": \"RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "I need to find a folding pattern for the 50-residue HP sequence that maximizes H-H contacts. Let me analyze the sequence and design a compact folding strategy.\n\nThe sequence is: `HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH`\n\nTo maximize H-H contacts, I need to create a compact structure that brings non-consecutive H residues close together. A good strategy is to create a spiral or serpentine pattern that folds back on itself multiple times.\n\nLet me design a folding pattern that creates multiple layers and turns to maximize contacts:\n\n```json\n{ \"steps\": \"RRRRRRRRRUULLLLLLLLDDRRRRRRRRRUULLLLLLLLDDRRRRRRR\" }\n```"
+    },
+    {
+      "solutionData": {
+        "steps": "RRUURRDDLLUUURRDDLLDDRRUURRDDLLUUURRDDLLDDRRUURR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{ \"steps\": \"RRUURRDDLLUUURRDDLLDDRRUURRDDLLUUURRDDLLDDRRUURR\" }\n```"
+    },
+    {
+      "solutionData": {
+        "steps": "RRDDRRUURRDDLLUURRDDRRUUDRRDLDRRDLDRRDLDRRDDRRUULL"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{\n  \"steps\": \"RRDDRRUURRDDLLUURRDDRRUUDRRDLDRRDLDRRDLDRRDDRRUULL\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1157,
+      "completion": 257,
+      "total": 1414
+    },
+    "wallClockMs": 6639,
+    "evalCpuMs": 236,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T17:22:38.057Z",
+        "score": 1e+30,
+        "cpuMs": 79
+      },
+      {
+        "timestamp": "2026-04-08T17:22:39.352Z",
+        "score": 1e+30,
+        "cpuMs": 76
+      },
+      {
+        "timestamp": "2026-04-08T17:22:40.330Z",
+        "score": 1e+30,
+        "cpuMs": 81
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_t3t9s4zt9882oxu9q8e7",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T17:22:42.034Z"
+}

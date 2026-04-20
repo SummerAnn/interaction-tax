@@ -1,0 +1,47 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "hpe-mixed-oss",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRUULLDDRRUULLDDRURDRURDRDRRUULLDDRRUUDDLDRRUU"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "```json\n{ \"steps\": \"RRUULLDDRRUULLDDRURDRURDRDRRUULLDDRRUUDDLDRRUU\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRUULLDDRRUULLDDRURDRURDRDRRUULLDDRRUUDDLDRRUU"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{ \"steps\": \"RRUULLDDRRUULLDDRURDRURDRDRRUULLDDRRUUDDLDRRUU\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 9759,
+      "completion": 9314,
+      "total": 19073
+    },
+    "wallClockMs": 360590,
+    "evalCpuMs": 58,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T21:00:40.236Z",
+        "score": 1e+30,
+        "cpuMs": 58
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_6j347hv5ew7ivj16hvfz",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T21:05:36.342Z"
+}

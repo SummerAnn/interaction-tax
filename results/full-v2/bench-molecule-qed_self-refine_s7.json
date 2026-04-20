@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine",
+  "runIndex": 1,
+  "seed": 7,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCN(CC)CCNc1ccc(c2cccnc2)cc1"
+    },
+    "devScore": 0.8335252694839652,
+    "rawOutput": "Looking at the current solution with QED score 0.786, I need to identify ways to improve drug-likeness while maintaining synthetic accessibility.\n\nThe current molecule `CCN(CC)CCNC(=O)c1cc(C)on1` contains:\n- A diethylamino group\n- An amide linker\n- A methylisoxazole ring\n\nTo improve QED, I should focus on:\n1. Optimizing molecular weight (ideal ~300-500 Da)\n2. Improving lipophilicity (LogP ~2-3)\n3. Adding more aromatic character\n4. Maintaining good hydrogen bonding potential\n5. Keeping synthetic accessibility high\n\nI'll modify the structure by:\n- Replacing the isoxazole with a pyridine ring (more drug-like)\n- Adding a phenyl ring to increase aromaticity\n- Optimizing the linker chain length\n- Maintaining the tertiary amine for basicity\n\n{\n  \"smiles\": \"CCN(CC)CCNc1ccc(c2cccnc2)cc1\"\n}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(C)on1"
+      },
+      "devScore": 0.7859913561327613,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(C)on1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNc1nc(C)cc(OC)n1"
+      },
+      "devScore": 0.7807234148844169,
+      "rawOutput": "Looking at the current solution with QED score 0.7859, I need to identify potential improvements while maintaining synthesizability.\n\nThe current molecule `CCN(CC)CCNC(=O)c1cc(C)on1` contains:\n- Diethylamino group\n- Amide linker\n- Methylisoxazole core\n\nTo improve QED while maintaining synthesizability, I'll focus on:\n1. Optimizing molecular weight (QED favors MW ~200-400)\n2. Improving lipophilicity balance\n3. Adding favorable heterocycles\n4. Maintaining drug-like functional groups\n\nI'll modify the structure to include a pyrimidine ring (common in drugs) and optimize the substitution pattern:\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNc1nc(C)cc(OC)n1\"\n}\n```\n\nThis modification:\n- Replaces the isoxazole with pyrimidine (better drug-like properties)\n- Changes amide to amine (reduces molecular weight slightly)\n- Adds methoxy group for improved property balance\n- Maintains the diethylamino chain for favorable nitrogen content\n- Should have better overall QED due to optimized heterocycle and substitution pattern"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNc1ccc(c2cccnc2)cc1"
+      },
+      "devScore": 0.8335252694839652,
+      "rawOutput": "Looking at the current solution with QED score 0.786, I need to identify ways to improve drug-likeness while maintaining synthetic accessibility.\n\nThe current molecule `CCN(CC)CCNC(=O)c1cc(C)on1` contains:\n- A diethylamino group\n- An amide linker\n- A methylisoxazole ring\n\nTo improve QED, I should focus on:\n1. Optimizing molecular weight (ideal ~300-500 Da)\n2. Improving lipophilicity (LogP ~2-3)\n3. Adding more aromatic character\n4. Maintaining good hydrogen bonding potential\n5. Keeping synthetic accessibility high\n\nI'll modify the structure by:\n- Replacing the isoxazole with a pyridine ring (more drug-like)\n- Adding a phenyl ring to increase aromaticity\n- Optimizing the linker chain length\n- Maintaining the tertiary amine for basicity\n\n{\n  \"smiles\": \"CCN(CC)CCNc1ccc(c2cccnc2)cc1\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCOc1ccc(CNc2ccccn2)cc1"
+      },
+      "devScore": 0.7697005930562492,
+      "rawOutput": "Looking at the current solution with QED score 0.8335, I need to identify potential improvements while being mindful of the synthesizability constraint in the hidden evaluator.\n\nThe current molecule `CCN(CC)CCNc1ccc(c2cccnc2)cc1` has:\n- A diethylamino group\n- An ethyl linker\n- A biphenyl-pyridine system\n\nTo improve QED while maintaining synthesizability, I'll focus on:\n1. Optimizing molecular weight (QED favors MW ~400-500)\n2. Improving lipophilicity balance\n3. Maintaining drug-like heteroatom content\n4. Keeping synthetic accessibility high\n\nI'll modify the structure to include a more optimal scaffold with better drug-like properties:\n\n{\n  \"smiles\": \"CCN(CC)CCOc1ccc(CNc2ccccn2)cc1\"\n}\n\nThis modification:\n- Replaces the direct biphenyl connection with an ether linkage (more flexible, better ADMET)\n- Adds a methylene spacer between the phenyl and pyridine nitrogen\n- Maintains the diethylamino group for favorable basicity\n- Should have improved rotatable bonds and topological polar surface area\n- Remains synthetically accessible through standard medicinal chemistry methods"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2323,
+      "completion": 886,
+      "total": 3209
+    },
+    "wallClockMs": 17838,
+    "evalCpuMs": 982,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-20T00:49:54.522Z",
+        "score": 0.7859913561327613,
+        "cpuMs": 227
+      },
+      {
+        "timestamp": "2026-04-20T00:49:59.375Z",
+        "score": 0.7807234148844169,
+        "cpuMs": 238
+      },
+      {
+        "timestamp": "2026-04-20T00:50:05.744Z",
+        "score": 0.8335252694839652,
+        "cpuMs": 239
+      },
+      {
+        "timestamp": "2026-04-20T00:50:10.798Z",
+        "score": 0.7697005930562492,
+        "cpuMs": 278
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_igdcfgrhlyvcxh2408z6",
+  "hiddenScore": 0.7498253654473309,
+  "timestamp": "2026-04-20T00:50:15.464Z"
+}

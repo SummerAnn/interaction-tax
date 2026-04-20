@@ -1,0 +1,152 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "hpe",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        44,
+        65,
+        73,
+        85,
+        106,
+        127,
+        150,
+        180,
+        204,
+        217,
+        246,
+        283,
+        315,
+        360,
+        400,
+        450,
+        504,
+        546,
+        595,
+        651,
+        700,
+        744,
+        803,
+        850,
+        912,
+        993
+      ]
+    },
+    "devScore": 77.78571428571429,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 73, 85, 106, 127, 150, 180, 204, 217, 246, 283, 315, 360, 400, 450, 504, 546, 595, 651, 700, 744, 803, 850, 912, 993]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          13,
+          24,
+          39,
+          60,
+          85,
+          114,
+          147,
+          184,
+          225,
+          270,
+          319,
+          372,
+          429,
+          490,
+          555,
+          624,
+          697,
+          774,
+          855,
+          940
+        ]
+      },
+      "devScore": 192,
+      "rawOutput": "Looking at the three executor contributions, I need to synthesize the best approach:\n\n1. **Executor 1** provided optimal small-scale constructions showing the pattern {0,1,3,7,12,...} works well\n2. **Executor 2** demonstrated effective greedy extension for large v values with good scaling\n3. **Executor 3** offered theoretical insights about Singer sets and modular arithmetic patterns\n\nThe key insight is that for practical submission, I should use a construction that balances theoretical optimality with computational feasibility. The greedy approach from Executor 2 showed strong performance with scores around 0.56-0.65 for large v values.\n\nLooking at the patterns, the most promising approach is to start with the proven small-scale optimal base {0,1,3,7,12} and extend it using the greedy strategy that achieved good results for v=1000-1500.\n\nFrom Executor 2's results, the construction for v=1000 achieved a strong score of 0.576 with 24 elements. This represents a good balance of coverage and efficiency.\n\n```json\n{\n  \"set\": [0, 1, 3, 6, 13, 24, 39, 60, 85, 114, 147, 184, 225, 270, 319, 372, 429, 490, 555, 624, 697, 774, 855, 940]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          65,
+          73,
+          85,
+          106,
+          127,
+          150,
+          180,
+          204,
+          217,
+          246,
+          283,
+          315,
+          360,
+          400,
+          450,
+          504,
+          546,
+          595,
+          651,
+          700,
+          744,
+          803,
+          850,
+          912,
+          993
+        ]
+      },
+      "devScore": 77.78571428571429,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 73, 85, 106, 127, 150, 180, 204, 217, 246, 283, 315, 360, 400, 450, 504, 546, 595, 651, 700, 744, 803, 850, 912, 993]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 12938,
+      "completion": 8457,
+      "total": 21395
+    },
+    "wallClockMs": 165854,
+    "evalCpuMs": 570,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T05:10:55.148Z",
+        "score": 192,
+        "cpuMs": 284
+      },
+      {
+        "timestamp": "2026-04-08T05:12:15.331Z",
+        "score": 77.78571428571429,
+        "cpuMs": 286
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_pgnf42uncvxdsoepbz1t",
+  "hiddenScore": 77.78571428571429,
+  "timestamp": "2026-04-08T05:12:16.986Z"
+}

@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 4,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O"
+    },
+    "devScore": 0.8215995486924976,
+    "rawOutput": "```json\n{ \"smiles\": \"CC(C)CC1=CC=C(C=C1)C(C)C(=O)O\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCc1nc(N)nc(N)c1C"
+      },
+      "devScore": 0.6142926223400974,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid the \"proxy-overfit trap\" by ensuring the molecule is synthetically accessible. This means I should focus on relatively simple, well-known drug-like scaffolds rather than complex ring systems.\n\nLet me consider a molecule that balances high QED with synthetic accessibility. I'll design something based on successful drug scaffolds:\n\nA pyrimidine-based structure with optimal drug-like properties:\n- Moderate molecular weight (150-350 Da range is optimal for QED)\n- Balanced lipophilicity \n- Appropriate number of H-bond donors/acceptors\n- Simple synthetic route\n\nHere's my optimized molecule:\n\n```json\n{ \"smiles\": \"CCc1nc(N)nc(N)c1C\" }\n```\n\nThis is 2,4-diamino-5-ethyl-6-methylpyrimidine, which has:\n- MW ~152 Da (optimal range)\n- Good balance of polar/nonpolar features\n- Simple pyrimidine scaffold (synthetically accessible)\n- No structural alerts\n- Appropriate H-bond donor/acceptor count\n- Low rotatable bond count\n- Single aromatic ring"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O"
+      },
+      "devScore": 0.8215995486924976,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)CC1=CC=C(C=C1)C(C)C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]ccc12"
+      },
+      "devScore": 0.6698172578643221,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]ccc12\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 419,
+      "total": 1780
+    },
+    "wallClockMs": 8396,
+    "evalCpuMs": 804,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-16T21:30:33.416Z",
+        "score": 0.6142926223400974,
+        "cpuMs": 267
+      },
+      {
+        "timestamp": "2026-04-16T21:30:34.574Z",
+        "score": 0.8215995486924976,
+        "cpuMs": 268
+      },
+      {
+        "timestamp": "2026-04-16T21:30:35.976Z",
+        "score": 0.6698172578643221,
+        "cpuMs": 269
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_zkitmk6z4v3z5hdeiwi0",
+  "hiddenScore": 0.7128055802893332,
+  "timestamp": "2026-04-16T21:30:37.411Z"
+}

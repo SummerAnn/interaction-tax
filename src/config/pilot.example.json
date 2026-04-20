@@ -1,0 +1,265 @@
+{
+  "id": "pilot-v1",
+  "name": "Agent4Science-Bench Pilot (9 tasks × 9 protocols × 5 seeds)",
+  "tasks": [
+    {
+      "id": "bench-maxcut-g200",
+      "title": "Benchmark: MaxCut on G(200, 0.3)",
+      "track": "scientific",
+      "challengeId": "ch_bench_71qs8npijpnvky4q",
+      "prompt": "Find the maximum cut of a random graph G(n=200, p=0.3) with seed=17. A cut partitions vertices into two sets. The cut value is the number of edges from the evaluation set crossing the partition. Maximize the cut value.\n\nReturn a JSON object with a 'partition' field: an array of 200 values, each 0 or 1.",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["partition"],
+        "properties": {
+          "partition": {
+            "type": "array",
+            "items": { "type": "integer", "enum": [0, 1] },
+            "minItems": 200,
+            "maxItems": 200
+          }
+        }
+      },
+      "scoringDirection": "maximize",
+      "parameters": { "n": 200, "p": 0.3, "graphSeed": 17, "edgeSeed": 71 }
+    },
+    {
+      "id": "bench-circle-packing-n20",
+      "title": "Benchmark: Circle Packing in a Square (N=20)",
+      "track": "scientific",
+      "challengeId": "ch_bench_d1v5b25w8y3jk58a",
+      "prompt": "Pack 20 non-overlapping circles inside the unit square [0,1]² to maximize the sum of all radii. No overlaps, all circles fully contained.\n\nReturn a JSON object with a 'circles' field: array of 20 triples [x, y, radius].",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["circles"],
+        "properties": {
+          "circles": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+            "minItems": 20,
+            "maxItems": 20
+          }
+        }
+      },
+      "scoringDirection": "maximize",
+      "parameters": { "n": 20 }
+    },
+    {
+      "id": "bench-difference-bases",
+      "title": "Benchmark: Difference Bases",
+      "track": "scientific",
+      "challengeId": "ch_bench_4syi46tpyxhd5jp2",
+      "prompt": "Find a set B of non-negative integers (max 2000 elements) that minimizes |B|²/v, where v is the largest integer such that all of 1..v appear as pairwise differences of elements in B.\n\nReturn a JSON object with a 'set' field: array of non-negative integers.",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["set"],
+        "properties": {
+          "set": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0 },
+            "maxItems": 2000
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": { "maxSize": 2000 }
+    },
+    {
+      "id": "bench-flat-poly-deg50",
+      "title": "Benchmark: Flat Polynomials (Degree 50)",
+      "track": "scientific",
+      "challengeId": "ch_bench_0qjyvb1amfhddk1v",
+      "prompt": "Find a ±1 coefficient polynomial of degree 50 (51 coefficients) that minimizes the peak-to-RMS ratio max|P(z)|/√51 evaluated on the unit circle.\n\nReturn a JSON object with a 'coefficients' field: array of exactly 51 integers, each +1 or -1.",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["coefficients"],
+        "properties": {
+          "coefficients": {
+            "type": "array",
+            "items": { "type": "integer", "enum": [-1, 1] },
+            "minItems": 51,
+            "maxItems": 51
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": { "degree": 50 }
+    },
+    {
+      "id": "bench-thomson-n83",
+      "title": "Benchmark: Thomson Problem (N=83)",
+      "track": "scientific",
+      "challengeId": "ch_bench_adivevhf5ty1glof",
+      "prompt": "Place 83 points on the unit sphere to minimize the Coulomb energy: sum of 1/r_ij for all pairs. Points are projected to the unit sphere.\n\nReturn a JSON object with a 'vectors' field: array of 83 three-element arrays [x, y, z].",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["vectors"],
+        "properties": {
+          "vectors": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+            "minItems": 83,
+            "maxItems": 83
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": { "n": 83 }
+    },
+    {
+      "id": "bench-tsp-100",
+      "title": "Benchmark: Traveling Salesman (N=100)",
+      "track": "scientific",
+      "challengeId": "ch_bench_l9x80j6i5n2q27ic",
+      "prompt": "Find the shortest tour through 100 cities in [0,1000]². City positions are deterministic from seed=42. Tour must visit all cities and return to start.\n\nReturn a JSON object with a 'tour' field: a permutation of integers 0..99.",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["tour"],
+        "properties": {
+          "tour": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0, "maximum": 99 },
+            "minItems": 100,
+            "maxItems": 100
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": { "n": 100, "citySeed": 42 }
+    },
+    {
+      "id": "bench-hp-folding-48mer",
+      "title": "Benchmark: HP Protein Folding (2D, 48-mer)",
+      "track": "scientific",
+      "challengeId": "ch_bench_u6r7yzs8apfkkz89",
+      "prompt": "Fold the HP sequence HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH on a 2D square lattice to maximize H-H contacts. The folding must be a self-avoiding walk with consecutive residues on adjacent lattice sites.\n\nReturn a JSON object with a 'coords' field: array of 48 [x, y] integer lattice coordinates.",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["coords"],
+        "properties": {
+          "coords": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 },
+            "minItems": 48,
+            "maxItems": 48
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": { "sequence": "HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH" }
+    },
+    {
+      "id": "bench-lj-n41",
+      "title": "Benchmark: Lennard-Jones Cluster (N=41)",
+      "track": "scientific",
+      "challengeId": "ch_bench_42dj6zp8mz7hjrjt",
+      "prompt": "Place 41 atoms in 3D space to minimize the Lennard-Jones potential energy: 4·Σ(1/r_ij¹² - 1/r_ij⁶) for all pairs.\n\nReturn a JSON object with a 'positions' field: array of 41 three-element arrays [x, y, z].",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["positions"],
+        "properties": {
+          "positions": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+            "minItems": 41,
+            "maxItems": 41
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": { "n": 41 }
+    },
+    {
+      "id": "bench-erdos-overlap",
+      "title": "Benchmark: Erdős Minimum Overlap (Upper Bound)",
+      "track": "scientific",
+      "challengeId": "ch_bench_btmj7mk7aetnn65a",
+      "prompt": "Find a function f: [0,1] → [0,1] with ∫f = 1/2 that minimizes the maximum overlap (cross-correlation) between f and its translates. Provide f as uniformly-spaced samples.\n\nReturn a JSON object with a 'values' field: array of at least 100 floats in [0,1].",
+      "solutionSchema": {
+        "type": "object",
+        "required": ["values"],
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": { "type": "number", "minimum": 0, "maximum": 1 },
+            "minItems": 100
+          }
+        }
+      },
+      "scoringDirection": "minimize",
+      "parameters": {}
+    }
+  ],
+  "protocols": [
+    {
+      "id": "single-shot",
+      "name": "Single-Shot",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": {}
+    },
+    {
+      "id": "self-refine",
+      "name": "Self-Refine (3 rounds)",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": { "rounds": 3 }
+    },
+    {
+      "id": "best-of-n",
+      "name": "Best-of-8",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": { "n": 8 }
+    },
+    {
+      "id": "vgs",
+      "name": "VGS (pop=4, gen=5)",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": { "populationSize": 4, "generations": 5, "eliteCount": 2, "convergenceWindow": 2 }
+    },
+    {
+      "id": "homo-chain",
+      "name": "Homogeneous Chain (4 agents)",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": { "chainLength": 4 }
+    },
+    {
+      "id": "cross-chain",
+      "name": "Cross-Model Chain (Claude → GPT-4o → Gemini)",
+      "backbones": [
+        { "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" },
+        { "provider": "openai", "model": "gpt-4o-2024-08-06", "apiKey": "${OPENAI_API_KEY}" },
+        { "provider": "openrouter", "model": "google/gemini-2.5-flash-preview-04-17", "apiKey": "${OPENROUTER_API_KEY}" }
+      ],
+      "params": {}
+    },
+    {
+      "id": "magicore",
+      "name": "MAgICoRe (2 rounds)",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": { "rounds": 2 }
+    },
+    {
+      "id": "debate",
+      "name": "Debate (2 rounds + synthesis)",
+      "backbones": [{ "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" }],
+      "params": { "debateRounds": 2 }
+    },
+    {
+      "id": "moa",
+      "name": "Mixture-of-Agents (3 models → aggregator)",
+      "backbones": [
+        { "provider": "anthropic", "model": "claude-sonnet-4-20250514", "apiKey": "${ANTHROPIC_API_KEY}" },
+        { "provider": "openai", "model": "gpt-4o-2024-08-06", "apiKey": "${OPENAI_API_KEY}" },
+        { "provider": "openrouter", "model": "google/gemini-2.5-flash-preview-04-17", "apiKey": "${OPENROUTER_API_KEY}" }
+      ],
+      "params": {}
+    }
+  ],
+  "budget": {
+    "tokenCap": 50000,
+    "wallClockSeconds": 300,
+    "evalCpuSeconds": 60,
+    "evalCallCap": 25
+  },
+  "seeds": [1, 2, 3, 4, 5],
+  "outputDir": "./results/pilot-v1"
+}

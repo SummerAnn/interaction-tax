@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "magicore",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRRRRRUULLLLLUURRRRRUULLLLLUURRRRRUULLLLLUURRRD"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "Looking at this HP lattice protein folding problem, I need to find a sequence of 49 moves (R/L/U/D) that maximizes H-H contacts for the given sequence.\n\nThe sequence is: `HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH`\n\nLet me analyze the H positions: 0,2,5,6,8,10,12,13,15,17,19,20,22,23,25,27,29,30,32,34,36,37,39,41,43,44,46,47,49\n\nTo maximize H-H contacts, I need to create compact structures where H residues can be adjacent on the lattice. I'll try to form a structure that brings many H residues close together.\n\nLet me design a path that creates a compact, roughly rectangular structure with good H-H contact opportunities:\n\nStarting at (0,0), I'll create a folded structure:\n- Move right to establish a base\n- Create turns to fold back\n- Form compact regions where H residues can contact\n\nAfter analyzing the sequence pattern and optimizing for H-H contacts, here's my solution:\n\n{\"steps\": \"RRRRRRUULLLLLUURRRRRUULLLLLUURRRRRUULLLLLUURRRD\"}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRRRRRUULLLLLUURRRRRUULLLLLUURRRRRUULLLLLUURRRD"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "Looking at this HP lattice protein folding problem, I need to find a sequence of 49 moves (R/L/U/D) that maximizes H-H contacts for the given sequence.\n\nThe sequence is: `HPHPPHHPHPPHPHHPPHPHPHHPPHHPHPPHPHHPPHPHPHHPPHHPHH`\n\nLet me analyze the H positions: 0,2,5,6,8,10,12,13,15,17,19,20,22,23,25,27,29,30,32,34,36,37,39,41,43,44,46,47,49\n\nTo maximize H-H contacts, I need to create compact structures where H residues can be adjacent on the lattice. I'll try to form a structure that brings many H residues close together.\n\nLet me design a path that creates a compact, roughly rectangular structure with good H-H contact opportunities:\n\nStarting at (0,0), I'll create a folded structure:\n- Move right to establish a base\n- Create turns to fold back\n- Form compact regions where H residues can contact\n\nAfter analyzing the sequence pattern and optimizing for H-H contacts, here's my solution:\n\n{\"steps\": \"RRRRRRUULLLLLUURRRRRUULLLLLUURRRRRUULLLLLUURRRD\"}"
+    },
+    {
+      "solutionData": {
+        "steps": "RRRUULLDDRRRUULLDDRRRUULLDDRRRUULLDDRRRUULLDDRRR"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "{\n  \"steps\": \"RRRUULLDDRRRUULLDDRRRUULLDDRRRUULLDDRRRUULLDDRRR\"\n}"
+    },
+    {
+      "solutionData": {
+        "steps": "RRRRRUUUUULLLLLDDDDDRRRUUULLLDRRRUUULLLDRRRUUULLL"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "{\n  \"steps\": \"RRRRRUUUUULLLLLDDDDDRRRUUULLLDRRRUUULLLDRRRUUULLL\"\n}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3732,
+      "completion": 2041,
+      "total": 5773
+    },
+    "wallClockMs": 49927,
+    "evalCpuMs": 235,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T17:24:37.531Z",
+        "score": 1e+30,
+        "cpuMs": 89
+      },
+      {
+        "timestamp": "2026-04-08T17:24:58.105Z",
+        "score": 1e+30,
+        "cpuMs": 77
+      },
+      {
+        "timestamp": "2026-04-08T17:25:20.054Z",
+        "score": 1e+30,
+        "cpuMs": 69
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_aw51xdry8vonb4xnzi53",
+  "hiddenScore": 0,
+  "timestamp": "2026-04-08T17:25:21.611Z"
+}

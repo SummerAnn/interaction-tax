@@ -1,0 +1,115 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "single-shot-gemini",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        44,
+        59,
+        72,
+        89,
+        102,
+        116,
+        131,
+        142,
+        155,
+        169,
+        182,
+        196,
+        209,
+        224,
+        238,
+        253,
+        269,
+        284,
+        300,
+        317,
+        333,
+        350,
+        368,
+        386,
+        404,
+        423
+      ]
+    },
+    "devScore": 54.45,
+    "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    44,\n    59,\n    72,\n    89,\n    102,\n    116,\n    131,\n    142,\n    155,\n    169,\n    182,\n    196,\n    209,\n    224,\n    238,\n    253,\n    269,\n    284,\n    300,\n    317,\n    333,\n    350,\n    368,\n    386,\n    404,\n    423\n  ]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          59,
+          72,
+          89,
+          102,
+          116,
+          131,
+          142,
+          155,
+          169,
+          182,
+          196,
+          209,
+          224,
+          238,
+          253,
+          269,
+          284,
+          300,
+          317,
+          333,
+          350,
+          368,
+          386,
+          404,
+          423
+        ]
+      },
+      "devScore": 54.45,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    44,\n    59,\n    72,\n    89,\n    102,\n    116,\n    131,\n    142,\n    155,\n    169,\n    182,\n    196,\n    209,\n    224,\n    238,\n    253,\n    269,\n    284,\n    300,\n    317,\n    333,\n    350,\n    368,\n    386,\n    404,\n    423\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 312,
+      "completion": 199,
+      "total": 511
+    },
+    "wallClockMs": 1585,
+    "evalCpuMs": 147,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-18T01:08:03.417Z",
+        "score": 54.45,
+        "cpuMs": 147
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_uui3l9k3x4otdqfxs8lr",
+  "hiddenScore": 51.857142857142854,
+  "timestamp": "2026-04-18T01:08:03.914Z"
+}

@@ -1,0 +1,84 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "hpe-mixed-oss",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        5,
+        7,
+        11,
+        24
+      ]
+    },
+    "devScore": 18,
+    "rawOutput": "```json\n{\"set\": [0, 1, 5, 7, 11, 24]}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          15,
+          31,
+          63,
+          127,
+          255,
+          511
+        ]
+      },
+      "devScore": 25,
+      "rawOutput": "```json\n{ \"set\": [0, 1, 3, 7, 15, 31, 63, 127, 255, 511] }\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          5,
+          7,
+          11,
+          24
+        ]
+      },
+      "devScore": 18,
+      "rawOutput": "```json\n{\"set\": [0, 1, 5, 7, 11, 24]}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 8966,
+      "completion": 4972,
+      "total": 13938
+    },
+    "wallClockMs": 177263,
+    "evalCpuMs": 816,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T17:47:26.314Z",
+        "score": 25,
+        "cpuMs": 513
+      },
+      {
+        "timestamp": "2026-04-08T17:48:55.758Z",
+        "score": 18,
+        "cpuMs": 303
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_umqd87wsc261pflvxmym",
+  "hiddenScore": 18,
+  "timestamp": "2026-04-08T17:48:58.855Z"
+}

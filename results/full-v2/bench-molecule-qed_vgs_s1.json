@@ -1,0 +1,131 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "vgs",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(C)Cc1ccc(C(C)(C)C(=O)N2CCOCC2)cc1"
+    },
+    "devScore": 0.8524710934400527,
+    "rawOutput": "{\"smiles\": \"CC(C)Cc1ccc(C(C)(C)C(=O)N2CCOCC2)cc1\"}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(OC)c(OC)cc1OC"
+      },
+      "devScore": 0.7532750042882362,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)c(OC)cc1OC\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)C(=O)O)cc1OC"
+      },
+      "devScore": 0.8303066292459957,
+      "rawOutput": "{\"smiles\": \"COc1ccc(CC(C)C(=O)O)cc1OC\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(Cl)ccc1OC"
+      },
+      "devScore": 0.8360132812968629,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(Cl)ccc1OC\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(C)(C)C(=O)N2CCOCC2)cc1"
+      },
+      "devScore": 0.8524710934400527,
+      "rawOutput": "{\"smiles\": \"CC(C)Cc1ccc(C(C)(C)C(=O)N2CCOCC2)cc1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(N2CCOCC2)cc1OC"
+      },
+      "devScore": 0.7774469393662201,
+      "rawOutput": "Looking at the top solutions, I can identify key patterns that contribute to high QED scores:\n\n1. **Candidate 1** (0.852): Features a morpholine ring (N2CCOCC2) attached to a substituted phenyl ring with branched alkyl chains\n2. **Candidate 2** (0.836): Contains a diethylamino group, amide linkage, chlorine substitution, and methoxy group\n3. **Candidate 3** (0.830): Has dimethoxy substitution on benzene with a branched carboxylic acid side chain\n\nThe highest scorer uses a morpholine heterocycle, which provides good drug-likeness properties. I'll create a new variant that combines:\n- The morpholine scaffold (from Candidate 1)\n- Strategic methoxy substitution (from Candidates 2&3)\n- A different connection pattern to explore new chemical space\n- Maintain synthetic accessibility\n\nMy new design places the morpholine directly on the benzene ring with complementary methoxy substitution:\n\n```json\n{\n  \"smiles\": \"COc1ccc(N2CCOCC2)cc1OC\"\n}\n```\n\nThis molecule:\n- Uses the successful morpholine heterocycle\n- Incorporates dual methoxy groups for optimal electronic properties\n- Maintains a simple, synthetically accessible structure\n- Explores a different substitution pattern than the top candidates\n- Should have excellent drug-like properties due to the balanced lipophilicity and hydrogen bonding capacity"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1nc(N2CCOCC2)nc(C)c1C"
+      },
+      "devScore": 0.7463864179833019,
+      "rawOutput": "Looking at the top solutions, I can identify key structural features that contribute to high QED scores:\n\n1. **Candidate 1** (0.852): Features a morpholine ring (N2CCOCC2) attached to a substituted benzene ring with branched alkyl groups\n2. **Candidate 2** (0.836): Contains a diethylamino group, amide linkage, chloro and methoxy substituents on benzene\n3. **Candidate 3** (0.830): Has dimethoxy substitution on benzene with a branched carboxylic acid side chain\n\nThe highest scorer uses a morpholine heterocycle, which is excellent for drug-likeness due to its moderate polarity and hydrogen bonding capability. I'll create a new variant that combines:\n- The successful morpholine motif from Candidate 1\n- Strategic heteroatom placement for optimal drug-like properties\n- A simpler, more synthesizable structure to avoid the proxy-overfit trap\n\nMy strategy is to use a pyrimidine core (another drug-privileged heterocycle) connected to morpholine, with methoxy substitution for balanced lipophilicity.\n\n```json\n{\n  \"smiles\": \"COc1nc(N2CCOCC2)nc(C)c1C\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(=O)N2CCN(C(C)C)CC2)cc1OC"
+      },
+      "devScore": 0.8494251327848393,
+      "rawOutput": "Looking at the top solutions, I can see several successful patterns:\n\n1. **Candidate 1** (0.852): Features a morpholine ring (N2CCOCC2), branched alkyl groups, and an amide connection\n2. **Candidate 2** (0.836): Has a diethylamino group, chloro substituent, and methoxy group on benzene\n3. **Candidate 3** (0.777): Contains a morpholine ring with dimethoxy substitution\n\nKey successful features:\n- Morpholine rings (excellent for drug-likeness)\n- Methoxy groups on benzene rings\n- Balanced lipophilicity through alkyl branching\n- Heteroatoms (N, O) for hydrogen bonding\n\nI'll create a new molecule that combines these successful elements while maintaining synthetic accessibility:\n\n```json\n{\n  \"smiles\": \"COc1ccc(C(=O)N2CCN(C(C)C)CC2)cc1OC\"\n}\n```\n\nThis design features:\n- Dimethoxybenzene core (from Candidate 3's success)\n- Piperazine ring instead of morpholine (still excellent for drug-likeness)\n- Isopropyl substituent on piperazine (branching from Candidate 1)\n- Amide linker (from Candidate 1's high score)\n- Maintains good balance of polar/nonpolar features for optimal QED"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(=O)N2CCN(C(C)C)CC2)cc1OC"
+      },
+      "devScore": 0.8494251327848393,
+      "rawOutput": "Looking at the top solutions, I can identify key structural features that contribute to high QED scores:\n\n1. **Candidate 1** (0.852): Has an isobutyl group, tertiary carbon with geminal dimethyls, morpholine ring, and aromatic substitution\n2. **Candidate 2** (0.836): Contains diethylamino group, amide linkage, chloro and methoxy substituents on benzene\n3. **Candidate 3** (0.777): Features morpholine ring with dimethoxy-substituted benzene\n\nKey patterns for high QED:\n- Morpholine rings (present in top 2 candidates)\n- Balanced lipophilicity through alkyl chains and polar groups\n- Aromatic rings with electron-donating substituents\n- Amide or ether linkages for hydrogen bonding\n- Moderate molecular weight and complexity\n\nI'll create a new molecule that combines these successful elements while maintaining synthetic accessibility:\n\n```json\n{\n  \"smiles\": \"COc1ccc(C(=O)N2CCN(C(C)C)CC2)cc1OC\"\n}\n```\n\nThis design incorporates:\n- Dimethoxybenzene core (like candidate 3, but with different substitution pattern)\n- Amide linkage (like candidate 2)\n- Piperazine ring with isopropyl substitution (morpholine-like but with additional alkyl branching)\n- Balanced MW and polar surface area for optimal drug-likeness"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 5070,
+      "completion": 1470,
+      "total": 6540
+    },
+    "wallClockMs": 38103,
+    "evalCpuMs": 2225,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:31:03.100Z",
+        "score": 0.7532750042882362,
+        "cpuMs": 277
+      },
+      {
+        "timestamp": "2026-04-14T02:31:04.588Z",
+        "score": 0.8303066292459957,
+        "cpuMs": 274
+      },
+      {
+        "timestamp": "2026-04-14T02:31:06.123Z",
+        "score": 0.8360132812968629,
+        "cpuMs": 270
+      },
+      {
+        "timestamp": "2026-04-14T02:31:08.956Z",
+        "score": 0.8524710934400527,
+        "cpuMs": 258
+      },
+      {
+        "timestamp": "2026-04-14T02:31:17.681Z",
+        "score": 0.7774469393662201,
+        "cpuMs": 257
+      },
+      {
+        "timestamp": "2026-04-14T02:31:25.980Z",
+        "score": 0.7463864179833019,
+        "cpuMs": 296
+      },
+      {
+        "timestamp": "2026-04-14T02:31:31.813Z",
+        "score": 0.8494251327848393,
+        "cpuMs": 321
+      },
+      {
+        "timestamp": "2026-04-14T02:31:37.999Z",
+        "score": 0.8494251327848393,
+        "cpuMs": 272
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_tq57fiegv0ah1qn723lb",
+  "hiddenScore": 0.7469879220430478,
+  "timestamp": "2026-04-14T02:31:39.380Z"
+}

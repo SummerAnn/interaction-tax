@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "debate-gpt4o",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC1=CC=CC=C1C(=O)O"
+    },
+    "devScore": 0.6374596390700277,
+    "rawOutput": "```json\n{ \"smiles\": \"CC1=CC=CC=C1C(=O)O\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(C)C1=CC=CC=C1O"
+      },
+      "devScore": 0.6285471901725991,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)C1=CC=CC=C1O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1=CC=CC=C1C(=O)O"
+      },
+      "devScore": 0.6374596390700277,
+      "rawOutput": "```json\n{ \"smiles\": \"CC1=CC=CC=C1C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "c1ccccc1C(=O)O"
+      },
+      "devScore": 0.6106035394285076,
+      "rawOutput": "```json\n{ \"smiles\": \"c1ccccc1C(=O)O\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 4193,
+      "completion": 1737,
+      "total": 5930
+    },
+    "wallClockMs": 22206,
+    "evalCpuMs": 822,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:10:29.865Z",
+        "score": 0.6285471901725991,
+        "cpuMs": 249
+      },
+      {
+        "timestamp": "2026-04-14T04:10:30.740Z",
+        "score": 0.6374596390700277,
+        "cpuMs": 304
+      },
+      {
+        "timestamp": "2026-04-14T04:10:51.151Z",
+        "score": 0.6106035394285076,
+        "cpuMs": 269
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_hm8ws4mn05c5yvlmwid2",
+  "hiddenScore": 0.6174817170004606,
+  "timestamp": "2026-04-14T04:10:52.487Z"
+}

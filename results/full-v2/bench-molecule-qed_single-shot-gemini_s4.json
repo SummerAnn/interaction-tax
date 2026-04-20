@@ -1,0 +1,47 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "single-shot-gemini",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)NCCC(=O)c1ccc(Cl)cc1"
+    },
+    "devScore": 0.7976327976016317,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccc(Cl)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccc(Cl)cc1"
+      },
+      "devScore": 0.7976327976016317,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccc(Cl)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 459,
+      "completion": 33,
+      "total": 492
+    },
+    "wallClockMs": 912,
+    "evalCpuMs": 259,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:14:35.307Z",
+        "score": 0.7976327976016317,
+        "cpuMs": 259
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_7xqq6es5wf9twzcbzpb5",
+  "hiddenScore": 0.7408132162001365,
+  "timestamp": "2026-04-14T04:14:36.503Z"
+}

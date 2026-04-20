@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "homo-chain",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCN(CC)c1ccc(C(=O)NC)cc1"
+    },
+    "devScore": 0.8155974673602167,
+    "rawOutput": "{\n  \"smiles\": \"CCN(CC)c1ccc(C(=O)NC)cc1\"\n}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)C(=O)c1cc(C)on1"
+      },
+      "devScore": 0.7106199583366689,
+      "rawOutput": "{\"smiles\": \"CCN(CC)C(=O)c1cc(C)on1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)c1cccc(C(=O)N(C)C)c1"
+      },
+      "devScore": 0.7765808642160845,
+      "rawOutput": "{\n  \"smiles\": \"CCN(CC)c1cccc(C(=O)N(C)C)c1\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)c1ccc(C(=O)NC)cc1"
+      },
+      "devScore": 0.8155974673602167,
+      "rawOutput": "{\n  \"smiles\": \"CCN(CC)c1ccc(C(=O)NC)cc1\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOc1ccc(N2CCNCC2)nc1"
+      },
+      "devScore": 0.7984489934337139,
+      "rawOutput": "Looking at the previous solution with QED score 0.8155, I need to find a molecule that maximizes QED while maintaining synthetic accessibility.\n\nThe previous molecule is a diethylamino benzamide. To improve QED, I should consider molecules with optimal drug-like properties according to the QED descriptors: molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of aromatic rings, and number of rotatable bonds.\n\nBased on literature and known high-QED molecules, I'll try a pyrimidine-based structure that balances all QED parameters optimally:\n\n```json\n{ \"smiles\": \"CCOc1ccc(N2CCNCC2)nc1\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2235,
+      "completion": 272,
+      "total": 2507
+    },
+    "wallClockMs": 13645,
+    "evalCpuMs": 1087,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:36:07.915Z",
+        "score": 0.7106199583366689,
+        "cpuMs": 288
+      },
+      {
+        "timestamp": "2026-04-14T02:36:10.895Z",
+        "score": 0.7765808642160845,
+        "cpuMs": 270
+      },
+      {
+        "timestamp": "2026-04-14T02:36:12.491Z",
+        "score": 0.8155974673602167,
+        "cpuMs": 268
+      },
+      {
+        "timestamp": "2026-04-14T02:36:18.523Z",
+        "score": 0.7984489934337139,
+        "cpuMs": 261
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_4fpiq0rpjn46t7xqoe43",
+  "hiddenScore": 0.7494737906661679,
+  "timestamp": "2026-04-14T02:36:23.691Z"
+}

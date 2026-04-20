@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "hpe-deepseek",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)Nc1ccc(OC)cc1"
+    },
+    "devScore": 0.7232129256008616,
+    "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(OC)cc1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Nc1ccc(OC)cc1"
+      },
+      "devScore": 0.7232129256008616,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(OC)cc1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Nc1ccc(O)cc1"
+      },
+      "devScore": 0.5950261967780849,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)Nc1ccc(O)cc1\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 8878,
+      "completion": 3546,
+      "total": 12424
+    },
+    "wallClockMs": 214577,
+    "evalCpuMs": 619,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:01:37.343Z",
+        "score": 0.7232129256008616,
+        "cpuMs": 321
+      },
+      {
+        "timestamp": "2026-04-14T04:03:21.188Z",
+        "score": 0.5950261967780849,
+        "cpuMs": 298
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_apexoiedafluj4qaismv",
+  "hiddenScore": 0.705589320537233,
+  "timestamp": "2026-04-14T04:03:23.745Z"
+}

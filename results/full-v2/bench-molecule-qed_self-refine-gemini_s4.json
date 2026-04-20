@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine-gemini",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(=O)NCCC(=O)c1ccc(Cl)cc1"
+    },
+    "devScore": 0.7976327976016317,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccc(Cl)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "Cc1ccc(C(=O)O)c(Cl)c1"
+      },
+      "devScore": 0.7026686167392562,
+      "rawOutput": "```json\n{\n  \"smiles\": \"Cc1ccc(C(=O)O)c(Cl)c1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Oc1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.5501217966938848,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)Oc1ccc(C(=O)O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccc(Cl)cc1"
+      },
+      "devScore": 0.7976327976016317,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccc(Cl)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Oc1ccc(C(=O)O)cc1"
+      },
+      "devScore": 0.5501217966938848,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)Oc1ccc(C(=O)O)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2038,
+      "completion": 129,
+      "total": 2167
+    },
+    "wallClockMs": 4223,
+    "evalCpuMs": 1133,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:15:09.115Z",
+        "score": 0.7026686167392562,
+        "cpuMs": 276
+      },
+      {
+        "timestamp": "2026-04-14T04:15:10.162Z",
+        "score": 0.5501217966938848,
+        "cpuMs": 325
+      },
+      {
+        "timestamp": "2026-04-14T04:15:11.201Z",
+        "score": 0.7976327976016317,
+        "cpuMs": 266
+      },
+      {
+        "timestamp": "2026-04-14T04:15:12.172Z",
+        "score": 0.5501217966938848,
+        "cpuMs": 266
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_rnvwv2jyj3lu4ekndn73",
+  "hiddenScore": 0.7408132162001365,
+  "timestamp": "2026-04-14T04:15:17.335Z"
+}

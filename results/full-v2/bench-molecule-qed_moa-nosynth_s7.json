@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-nosynth",
+  "runIndex": 1,
+  "seed": 7,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CCN2CCN(c3ncccn3)CC2)cc1OC"
+    },
+    "devScore": 0.8066678239485012,
+    "rawOutput": "Looking at this problem, I need to maximize QED (Quantitative Estimate of Drug-likeness) while being mindful that the hidden evaluator also considers synthesizability. QED is calculated based on molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of aromatic rings, and number of rotatable bonds.\n\nTo achieve a high QED score, I want a molecule that:\n- Has moderate molecular weight (around 300-400 Da)\n- Balanced lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Some but not excessive hydrogen bonding capacity\n- Contains aromatic rings but not overly complex systems\n- Has some flexibility but not too many rotatable bonds\n\nI'll design a molecule that incorporates proven drug-like scaffolds while optimizing these parameters. A good approach is to use a pyrimidine or pyridine core with appropriate substituents.\n\n```json\n{\"smiles\": \"COc1ccc(CCN2CCN(c3ncccn3)CC2)cc1OC\"}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN2CCN(c3ncccn3)CC2)cc1OC"
+      },
+      "devScore": 0.8066678239485012,
+      "rawOutput": "Looking at this problem, I need to maximize QED (Quantitative Estimate of Drug-likeness) while being mindful that the hidden evaluator also considers synthesizability. QED is calculated based on molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of aromatic rings, and number of rotatable bonds.\n\nTo achieve a high QED score, I want a molecule that:\n- Has moderate molecular weight (around 300-400 Da)\n- Balanced lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Some but not excessive hydrogen bonding capacity\n- Contains aromatic rings but not overly complex systems\n- Has some flexibility but not too many rotatable bonds\n\nI'll design a molecule that incorporates proven drug-like scaffolds while optimizing these parameters. A good approach is to use a pyrimidine or pyridine core with appropriate substituents.\n\n```json\n{\"smiles\": \"COc1ccc(CCN2CCN(c3ncccn3)CC2)cc1OC\"}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCn1c2cc(ccc2c(=O)n(C)c1=O)C"
+      },
+      "devScore": 0.7171736329868966,
+      "rawOutput": "```json\n{ \"smiles\": \"CCn1c2cc(ccc2c(=O)n(C)c1=O)C\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)(C)c1ccc(C(C)(C)C)c(O)c1"
+      },
+      "devScore": 0.6802500634680617,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)(C)c1ccc(C(C)(C)C)c(O)c1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1361,
+      "completion": 327,
+      "total": 1688
+    },
+    "wallClockMs": 6658,
+    "evalCpuMs": 826,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-16T21:30:06.543Z",
+        "score": 0.8066678239485012,
+        "cpuMs": 268
+      },
+      {
+        "timestamp": "2026-04-16T21:30:07.951Z",
+        "score": 0.7171736329868966,
+        "cpuMs": 270
+      },
+      {
+        "timestamp": "2026-04-16T21:30:08.972Z",
+        "score": 0.6802500634680617,
+        "cpuMs": 288
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_nw9eaahrvwtc4gfwcikc",
+  "hiddenScore": 0.7209485774493672,
+  "timestamp": "2026-04-16T21:30:10.268Z"
+}

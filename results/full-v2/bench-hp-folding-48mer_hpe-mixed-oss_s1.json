@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-hp-folding-48mer",
+  "protocolId": "hpe-mixed-oss",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "steps": "RRURDDLLDRRULURRDLLDRRURURDLDURDLDURDLDURDLDURDLDURDLDURDLDURD"
+    },
+    "devScore": 1e+30,
+    "rawOutput": "```json\n{ \"steps\": \"RRURDDLLDRRULURRDLLDRRURURDLDURDLDURDLDURDLDURDLDURDLDURDLDURD\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "steps": "RRURDDLLDRRULURRDLLDRRURURDLDURDLDURDLDURDLDURDLDURDLDURDLDURD"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{ \"steps\": \"RRURDDLLDRRULURRDLLDRRURURDLDURDLDURDLDURDLDURDLDURDLDURDLDURD\" }\n```"
+    },
+    {
+      "solutionData": {
+        "steps": "RRURDDLLDRRUURDRUUUURRDDLLURDRDRUURDDLURURDDLUURD"
+      },
+      "devScore": 1e+30,
+      "rawOutput": "```json\n{\n  \"steps\": \"RRURDDLLDRRUURDRUUUURRDDLLURDRDRUURDDLURURDDLUURD\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 8387,
+      "completion": 3857,
+      "total": 12244
+    },
+    "wallClockMs": 144771,
+    "evalCpuMs": 261,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-08T20:51:11.092Z",
+        "score": 1e+30,
+        "cpuMs": 72
+      },
+      {
+        "timestamp": "2026-04-08T20:52:30.926Z",
+        "score": 1e+30,
+        "cpuMs": 189
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_yzlmgornysm228btus17",
+  "hiddenScore": 1e+30,
+  "timestamp": "2026-04-08T20:52:33.430Z"
+}

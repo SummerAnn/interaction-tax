@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "magicore-deepseek",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC1=C(C(=O)N2C=CC=N2)N(C)C(=O)N1Cc3ccccc3"
+    },
+    "devScore": 0.7342845759078744,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC1=C(C(=O)N2C=CC=N2)N(C)C(=O)N1Cc3ccccc3\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(=O)Nc1ccc(cc1)C(=O)O"
+      },
+      "devScore": 0.7195027364935574,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)Nc1ccc(cc1)C(=O)O\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "O=C1N(C)CCN1c2ccccc2"
+      },
+      "devScore": 0.6365820665797632,
+      "rawOutput": "```json\n{\n  \"smiles\": \"O=C1N(C)CCN1c2ccccc2\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1=C(C(=O)N2C=CC=N2)N(C)C(=O)N1Cc3ccccc3"
+      },
+      "devScore": 0.7342845759078744,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC1=C(C(=O)N2C=CC=N2)N(C)C(=O)N1Cc3ccccc3\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3919,
+      "completion": 1764,
+      "total": 5683
+    },
+    "wallClockMs": 60350,
+    "evalCpuMs": 843,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T03:31:14.314Z",
+        "score": 0.7195027364935574,
+        "cpuMs": 267
+      },
+      {
+        "timestamp": "2026-04-14T03:31:50.087Z",
+        "score": 0.6365820665797632,
+        "cpuMs": 311
+      },
+      {
+        "timestamp": "2026-04-14T03:32:12.001Z",
+        "score": 0.7342845759078744,
+        "cpuMs": 265
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_mp86oqygb7k5vv2bg4qc",
+  "hiddenScore": 0.6069551941789881,
+  "timestamp": "2026-04-14T03:32:16.098Z"
+}

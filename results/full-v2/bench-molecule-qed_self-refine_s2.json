@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCN(CC)c1nc(C)nc(N2CCOCC2)c1OC"
+    },
+    "devScore": 0.8140126761168487,
+    "rawOutput": "Looking at the current solution with QED score 0.8105, I need to identify what molecular features could be optimized while maintaining synthesizability.\n\nThe current molecule `CCN(C)c1nc(C)nc(N2CCOCC2)c1C` has:\n- A pyrimidine core with substituents\n- Morpholine ring system\n- Dimethylamino group\n- Multiple methyl groups\n\nTo improve QED while avoiding synthesis complexity, I should focus on:\n1. Optimizing molecular weight (QED favors MW ~300-500)\n2. Improving lipophilicity balance\n3. Maintaining good polar surface area\n4. Keeping rotatable bonds reasonable\n5. Using common, synthesizable fragments\n\nI'll modify the structure by:\n- Replacing one methyl with ethyl to slightly increase MW\n- Adjusting the substitution pattern for better drug-like properties\n- Maintaining the core heterocyclic framework which is drug-like\n\n{\n  \"smiles\": \"CCN(CC)c1nc(C)nc(N2CCOCC2)c1OC\"\n}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(C)on1"
+      },
+      "devScore": 0.7859913561327613,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(C)on1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(C)c1nc(C)nc(N2CCOCC2)c1C"
+      },
+      "devScore": 0.8105546468140391,
+      "rawOutput": "Looking at the current solution with QED score 0.786, I need to identify potential improvements while maintaining synthesizability.\n\nThe current molecule \"CCN(CC)CCNC(=O)c1cc(C)on1\" contains:\n- Diethylamino group\n- Amide linker\n- Methylisoxazole core\n\nTo improve QED while maintaining synthesizability, I'll focus on:\n1. Optimizing molecular weight (QED favors MW ~200-400)\n2. Improving lipophilicity balance\n3. Adding favorable heteroatoms\n4. Maintaining simple, drug-like scaffolds\n\nHere's an improved molecule based on a pyrimidine scaffold with optimized substituents:\n\n{\n  \"smiles\": \"CCN(C)c1nc(C)nc(N2CCOCC2)c1C\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)c1nc(C)nc(N2CCOCC2)c1OC"
+      },
+      "devScore": 0.8140126761168487,
+      "rawOutput": "Looking at the current solution with QED score 0.8105, I need to identify what molecular features could be optimized while maintaining synthesizability.\n\nThe current molecule `CCN(C)c1nc(C)nc(N2CCOCC2)c1C` has:\n- A pyrimidine core with substituents\n- Morpholine ring system\n- Dimethylamino group\n- Multiple methyl groups\n\nTo improve QED while avoiding synthesis complexity, I should focus on:\n1. Optimizing molecular weight (QED favors MW ~300-500)\n2. Improving lipophilicity balance\n3. Maintaining good polar surface area\n4. Keeping rotatable bonds reasonable\n5. Using common, synthesizable fragments\n\nI'll modify the structure by:\n- Replacing one methyl with ethyl to slightly increase MW\n- Adjusting the substitution pattern for better drug-like properties\n- Maintaining the core heterocyclic framework which is drug-like\n\n{\n  \"smiles\": \"CCN(CC)c1nc(C)nc(N2CCOCC2)c1OC\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1cc(N2CCN(C)CC2)nc(N(C)C)n1"
+      },
+      "devScore": 0.7698716859878487,
+      "rawOutput": "Looking at the current solution with QED score 0.814, I need to identify what could be improved while maintaining synthesizability.\n\nThe current molecule has:\n- A pyrimidine core with methoxy substitution\n- Diethylamino and morpholino groups\n- Good drug-like properties but room for optimization\n\nKey strategies to improve QED:\n1. Optimize molecular weight (current seems reasonable)\n2. Improve lipophilicity balance\n3. Enhance flexibility/rigidity balance\n4. Maintain good hydrogen bonding potential\n5. Keep synthesizability high\n\nI'll modify the structure to include a more optimal aromatic system and better balanced substituents:\n\n```json\n{\n  \"smiles\": \"COc1cc(N2CCN(C)CC2)nc(N(C)C)n1\"\n}\n```\n\nThis modification:\n- Maintains the pyrimidine core for good drug-likeness\n- Adds a methylpiperazine group (common in drugs, highly synthesizable)\n- Includes dimethylamino group for optimal electronics\n- Keeps methoxy for favorable properties\n- Should have better QED due to optimized substituent pattern and improved molecular properties balance"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2329,
+      "completion": 771,
+      "total": 3100
+    },
+    "wallClockMs": 19446,
+    "evalCpuMs": 1046,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:27:34.158Z",
+        "score": 0.7859913561327613,
+        "cpuMs": 260
+      },
+      {
+        "timestamp": "2026-04-14T02:27:38.697Z",
+        "score": 0.8105546468140391,
+        "cpuMs": 267
+      },
+      {
+        "timestamp": "2026-04-14T02:27:43.335Z",
+        "score": 0.8140126761168487,
+        "cpuMs": 253
+      },
+      {
+        "timestamp": "2026-04-14T02:27:51.985Z",
+        "score": 0.7698716859878487,
+        "cpuMs": 266
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_aetw1p7s7g3vu9r2djlj",
+  "hiddenScore": 0.6713636263700629,
+  "timestamp": "2026-04-14T02:27:57.041Z"
+}

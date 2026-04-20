@@ -1,0 +1,47 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "single-shot",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCN(CC)CCNC(=O)c1cc(C)on1"
+    },
+    "devScore": 0.7859913561327613,
+    "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(C)on1\"}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(C)on1"
+      },
+      "devScore": 0.7859913561327613,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(C)on1\"}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 531,
+      "completion": 30,
+      "total": 561
+    },
+    "wallClockMs": 1614,
+    "evalCpuMs": 259,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:26:57.948Z",
+        "score": 0.7859913561327613,
+        "cpuMs": 259
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_bf6mdv3d3be33ptdqul8",
+  "hiddenScore": 0.6855970332230937,
+  "timestamp": "2026-04-14T02:26:59.311Z"
+}

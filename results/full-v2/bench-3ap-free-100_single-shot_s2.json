@@ -1,0 +1,105 @@
+{
+  "taskId": "bench-3ap-free-100",
+  "protocolId": "single-shot",
+  "runIndex": 1,
+  "seed": 2,
+  "bestArtifact": {
+    "solutionData": {
+      "subset": [
+        1,
+        2,
+        3,
+        4,
+        9,
+        10,
+        12,
+        13,
+        27,
+        28,
+        30,
+        31,
+        36,
+        37,
+        39,
+        40,
+        81,
+        82,
+        84,
+        85,
+        90,
+        91,
+        93,
+        94,
+        108,
+        109,
+        111,
+        112
+      ]
+    },
+    "devScore": 0,
+    "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nThis is a well-studied problem in additive combinatorics. The key insight is to use constructions based on sets with good additive properties.\n\nOne effective approach is to use a construction based on numbers whose ternary (base-3) representations have a specific structure. Another approach is to use residue classes modulo certain numbers.\n\nLet me construct a large AP-free set using a combination of strategies:\n\n1. Start with numbers that have no middle term in their local neighborhood\n2. Use numbers from specific residue classes that avoid creating APs\n3. Include carefully selected sparse elements\n\nBased on known constructions and the Salem-Spencer type approach mentioned in the problem, I'll construct a set targeting around 28 elements:\n\n```json\n{\n  \"subset\": [1, 2, 3, 4, 9, 10, 12, 13, 27, 28, 30, 31, 36, 37, 39, 40, 81, 82, 84, 85, 90, 91, 93, 94, 108, 109, 111, 112]\n}\n```\n\nWait, 108, 109, 111, 112 are out of range. Let me revise with a more systematic approach using a construction based on ternary representations where we avoid certain digit patterns:\n\n```json\n{\n  \"subset\": [1, 2, 3, 4, 9, 10, 12, 13, 27, 28, 30, 31, 36, 37, 39, 40, 81, 82, 84, 85, 90, 91, 93, 94]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          3,
+          4,
+          9,
+          10,
+          12,
+          13,
+          27,
+          28,
+          30,
+          31,
+          36,
+          37,
+          39,
+          40,
+          81,
+          82,
+          84,
+          85,
+          90,
+          91,
+          93,
+          94,
+          108,
+          109,
+          111,
+          112
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nThis is a well-studied problem in additive combinatorics. The key insight is to use constructions based on sets with good additive properties.\n\nOne effective approach is to use a construction based on numbers whose ternary (base-3) representations have a specific structure. Another approach is to use residue classes modulo certain numbers.\n\nLet me construct a large AP-free set using a combination of strategies:\n\n1. Start with numbers that have no middle term in their local neighborhood\n2. Use numbers from specific residue classes that avoid creating APs\n3. Include carefully selected sparse elements\n\nBased on known constructions and the Salem-Spencer type approach mentioned in the problem, I'll construct a set targeting around 28 elements:\n\n```json\n{\n  \"subset\": [1, 2, 3, 4, 9, 10, 12, 13, 27, 28, 30, 31, 36, 37, 39, 40, 81, 82, 84, 85, 90, 91, 93, 94, 108, 109, 111, 112]\n}\n```\n\nWait, 108, 109, 111, 112 are out of range. Let me revise with a more systematic approach using a construction based on ternary representations where we avoid certain digit patterns:\n\n```json\n{\n  \"subset\": [1, 2, 3, 4, 9, 10, 12, 13, 27, 28, 30, 31, 36, 37, 39, 40, 81, 82, 84, 85, 90, 91, 93, 94]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 486,
+      "completion": 422,
+      "total": 908
+    },
+    "wallClockMs": 8007,
+    "evalCpuMs": 84,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-09T19:30:15.076Z",
+        "score": 0,
+        "cpuMs": 84
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_e4nm0dwoqekf0g3vp6uc",
+  "hiddenScore": 0,
+  "timestamp": "2026-04-09T19:30:15.557Z"
+}

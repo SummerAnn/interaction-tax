@@ -1,0 +1,127 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "magicore-deepseek",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        44,
+        65,
+        80,
+        96
+      ]
+    },
+    "devScore": 5.761904761904762,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          65,
+          80,
+          96,
+          122,
+          147,
+          178,
+          199
+        ]
+      },
+      "devScore": 10.714285714285714,
+      "rawOutput": "{\"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96, 122, 147, 178, 199]}"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          10,
+          15,
+          21,
+          28,
+          36,
+          45,
+          55,
+          66,
+          78,
+          91,
+          105
+        ]
+      },
+      "devScore": 15,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          44,
+          65,
+          80,
+          96
+        ]
+      },
+      "devScore": 5.761904761904762,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3417,
+      "completion": 1903,
+      "total": 5320
+    },
+    "wallClockMs": 116061,
+    "evalCpuMs": 481,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-15T21:06:22.602Z",
+        "score": 10.714285714285714,
+        "cpuMs": 148
+      },
+      {
+        "timestamp": "2026-04-15T21:07:50.828Z",
+        "score": 15,
+        "cpuMs": 155
+      },
+      {
+        "timestamp": "2026-04-15T21:08:13.829Z",
+        "score": 5.761904761904762,
+        "cpuMs": 178
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_dcz653simue5ayzo4wbm",
+  "hiddenScore": 5.041666666666667,
+  "timestamp": "2026-04-15T21:08:15.541Z"
+}

@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine",
+  "runIndex": 0,
+  "seed": 6,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CCNc2nc(C)nc(N)n2)cc1"
+    },
+    "devScore": 0.8443402893148687,
+    "rawOutput": "Looking at the current solution with QED score 0.821, I need to identify potential improvements while maintaining synthesizability.\n\nThe current molecule `CCN(CC)CCc1nc(C)nc(N)c1C` is a pyrimidine derivative with:\n- Good molecular weight (~208 Da)\n- Reasonable lipophilicity \n- Hydrogen bond donors/acceptors\n- But may have suboptimal features for QED maximization\n\nTo improve QED while maintaining synthesizability, I'll focus on:\n1. Optimizing molecular weight (ideal ~300-400 Da for QED)\n2. Adding aromatic rings (QED favors aromatic ring count of 2-3)\n3. Maintaining good H-bond donor/acceptor balance\n4. Ensuring synthetic accessibility\n\nI'll design a molecule with a benzene ring connected to a pyrimidine, with carefully placed functional groups:\n\n```json\n{\n  \"smiles\": \"COc1ccc(CCNc2nc(C)nc(N)n2)cc1\"\n}\n```\n\nThis molecule features:\n- Methoxybenzene connected to aminopyrimidine via ethyl linker\n- MW ~247 Da (better for QED than current ~208)\n- 2 aromatic rings (optimal for QED)\n- Good H-bond profile (3 donors, 4 acceptors)\n- High synthetic accessibility (common pharmaceutical building blocks)\n- Balanced lipophilicity"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(C)on1"
+      },
+      "devScore": 0.7859913561327613,
+      "rawOutput": "{ \"smiles\": \"CCN(CC)CCNC(=O)c1cc(C)on1\" }"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCc1nc(C)nc(N)c1C"
+      },
+      "devScore": 0.821148366821776,
+      "rawOutput": "Looking at the current solution with QED score 0.786, I need to identify potential improvements while maintaining synthesizability.\n\nThe current molecule `CCN(CC)CCNC(=O)c1cc(C)on1` contains:\n- Diethylamino group\n- Amide linker\n- Methylisoxazole ring\n\nTo improve QED, I should consider:\n1. Optimizing molecular weight (target ~300-500 Da)\n2. Improving lipophilicity balance\n3. Adding aromatic character\n4. Maintaining drug-like functional groups\n\nI'll modify the structure by replacing the isoxazole with a pyrimidine ring system and adjusting the aliphatic chain to better balance the physicochemical properties:\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCc1nc(C)nc(N)c1C\"\n}\n```\n\nThis modification:\n- Replaces isoxazole with pyrimidine (better drug-like profile)\n- Removes the amide (reduces polarity slightly)\n- Adds an amino group (maintains H-bond donor capability)\n- Keeps the diethylamino group (maintains basicity)\n- Should have better balanced lipophilicity and molecular weight"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCNc2nc(C)nc(N)n2)cc1"
+      },
+      "devScore": 0.8443402893148687,
+      "rawOutput": "Looking at the current solution with QED score 0.821, I need to identify potential improvements while maintaining synthesizability.\n\nThe current molecule `CCN(CC)CCc1nc(C)nc(N)c1C` is a pyrimidine derivative with:\n- Good molecular weight (~208 Da)\n- Reasonable lipophilicity \n- Hydrogen bond donors/acceptors\n- But may have suboptimal features for QED maximization\n\nTo improve QED while maintaining synthesizability, I'll focus on:\n1. Optimizing molecular weight (ideal ~300-400 Da for QED)\n2. Adding aromatic rings (QED favors aromatic ring count of 2-3)\n3. Maintaining good H-bond donor/acceptor balance\n4. Ensuring synthetic accessibility\n\nI'll design a molecule with a benzene ring connected to a pyrimidine, with carefully placed functional groups:\n\n```json\n{\n  \"smiles\": \"COc1ccc(CCNc2nc(C)nc(N)n2)cc1\"\n}\n```\n\nThis molecule features:\n- Methoxybenzene connected to aminopyrimidine via ethyl linker\n- MW ~247 Da (better for QED than current ~208)\n- 2 aromatic rings (optimal for QED)\n- Good H-bond profile (3 donors, 4 acceptors)\n- High synthetic accessibility (common pharmaceutical building blocks)\n- Balanced lipophilicity"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCNc2nc(N)nc(N)n2)cc1O"
+      },
+      "devScore": 0.6167385196435432,
+      "rawOutput": "Looking at the current solution with QED score 0.8443, I need to identify potential improvements while maintaining synthesizability.\n\nThe current molecule `COc1ccc(CCNc2nc(C)nc(N)n2)cc1` has:\n- A methoxy-substituted benzene ring\n- An ethyl linker\n- A triazine ring with methyl and amino substituents\n\nTo improve QED while maintaining synthesizability, I'll focus on:\n1. Optimizing molecular weight (current appears reasonable)\n2. Improving lipophilicity balance\n3. Enhancing hydrogen bonding potential\n4. Maintaining good topological polar surface area\n\nI'll modify the structure by:\n- Adding a hydroxyl group to the benzene ring for better H-bonding\n- Replacing one methyl on triazine with a more favorable substituent\n- Ensuring the molecule remains synthetically accessible\n\n```json\n{\n  \"smiles\": \"COc1ccc(CCNc2nc(N)nc(N)n2)cc1O\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2321,
+      "completion": 914,
+      "total": 3235
+    },
+    "wallClockMs": 20009,
+    "evalCpuMs": 2724,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-20T00:49:31.627Z",
+        "score": 0.7859913561327613,
+        "cpuMs": 1965
+      },
+      {
+        "timestamp": "2026-04-20T00:49:38.849Z",
+        "score": 0.821148366821776,
+        "cpuMs": 296
+      },
+      {
+        "timestamp": "2026-04-20T00:49:44.339Z",
+        "score": 0.8443402893148687,
+        "cpuMs": 231
+      },
+      {
+        "timestamp": "2026-04-20T00:49:48.209Z",
+        "score": 0.6167385196435432,
+        "cpuMs": 232
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_tn7ybx1cqffd1klq46on",
+  "hiddenScore": 0.7500647435181634,
+  "timestamp": "2026-04-20T00:49:52.959Z"
+}

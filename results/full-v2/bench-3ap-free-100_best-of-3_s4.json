@@ -1,0 +1,211 @@
+{
+  "taskId": "bench-3ap-free-100",
+  "protocolId": "best-of-3",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "subset": [
+        1,
+        2,
+        4,
+        8,
+        13,
+        16,
+        17,
+        25,
+        26,
+        29,
+        32,
+        34,
+        37,
+        41,
+        49,
+        50,
+        52,
+        53,
+        58,
+        61,
+        64,
+        65,
+        68,
+        73,
+        74,
+        76,
+        81,
+        82,
+        85,
+        89,
+        97,
+        98,
+        100
+      ]
+    },
+    "devScore": 0,
+    "rawOutput": "```json\n{\n  \"subset\": [1, 2, 4, 8, 13, 16, 17, 25, 26, 29, 32, 34, 37, 41, 49, 50, 52, 53, 58, 61, 64, 65, 68, 73, 74, 76, 81, 82, 85, 89, 97, 98, 100]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          8,
+          13,
+          16,
+          17,
+          25,
+          26,
+          29,
+          32,
+          34,
+          37,
+          41,
+          49,
+          50,
+          52,
+          53,
+          58,
+          61,
+          64,
+          65,
+          68,
+          73,
+          74,
+          76,
+          81,
+          82,
+          85,
+          89,
+          97,
+          98,
+          100
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "```json\n{\n  \"subset\": [1, 2, 4, 8, 13, 16, 17, 25, 26, 29, 32, 34, 37, 41, 49, 50, 52, 53, 58, 61, 64, 65, 68, 73, 74, 76, 81, 82, 85, 89, 97, 98, 100]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          8,
+          13,
+          16,
+          17,
+          19,
+          25,
+          26,
+          28,
+          31,
+          32,
+          34,
+          37,
+          38,
+          41,
+          43,
+          44,
+          47,
+          49,
+          52,
+          53,
+          56,
+          58,
+          61,
+          62,
+          64,
+          67,
+          68,
+          71,
+          73,
+          74,
+          76,
+          79,
+          82,
+          83,
+          86,
+          88,
+          91,
+          92,
+          94,
+          97,
+          98,
+          100
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "{\"subset\": [1, 2, 4, 8, 13, 16, 17, 19, 25, 26, 28, 31, 32, 34, 37, 38, 41, 43, 44, 47, 49, 52, 53, 56, 58, 61, 62, 64, 67, 68, 71, 73, 74, 76, 79, 82, 83, 86, 88, 91, 92, 94, 97, 98, 100]}"
+    },
+    {
+      "solutionData": {
+        "subset": [
+          1,
+          2,
+          4,
+          5,
+          10,
+          11,
+          13,
+          14,
+          28,
+          29,
+          31,
+          32,
+          37,
+          38,
+          40,
+          41,
+          82,
+          83,
+          85,
+          86,
+          91,
+          92,
+          94,
+          95,
+          100
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "Looking at this problem, I need to find the largest subset of {1, 2, ..., 100} that contains no 3-term arithmetic progression.\n\nThis is a well-studied problem in additive combinatorics. I'll use a construction based on the Behrend construction, which uses numbers whose base-3 representations have a specific structure to avoid arithmetic progressions.\n\nThe key insight is to select numbers based on their ternary (base-3) digit patterns. I'll choose numbers where the sum of positions of non-zero digits in their ternary representation has a specific residue modulo 3.\n\nLet me construct such a set:\n\n```json\n{\n  \"subset\": [1, 2, 4, 5, 10, 11, 13, 14, 28, 29, 31, 32, 37, 38, 40, 41, 82, 83, 85, 86, 91, 92, 94, 95, 100]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2503,
+      "completion": 1657,
+      "total": 4160
+    },
+    "wallClockMs": 24383,
+    "evalCpuMs": 136,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-19T19:37:43.296Z",
+        "score": 0,
+        "cpuMs": 38
+      },
+      {
+        "timestamp": "2026-04-19T19:37:55.962Z",
+        "score": 0,
+        "cpuMs": 36
+      },
+      {
+        "timestamp": "2026-04-19T19:37:59.476Z",
+        "score": 0,
+        "cpuMs": 62
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_kytba4ciaausq884u00e",
+  "hiddenScore": 0,
+  "timestamp": "2026-04-19T19:37:59.829Z"
+}

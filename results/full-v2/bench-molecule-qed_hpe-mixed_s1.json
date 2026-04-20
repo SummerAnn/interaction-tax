@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "hpe-mixed",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(C(O)CN(C)C)cc1"
+    },
+    "devScore": 0.7854701003790532,
+    "rawOutput": "```json\n{\n  \"smiles\": \"COc1ccc(C(O)CN(C)C)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "NC(=O)c1ccc(O)cc1"
+      },
+      "devScore": 0.5912712208356959,
+      "rawOutput": "Looking at the three executor contributions, I need to integrate:\n\n1. **Core scaffolds**: Benzene, pyridine, and indole as top-performing backbones\n2. **Functional groups**: Hydroxyl (-OH), amino groups, and balanced substituents for optimal QED\n3. **Synthetic accessibility**: Avoiding complex ring systems, excessive stereocenters, and maintaining realistic synthesis\n\nThe executors identified that benzene derivatives with simple substitutions offer the best balance of high QED (0.85-0.95) and excellent synthetic accessibility (SA score 1.0-2.0).\n\nFrom Executor 2's examples, \"c1cc(ccc1O)C(=O)N\" incorporates:\n- Benzene ring (optimal scaffold)\n- Hydroxyl group (HBD contribution)\n- Amide group (HBA/HBD balance, moderate PSA)\n- Low molecular weight (~137 Da)\n- Minimal rotatable bonds\n- Simple para-substitution pattern\n\nThis molecule avoids the synthetic accessibility pitfalls identified by Executor 3:\n- No strained rings\n- No stereocenters\n- Low complexity score\n- Simple functional group transformations\n\nThe structure represents 4-hydroxybenzamide, which balances all QED components while maintaining excellent synthetic accessibility through standard aromatic substitution chemistry.\n\n```json\n{\n  \"smiles\": \"NC(=O)c1ccc(O)cc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(C(O)CN(C)C)cc1"
+      },
+      "devScore": 0.7854701003790532,
+      "rawOutput": "```json\n{\n  \"smiles\": \"COc1ccc(C(O)CN(C)C)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 14380,
+      "completion": 7785,
+      "total": 22165
+    },
+    "wallClockMs": 95309,
+    "evalCpuMs": 524,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T03:02:43.936Z",
+        "score": 0.5912712208356959,
+        "cpuMs": 259
+      },
+      {
+        "timestamp": "2026-04-14T03:03:32.520Z",
+        "score": 0.7854701003790532,
+        "cpuMs": 265
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_5qvgj0pwwt5k9c78hjhp",
+  "hiddenScore": 0.6775131311664296,
+  "timestamp": "2026-04-14T03:03:35.240Z"
+}

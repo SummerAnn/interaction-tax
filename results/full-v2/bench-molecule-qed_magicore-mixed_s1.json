@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "magicore-mixed",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(C)Cc1ccc(C(=O)NCC2CCOCC2)cc1"
+    },
+    "devScore": 0.8966792541060743,
+    "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)Cc1ccc(C(=O)NCC2CCOCC2)cc1\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(C)(C)C(=O)N2CCCCC2)cc1"
+      },
+      "devScore": 0.8134196521389842,
+      "rawOutput": "{\"smiles\": \"CC(C)Cc1ccc(C(C)(C)C(=O)N2CCCCC2)cc1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)N1CCC(c2ccccc2)CC1"
+      },
+      "devScore": 0.6860645975025808,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)N1CCC(c2ccccc2)CC1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(=O)NCC2CCOCC2)cc1"
+      },
+      "devScore": 0.8966792541060743,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(C)Cc1ccc(C(=O)NCC2CCOCC2)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3578,
+      "completion": 1180,
+      "total": 4758
+    },
+    "wallClockMs": 14051,
+    "evalCpuMs": 908,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:56:57.519Z",
+        "score": 0.8134196521389842,
+        "cpuMs": 300
+      },
+      {
+        "timestamp": "2026-04-14T02:57:03.725Z",
+        "score": 0.6860645975025808,
+        "cpuMs": 290
+      },
+      {
+        "timestamp": "2026-04-14T02:57:09.745Z",
+        "score": 0.8966792541060743,
+        "cpuMs": 318
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_vesnvkpjsjge1h052j0h",
+  "hiddenScore": 0.8079400345002312,
+  "timestamp": "2026-04-14T02:57:13.947Z"
+}

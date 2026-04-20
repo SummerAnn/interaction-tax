@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "magicore-gpt4o",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COC1=CC2=C(C=C1)C(=O)NC2"
+    },
+    "devScore": 0.6686537030927768,
+    "rawOutput": "```json\n{\n  \"smiles\": \"COC1=CC2=C(C=C1)C(=O)NC2\"\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "O=C1CCCN1C2=CC=CC=C2"
+      },
+      "devScore": 0.6147906334184668,
+      "rawOutput": "```json\n{ \"smiles\": \"O=C1CCCN1C2=CC=CC=C2\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NC1=CC=CC=C1"
+      },
+      "devScore": 0.6227994751052723,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(=O)NC1=CC=CC=C1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COC1=CC2=C(C=C1)C(=O)NC2"
+      },
+      "devScore": 0.6686537030927768,
+      "rawOutput": "```json\n{\n  \"smiles\": \"COC1=CC2=C(C=C1)C(=O)NC2\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3437,
+      "completion": 1127,
+      "total": 4564
+    },
+    "wallClockMs": 13647,
+    "evalCpuMs": 792,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:08:09.514Z",
+        "score": 0.6147906334184668,
+        "cpuMs": 262
+      },
+      {
+        "timestamp": "2026-04-14T04:08:15.665Z",
+        "score": 0.6227994751052723,
+        "cpuMs": 268
+      },
+      {
+        "timestamp": "2026-04-14T04:08:21.998Z",
+        "score": 0.6686537030927768,
+        "cpuMs": 262
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_igyts0an23p9hvoz9wzx",
+  "hiddenScore": 0.5883184787222079,
+  "timestamp": "2026-04-14T04:08:25.677Z"
+}

@@ -1,0 +1,203 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "vgs",
+  "runIndex": 0,
+  "seed": 6,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCN(CC)CCNC(=O)c1cc(OC)cnc1C"
+    },
+    "devScore": 0.8109042000157642,
+    "rawOutput": "Looking at the top solutions, I can see they all share a common scaffold with:\n- A diethylaminoethyl chain (CCN(CC)CC)\n- An amide linker (NC(=O))\n- A substituted aromatic ring with methoxy groups\n\nThe highest scoring solution uses a pyrimidine ring with two methoxy groups, while the others use benzene rings with methoxy and hydroxyl substitutions.\n\nI'll create a new variant that combines the best features:\n1. Keep the successful diethylaminoethyl-amide scaffold\n2. Use a pyridine ring (between pyrimidine and benzene in terms of nitrogen content)\n3. Add strategic methoxy substitutions for optimal drug-likeness\n4. Include a small alkyl branch for improved properties\n\n{ \"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)cnc1C\" }"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(OC)c(OC)cc1OC"
+      },
+      "devScore": 0.7532750042882362,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)c(OC)cc1OC\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)C(=O)c1ccc(N)cc1"
+      },
+      "devScore": 0.7415006840514895,
+      "rawOutput": "{ \"smiles\": \"CCN(CC)C(=O)c1ccc(N)cc1\" }"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCOC(=O)C1CCN(C(=O)C2CCCCC2)CC1"
+      },
+      "devScore": 0.6698226452613318,
+      "rawOutput": "{ \"smiles\": \"CCN(CC)CCOC(=O)C1CCN(C(=O)C2CCCCC2)CC1\" }"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)C(=O)c1ccc(N)cc1"
+      },
+      "devScore": 0.7415006840514895,
+      "rawOutput": "{\"smiles\": \"CCN(CC)C(=O)c1ccc(N)cc1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)c1nc(OC)nc(N)c1C(=O)N"
+      },
+      "devScore": 0.749190231746272,
+      "rawOutput": "Looking at the top solutions, I can see they share common features that contribute to high QED scores:\n\n1. Diethylamino groups (CCN(CC)) which provide good lipophilicity balance\n2. Aromatic rings for structural stability\n3. Amide linkages for hydrogen bonding potential\n4. The top scorer has methoxy groups which can improve drug-likeness\n\nI'll create a new molecule that combines these successful elements while exploring a slightly different scaffold - using a pyrimidine core (common in many drugs) with similar functional groups:\n\n```json\n{\n  \"smiles\": \"CCN(CC)c1nc(OC)nc(N)c1C(=O)N\"\n}\n```\n\nThis design incorporates:\n- The successful diethylamino group from top solutions\n- A pyrimidine ring (drug-like heterocycle)\n- Methoxy group (like the top scorer)\n- Primary amine and amide groups for hydrogen bonding\n- Maintains good molecular weight and complexity balance for synthesizability"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(OC)c(O)c(OC)c1"
+      },
+      "devScore": 0.7601529952482866,
+      "rawOutput": "Looking at the top solutions, I can see they share common features that contribute to high QED scores:\n\n1. Diethylamino groups (CCN(CC)) - provide good lipophilicity balance\n2. Aromatic rings with electron-donating substituents (methoxy, amino)\n3. Amide linkages for hydrogen bonding\n4. Moderate molecular weight and complexity\n\nThe best candidate has multiple methoxy groups on the aromatic ring, which likely optimizes the electronic properties and lipophilicity. I'll create a new variant that combines these successful elements while exploring a slightly different substitution pattern and incorporating a hydroxyl group for additional hydrogen bonding potential.\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)c(O)c(OC)c1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNc1nc(OC)nc(O)c1C(=O)NCC"
+      },
+      "devScore": 0.6168680100380175,
+      "rawOutput": "Looking at the top solutions, I can see they all feature:\n1. Diethylamino groups (CCN(CC)) which appear to contribute positively to QED\n2. Methoxy substituents (OC) that optimize lipophilicity and other drug-like properties\n3. Amide linkages (C(=O)N) that provide hydrogen bonding capability\n\nThe highest scoring solution has a phenolic OH group and asymmetric methoxy substitution pattern. I'll create a new variant that combines these successful elements while exploring a slightly different aromatic scaffold - using a pyrimidine core instead of benzene, which can provide additional nitrogen atoms for hydrogen bonding while maintaining planarity and drug-likeness.\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNc1nc(OC)nc(O)c1C(=O)NCC\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCOc1nc(N)nc(OC)c1C(=O)NCC"
+      },
+      "devScore": 0.6857277894575552,
+      "rawOutput": "Looking at the top solutions, I can see they all feature:\n1. Diethylamino groups (CCN(CC)) which contribute favorably to QED\n2. Methoxy substituents (OC) for optimal lipophilicity\n3. Amide functionalities for hydrogen bonding\n4. Aromatic rings as core scaffolds\n\nThe highest scoring solution has a phenolic OH group and symmetric methoxy substitution. I'll create a new variant that combines these favorable features while exploring a pyrimidine scaffold with optimized substitution patterns for better drug-likeness.\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCOc1nc(N)nc(OC)c1C(=O)NCC\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(OC)cc(O)c1OC"
+      },
+      "devScore": 0.7601529952482866,
+      "rawOutput": "Looking at the top solutions, I can see they all share common drug-like features:\n- Diethylamino groups (CCN(CC)) which provide good basicity and solubility\n- Methoxy substituents (OC) for favorable lipophilicity\n- Amide linkages for hydrogen bonding\n- Aromatic cores for stability\n\nThe highest scoring candidates have simpler benzene rings with methoxy and hydroxyl substituents. Let me create a variant that combines these successful elements while exploring a slightly different substitution pattern that might optimize the QED components (MW, LogP, HBA, HBD, PSA, rotatable bonds, aromatic rings, alerts).\n\nI'll design a molecule with:\n- The successful diethylamino chain for basicity\n- A benzene core with optimal methoxy/hydroxyl substitution\n- An amide linker\n- Careful attention to molecular weight and flexibility\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)cc(O)c1OC\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(OC)nc(OC)c1"
+      },
+      "devScore": 0.7747179508563541,
+      "rawOutput": "Looking at the top solutions, I can see they all share certain key features that contribute to high QED scores:\n\n1. Diethylamino groups (CCN(CC)) which provide good lipophilicity balance\n2. Methoxy substituents (OC) for favorable physicochemical properties\n3. Amide linkages (C(=O)N) for hydrogen bonding potential\n4. Aromatic rings as core scaffolds\n\nThe top two candidates are very similar, differing mainly in the hydroxyl vs methoxy substitution pattern on the benzene ring. I'll create a new variant that:\n- Maintains the successful diethylamino and amide features\n- Uses a pyridine ring instead of benzene for better drug-likeness\n- Optimizes the substitution pattern for maximum QED\n- Keeps synthetic accessibility reasonable\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)nc(OC)c1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(OC)cnc1C"
+      },
+      "devScore": 0.8109042000157642,
+      "rawOutput": "Looking at the top solutions, I can see they all share a common scaffold with:\n- A diethylaminoethyl chain (CCN(CC)CC)\n- An amide linker (NC(=O))\n- A substituted aromatic ring with methoxy groups\n\nThe highest scoring solution uses a pyrimidine ring with two methoxy groups, while the others use benzene rings with methoxy and hydroxyl substitutions.\n\nI'll create a new variant that combines the best features:\n1. Keep the successful diethylaminoethyl-amide scaffold\n2. Use a pyridine ring (between pyrimidine and benzene in terms of nitrogen content)\n3. Add strategic methoxy substitutions for optimal drug-likeness\n4. Include a small alkyl branch for improved properties\n\n{ \"smiles\": \"CCN(CC)CCNC(=O)c1cc(OC)cnc1C\" }"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cnc(OC)cn1"
+      },
+      "devScore": 0.7675912208925391,
+      "rawOutput": "Looking at the top solutions, I can see they all share a common scaffold with:\n- A diethylamino group (CCN(CC))\n- An ethyl linker (CC)\n- An amide bond (NC(=O))\n- A substituted benzene ring with methoxy groups\n\nThe highest scoring solution has a pyrimidine ring instead of a benzene ring. To create a new variant, I'll explore a different heterocyclic core while maintaining the favorable diethylaminoethyl amide side chain. I'll try a pyrazine ring with strategic methoxy substitution.\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNC(=O)c1cnc(OC)cn1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1nc(OC)cc(C)n1"
+      },
+      "devScore": 0.7927381812039875,
+      "rawOutput": "Looking at the top solutions, I can see they all share a common pattern:\n- CCN(CC)CC backbone (diethylaminoethyl group)\n- Amide linkage NC(=O)\n- Aromatic heterocycles with methoxy substituents\n\nThe highest scoring solution has a pyridine ring with methoxy at position 4 and methyl at position 2. To improve upon this, I'll modify the structure by:\n\n1. Keeping the successful diethylaminoethyl-amide backbone\n2. Using a pyrimidine core instead of pyridine (more drug-like nitrogen content)\n3. Adding strategic methoxy groups for optimal lipophilicity\n4. Including a methyl substituent for favorable molecular properties\n\nThis approach maintains synthetic accessibility while optimizing the QED components.\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNC(=O)c1nc(OC)cc(C)n1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cnc(C)nc1OC"
+      },
+      "devScore": 0.7927381812039875,
+      "rawOutput": "Looking at the top solutions, I can see they all share a common pattern: CCN(CC)CCNC(=O) core with different heterocyclic systems. The highest scorer has a pyridine ring with methoxy and methyl substituents. \n\nTo improve on this, I'll maintain the successful diethylamino-ethyl-carboxamide pharmacophore but explore a different heterocycle that could provide better QED optimization while remaining synthetically accessible. I'll try a pyrimidine system with strategic substitution:\n\n```json\n{\n  \"smiles\": \"CCN(CC)CCNC(=O)c1cnc(C)nc1OC\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 9528,
+      "completion": 2213,
+      "total": 11741
+    },
+    "wallClockMs": 70042,
+    "evalCpuMs": 5621,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-20T00:53:18.772Z",
+        "score": 0.7532750042882362,
+        "cpuMs": 223
+      },
+      {
+        "timestamp": "2026-04-20T00:53:20.289Z",
+        "score": 0.7415006840514895,
+        "cpuMs": 222
+      },
+      {
+        "timestamp": "2026-04-20T00:53:22.577Z",
+        "score": 0.6698226452613318,
+        "cpuMs": 256
+      },
+      {
+        "timestamp": "2026-04-20T00:53:23.933Z",
+        "score": 0.7415006840514895,
+        "cpuMs": 230
+      },
+      {
+        "timestamp": "2026-04-20T00:53:31.053Z",
+        "score": 0.749190231746272,
+        "cpuMs": 241
+      },
+      {
+        "timestamp": "2026-04-20T00:53:37.109Z",
+        "score": 0.7601529952482866,
+        "cpuMs": 228
+      },
+      {
+        "timestamp": "2026-04-20T00:53:43.605Z",
+        "score": 0.6168680100380175,
+        "cpuMs": 247
+      },
+      {
+        "timestamp": "2026-04-20T00:53:47.145Z",
+        "score": 0.6857277894575552,
+        "cpuMs": 226
+      },
+      {
+        "timestamp": "2026-04-20T00:53:54.415Z",
+        "score": 0.7601529952482866,
+        "cpuMs": 227
+      },
+      {
+        "timestamp": "2026-04-20T00:53:58.132Z",
+        "score": 0.7747179508563541,
+        "cpuMs": 215
+      },
+      {
+        "timestamp": "2026-04-20T00:54:04.182Z",
+        "score": 0.8109042000157642,
+        "cpuMs": 223
+      },
+      {
+        "timestamp": "2026-04-20T00:54:09.702Z",
+        "score": 0.7675912208925391,
+        "cpuMs": 226
+      },
+      {
+        "timestamp": "2026-04-20T00:54:20.866Z",
+        "score": 0.7927381812039875,
+        "cpuMs": 2511
+      },
+      {
+        "timestamp": "2026-04-20T00:54:26.086Z",
+        "score": 0.7927381812039875,
+        "cpuMs": 346
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_g04tlcb8boitxjvofndh",
+  "hiddenScore": 0.7091501595379469,
+  "timestamp": "2026-04-20T00:54:27.908Z"
+}

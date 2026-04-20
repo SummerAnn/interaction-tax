@@ -1,0 +1,59 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "hpe-gpt4o",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CCOC(=O)c1ccccc1"
+    },
+    "devScore": 0.601336802799046,
+    "rawOutput": "```json\n{ \"smiles\": \"CCOC(=O)c1ccccc1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1cc(O)cc(C(=O)O)cc1"
+      },
+      "devScore": -1e+30,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)Cc1cc(O)cc(C(=O)O)cc1\" }\n```\n\nThis SMILES string represents a modified Ibuprofen derivative. The structure maintains the core scaffold of Ibuprofen, which is known for its drug-likeness and synthetic accessibility. The modifications include the introduction of a hydroxyl group on the aromatic ring to potentially enhance hydrogen bonding and QED score, while keeping the structure synthetically accessible and avoiding overly complex ring systems. This solution aims to balance high QED potential with synthetic feasibility."
+    },
+    {
+      "solutionData": {
+        "smiles": "CCOC(=O)c1ccccc1"
+      },
+      "devScore": 0.601336802799046,
+      "rawOutput": "```json\n{ \"smiles\": \"CCOC(=O)c1ccccc1\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 9325,
+      "completion": 3759,
+      "total": 13084
+    },
+    "wallClockMs": 45379,
+    "evalCpuMs": 525,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T04:11:15.029Z",
+        "score": -1e+30,
+        "cpuMs": 261
+      },
+      {
+        "timestamp": "2026-04-14T04:11:37.866Z",
+        "score": 0.601336802799046,
+        "cpuMs": 264
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_11ftqjwm8aq0np8sh41n",
+  "hiddenScore": 0.5923146392760679,
+  "timestamp": "2026-04-14T04:11:39.881Z"
+}

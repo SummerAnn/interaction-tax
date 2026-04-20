@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "self-refine",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CC(C)NC(C)C)cc1OC"
+    },
+    "devScore": 0.8247415695622751,
+    "rawOutput": "Looking at the current solution and the goal to maximize QED score, I need to analyze what makes a molecule more drug-like according to QED criteria, which include molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of rotatable bonds, number of aromatic rings, and structural alerts.\n\nThe current molecule has a QED of ~0.60. To improve this, I should consider:\n\n1. Optimizing molecular weight (ideal range ~160-480 Da)\n2. Balancing lipophilicity (LogP ideally 1-3)\n3. Managing polar surface area\n4. Optimizing hydrogen bonding capacity\n5. Controlling flexibility (rotatable bonds)\n6. Including appropriate aromatic character\n\nLooking at successful drug-like molecules, I'll design a molecule that incorporates favorable structural features while maintaining synthetic accessibility:\n\n{\n  \"smiles\": \"COc1ccc(CC(C)NC(C)C)cc1OC\"\n}"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CC(C)NCC(O)c1ccc(O)c(CO)c1"
+      },
+      "devScore": 0.6009543442060464,
+      "rawOutput": "{\"smiles\": \"CC(C)NCC(O)c1ccc(O)c(CO)c1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)NC(C)C)cc1OC"
+      },
+      "devScore": 0.8247415695622751,
+      "rawOutput": "Looking at the current solution and the goal to maximize QED score, I need to analyze what makes a molecule more drug-like according to QED criteria, which include molecular weight, lipophilicity (LogP), topological polar surface area, number of hydrogen bond donors/acceptors, number of rotatable bonds, number of aromatic rings, and structural alerts.\n\nThe current molecule has a QED of ~0.60. To improve this, I should consider:\n\n1. Optimizing molecular weight (ideal range ~160-480 Da)\n2. Balancing lipophilicity (LogP ideally 1-3)\n3. Managing polar surface area\n4. Optimizing hydrogen bonding capacity\n5. Controlling flexibility (rotatable bonds)\n6. Including appropriate aromatic character\n\nLooking at successful drug-like molecules, I'll design a molecule that incorporates favorable structural features while maintaining synthetic accessibility:\n\n{\n  \"smiles\": \"COc1ccc(CC(C)NC(C)C)cc1OC\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)N(C)C)cc1O"
+      },
+      "devScore": 0.8216640973682493,
+      "rawOutput": "Looking at the current solution with QED score 0.8247, I need to identify ways to improve drug-likeness while maintaining synthetic accessibility.\n\nThe current molecule has good features but can be optimized:\n- MW: ~237 (good range)\n- LogP: likely around 2-3 (reasonable)\n- Has methoxy groups and aliphatic amine (drug-like)\n\nTo improve QED, I should:\n1. Optimize molecular weight to be closer to the ideal range (around 200-300)\n2. Fine-tune lipophilicity \n3. Maintain rotatable bonds in optimal range\n4. Keep aromatic rings but ensure good substitution pattern\n5. Maintain synthetic accessibility\n\nI'll modify the structure by:\n- Replacing one methoxy with a smaller group\n- Adjusting the aliphatic chain length\n- Adding a hydroxyl group for better balance\n\n{\n  \"smiles\": \"COc1ccc(CC(C)N(C)C)cc1O\"\n}"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CCN(C)C)cc1F"
+      },
+      "devScore": 0.7310337076681598,
+      "rawOutput": "Looking at the current solution with QED score 0.8247, I need to identify what makes a molecule more drug-like according to QED parameters while maintaining synthetic accessibility.\n\nQED considers:\n- Molecular weight (optimal ~300-400 Da)\n- LogP (optimal ~2-3)\n- HBA/HBD counts (moderate values preferred)\n- PSA (optimal ~60-90 Ų)\n- Rotatable bonds (fewer is better)\n- Aromatic rings (1-2 preferred)\n- Alerts (structural flags to avoid)\n\nThe current molecule has good properties but I can optimize further by:\n1. Adding a heterocycle (pyridine) which is common in drugs\n2. Including a strategically placed fluorine (common in pharmaceuticals, improves metabolic stability)\n3. Maintaining moderate molecular weight and good balance of properties\n4. Ensuring synthetic accessibility with simple, well-known structural motifs\n\n```json\n{\n  \"smiles\": \"COc1ccc(CCN(C)C)cc1F\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2321,
+      "completion": 745,
+      "total": 3066
+    },
+    "wallClockMs": 20898,
+    "evalCpuMs": 1171,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-14T02:27:08.013Z",
+        "score": 0.6009543442060464,
+        "cpuMs": 272
+      },
+      {
+        "timestamp": "2026-04-14T02:27:15.069Z",
+        "score": 0.8247415695622751,
+        "cpuMs": 324
+      },
+      {
+        "timestamp": "2026-04-14T02:27:22.672Z",
+        "score": 0.8216640973682493,
+        "cpuMs": 304
+      },
+      {
+        "timestamp": "2026-04-14T02:27:27.323Z",
+        "score": 0.7310337076681598,
+        "cpuMs": 271
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_1yyhf1muaxdh4b3vo0xs",
+  "hiddenScore": 0.7054226955885624,
+  "timestamp": "2026-04-14T02:27:32.538Z"
+}
