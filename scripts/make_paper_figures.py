@@ -1,472 +1,212 @@
 #!/usr/bin/env python3
-"""Generate Figures 1–4 for the NeurIPS 2026 paper (9-task analysis)."""
-from __future__ import annotations
+"""
+Generate clean publication figures for icml2026_combined.tex.
+Outputs PDF + PNG to figures/paper_*.
 
-import csv
-import os
+Figure 1: MIG flip -- connected dot plot (single column)
+Figure 2: Two-panel -- 2x2 factorial (left) + multi-synth robustness (right)
+"""
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
 from pathlib import Path
 
-os.environ.setdefault("MPLBACKEND", "Agg")
-os.environ.setdefault("MPLCONFIGDIR", "/tmp/mplconfig")
+Path("figures").mkdir(exist_ok=True)
 
-import matplotlib.pyplot as plt
-import matplotlib.colors as mcolors
-import numpy as np
+# ── shared style ────────────────────────────────────────────────────────────
+plt.rcParams.update({
+    "font.family":      "serif",
+    "font.serif":       ["Times New Roman", "DejaVu Serif", "Georgia"],
+    "font.size":        9,
+    "axes.labelsize":   9,
+    "xtick.labelsize":  8,
+    "ytick.labelsize":  9,
+    "axes.spines.top":  False,
+    "axes.spines.right": False,
+    "figure.dpi":       300,
+    "pdf.fonttype":     42,
+    "ps.fonttype":      42,
+})
+
+RED    = "#c0392b"
+GREEN  = "#27ae60"
+BLUE   = "#2980b9"
+GRAY   = "#7f8c8d"
+LGRAY  = "#bdc3c7"
+BLACK  = "#2c3e50"
 
 
-ROOT = Path(__file__).resolve().parents[1]
-RANK_TABLE = ROOT / "results" / "dev_hidden_rank" / "rank_table.tsv"
-MEG_TSV = ROOT / "results" / "analysis" / "meg_full.tsv"
-OUTDIR = ROOT / "figures"
+# ============================================================================
+# FIGURE 1 — MIG flip
+# ============================================================================
+# Data from Table 5 (tab:mig). Order: flipped (top) → MoA (exception) → HPE
+families   = ["Debate", "MAgICoRe", "Chain", "MoA", "HPE"]
+mig_same   = [ 0.012,   0.044,      0.051,   0.012, -0.163]
+mig_div    = [-0.078,  -0.035,     -0.024,   0.016, -0.145]
 
-MAXCUT_TASK = "bench-maxcut-g200"
-CORE_PROTOCOLS = [
-    "single-shot",
-    "best-of-n",
-    "self-refine",
-    "vgs",
-    "homo-chain",
-    "cross-chain",
-    "magicore",
-    "debate",
-    "moa",
-    "hpe",
+fig1, ax = plt.subplots(figsize=(3.4, 3.1))
+
+y = np.arange(len(families))
+
+for i, (s, d, name) in enumerate(zip(mig_same, mig_div, families)):
+    if name == "MoA":
+        col = GREEN
+    elif name == "HPE":
+        col = GRAY
+    else:
+        col = RED  # flipped
+
+    # connecting line
+    ax.plot([s, d], [i, i], color=col, linewidth=1.8, alpha=0.85, zorder=3,
+            solid_capstyle="round")
+    # same-model dot (open circle)
+    ax.scatter(s, i, color="white", edgecolors=GRAY, s=50, zorder=5,
+               linewidths=1.2)
+    # diverse-model dot (filled diamond)
+    ax.scatter(d, i, color=col, marker="D", s=44, zorder=6)
+
+    # delta label — always at a consistent right margin
+    delta = d - s
+    sign = "+" if delta >= 0 else ""
+    label_x = 0.105  # fixed right margin for all labels
+    ax.text(label_x, i, f"{sign}{delta:.3f}",
+            va="center", ha="left", fontsize=7.8,
+            color=col, fontweight="bold" if name == "MoA" else "normal")
+
+# zero line
+ax.axvline(0, color=BLACK, linewidth=0.8, linestyle="--", alpha=0.55, zorder=2)
+
+# light shading
+ax.axvspan(-0.28, 0, alpha=0.035, color=RED,   zorder=0)
+ax.axvspan(0, 0.10, alpha=0.035, color=GREEN, zorder=0)
+
+# "Δ =" header above labels
+ax.text(0.105, len(families) - 0.05, "Δ",
+        va="bottom", ha="left", fontsize=7.5, color=GRAY, style="italic")
+
+ax.set_yticks(y)
+ax.set_yticklabels(families, fontsize=9.5)
+ax.set_xlabel("Marginal Interaction Gain (MIG)", labelpad=5)
+ax.set_xlim(-0.28, 0.16)
+ax.set_ylim(-0.7, len(families) - 0.1)
+ax.spines["left"].set_visible(False)
+ax.tick_params(axis="y", length=0, pad=5)
+ax.xaxis.grid(True, color="#eeeeee", linewidth=0.5, zorder=0)
+
+# compact inline legend using text annotations
+from matplotlib.lines import Line2D
+legend_handles = [
+    Line2D([0], [0], marker="o", color="w", markerfacecolor="white",
+           markeredgecolor=GRAY, markeredgewidth=1.2, markersize=6,
+           label="Same-model agents"),
+    Line2D([0], [0], marker="D", color="w", markerfacecolor=RED,
+           markersize=6, label="Diverse-model — flips negative (Chain/MAgICoRe/Debate)"),
+    Line2D([0], [0], marker="D", color="w", markerfacecolor=GREEN,
+           markersize=6, label="Diverse-model — MoA (stays positive)"),
+    Line2D([0], [0], marker="D", color="w", markerfacecolor=GRAY,
+           markersize=6, label="HPE (already negative both configs)"),
 ]
-TASKS = ["MaxCut", "CircPack", "DiffBases", "FlatPoly", "TSP-100", "LJ-n41", "Erdős", "MolQED", "TSP-50"]
-
-# Bar chart ordering: sorted by AggMEG descending, with moa-same-model inserted
-BAR_PROTOCOLS = [
-    "moa",
-    "self-refine",
-    "best-of-n",
-    "cross-chain",
-    "homo-chain",
-    "magicore",
-    "moa-same-model",
-    "vgs",
-    "debate",
-    "single-shot",
-    "hpe",
-]
-
-STORY_BAR_PROTOCOLS = [
-    "moa",
-    "best-of-n",
-    "vgs",
-    "moa-same-model",
-    "debate",
-    "hpe",
-]
-
-
-LABELS = {
-    "single-shot": "SS",
-    "best-of-n": "BoN",
-    "self-refine": "SR",
-    "vgs": "VGS",
-    "homo-chain": "HC",
-    "cross-chain": "CC",
-    "magicore": "MAG",
-    "debate": "DEB",
-    "moa": "MoA",
-    "moa-same-model": "MoA-same",
-    "hpe": "HPE",
-}
-
-FULL_LABELS = {
-    "moa": "Mixture-of-Agents (diverse)",
-    "best-of-n": "Best-of-N",
-    "vgs": "Verifier-guided search",
-    "moa-same-model": "MoA (same model)",
-    "debate": "Debate",
-    "hpe": "Planner-Executor",
-    "self-refine": "Self-Refine",
-    "cross-chain": "Cross-chain",
-    "homo-chain": "Homo-chain",
-    "magicore": "MAgICoRe",
-    "single-shot": "Single-shot",
-}
-
-FAMILIES = {
-    "single-shot": "single",
-    "best-of-n": "single",
-    "self-refine": "single",
-    "vgs": "single",
-    "homo-chain": "chain",
-    "cross-chain": "chain",
-    "magicore": "role",
-    "debate": "role",
-    "moa": "ensemble",
-    "moa-same-model": "ensemble-same",
-    "hpe": "decomp",
-}
-
-COLORS = {
-    "single": "#4e79a7",
-    "chain": "#59a14f",
-    "role": "#f28e2b",
-    "ensemble": "#e15759",
-    "ensemble-same": "#ff9d9a",
-    "decomp": "#b07aa1",
-}
-
-
-def read_tsv(path: Path) -> list[dict[str, str]]:
-    with path.open() as f:
-        return list(csv.DictReader(f, delimiter="\t"))
-
-
-def parse_float(raw: str) -> float:
-    cleaned = raw.replace("*", "").strip()
-    if cleaned == "nan" or cleaned == "":
-        return float("nan")
-    return float(cleaned)
-
-
-def save_figure(fig: plt.Figure, stem: str) -> None:
-    OUTDIR.mkdir(parents=True, exist_ok=True)
-    pdf_path = OUTDIR / f"{stem}.pdf"
-    png_path = OUTDIR / f"{stem}.png"
-    fig.savefig(pdf_path, bbox_inches="tight")
-    fig.savefig(png_path, dpi=220, bbox_inches="tight")
-    print(f"wrote {pdf_path}")
-    print(f"wrote {png_path}")
-
-
-# ── Figure 1: MaxCut dev/hidden rank scatter (core 10 protocols) ──────
-
-def plot_maxcut_rank_inversion() -> None:
-    all_rows = [r for r in read_tsv(RANK_TABLE) if r["task"] == MAXCUT_TASK]
-    # Filter to core 10 protocols only
-    core_set = set(CORE_PROTOCOLS)
-    rows = [r for r in all_rows if r["protocol"] in core_set]
-
-    # Recompute ranks within core-10 set
-    rows.sort(key=lambda r: float(r["dev_mean"]), reverse=True)
-    for i, r in enumerate(rows):
-        r["dev_rank_core"] = i + 1
-    rows.sort(key=lambda r: float(r["hidden_mean"]), reverse=True)
-    for i, r in enumerate(rows):
-        r["hidden_rank_core"] = i + 1
-
-    n = len(rows)
-    d_sq = sum((r["dev_rank_core"] - r["hidden_rank_core"]) ** 2 for r in rows)
-    rho = 1 - (6 * d_sq) / (n * (n ** 2 - 1))
-
-    fig, ax = plt.subplots(figsize=(6.4, 5.6))
-    ax.plot([0.5, n + 0.5], [0.5, n + 0.5], linestyle="--", linewidth=1.1, color="#c7c7c7", zorder=0)
-
-    for row in rows:
-        protocol = row["protocol"]
-        dr = row["dev_rank_core"]
-        hr = row["hidden_rank_core"]
-        family = FAMILIES.get(protocol, "single")
-        color = COLORS[family]
-
-        size = 72
-        edge = "white"
-        lw = 1.0
-        if protocol in {"vgs", "cross-chain"}:
-            size = 130
-            edge = "black"
-            lw = 1.4
-
-        ax.scatter(dr, hr, s=size, color=color, edgecolor=edge, linewidth=lw, zorder=3)
-
-        # Offset labels to avoid overlap
-        offsets = {
-            "vgs": (0.25, -0.15),
-            "cross-chain": (0.25, 0.20),
-            "best-of-n": (0.25, -0.15),
-            "magicore": (0.25, 0.20),
-            "self-refine": (0.25, -0.15),
-            "debate": (0.25, 0.20),
-            "moa": (0.25, -0.15),
-            "homo-chain": (0.25, 0.0),
-            "hpe": (0.25, 0.0),
-            "single-shot": (0.25, 0.0),
-        }
-        dx, dy = offsets.get(protocol, (0.25, 0.0))
-        ax.text(
-            dr + dx, hr + dy,
-            LABELS.get(protocol, protocol),
-            fontsize=9, ha="left", va="center",
-        )
-
-    ax.invert_yaxis()
-    ax.set_xlim(0.3, n + 0.7)
-    ax.set_ylim(n + 0.7, 0.3)
-    ax.set_xticks(range(1, n + 1))
-    ax.set_yticks(range(1, n + 1))
-    ax.set_xlabel("Development-evaluator rank (1 = best)")
-    ax.set_ylabel("Hidden-evaluator rank (1 = best)")
-    ax.set_title(
-        "MaxCut: visible feedback changes the ranking",
-        fontsize=13, pad=12,
-    )
-    ax.text(
-        0.02, -0.12,
-        f"Core-protocol raw-score Spearman \u03c1 = {rho:.3f}; top-1 protocol flips from VGS to cross-chain.",
-        transform=ax.transAxes, fontsize=9.5, color="#444444",
-    )
-
-    legend_items = [
-        plt.Line2D([0], [0], marker="o", color="w", label=name, markerfacecolor=color, markersize=8)
-        for name, color in [
-            ("single-agent", COLORS["single"]),
-            ("chain", COLORS["chain"]),
-            ("role-structured", COLORS["role"]),
-            ("ensemble", COLORS["ensemble"]),
-            ("decomposition", COLORS["decomp"]),
-        ]
-    ]
-    ax.legend(handles=legend_items, loc="upper left", fontsize=8.5, frameon=False, ncol=2)
-    ax.grid(alpha=0.15, linewidth=0.7)
-    fig.tight_layout()
-    save_figure(fig, "maxcut_rank_inversion")
-    plt.close(fig)
-
-
-# ── Figure 2: Aggregate MEG bar chart with bootstrap CIs ─────────────
-
-def plot_agg_meg_bar() -> None:
-    rows = read_tsv(MEG_TSV)
-    row_map = {r["protocol"]: r for r in rows}
-    protocols = [p for p in BAR_PROTOCOLS if p in row_map]
-
-    vals = [parse_float(row_map[p]["AggMEG"]) for p in protocols]
-    ci_lo = [parse_float(row_map[p]["CI_lo"]) for p in protocols]
-    ci_hi = [parse_float(row_map[p]["CI_hi"]) for p in protocols]
-    err_lo = [v - lo for v, lo in zip(vals, ci_lo)]
-    err_hi = [hi - v for v, hi in zip(vals, ci_hi)]
-
-    colors = []
-    for p, v in zip(protocols, vals):
-        family = FAMILIES.get(p, "single")
-        if v > 0:
-            colors.append("#2e8b57")
-        else:
-            colors.append(COLORS.get(family, "#999999"))
-
-    fig, ax = plt.subplots(figsize=(8.4, 5.6))
-    y = np.arange(len(protocols))
-    ax.barh(
-        y, vals, color=colors, edgecolor="none",
-        xerr=[err_lo, err_hi], error_kw=dict(ecolor="#555555", capsize=3, linewidth=1.2),
-    )
-    ax.axvline(0, color="#666666", linestyle="--", linewidth=1.0)
-    ax.set_yticks(y)
-    ax.set_yticklabels([FULL_LABELS.get(p, p) for p in protocols], fontsize=9.5)
-    ax.invert_yaxis()
-    ax.set_xlabel("Aggregate hidden-score MEG (9 tasks; MoA arms n=10, others n=5)")
-    ax.set_title(
-        "Diverse MoA is consistent with null; same-model MoA is clearly negative",
-        fontsize=12.5, pad=10,
-    )
-    ax.grid(axis="x", alpha=0.15, linewidth=0.7)
-
-    for yi, v in zip(y, vals):
-        offset = 0.006
-        if v >= 0:
-            ax.text(v + offset, yi, f"{v:+.03f}", va="center", ha="left", fontsize=8.5)
-        else:
-            ax.text(v - offset, yi, f"{v:+.03f}", va="center", ha="right", fontsize=8.5)
-
-    ax.text(
-        0.0, -0.11,
-        "Error bars: bootstrap 95% CI (2000 resamples). "
-        "BoN, SR, and VGS are the single-agent controls in the MEG denominator.",
-        transform=ax.transAxes, fontsize=9, color="#444444",
-    )
-    fig.tight_layout()
-    save_figure(fig, "agg_meg_core_bar")
-    plt.close(fig)
-
-
-# ── Figure 3: MEG heatmap (9 tasks x 10 core protocols) ──────────────
-
-def plot_meg_heatmap() -> None:
-    rows = read_tsv(MEG_TSV)
-    row_map = {r["protocol"]: r for r in rows}
-    values = []
-    for protocol in CORE_PROTOCOLS:
-        row = row_map[protocol]
-        values.append([parse_float(row[task]) for task in TASKS])
-    mat = np.array(values)
-
-    fig, ax = plt.subplots(figsize=(9.0, 5.0))
-    vmax = max(abs(np.nanmin(mat)), abs(np.nanmax(mat)))
-    norm = mcolors.TwoSlopeNorm(vmin=-vmax, vcenter=0.0, vmax=vmax)
-    im = ax.imshow(mat, cmap="RdBu_r", norm=norm, aspect="auto")
-
-    for i in range(mat.shape[0]):
-        for j in range(mat.shape[1]):
-            val = mat[i, j]
-            if np.isnan(val):
-                continue
-            text_color = "black" if abs(val) < 0.15 else "white"
-            ax.text(j, i, f"{val:+.02f}", ha="center", va="center", fontsize=7.5, color=text_color)
-
-    ax.set_xticks(np.arange(len(TASKS)))
-    ax.set_xticklabels(TASKS, rotation=25, ha="right")
-    ax.set_yticks(np.arange(len(CORE_PROTOCOLS)))
-    ax.set_yticklabels([LABELS[p] for p in CORE_PROTOCOLS])
-    ax.set_title("Hidden-score MEG by task and protocol (9 tasks)", fontsize=13, pad=10)
-    ax.set_xlabel("Task")
-    ax.set_ylabel("Protocol")
-
-    cbar = fig.colorbar(im, ax=ax, shrink=0.93)
-    cbar.set_label("MEG")
-
-    ax.text(
-        0.0, -0.18,
-        "Positive MEG means beating max(Self-Refine, Best-of-N, VGS) on the hidden evaluator. "
-        "All 9 tasks included (Erd\u0151s and MolQED complete).",
-        transform=ax.transAxes, fontsize=8.5, color="#444444",
-    )
-    fig.tight_layout()
-    save_figure(fig, "meg_heatmap_primary")
-    plt.close(fig)
-
-
-# ── Figure 4: Story bar (5 key protocols + MoA-same-model) ───────────
-
-def plot_story_bar() -> None:
-    rows = read_tsv(MEG_TSV)
-    row_map = {r["protocol"]: r for r in rows}
-    protocols = [p for p in STORY_BAR_PROTOCOLS if p in row_map]
-
-    vals = [parse_float(row_map[p]["AggMEG"]) for p in protocols]
-    ci_lo = [parse_float(row_map[p]["CI_lo"]) for p in protocols]
-    ci_hi = [parse_float(row_map[p]["CI_hi"]) for p in protocols]
-    err_lo = [v - lo for v, lo in zip(vals, ci_lo)]
-    err_hi = [hi - v for v, hi in zip(vals, ci_hi)]
-
-    colors = []
-    for p, v in zip(protocols, vals):
-        if p == "moa":
-            colors.append("#2e8b57")
-        elif p == "moa-same-model":
-            colors.append("#ff9d9a")
-        elif p in {"best-of-n", "vgs"}:
-            colors.append(COLORS["single"])
-        else:
-            colors.append(COLORS[FAMILIES.get(p, "role")])
-
-    fig, ax = plt.subplots(figsize=(8.6, 4.6))
-    y = np.arange(len(protocols))
-    ax.barh(
-        y, vals, color=colors, edgecolor="none",
-        xerr=[err_lo, err_hi], error_kw=dict(ecolor="#555555", capsize=3, linewidth=1.2),
-    )
-    ax.axvline(0, color="#666666", linestyle="--", linewidth=1.0)
-    ax.set_yticks(y)
-    ax.set_yticklabels([FULL_LABELS.get(p, p) for p in protocols], fontsize=10)
-    ax.invert_yaxis()
-    ax.set_xlabel("Aggregate hidden-score MEG (9 tasks; MoA arms n=10, others n=5)")
-    ax.set_title(
-        "Diverse MoA is consistent with null; same-model MoA is negative; HPE inverts",
-        fontsize=12, pad=10,
-    )
-    ax.grid(axis="x", alpha=0.15, linewidth=0.7)
-
-    for yi, v in zip(y, vals):
-        offset = 0.006
-        if v >= 0:
-            ax.text(v + offset, yi, f"{v:+.03f}", va="center", ha="left", fontsize=9)
-        else:
-            ax.text(v - offset, yi, f"{v:+.03f}", va="center", ha="right", fontsize=9)
-
-    ax.text(
-        0.0, -0.15,
-        "The diverse\u2013vs.\u2013same-model MoA split is the clearest evidence that model diversity matters. "
-        "HPE scores best on dev but worst on hidden.",
-        transform=ax.transAxes, fontsize=9, color="#444444",
-    )
-    fig.tight_layout()
-    save_figure(fig, "agg_meg_story_bar")
-    plt.close(fig)
-
-
-# ── Slopegraph variant (core 10 only) ────────────────────────────────
-
-def plot_maxcut_rank_slopegraph() -> None:
-    all_rows = [r for r in read_tsv(RANK_TABLE) if r["task"] == MAXCUT_TASK]
-    core_set = set(CORE_PROTOCOLS)
-    rows = [r for r in all_rows if r["protocol"] in core_set]
-
-    # Recompute ranks within core-10 set
-    rows.sort(key=lambda r: float(r["dev_mean"]), reverse=True)
-    for i, r in enumerate(rows):
-        r["dev_rank_core"] = i + 1
-    rows.sort(key=lambda r: float(r["hidden_mean"]), reverse=True)
-    for i, r in enumerate(rows):
-        r["hidden_rank_core"] = i + 1
-    rows.sort(key=lambda r: r["dev_rank_core"])
-
-    n = len(rows)
-    fig, ax = plt.subplots(figsize=(7.4, 5.8))
-    x_dev, x_hid = 0.0, 1.0
-
-    for row in rows:
-        protocol = row["protocol"]
-        dr = row["dev_rank_core"]
-        hr = row["hidden_rank_core"]
-        family = FAMILIES.get(protocol, "single")
-        color = COLORS[family]
-        alpha = 0.6
-        lw = 1.8
-        z = 2
-
-        if protocol in {"vgs", "cross-chain"}:
-            color = "#111111"
-            alpha = 1.0
-            lw = 2.8
-            z = 4
-
-        ax.plot([x_dev, x_hid], [dr, hr], color=color, alpha=alpha, linewidth=lw, zorder=z)
-
-        left_label = LABELS.get(protocol, protocol)
-        right_label = LABELS.get(protocol, protocol)
-        if protocol == "vgs":
-            left_label = "VGS (dev #1)"
-        if protocol == "cross-chain":
-            right_label = "CC (hidden #1)"
-
-        ax.text(x_dev - 0.05, dr, left_label, ha="right", va="center", fontsize=9)
-        ax.text(x_hid + 0.05, hr, right_label, ha="left", va="center", fontsize=9)
-
-    ax.set_xlim(-0.28, 1.28)
-    ax.set_ylim(n + 0.5, 0.5)
-    ax.set_xticks([x_dev, x_hid])
-    ax.set_xticklabels(["Development rank", "Hidden rank"])
-    ax.set_yticks(range(1, n + 1))
-    ax.set_ylabel("Rank (1 = best)")
-    ax.set_title("MaxCut protocol ranking changes under hidden evaluation", fontsize=13, pad=12)
-    ax.grid(axis="y", alpha=0.15, linewidth=0.7)
-
-    d_sq = sum((r["dev_rank_core"] - r["hidden_rank_core"]) ** 2 for r in rows)
-    rho = 1 - (6 * d_sq) / (n * (n ** 2 - 1))
-
-    ax.text(
-        0.0, -0.10,
-        f"VGS is best on the visible score; cross-chain is best on the hidden score. "
-        f"\u03c1 = {rho:.3f}, top-1 inverted.",
-        transform=ax.transAxes, fontsize=9.5, color="#444444",
-    )
-
-    fig.tight_layout()
-    save_figure(fig, "maxcut_rank_slopegraph")
-    plt.close(fig)
-
-
-def main() -> None:
-    plot_maxcut_rank_inversion()
-    plot_maxcut_rank_slopegraph()
-    plot_meg_heatmap()
-    plot_agg_meg_bar()
-    plot_story_bar()
-
-
-if __name__ == "__main__":
-    main()
+ax.legend(handles=legend_handles, fontsize=6.2,
+          loc="upper center", bbox_to_anchor=(0.5, -0.16),
+          ncol=2, frameon=True, framealpha=0.95, edgecolor="#dddddd",
+          handlelength=0.8, labelspacing=0.4, borderpad=0.6,
+          columnspacing=0.8)
+
+fig1.tight_layout(pad=0.6)
+fig1.subplots_adjust(bottom=0.28)
+
+for ext in ("pdf", "png"):
+    path = f"figures/paper_fig1_mig_flip.{ext}"
+    fig1.savefig(path, bbox_inches="tight", dpi=300)
+    print(f"saved {path}")
+
+plt.close(fig1)
+
+
+# ============================================================================
+# FIGURE 2 — two-panel: 2x2 factorial (left) + multi-synth robustness (right)
+# ============================================================================
+fig2, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(6.8, 2.6),
+                                   gridspec_kw={"width_ratios": [1.1, 1]})
+
+# ── Left panel: 2x2 factorial coefficients ──────────────────────────────────
+# Data from Table 8 (tab:2x2) and text
+terms   = ["Diversity\n× Synthesis\n(interaction)", "Synthesis\nstep", "Backbone\ndiversity"]
+ests    = [0.046,  -0.010,  0.188]
+ci_lo   = [0.046 - (-0.130), 0.010 + 0.134, 0.188 - 0.064]   # half-widths: est - lo_bound
+ci_hi   = [0.222 - 0.046,    0.115 - (-0.010), 0.312 - 0.188]
+
+colors_l = [GRAY, GRAY, GREEN]
+markers  = ["o", "o", "D"]
+
+y_l = np.arange(len(terms))
+
+for i, (e, lo, hi, c, m) in enumerate(zip(ests, ci_lo, ci_hi, colors_l, markers)):
+    ax_l.errorbar(e, i, xerr=[[lo], [hi]], fmt="none",
+                  color=c, capsize=4, linewidth=1.5, zorder=3)
+    ax_l.scatter(e, i, color=c, marker=m, s=50, zorder=4)
+
+    sig = "*" if c == GREEN else "n.s."
+    label = f"{e:+.3f} {sig}"
+    offset = hi + 0.025 if e >= 0 else -(lo + 0.025)
+    ha = "left" if e >= 0 else "right"
+    ax_l.text(e + (hi + 0.018 if e >= 0 else -(lo + 0.018)),
+              i, label, va="center", ha=ha,
+              fontsize=7.5, color=c,
+              fontweight="bold" if c == GREEN else "normal")
+
+ax_l.axvline(0, color=BLACK, linewidth=0.8, linestyle="--", alpha=0.6)
+ax_l.axvspan(0, 0.55, alpha=0.04, color=GREEN)
+ax_l.set_yticks(y_l)
+ax_l.set_yticklabels(terms, fontsize=8)
+ax_l.set_xlabel("OLS coefficient (95% CI)", labelpad=5)
+ax_l.set_xlim(-0.35, 0.60)
+ax_l.set_ylim(-0.7, len(terms) - 0.3)
+ax_l.spines["left"].set_visible(False)
+ax_l.tick_params(axis="y", length=0, pad=4)
+ax_l.xaxis.grid(True, color="#eeeeee", linewidth=0.5, zorder=0)
+ax_l.set_title("(a) 2×2 factorial ($N{=}120$)", fontsize=8.5, pad=6, loc="left")
+
+# ── Right panel: multi-synthesizer robustness ────────────────────────────────
+# Data from paper text (Discussion section)
+synths     = ["Gemini\n2.5 Flash", "GPT-4o", "Claude\nSonnet 4"]
+div_coefs  = [0.170, 0.176, 0.234]
+div_lo     = [0.170 - 0.044, 0.176 - 0.049, 0.234 - 0.106]
+div_hi     = [0.298 - 0.170, 0.303 - 0.176, 0.355 - 0.234]
+
+y_r = np.arange(len(synths))
+
+for i, (e, lo, hi) in enumerate(zip(div_coefs, div_lo, div_hi)):
+    ax_r.errorbar(e, i, xerr=[[lo], [hi]], fmt="none",
+                  color=GREEN, capsize=4, linewidth=1.5, zorder=3)
+    ax_r.scatter(e, i, color=GREEN, marker="D", s=50, zorder=4)
+    ax_r.text(e + hi + 0.015, i, f"+{e:.3f}*",
+              va="center", ha="left", fontsize=7.5, color=GREEN, fontweight="bold")
+
+# shaded region where all three CIs sit
+ax_r.axvspan(0.044, 0.355, alpha=0.08, color=GREEN, zorder=0)
+ax_r.axvline(0, color=BLACK, linewidth=0.8, linestyle="--", alpha=0.6)
+ax_r.set_yticks(y_r)
+ax_r.set_yticklabels(synths, fontsize=8)
+ax_r.set_xlabel("Diversity coefficient (95% CI)", labelpad=5)
+ax_r.set_xlim(-0.15, 0.55)
+ax_r.set_ylim(-0.7, len(synths) - 0.3)
+ax_r.spines["left"].set_visible(False)
+ax_r.tick_params(axis="y", length=0, pad=4)
+ax_r.xaxis.grid(True, color="#eeeeee", linewidth=0.5, zorder=0)
+ax_r.set_title("(b) Diversity effect by synthesizer", fontsize=8.5, pad=6, loc="left")
+
+fig2.tight_layout(pad=0.8, w_pad=2.0)
+
+for ext in ("pdf", "png"):
+    path = f"figures/paper_fig2_mechanism.{ext}"
+    fig2.savefig(path, bbox_inches="tight", dpi=300)
+    print(f"saved {path}")
+
+plt.close(fig2)
+
+print("\nDone. Use in LaTeX:")
+print("  \\includegraphics[width=\\columnwidth]{figures/paper_fig1_mig_flip}")
+print("  \\includegraphics[width=\\textwidth]{figures/paper_fig2_mechanism}")
