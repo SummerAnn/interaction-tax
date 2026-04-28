@@ -1,0 +1,212 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "moa-nosynth",
+  "runIndex": 6,
+  "seed": 27,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        6,
+        10,
+        15,
+        21,
+        28,
+        36,
+        45,
+        55,
+        66,
+        78,
+        91,
+        105,
+        120,
+        136,
+        153,
+        171,
+        190
+      ]
+    },
+    "devScore": 12.903225806451612,
+    "rawOutput": "```json\n{ \"set\": [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190] }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          10,
+          15,
+          21,
+          28,
+          36,
+          45,
+          55,
+          66,
+          78,
+          91,
+          105,
+          120,
+          136,
+          153,
+          171,
+          190,
+          210,
+          231,
+          253,
+          276,
+          300,
+          325,
+          351,
+          378,
+          406,
+          435,
+          465,
+          496,
+          528,
+          561,
+          595,
+          630,
+          666,
+          703,
+          741,
+          780,
+          820,
+          861,
+          903,
+          946,
+          990,
+          1035,
+          1081,
+          1128,
+          1176,
+          1225
+        ]
+      },
+      "devScore": 39.682539682539684,
+      "rawOutput": "Looking at this problem, I need to find a set B that maximizes the contiguous coverage v while minimizing |B|²/v.\n\nThis is related to the concept of Sidon sets (B_h sequences) and difference sets. For optimal coverage, I want differences between elements to cover {1, 2, ..., v} as completely as possible.\n\nLet me construct a set using a systematic approach. I'll start with small elements and add larger ones strategically to maximize new differences while keeping the set size reasonable.\n\nStarting with 0 (automatically included), I'll build up:\n- 0, 1 gives difference 1\n- Adding 3 gives differences 2, 3 \n- Adding 6 gives differences 3, 5, 6\n- Adding 10 gives differences 4, 7, 9, 10\n\nI'll use a greedy approach, adding elements that maximize new contiguous differences:\n\n```json\n{ \"set\": [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903, 946, 990, 1035, 1081, 1128, 1176, 1225] }\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          10,
+          15,
+          21,
+          28,
+          36,
+          45,
+          55,
+          66,
+          78,
+          91,
+          105,
+          120,
+          136,
+          153,
+          171,
+          190
+        ]
+      },
+      "devScore": 12.903225806451612,
+      "rawOutput": "```json\n{ \"set\": [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190] }\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          43,
+          59,
+          79,
+          103,
+          131,
+          163,
+          199,
+          239,
+          283,
+          331,
+          383,
+          439,
+          499,
+          563,
+          631,
+          703,
+          779,
+          859,
+          943,
+          1031,
+          1123,
+          1219,
+          1319,
+          1423,
+          1531,
+          1643,
+          1759,
+          1879,
+          2003,
+          2131,
+          2263,
+          2399,
+          2539,
+          2683,
+          2831,
+          2983,
+          3139,
+          3299,
+          3463,
+          3631
+        ]
+      },
+      "devScore": 169.92307692307693,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0, 1, 3, 7, 12, 20, 30, 43, 59, 79, 103, 131, 163, 199, 239, 283, 331, 383, 439, 499, 563, 631, 703, 779, 859, 943, 1031, 1123, 1219, 1319, 1423, 1531, 1643, 1759, 1879, 2003, 2131, 2263, 2399, 2539, 2683, 2831, 2983, 3139, 3299, 3463, 3631\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1181,
+      "completion": 4799,
+      "total": 5980
+    },
+    "wallClockMs": 50584,
+    "evalCpuMs": 828,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-21T17:29:07.928Z",
+        "score": 39.682539682539684,
+        "cpuMs": 239
+      },
+      {
+        "timestamp": "2026-04-21T17:29:50.015Z",
+        "score": 12.903225806451612,
+        "cpuMs": 205
+      },
+      {
+        "timestamp": "2026-04-21T17:29:52.370Z",
+        "score": 169.92307692307693,
+        "cpuMs": 384
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_5q8a8jf0vff4j6iugsf5",
+  "hiddenScore": 9.523809523809524,
+  "timestamp": "2026-04-21T17:29:53.104Z"
+}

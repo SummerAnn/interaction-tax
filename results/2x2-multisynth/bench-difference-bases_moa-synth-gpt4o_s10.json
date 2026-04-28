@@ -1,0 +1,263 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "moa-synth-gpt4o",
+  "runIndex": 9,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        42
+      ]
+    },
+    "devScore": 4.923076923076923,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          13,
+          20,
+          27,
+          31,
+          35,
+          41,
+          44,
+          50,
+          56,
+          61,
+          68,
+          72,
+          77,
+          85,
+          89,
+          96,
+          100,
+          105,
+          109,
+          113,
+          122,
+          128,
+          136,
+          142,
+          150,
+          155,
+          161,
+          167,
+          177,
+          182,
+          189,
+          197,
+          202,
+          209,
+          218,
+          223,
+          235,
+          242,
+          250,
+          256,
+          267,
+          273,
+          282,
+          289,
+          299,
+          307,
+          316,
+          324,
+          334,
+          342,
+          350,
+          357,
+          367,
+          375,
+          386,
+          394,
+          404,
+          414,
+          423,
+          433,
+          442,
+          452,
+          461,
+          472,
+          483,
+          493,
+          505,
+          515,
+          526,
+          537,
+          548,
+          558,
+          570,
+          581,
+          593,
+          604,
+          616,
+          628,
+          640,
+          652,
+          665,
+          677,
+          690,
+          703,
+          716,
+          729,
+          742,
+          756,
+          769,
+          783,
+          797,
+          811,
+          825,
+          840,
+          854,
+          869,
+          884
+        ]
+      },
+      "devScore": 17.896491228070175,
+      "rawOutput": "Looking at this problem, I need to find a set B that maximizes the contiguous coverage v while minimizing |B|²/v.\n\nThis is related to the concept of Sidon sets or B_h sequences in additive combinatorics. I want to construct a set where pairwise differences cover {1, 2, ..., v} as efficiently as possible.\n\nLet me use a greedy approach combined with some known constructions:\n\n1. Start with 0 (automatically included)\n2. Add elements that maximize new differences while avoiding repetition\n3. Use a singer difference set-like construction for efficiency\n\nI'll construct a set based on quadratic residues and careful greedy selection:\n\n```json\n{\n  \"set\": [0, 1, 3, 6, 13, 20, 27, 31, 35, 41, 44, 50, 56, 61, 68, 72, 77, 85, 89, 96, 100, 105, 109, 113, 122, 128, 136, 142, 150, 155, 161, 167, 177, 182, 189, 197, 202, 209, 218, 223, 235, 242, 250, 256, 267, 273, 282, 289, 299, 307, 316, 324, 334, 342, 350, 357, 367, 375, 386, 394, 404, 414, 423, 433, 442, 452, 461, 472, 483, 493, 505, 515, 526, 537, 548, 558, 570, 581, 593, 604, 616, 628, 640, 652, 665, 677, 690, 703, 716, 729, 742, 756, 769, 783, 797, 811, 825, 840, 854, 869, 884]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          10,
+          15,
+          21,
+          28,
+          36,
+          45,
+          55,
+          66,
+          78,
+          91,
+          105,
+          120,
+          136,
+          153,
+          171,
+          190,
+          210,
+          231,
+          253,
+          276,
+          300,
+          325,
+          351,
+          378,
+          406,
+          435,
+          465,
+          496,
+          528,
+          561,
+          595,
+          630,
+          666,
+          703,
+          741,
+          780,
+          820,
+          861,
+          903,
+          946,
+          990,
+          1035,
+          1081,
+          1128,
+          1176,
+          1225
+        ]
+      },
+      "devScore": 39.682539682539684,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210, 231, 253, 276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903, 946, 990, 1035, 1081, 1128, 1176, 1225]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    42\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3136,
+      "completion": 17107,
+      "total": 20243
+    },
+    "wallClockMs": 78539,
+    "evalCpuMs": 646,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-18T23:42:08.270Z",
+        "score": 17.896491228070175,
+        "cpuMs": 155
+      },
+      {
+        "timestamp": "2026-04-18T23:42:27.518Z",
+        "score": 39.682539682539684,
+        "cpuMs": 171
+      },
+      {
+        "timestamp": "2026-04-18T23:43:16.101Z",
+        "score": 4.923076923076923,
+        "cpuMs": 164
+      },
+      {
+        "timestamp": "2026-04-18T23:43:17.080Z",
+        "score": 4.923076923076923,
+        "cpuMs": 156
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_9vigbgxelejuro8rkwrn",
+  "hiddenScore": 4.923076923076923,
+  "timestamp": "2026-04-18T23:43:17.701Z"
+}

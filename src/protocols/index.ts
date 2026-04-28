@@ -11,6 +11,7 @@ import { runSingleShot, runSelfRefine, runBestOfN } from './baselines.js';
 import { runVGS } from './vgs.js';
 import { runHomoChain, runCrossChain, runMAgICoRe, runDebate, runMoA, runMoANoSynth } from './multi-agent.js';
 import { runHPE } from './hpe.js';
+import { runCrossoverNoRefine, runCrossoverWithRefine } from './evolutionary.js';
 
 export type ProtocolRunner = (
   task: BenchmarkTask,
@@ -209,12 +210,29 @@ export const PROTOCOL_RUNNERS: Record<ProtocolId, ProtocolRunner> = {
   'best-of-5-diverse': async (task, config, budget) =>
     runMoANoSynth(task, config.backbones, budget),
 
+  // MoA-5-Diverse: 5 diverse models propose independently, synthesizer combines
+  // all 5. Second composition protocol — structurally different from 3-model MoA.
+  // Tests whether composition-positive MIG generalizes beyond N=3.
+  'moa-5-diverse': async (task, config, budget) =>
+    runMoA(task, config.backbones, budget),
+
   // Best-of-3: matched N=3 control for the clean 2×2 ablation.
   // Generates 3 proposals from a single model (Claude) and selects the best
   // by dev score. Matches MoA/MoA-nosynth/MoA-same-model arm size (N=3)
   // to eliminate the team-size confound with Best-of-8.
   'best-of-3': async (task, config, budget) =>
     runBestOfN(task, config.backbones[0], budget, (config.params.n as number) ?? 3),
+
+  // Evolutionary crossover — explicit component-level recombination (W7 fix).
+  // Phase 1: independent proposals (like MoA). Phase 2: crossover agent explicitly
+  // recombines best components. Phase 3 (refine variant): local improvement from
+  // crossover output. Tests whether diversity tax is about any interaction or
+  // specifically about consensus-building interaction.
+  'crossover': async (task, config, budget) =>
+    runCrossoverNoRefine(task, config.backbones, budget),
+
+  'crossover-refine': async (task, config, budget) =>
+    runCrossoverWithRefine(task, config.backbones, budget),
 
   // ── Budget-scaling variants (2× budget) ──────────────────────────────────
   // Identical runner code, different protocol IDs so results land in

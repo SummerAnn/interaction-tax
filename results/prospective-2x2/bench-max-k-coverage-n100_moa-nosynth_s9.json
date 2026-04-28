@@ -1,0 +1,135 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa-nosynth",
+  "runIndex": 8,
+  "seed": 9,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        7,
+        23,
+        41,
+        58,
+        76,
+        91,
+        14,
+        35,
+        67,
+        89,
+        102,
+        125,
+        3,
+        49,
+        133
+      ]
+    },
+    "devScore": 56,
+    "rawOutput": "I need to solve the maximum k-coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets data (seed=301), I'll need to use a strategic approach. Given that this is a well-known NP-hard problem, I'll apply a greedy heuristic that typically performs well:\n\n1. Start with an empty selection\n2. Iteratively add the set that covers the most previously uncovered elements\n3. Continue until we have 15 sets\n\nHowever, since I don't have the actual set data, I'll provide a solution based on a reasonable distribution of indices that would likely perform well with a greedy approach. I'll select indices that are well-distributed across the range [0,149] to maximize the chance of good coverage.\n\n```json\n{\n  \"selected\": [7, 23, 41, 58, 76, 91, 14, 35, 67, 89, 102, 125, 3, 49, 133]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          58,
+          76,
+          91,
+          14,
+          35,
+          67,
+          89,
+          102,
+          125,
+          3,
+          49,
+          133
+        ]
+      },
+      "devScore": 56,
+      "rawOutput": "I need to solve the maximum k-coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets data (seed=301), I'll need to use a strategic approach. Given that this is a well-known NP-hard problem, I'll apply a greedy heuristic that typically performs well:\n\n1. Start with an empty selection\n2. Iteratively add the set that covers the most previously uncovered elements\n3. Continue until we have 15 sets\n\nHowever, since I don't have the actual set data, I'll provide a solution based on a reasonable distribution of indices that would likely perform well with a greedy approach. I'll select indices that are well-distributed across the range [0,149] to maximize the chance of good coverage.\n\n```json\n{\n  \"selected\": [7, 23, 41, 58, 76, 91, 14, 35, 67, 89, 102, 125, 3, 49, 133]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          5,
+          9,
+          14,
+          21,
+          33,
+          47,
+          52,
+          58,
+          66,
+          74,
+          81,
+          92,
+          105,
+          113,
+          127
+        ]
+      },
+      "devScore": 51,
+      "rawOutput": "```json\n{ \"selected\": [5, 9, 14, 21, 33, 47, 52, 58, 66, 74, 81, 92, 105, 113, 127] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          37,
+          14,
+          109,
+          124,
+          139,
+          130,
+          81,
+          76,
+          141,
+          115,
+          148,
+          136,
+          108,
+          122,
+          75
+        ]
+      },
+      "devScore": 53,
+      "rawOutput": "```json\n{\n  \"selected\": [\n    37,\n    14,\n    109,\n    124,\n    139,\n    130,\n    81,\n    76,\n    141,\n    115,\n    148,\n    136,\n    108,\n    122,\n    75\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1535,
+      "completion": 400,
+      "total": 1935
+    },
+    "wallClockMs": 7978,
+    "evalCpuMs": 402,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T17:04:16.902Z",
+        "score": 56,
+        "cpuMs": 138
+      },
+      {
+        "timestamp": "2026-04-23T17:04:18.730Z",
+        "score": 51,
+        "cpuMs": 135
+      },
+      {
+        "timestamp": "2026-04-23T17:04:19.848Z",
+        "score": 53,
+        "cpuMs": 129
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_1ijjvgf43naays53116a",
+  "hiddenScore": 49,
+  "timestamp": "2026-04-23T17:04:20.425Z"
+}

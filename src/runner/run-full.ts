@@ -74,6 +74,7 @@ function challengeToTask(ch: typeof ALL_BENCHMARK_CHALLENGES[0]): BenchmarkTask 
     track: 'scientific',
     prompt: ch.description,
     devVerifier: ch.verifier,
+    hiddenVerifier: ch.hiddenVerifier,
     solutionSchema: { format: ch.solutionSchema },
     scoringDirection: ch.scoringDirection,
     challengeId: BENCHMARK_CHALLENGE_IDS[ch.id],

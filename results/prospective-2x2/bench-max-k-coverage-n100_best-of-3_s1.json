@@ -1,0 +1,135 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "best-of-3",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        7,
+        23,
+        41,
+        58,
+        76,
+        94,
+        112,
+        131,
+        14,
+        35,
+        67,
+        89,
+        105,
+        128,
+        146
+      ]
+    },
+    "devScore": 65,
+    "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets with seed=301, I'll use a strategic approach that combines greedy selection principles with diversification to likely achieve good coverage.\n\nMy strategy:\n1. Distribute selections across the range to avoid clustering\n2. Use a pattern that simulates greedy-like behavior by spacing selections\n3. Include some strategic choices at different intervals\n\nLet me select 15 indices that are well-distributed across the range [0,149]:\n\n```json\n{ \"selected\": [7, 23, 41, 58, 76, 94, 112, 131, 14, 35, 67, 89, 105, 128, 146] }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          2,
+          15,
+          28,
+          41,
+          54,
+          67,
+          80,
+          93,
+          106,
+          119,
+          132,
+          7,
+          23,
+          39,
+          76
+        ]
+      },
+      "devScore": 58,
+      "rawOutput": "I need to solve the Maximum k-Coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets generated with seed=301, I'll use a strategic approach that combines greedy selection with some diversification to likely achieve good coverage.\n\nFor a greedy-inspired solution, I'll select set indices that are well-distributed across the range [0,149] to increase the likelihood of diverse element coverage, while also including some clusters that might represent high-coverage sets.\n\nHere's my selection strategy:\n- Include some early indices (0-20) which often contain diverse elements\n- Include middle-range indices (30-80) for broad coverage\n- Include some higher indices (90-149) for completeness\n- Space selections to avoid too much clustering\n\n```json\n{ \"selected\": [2, 15, 28, 41, 54, 67, 80, 93, 106, 119, 132, 7, 23, 39, 76] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          58,
+          76,
+          94,
+          112,
+          131,
+          14,
+          35,
+          67,
+          89,
+          105,
+          128,
+          146
+        ]
+      },
+      "devScore": 65,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets with seed=301, I'll use a strategic approach that combines greedy selection principles with diversification to likely achieve good coverage.\n\nMy strategy:\n1. Distribute selections across the range to avoid clustering\n2. Use a pattern that simulates greedy-like behavior by spacing selections\n3. Include some strategic choices at different intervals\n\nLet me select 15 indices that are well-distributed across the range [0,149]:\n\n```json\n{ \"selected\": [7, 23, 41, 58, 76, 94, 112, 131, 14, 35, 67, 89, 105, 128, 146] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          2,
+          15,
+          28,
+          41,
+          54,
+          67,
+          80,
+          93,
+          106,
+          119,
+          132,
+          7,
+          23,
+          39,
+          76
+        ]
+      },
+      "devScore": 58,
+      "rawOutput": "I need to solve the Maximum k-Coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets for seed=301, I'll use a strategic approach that combines greedy selection with some diversification to likely achieve good coverage.\n\nFor a high-quality solution, I'll select sets that are likely to provide good coverage based on typical optimization patterns:\n\n- Start with some early indices that often contain diverse elements\n- Include some middle-range indices for variety\n- Add some higher indices to ensure broad coverage\n- Space them out to avoid clustering\n\nHere's my solution:\n\n```json\n{ \"selected\": [2, 15, 28, 41, 54, 67, 80, 93, 106, 119, 132, 7, 23, 39, 76] }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1671,
+      "completion": 631,
+      "total": 2302
+    },
+    "wallClockMs": 11291,
+    "evalCpuMs": 396,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T17:04:36.614Z",
+        "score": 58,
+        "cpuMs": 125
+      },
+      {
+        "timestamp": "2026-04-23T17:04:40.230Z",
+        "score": 65,
+        "cpuMs": 134
+      },
+      {
+        "timestamp": "2026-04-23T17:04:43.642Z",
+        "score": 58,
+        "cpuMs": 137
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_mj1qw8l6af9p696xgyao",
+  "hiddenScore": 55,
+  "timestamp": "2026-04-23T17:04:44.228Z"
+}

@@ -1,0 +1,189 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "moa-nosynth",
+  "runIndex": 0,
+  "seed": 21,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        15,
+        31,
+        63,
+        127,
+        255,
+        511,
+        1023,
+        2047
+      ]
+    },
+    "devScore": 36,
+    "rawOutput": "```json\n{ \"set\": [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047] }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          13,
+          20,
+          27,
+          39,
+          49,
+          56,
+          61,
+          69,
+          72,
+          77,
+          83,
+          89,
+          94,
+          103,
+          108,
+          114,
+          122,
+          128,
+          134,
+          142,
+          150,
+          156,
+          164,
+          171,
+          181,
+          189,
+          197,
+          204,
+          214,
+          221,
+          231,
+          240,
+          248,
+          258,
+          267,
+          278,
+          289,
+          300,
+          312,
+          325,
+          339,
+          354,
+          370,
+          387,
+          405,
+          424,
+          444,
+          465,
+          487,
+          510,
+          534,
+          559,
+          585,
+          612,
+          640,
+          669
+        ]
+      },
+      "devScore": 1200,
+      "rawOutput": "Looking at this problem, I need to find a set B that minimizes |B|²/v where v is the largest integer such that every integer in {1, 2, ..., v} appears as a pairwise difference.\n\nThis is related to Sidon sets and difference sets. I'll use a greedy approach to build a set that provides good coverage while keeping the set size reasonable.\n\nLet me construct a set using a combination of small dense numbers and strategically spaced larger numbers to maximize the range of differences:\n\n```json\n{\"set\": [0, 1, 3, 6, 13, 20, 27, 39, 49, 56, 61, 69, 72, 77, 83, 89, 94, 103, 108, 114, 122, 128, 134, 142, 150, 156, 164, 171, 181, 189, 197, 204, 214, 221, 231, 240, 248, 258, 267, 278, 289, 300, 312, 325, 339, 354, 370, 387, 405, 424, 444, 465, 487, 510, 534, 559, 585, 612, 640, 669]}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          15,
+          31,
+          63,
+          127,
+          255,
+          511,
+          1023,
+          2047
+        ]
+      },
+      "devScore": 36,
+      "rawOutput": "```json\n{ \"set\": [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047] }\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          43,
+          59,
+          79,
+          103,
+          131,
+          164,
+          202,
+          246,
+          296,
+          353,
+          417,
+          489,
+          569,
+          658,
+          757,
+          866,
+          986,
+          1118,
+          1262,
+          1419,
+          1590,
+          1776,
+          1978
+        ]
+      },
+      "devScore": 69.23076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 43, 59, 79, 103, 131, 164, 202, 246, 296, 353, 417, 489, 569, 658, 757, 866, 986, 1118, 1262, 1419, 1590, 1776, 1978]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1534,
+      "completion": 5106,
+      "total": 6640
+    },
+    "wallClockMs": 38062,
+    "evalCpuMs": 803,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-21T17:23:38.491Z",
+        "score": 1200,
+        "cpuMs": 336
+      },
+      {
+        "timestamp": "2026-04-21T17:23:41.573Z",
+        "score": 36,
+        "cpuMs": 208
+      },
+      {
+        "timestamp": "2026-04-21T17:24:04.604Z",
+        "score": 69.23076923076923,
+        "cpuMs": 259
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_6p725qq7zasto1de5p7r",
+  "hiddenScore": 36,
+  "timestamp": "2026-04-21T17:24:05.526Z"
+}

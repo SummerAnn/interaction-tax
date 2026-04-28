@@ -1,0 +1,135 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "best-of-3",
+  "runIndex": 8,
+  "seed": 9,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        2,
+        15,
+        23,
+        31,
+        47,
+        52,
+        68,
+        74,
+        89,
+        95,
+        103,
+        117,
+        128,
+        136,
+        144
+      ]
+    },
+    "devScore": 55,
+    "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets for seed=301, I'll use a strategic approach that combines:\n1. Spacing selections across the range to avoid clustering\n2. Including some early indices (often larger/better sets)\n3. Distributing selections to maximize potential coverage diversity\n\nBased on typical patterns in such problems and aiming for better than the greedy baseline of ~83-85 elements, I'll select sets that are well-distributed across the index range while favoring some lower indices that often contain larger sets.\n\n```json\n{ \"selected\": [2, 15, 23, 31, 47, 52, 68, 74, 89, 95, 103, 117, 128, 136, 144] }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          59,
+          77,
+          95,
+          113,
+          131,
+          149,
+          12,
+          34,
+          56,
+          78,
+          100,
+          122
+        ]
+      },
+      "devScore": 53,
+      "rawOutput": "I need to solve the maximum k-coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have the actual sets provided, I'll use a strategic approach that combines greedy selection with some diversification to likely achieve good coverage. I'll select indices that are well-distributed across the range to maximize the chance of covering different parts of the universe.\n\nHere's my solution using a combination of greedy-inspired spacing and strategic selection:\n\n```json\n{\n  \"selected\": [7, 23, 41, 59, 77, 95, 113, 131, 149, 12, 34, 56, 78, 100, 122]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          59,
+          77,
+          95,
+          113,
+          131,
+          149,
+          14,
+          32,
+          50,
+          68,
+          86,
+          104
+        ]
+      },
+      "devScore": 52,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have the actual set definitions, I'll use a strategic approach that combines:\n1. Spreading selections across the range to avoid clustering\n2. Using a pattern that tends to work well for coverage problems\n3. Including some randomness while maintaining good distribution\n\nI'll select sets at regular intervals with some strategic adjustments to maximize the likelihood of good coverage:\n\n```json\n{ \"selected\": [7, 23, 41, 59, 77, 95, 113, 131, 149, 14, 32, 50, 68, 86, 104] }\n```\n\nWait, 149 is the maximum index, so that works. Let me refine this to ensure good distribution:\n\n```json\n{ \"selected\": [5, 18, 31, 44, 57, 70, 83, 96, 109, 122, 135, 148, 12, 39, 66] }\n```\n\nActually, let me use a more systematic approach that spreads evenly across the range:\n\n{ \"selected\": [2, 15, 28, 41, 54, 67, 80, 93, 106, 119, 132, 145, 8, 35, 62] }"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          2,
+          15,
+          23,
+          31,
+          47,
+          52,
+          68,
+          74,
+          89,
+          95,
+          103,
+          117,
+          128,
+          136,
+          144
+        ]
+      },
+      "devScore": 55,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets for seed=301, I'll use a strategic approach that combines:\n1. Spacing selections across the range to avoid clustering\n2. Including some early indices (often larger/better sets)\n3. Distributing selections to maximize potential coverage diversity\n\nBased on typical patterns in such problems and aiming for better than the greedy baseline of ~83-85 elements, I'll select sets that are well-distributed across the index range while favoring some lower indices that often contain larger sets.\n\n```json\n{ \"selected\": [2, 15, 23, 31, 47, 52, 68, 74, 89, 95, 103, 117, 128, 136, 144] }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1671,
+      "completion": 695,
+      "total": 2366
+    },
+    "wallClockMs": 20168,
+    "evalCpuMs": 409,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T17:06:45.279Z",
+        "score": 53,
+        "cpuMs": 129
+      },
+      {
+        "timestamp": "2026-04-23T17:06:52.689Z",
+        "score": 52,
+        "cpuMs": 144
+      },
+      {
+        "timestamp": "2026-04-23T17:07:02.160Z",
+        "score": 55,
+        "cpuMs": 136
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_5dhzek8u1f5euckyz6cs",
+  "hiddenScore": 58,
+  "timestamp": "2026-04-23T17:07:02.676Z"
+}

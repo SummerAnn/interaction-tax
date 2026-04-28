@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-synth-gemini",
+  "runIndex": 9,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1nc(N)nc(Oc2ccc(F)cc2)n1"
+    },
+    "devScore": 0.8665763790883239,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. The QED score considers multiple drug-likeness properties including molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nGiven the examples and the need to balance high QED with synthetic accessibility, I'll design a molecule that:\n1. Has optimal molecular weight (around 200-400 Da)\n2. Contains appropriate functional groups for drug-likeness\n3. Has good balance of hydrophilic/lipophilic features\n4. Avoids complex ring systems that hurt synthesizability\n5. Includes heteroatoms in reasonable proportions\n\nI'll choose a pyrimidine-based structure with an ether linkage and fluorine substitution, which should score well on QED metrics while remaining synthetically accessible:\n\n```json\n{ \"smiles\": \"COc1nc(N)nc(Oc2ccc(F)cc2)n1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1nc(N)nc(Oc2ccc(F)cc2)n1"
+      },
+      "devScore": 0.8665763790883239,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. The QED score considers multiple drug-likeness properties including molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nGiven the examples and the need to balance high QED with synthetic accessibility, I'll design a molecule that:\n1. Has optimal molecular weight (around 200-400 Da)\n2. Contains appropriate functional groups for drug-likeness\n3. Has good balance of hydrophilic/lipophilic features\n4. Avoids complex ring systems that hurt synthesizability\n5. Includes heteroatoms in reasonable proportions\n\nI'll choose a pyrimidine-based structure with an ether linkage and fluorine substitution, which should score well on QED metrics while remaining synthetically accessible:\n\n```json\n{ \"smiles\": \"COc1nc(N)nc(Oc2ccc(F)cc2)n1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Oc1ccccc1C(=O)O"
+      },
+      "devScore": 0.7749290146965723,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)Oc1ccccc1C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]ccc12"
+      },
+      "devScore": 0.6698172578643221,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]ccc12\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1nc(N)nc(Oc2ccc(F)cc2)n1"
+      },
+      "devScore": 0.8665763790883239,
+      "rawOutput": "```json\n{\n  \"smiles\": \"COc1nc(N)nc(Oc2ccc(F)cc2)n1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1979,
+      "completion": 343,
+      "total": 2322
+    },
+    "wallClockMs": 7629,
+    "evalCpuMs": 917,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T05:21:34.490Z",
+        "score": 0.8665763790883239,
+        "cpuMs": 229
+      },
+      {
+        "timestamp": "2026-04-23T05:21:35.932Z",
+        "score": 0.7749290146965723,
+        "cpuMs": 242
+      },
+      {
+        "timestamp": "2026-04-23T05:21:36.909Z",
+        "score": 0.6698172578643221,
+        "cpuMs": 231
+      },
+      {
+        "timestamp": "2026-04-23T05:21:37.894Z",
+        "score": 0.8665763790883239,
+        "cpuMs": 215
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_gblbidwezz5ts8rel2q4",
+  "hiddenScore": 0.7522070686934084,
+  "timestamp": "2026-04-23T05:21:38.981Z"
+}

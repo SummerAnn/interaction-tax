@@ -1,0 +1,163 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa-same-model",
+  "runIndex": 5,
+  "seed": 6,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        2,
+        7,
+        13,
+        19,
+        28,
+        34,
+        41,
+        56,
+        63,
+        77,
+        89,
+        102,
+        118,
+        131,
+        147
+      ]
+    },
+    "devScore": 56,
+    "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a strategic approach that combines:\n1. Spread across the index range to maximize diversity\n2. Include some clustered selections that might work well together\n3. Balance between early indices (often good in greedy) and distributed coverage\n\nMy strategy:\n- Start with some early indices that greedy algorithms often favor\n- Include indices spread across the full range [0,149]\n- Add some mid-range and higher indices for diversity\n- Ensure exactly 15 distinct selections\n\n```json\n{ \"selected\": [2, 7, 13, 19, 28, 34, 41, 56, 63, 77, 89, 102, 118, 131, 147] }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          2,
+          18,
+          34,
+          51,
+          67,
+          83,
+          99,
+          115,
+          131,
+          147,
+          7,
+          23,
+          39,
+          55,
+          71
+        ]
+      },
+      "devScore": 49,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a strategic approach that combines:\n1. Spread selection across the range to avoid clustering\n2. Include some early indices (which often perform well in greedy algorithms)\n3. Include some well-spaced indices throughout the middle range\n4. Include some later indices for diversity\n\nBased on typical performance patterns and aiming to beat the ~83-85 greedy baseline, I'll select indices that are likely to provide good coverage with minimal overlap:\n\n```json\n{\"selected\": [2, 18, 34, 51, 67, 83, 99, 115, 131, 147, 7, 23, 39, 55, 71]}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          67,
+          89,
+          12,
+          34,
+          58,
+          76,
+          91,
+          3,
+          28,
+          49,
+          82,
+          105
+        ]
+      },
+      "devScore": 54,
+      "rawOutput": "I need to solve the Maximum k-Coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets for seed=301, I'll use a strategic approach that combines greedy selection with some diversification to likely achieve better than the typical 83-85 element coverage.\n\nMy strategy:\n1. Start with a greedy-like selection spread across the range\n2. Include some sets that might have complementary coverage\n3. Balance between sets that likely cover different ranges of elements\n\nBased on the problem structure and typical performance patterns, I'll select indices that are well-distributed and likely to provide good coverage:\n\n```json\n{ \"selected\": [7, 23, 41, 67, 89, 12, 34, 58, 76, 91, 3, 28, 49, 82, 105] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          2,
+          7,
+          13,
+          19,
+          28,
+          34,
+          41,
+          56,
+          63,
+          77,
+          89,
+          102,
+          118,
+          131,
+          147
+        ]
+      },
+      "devScore": 56,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a strategic approach that combines:\n1. Spread across the index range to maximize diversity\n2. Include some clustered selections that might work well together\n3. Balance between early indices (often good in greedy) and distributed coverage\n\nMy strategy:\n- Start with some early indices that greedy algorithms often favor\n- Include indices spread across the full range [0,149]\n- Add some mid-range and higher indices for diversity\n- Ensure exactly 15 distinct selections\n\n```json\n{ \"selected\": [2, 7, 13, 19, 28, 34, 41, 56, 63, 77, 89, 102, 118, 131, 147] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          34,
+          89,
+          41,
+          28,
+          2,
+          13,
+          19,
+          56,
+          63,
+          77,
+          102,
+          118,
+          131,
+          147
+        ]
+      },
+      "devScore": 56,
+      "rawOutput": "Looking at the three agent solutions, I need to identify patterns and combine the best performing elements to create a superior solution.\n\nAgent 3 achieved the highest score (56), followed by Agent 2 (54), then Agent 1 (49). Let me analyze the common high-performing indices:\n\nCommon indices across solutions:\n- 7: appears in all three solutions\n- 34: appears in all three solutions  \n- 89: appears in Agent 2 and Agent 3 (the two best)\n- 41: appears in Agent 2 and Agent 3\n- 28: appears in Agent 2 and Agent 3\n\nFrom Agent 3 (best performer), I'll prioritize: 2, 13, 19, 56, 63, 77, 102, 118, 131, 147\n\nFrom Agent 2's unique contributions: 67, 76, 91, 3, 49, 82, 105\n\nI'll synthesize by taking the core high-performing indices and filling with the most promising candidates from the better-performing agents:\n\n```json\n{\n  \"selected\": [7, 34, 89, 41, 28, 2, 13, 19, 56, 63, 77, 102, 118, 131, 147]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2381,
+      "completion": 926,
+      "total": 3307
+    },
+    "wallClockMs": 22053,
+    "evalCpuMs": 646,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T18:17:17.156Z",
+        "score": 49,
+        "cpuMs": 133
+      },
+      {
+        "timestamp": "2026-04-23T18:17:23.780Z",
+        "score": 54,
+        "cpuMs": 140
+      },
+      {
+        "timestamp": "2026-04-23T18:17:30.534Z",
+        "score": 56,
+        "cpuMs": 164
+      },
+      {
+        "timestamp": "2026-04-23T18:17:35.450Z",
+        "score": 56,
+        "cpuMs": 209
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_pw1w0uk09qzo1hxijf3h",
+  "hiddenScore": 52,
+  "timestamp": "2026-04-23T18:17:36.466Z"
+}

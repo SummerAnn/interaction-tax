@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-synth-gpt4o",
+  "runIndex": 9,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "Cc1nc(N)nc(c1)c2ccccc2"
+    },
+    "devScore": 0.739167146920749,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, and alerts.\n\nLet me design a molecule that balances these factors:\n\n- Moderate molecular weight (200-400 Da is optimal for QED)\n- Good lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Contains aromatic rings but not overly complex\n- Avoids structural alerts\n- Remains synthetically accessible\n\nI'll design a molecule with a pyrimidine core (common in drugs) with simple substituents:\n\n```json\n{\"smiles\": \"Cc1nc(N)nc(c1)c2ccccc2\"}\n```\n\nThis represents 4-amino-2-methyl-6-phenylpyrimidine, which has:\n- Moderate MW (~185 Da)\n- Good aromatic character with pyrimidine and benzene rings\n- Amino group for hydrogen bonding\n- Simple, synthetically accessible structure\n- No complex ring systems or alerts\n- Balanced lipophilicity"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "Cc1nc(N)nc(c1)c2ccccc2"
+      },
+      "devScore": 0.739167146920749,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-like properties including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, and alerts.\n\nLet me design a molecule that balances these factors:\n\n- Moderate molecular weight (200-400 Da is optimal for QED)\n- Good lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Contains aromatic rings but not overly complex\n- Avoids structural alerts\n- Remains synthetically accessible\n\nI'll design a molecule with a pyrimidine core (common in drugs) with simple substituents:\n\n```json\n{\"smiles\": \"Cc1nc(N)nc(c1)c2ccccc2\"}\n```\n\nThis represents 4-amino-2-methyl-6-phenylpyrimidine, which has:\n- Moderate MW (~185 Da)\n- Good aromatic character with pyrimidine and benzene rings\n- Amino group for hydrogen bonding\n- Simple, synthetically accessible structure\n- No complex ring systems or alerts\n- Balanced lipophilicity"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)CCCC(C)C(=O)O"
+      },
+      "devScore": 0.6671914748709137,
+      "rawOutput": "```json\n{ \"smiles\": \"CC(C)CCCC(C)C(=O)O\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC(=O)c1ccccc1"
+      },
+      "devScore": 0.7309641888463293,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC(=O)c1ccccc1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "Cc1nc(N)nc(c1)c2ccccc2"
+      },
+      "devScore": 0.739167146920749,
+      "rawOutput": "```json\n{ \"smiles\": \"Cc1nc(N)nc(c1)c2ccccc2\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1933,
+      "completion": 360,
+      "total": 2293
+    },
+    "wallClockMs": 11946,
+    "evalCpuMs": 947,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T05:17:09.380Z",
+        "score": 0.739167146920749,
+        "cpuMs": 243
+      },
+      {
+        "timestamp": "2026-04-23T05:17:10.420Z",
+        "score": 0.6671914748709137,
+        "cpuMs": 231
+      },
+      {
+        "timestamp": "2026-04-23T05:17:11.327Z",
+        "score": 0.7309641888463293,
+        "cpuMs": 225
+      },
+      {
+        "timestamp": "2026-04-23T05:17:16.415Z",
+        "score": 0.739167146920749,
+        "cpuMs": 248
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_2g7t4zx8uow6dm7y91lv",
+  "hiddenScore": 0.6786347110913037,
+  "timestamp": "2026-04-23T05:17:17.533Z"
+}

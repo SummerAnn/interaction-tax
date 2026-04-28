@@ -1,0 +1,163 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa",
+  "runIndex": 7,
+  "seed": 8,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        3,
+        8,
+        14,
+        22,
+        29,
+        41,
+        50,
+        63,
+        72,
+        94,
+        97,
+        124,
+        133,
+        141,
+        146
+      ]
+    },
+    "devScore": 62,
+    "rawOutput": "Looking at the three agent solutions, I need to synthesize their approaches to find a superior solution for the maximum k-coverage problem.\n\nAgent 1 (score 56) used a systematic spacing approach with intervals of 18, then filled gaps.\nAgent 2 (score 58) used smaller, more irregular intervals focusing on early indices.\nAgent 3 (score 61) achieved the highest score with a more diverse selection including higher indices.\n\nThe key insights are:\n1. Agent 3's higher score suggests including sets from across the full range [0,149]\n2. Agent 2's focus on lower indices (3,8,12,16,22,29,34) performed well\n3. Agent 3's inclusion of higher indices (139,141,146) was beneficial\n4. A balanced distribution across the range seems optimal\n\nSynthesizing the best elements from each approach:\n\n```json\n{\n  \"selected\": [3, 8, 14, 22, 29, 41, 50, 63, 72, 94, 97, 124, 133, 141, 146]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          59,
+          77,
+          95,
+          113,
+          131,
+          149,
+          3,
+          19,
+          37,
+          67,
+          89,
+          107
+        ]
+      },
+      "devScore": 56,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a strategic approach that combines:\n1. Distributed selection across the range to avoid clustering\n2. Prime number spacing to reduce overlap probability\n3. Strategic positioning based on typical random set distributions\n\nMy strategy:\n- Start with evenly spaced indices to ensure broad coverage\n- Use prime-like spacing (13, 17, 19, 23) to minimize systematic overlaps\n- Include some higher indices where sets might have different element distributions\n- Balance between early indices (potentially larger sets) and distributed coverage\n\n```json\n{ \"selected\": [7, 23, 41, 59, 77, 95, 113, 131, 149, 3, 19, 37, 67, 89, 107] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          3,
+          8,
+          12,
+          16,
+          22,
+          29,
+          34,
+          41,
+          47,
+          53,
+          60,
+          66,
+          72,
+          81,
+          95
+        ]
+      },
+      "devScore": 58,
+      "rawOutput": "```json\n{ \"selected\": [3, 8, 12, 16, 22, 29, 34, 41, 47, 53, 60, 66, 72, 81, 95] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          94,
+          14,
+          141,
+          139,
+          146,
+          77,
+          124,
+          63,
+          120,
+          133,
+          50,
+          115,
+          97,
+          129,
+          102
+        ]
+      },
+      "devScore": 61,
+      "rawOutput": "```json\n{\n  \"selected\": [\n    94,\n    14,\n    141,\n    139,\n    146,\n    77,\n    124,\n    63,\n    120,\n    133,\n    50,\n    115,\n    97,\n    129,\n    102\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          3,
+          8,
+          14,
+          22,
+          29,
+          41,
+          50,
+          63,
+          72,
+          94,
+          97,
+          124,
+          133,
+          141,
+          146
+        ]
+      },
+      "devScore": 62,
+      "rawOutput": "Looking at the three agent solutions, I need to synthesize their approaches to find a superior solution for the maximum k-coverage problem.\n\nAgent 1 (score 56) used a systematic spacing approach with intervals of 18, then filled gaps.\nAgent 2 (score 58) used smaller, more irregular intervals focusing on early indices.\nAgent 3 (score 61) achieved the highest score with a more diverse selection including higher indices.\n\nThe key insights are:\n1. Agent 3's higher score suggests including sets from across the full range [0,149]\n2. Agent 2's focus on lower indices (3,8,12,16,22,29,34) performed well\n3. Agent 3's inclusion of higher indices (139,141,146) was beneficial\n4. A balanced distribution across the range seems optimal\n\nSynthesizing the best elements from each approach:\n\n```json\n{\n  \"selected\": [3, 8, 14, 22, 29, 41, 50, 63, 72, 94, 97, 124, 133, 141, 146]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2338,
+      "completion": 628,
+      "total": 2966
+    },
+    "wallClockMs": 15264,
+    "evalCpuMs": 591,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T16:50:12.142Z",
+        "score": 56,
+        "cpuMs": 147
+      },
+      {
+        "timestamp": "2026-04-23T16:50:14.294Z",
+        "score": 58,
+        "cpuMs": 158
+      },
+      {
+        "timestamp": "2026-04-23T16:50:15.513Z",
+        "score": 61,
+        "cpuMs": 137
+      },
+      {
+        "timestamp": "2026-04-23T16:50:20.240Z",
+        "score": 62,
+        "cpuMs": 149
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_6k4mxg8b5a8pms4sz39t",
+  "hiddenScore": 56,
+  "timestamp": "2026-04-23T16:50:20.948Z"
+}

@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-synth-gpt4o",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC1=CC=CC=C1C(=O)NC2=CC=CC=C2"
+    },
+    "devScore": 0.8112788228538133,
+    "rawOutput": "```json\n{ \"smiles\": \"CC1=CC=CC=C1C(=O)NC2=CC=CC=C2\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CN[C@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)c3ccccc31"
+      },
+      "devScore": 0.8058613927728192,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED score while being synthetically accessible. QED considers multiple drug-likeness descriptors including molecular weight, lipophilicity, solubility, topological polar surface area, number of heavy atoms, number of aromatic rings, alerts for undesirable substructures, and number of rotatable bonds.\n\nBased on the examples provided and knowledge of high-scoring drug-like molecules, I'll design a molecule that balances these factors optimally. I want something with:\n- Moderate molecular weight (150-500 Da)\n- Good lipophilicity (LogP 1-3)\n- Appropriate polar surface area\n- Simple, synthetically accessible structure\n- No problematic functional groups\n\nLet me choose a well-known drug-like molecule that typically scores very high on QED: sertraline, which is a selective serotonin reuptake inhibitor. Its structure contains a dichlorophenyl group connected to a tetrahydronaphthalene system with an amine, providing excellent drug-like properties.\n\n```json\n{ \"smiles\": \"CN[C@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)c3ccccc31\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1=CC=CC=C1C(=O)NC2=CC=CC=C2"
+      },
+      "devScore": 0.8112788228538133,
+      "rawOutput": "```json\n{ \"smiles\": \"CC1=CC=CC=C1C(=O)NC2=CC=CC=C2\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1CCCCC1"
+      },
+      "devScore": 0.6883488299653465,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1CCCCC1\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC1=CC=CC=C1C(=O)NC2=CC=CC=C2"
+      },
+      "devScore": 0.8112788228538133,
+      "rawOutput": "```json\n{ \"smiles\": \"CC1=CC=CC=C1C(=O)NC2=CC=CC=C2\" }\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1952,
+      "completion": 381,
+      "total": 2333
+    },
+    "wallClockMs": 8399,
+    "evalCpuMs": 941,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T05:16:24.259Z",
+        "score": 0.8058613927728192,
+        "cpuMs": 248
+      },
+      {
+        "timestamp": "2026-04-23T05:16:25.349Z",
+        "score": 0.8112788228538133,
+        "cpuMs": 227
+      },
+      {
+        "timestamp": "2026-04-23T05:16:26.231Z",
+        "score": 0.6883488299653465,
+        "cpuMs": 224
+      },
+      {
+        "timestamp": "2026-04-23T05:16:27.400Z",
+        "score": 0.8112788228538133,
+        "cpuMs": 242
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_ik2dgkcppoigll2h3ylu",
+  "hiddenScore": 0.7922881169012194,
+  "timestamp": "2026-04-23T05:16:28.540Z"
+}

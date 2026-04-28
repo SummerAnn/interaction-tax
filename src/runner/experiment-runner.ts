@@ -23,6 +23,7 @@ import type {
 } from '../types.js';
 import { BudgetEnforcer } from '../budget/budget-vector.js';
 import { PlatformClient } from '../lib/platform-client.js';
+import { runPythonVerifier } from '../lib/local-evaluator.js';
 import { PROTOCOL_RUNNERS, getBestArtifact } from '../protocols/index.js';
 import { normalizeQ, NORMALIZATION_ANCHORS } from '../config/normalization-anchors.js';
 
@@ -215,6 +216,20 @@ async function runCell(
     }
   }
 
+  // Offline hidden eval: if no platform submission and the task has a local
+  // hidden verifier, run it now on the best artifact. This keeps runs
+  // hidden-blind during search (agents only see devScore) while making
+  // hiddenScore immediately available without a backfill step.
+  let hiddenScore: number | null = null;
+  if (!config.submitForHiddenEval && task.hiddenVerifier) {
+    try {
+      hiddenScore = await runPythonVerifier(task.hiddenVerifier, best.solutionData);
+      console.log(`  → hiddenScore=${hiddenScore} (local)`);
+    } catch (err) {
+      console.error(`  → local hidden eval failed: ${err}`);
+    }
+  }
+
   const result: RunResult = {
     taskId: task.id,
     protocolId: protocol.id,
@@ -224,7 +239,7 @@ async function runCell(
     allArtifacts,
     budgetTrace: trace,
     submissionId,
-    hiddenScore: null, // populated post-hoc by salvage/analysis script
+    hiddenScore,
     timestamp: new Date().toISOString(),
   };
 

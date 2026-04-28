@@ -32,6 +32,8 @@ export interface BenchmarkTask {
   prompt: string;
   /** Python verifier source: def evaluate(data: dict) -> float */
   devVerifier: string;
+  /** Hidden Python verifier source (full objective, not shown to agents during search) */
+  hiddenVerifier?: string;
   /** JSON schema for solutionData */
   solutionSchema: Record<string, unknown>;
   /** Score direction for this task */
@@ -127,14 +129,24 @@ export type ProtocolId =
   | 'moa-same-synth-gpt4o'
   | 'moa-synth-gemini'
   | 'moa-same-synth-gemini'
-  // Budget-doubled variants (2× cap experiment)
+  // MoA-5-Diverse: 5 diverse models propose independently, Claude synthesizes
+  // all 5. Second composition protocol to test whether the composition-positive
+  // MIG finding generalizes beyond 3-model MoA.
+  | 'moa-5-diverse'
+  // Best-of-3 matched control for 2×2 ablation.
+  | 'best-of-3'
+  // Evolutionary crossover protocols — explicit component-level recombination
+  // rather than consensus or critique. Addresses W7 (no adaptive composition tested).
+  // crossover: Phase 1 (independent) + Phase 2 (crossover recombination), no refinement.
+  // crossover-refine: Phase 1 + Phase 2 + Phase 3 (local refinement from crossover output).
+  | 'crossover'
+  | 'crossover-refine'
+  // Budget-scaling variants (2× budget cap)
   | 'single-shot-2x'
   | 'self-refine-2x'
   | 'best-of-n-2x'
   | 'vgs-2x'
-  | 'moa-2x'
-  // Best-of-3 (N=3 parallel variant)
-  | 'best-of-3';
+  | 'moa-2x';
 
 export type LLMProvider = 'openrouter' | 'anthropic' | 'openai';
 

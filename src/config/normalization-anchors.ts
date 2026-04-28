@@ -371,6 +371,40 @@ export const NORMALIZATION_ANCHORS: Record<string, NormalizationAnchor> = {
     invalidSentinel: 0,
     notes: '3-AP-free subset of {0,...,99}: no three-term arithmetic progressions allowed. Score = cardinality of valid submitted set. Dev verifier checks for APs; hidden verifier re-validates independently. sBase/sRef PROVISIONAL — calibrate before sweep.',
   },
+
+  // ── Prospective tasks (2026-04-23): composability validation extension ────────
+  // Added AFTER composability_prediction_v2.md was written (pre-registered predictions).
+  // Anchors set from task description; run calibrate-new-tasks.ts before full sweep.
+
+  'bench-max-k-coverage-n100': {
+    taskId: 'bench-max-k-coverage-n100',
+    direction: 'maximize',
+    // sBase = 20: weak random baseline (random selection of 15 sets from 150,
+    //   expected coverage ≈ 15 * avg_set_size / n_elements ≈ 15*5.5/100 ≈ 0.55
+    //   but with overlaps ~60/100; conservative floor = 20 to match prediction doc).
+    // sRef = 85: greedy coverage (always pick set covering most uncovered elements)
+    //   achieves ~83–85/100; 85 is the practical optimum achievable without brute force.
+    sBase: 20,
+    sRef: 85,
+    sRefSource: 'composability_prediction_v2.md (2026-04-23): s_bad=20 (weak random), s_ref=85 (greedy optimum on seed=301 instance).',
+    // float('-inf') is returned for invalid submissions; clips to Q=0 naturally.
+    invalidSentinel: -Infinity,
+    notes: 'HIGH composability task (C1+C2+C3). n=100 universe, m=150 sets, size~Uniform[3,8], k=15. Dev seed=301, hidden seed=419 (Type I instance split). Greedy achieves ~85, random ~60. Anchors set from prediction doc — confirm via calibration run before full sweep.',
+  },
+
+  'bench-latin-square-9': {
+    taskId: 'bench-latin-square-9',
+    direction: 'maximize',
+    // sBase = 0: random fill baseline (random integers 1-9 in each cell).
+    //   Expected correct cells against reference ≈ 81/9 = 9; conservative floor = 0
+    //   per prediction doc (s_bad = 0).
+    // sRef = 81: perfect completion — all 81 cells match the reference (only achievable
+    //   with a valid Latin square that is identical to the reference).
+    sBase: 0,
+    sRef: 81,
+    sRefSource: 'composability_prediction_v2.md (2026-04-23): s_bad=0 (random fill), s_ref=81 (perfect completion).',
+    notes: 'LOW composability task (C1+C2+C3 all fail). 9×9 Latin square, 30 cells revealed (seed=503). Dev score = correct cells vs reference (0-81). Hidden verifier: same seed but 20 clues (harder) + row/column validity bonus (+9 per valid row/col). Type II hidden (scoring criterion shift). Anchors set from prediction doc — confirm via calibration run.',
+  },
 };
 
 /**

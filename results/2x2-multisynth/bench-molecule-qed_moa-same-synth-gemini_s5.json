@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-same-synth-gemini",
+  "runIndex": 4,
+  "seed": 5,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc(CC(C)NC(=O)c2cccnc2)cc1"
+    },
+    "devScore": 0.9076063597670396,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-likeness factors including molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid overly complex structures that would be synthetically difficult to make, as the hidden evaluator penalizes for low synthesizability.\n\nLet me design a molecule that balances high QED with synthetic accessibility:\n\n- Moderate molecular weight (not too heavy)\n- Good balance of hydrophobic and hydrophilic features\n- Simple, accessible ring systems\n- Appropriate number of H-bond donors/acceptors\n- No problematic structural alerts\n\nI'll design a molecule based on successful drug scaffolds but optimized for QED parameters:\n\n```json\n{ \"smiles\": \"COc1ccc(CC(C)NC(=O)c2cccnc2)cc1\" }\n```\n\nThis molecule features:\n- A methoxybenzene group (common, drug-like)\n- A secondary amine (H-bond donor)\n- An amide group (H-bond acceptor/donor)\n- A pyridine ring (aromatic, drug-like)\n- Moderate molecular weight (~286 g/mol)\n- Good balance of polar and nonpolar features\n- Synthetically accessible from readily available starting materials"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)NC(=O)c2cccnc2)cc1"
+      },
+      "devScore": 0.9076063597670396,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-likeness factors including molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid overly complex structures that would be synthetically difficult to make, as the hidden evaluator penalizes for low synthesizability.\n\nLet me design a molecule that balances high QED with synthetic accessibility:\n\n- Moderate molecular weight (not too heavy)\n- Good balance of hydrophobic and hydrophilic features\n- Simple, accessible ring systems\n- Appropriate number of H-bond donors/acceptors\n- No problematic structural alerts\n\nI'll design a molecule based on successful drug scaffolds but optimized for QED parameters:\n\n```json\n{ \"smiles\": \"COc1ccc(CC(C)NC(=O)c2cccnc2)cc1\" }\n```\n\nThis molecule features:\n- A methoxybenzene group (common, drug-like)\n- A secondary amine (H-bond donor)\n- An amide group (H-bond acceptor/donor)\n- A pyridine ring (aromatic, drug-like)\n- Moderate molecular weight (~286 g/mol)\n- Good balance of polar and nonpolar features\n- Synthetically accessible from readily available starting materials"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)C(=O)NCc2ccccc2)cc1OC"
+      },
+      "devScore": 0.8537028264598236,
+      "rawOutput": "Looking at this problem, I need to maximize QED (Quantitative Estimate of Drug-likeness) while considering that the hidden evaluator also factors in synthesizability. This means I should aim for a molecule that has excellent drug-like properties but remains synthetically accessible.\n\nThe QED score considers multiple molecular descriptors including:\n- Molecular weight (optimal ~300-500 Da)\n- LogP (optimal ~2-3)\n- Number of hydrogen bond donors/acceptors\n- Polar surface area\n- Number of rotatable bonds\n- Number of aromatic rings\n\nI'll design a molecule that optimizes these parameters while maintaining synthetic accessibility. Based on known high-QED molecules, I'll create a structure with:\n- Moderate molecular weight\n- Good lipophilicity balance\n- Appropriate hydrogen bonding capacity\n- Simple, accessible synthetic route\n\nHere's my optimized drug-like molecule:\n\n```json\n{ \"smiles\": \"COc1ccc(CC(C)C(=O)NCc2ccccc2)cc1OC\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc2c(c1)oc(cc2=O)C(C)N(C)C"
+      },
+      "devScore": 0.8350552600946409,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-likeness descriptors including molecular weight, lipophilicity, solubility, topological polar surface area, number of heavy atoms, number of aromatic rings, number of rotatable bonds, and number of hydrogen bond acceptors/donors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid the proxy-overfit trap by ensuring synthetic accessibility. This means I should focus on molecules with:\n- Optimal molecular weight (around 300-500 Da)\n- Balanced lipophilicity (LogP around 2-3)\n- Appropriate polar surface area\n- Simple, accessible ring systems\n- Good balance of flexibility and rigidity\n\nLet me design a molecule that incorporates proven drug-like scaffolds with optimal properties. I'll use a benzopyran-based structure with a carboxylic acid and amine functionality, which should provide excellent QED scores while maintaining synthetic accessibility.\n\n```json\n{ \"smiles\": \"COc1ccc2c(c1)oc(cc2=O)C(C)N(C)C\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc(CC(C)NC(=O)c2cccnc2)cc1"
+      },
+      "devScore": 0.9076063597670396,
+      "rawOutput": "```json\n{\n  \"smiles\": \"COc1ccc(CC(C)NC(=O)c2cccnc2)cc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2134,
+      "completion": 895,
+      "total": 3029
+    },
+    "wallClockMs": 27444,
+    "evalCpuMs": 1026,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T05:22:56.461Z",
+        "score": 0.9076063597670396,
+        "cpuMs": 245
+      },
+      {
+        "timestamp": "2026-04-23T05:23:03.032Z",
+        "score": 0.8537028264598236,
+        "cpuMs": 314
+      },
+      {
+        "timestamp": "2026-04-23T05:23:16.874Z",
+        "score": 0.8350552600946409,
+        "cpuMs": 247
+      },
+      {
+        "timestamp": "2026-04-23T05:23:17.880Z",
+        "score": 0.9076063597670396,
+        "cpuMs": 220
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_0z0lrp4w54i5rxmjvkqt",
+  "hiddenScore": 0.7930488566378625,
+  "timestamp": "2026-04-23T05:23:19.006Z"
+}

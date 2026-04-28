@@ -7,6 +7,8 @@
  * Hidden verifiers are stored server-side and never returned to the experiment runner.
  */
 
+import { MAX_K_COVERAGE, LATIN_SQUARE } from './prospective-tasks.js';
+
 export interface BenchmarkChallengeDefinition {
   id: string;
   title: string;
@@ -1949,13 +1951,243 @@ def evaluate(data):
 `,
 };
 
+// ─── Card 17: Knapsack-50 — Perturbed Weights Proxy-Overfit ──────────────────
+
+export const KNAPSACK_50: BenchmarkChallengeDefinition = {
+  id: 'bench-knapsack-50',
+  card: 17,
+  hiddenType: 'II',
+  hiddenPattern: 'C',
+  title: 'Benchmark: 0-1 Knapsack (N=50) (v1)',
+  description: `## 0-1 Knapsack Problem (N=50)
+
+Select a subset of 50 items to **maximize the total value** without exceeding the knapsack capacity.
+
+### Problem Details
+
+- **N**: 50 items, generated deterministically from seed=123
+- **Weights**: \`rng = np.random.RandomState(123); weights = rng.randint(1, 50, 50)\` — integers in [1, 49]
+- **Values**: \`values = rng.randint(10, 100, 50)\` — integers in [10, 99]
+- **Capacity**: \`capacity = int(np.sum(weights) * 0.4)\` — 40% of total weight
+- **Dev evaluator**: Standard 0-1 knapsack — returns sum of values if total weight ≤ capacity, else −1000
+
+### Submission Format
+
+\`\`\`json
+{ "selection": [0, 1, 0, 1, ...] }
+\`\`\`
+
+Array of exactly 50 integers, each 0 or 1. selection[i]=1 means item i is selected.
+
+### Notes
+
+- This is the classic NP-hard 0-1 knapsack. For N=50, exact dynamic programming is tractable (pseudo-polynomial in capacity).
+- Greedy by value/weight ratio is a strong baseline but not guaranteed optimal.
+- Solutions near the capacity boundary under original weights are at risk of busting under perturbed weights on the hidden evaluator — avoid packing to exact capacity if possible.
+
+**Source**: Karp (1972); Dantzig (1957)
+`,
+  tags: ['combinatorics', 'optimization', 'np-hard', 'knapsack'],
+  evaluationType: 'deterministic',
+  scoringDirection: 'maximize',
+  minImprovement: 1,
+  solutionSchema: '{ selection: int[50] — EXACTLY 50 integers, each 0 or 1. selection[i]=1 means item i is selected. }',
+  experimental: true,
+  benchmarkTrack: 'scientific',
+  closesAt: '2026-12-31T23:59:59Z',
+
+  // Dev verifier: standard 0-1 knapsack with original weights
+  verifier: `
+import numpy as np
+
+def evaluate(data):
+    rng = np.random.RandomState(123)
+    n = 50
+    weights = rng.randint(1, 50, n)
+    values = rng.randint(10, 100, n)
+    capacity = int(np.sum(weights) * 0.4)
+
+    selection = np.array(data["selection"], dtype=int)
+    assert len(selection) == n, f"Expected {n} entries, got {len(selection)}"
+    assert np.all((selection == 0) | (selection == 1)), "Entries must be 0 or 1"
+
+    total_weight = int(np.sum(weights * selection))
+    total_value = int(np.sum(values * selection))
+
+    if total_weight > capacity:
+        return -1000.0
+    return float(total_value)
+`,
+
+  // Hidden verifier (Type II, Pattern C): perturbed weights (±3, seed=777)
+  // Solutions tight against the original capacity boundary may bust here.
+  hiddenVerifier: `
+import numpy as np
+
+def evaluate(data):
+    rng = np.random.RandomState(123)
+    n = 50
+    weights = rng.randint(1, 50, n)
+    values = rng.randint(10, 100, n)
+    capacity = int(np.sum(weights) * 0.4)
+
+    # Perturbed weights: ±3 per item (seed=777), floored at 1
+    rng2 = np.random.RandomState(777)
+    perturbed_weights = weights + rng2.randint(-3, 4, n)
+    perturbed_weights = np.maximum(perturbed_weights, 1)
+
+    selection = np.array(data["selection"], dtype=int)
+    assert len(selection) == n, f"Expected {n} entries, got {len(selection)}"
+    assert np.all((selection == 0) | (selection == 1)), "Entries must be 0 or 1"
+
+    total_weight = int(np.sum(perturbed_weights * selection))
+    total_value = int(np.sum(values * selection))
+
+    if total_weight > capacity:
+        return -1000.0
+    return float(total_value)
+`,
+};
+
+// ─── Card 18: Weighted Set Cover — Held-Out Elements Proxy-Overfit ───────────
+
+export const SET_COVER: BenchmarkChallengeDefinition = {
+  id: 'bench-set-cover-60',
+  card: 18,
+  hiddenType: 'I',
+  hiddenPattern: 'A',
+  title: 'Benchmark: Weighted Set Cover (60 elements, 120 sets) (v1)',
+  description: `## Weighted Set Cover Problem (60 Elements, 120 Sets)
+
+Select a collection of sets to **cover all required elements** while **minimizing the total cost** of selected sets.
+
+### Problem Details
+
+- **Universe**: 60 elements (0..59)
+- **Sets**: 120 sets generated deterministically from seed=53
+  \`\`\`python
+  rng = np.random.RandomState(53)
+  n_elements = 60
+  n_sets = 120
+  sets = []
+  for i in range(n_sets):
+      size = rng.randint(5, 16)
+      elements = sorted(rng.choice(n_elements, size, replace=False).tolist())
+      cost = rng.randint(1, 20)
+      sets.append((elements, cost))
+  \`\`\`
+- **Example sets** (first 5):
+  - Set 0: elements=[3, 8, 17, 24, 29, 30, 38, 42, 47, 50, 53], cost=12
+  - Set 1: elements=[2, 14, 25, 30, 35, 47, 49, 52], cost=5
+  - Set 2: elements=[0, 7, 10, 14, 18, 28, 35, 38, 42, 43, 56], cost=14
+  - Set 3: elements=[4, 14, 17, 35, 47, 52], cost=9
+  - Set 4: elements=[3, 12, 25, 31, 38, 42, 46, 54, 58], cost=8
+- **Dev evaluator**: Checks coverage of a public 80% subset of the universe (48 of 60 elements, selected with seed=71). Returns total cost if all 48 visible elements are covered, else 1e6 (penalty).
+- **Scoring direction**: Minimize total cost.
+
+### Submission Format
+
+\`\`\`json
+{ "selected": [0, 1, 0, 1, ...] }
+\`\`\`
+
+Array of exactly 120 integers, each 0 or 1. selected[i]=1 means set i is included.
+
+### Notes
+
+- Greedy set cover (pick the set with lowest cost-per-new-element ratio) is a classic log(n)-approximation.
+- Since the dev evaluator only checks 48 of 60 elements, a solution that covers just the visible subset may fail on the hidden evaluator which requires ALL 60 elements.
+- Redundancy helps: selecting extra low-cost sets that cover hidden elements reduces proxy-overfit risk.
+
+**Source**: Karp (1972); Chvátal (1979)
+`,
+  tags: ['combinatorics', 'optimization', 'np-hard', 'set-cover'],
+  evaluationType: 'deterministic',
+  scoringDirection: 'minimize',
+  minImprovement: 1,
+  solutionSchema: '{ selected: int[120] — EXACTLY 120 integers, each 0 or 1. selected[i]=1 means set i is included. }',
+  experimental: true,
+  benchmarkTrack: 'scientific',
+  closesAt: '2026-12-31T23:59:59Z',
+
+  // Dev verifier: coverage scored on 80% visible subset (48 of 60 elements, seed=71)
+  verifier: `
+import numpy as np
+
+def evaluate(data):
+    rng = np.random.RandomState(53)
+    n_elements = 60
+    n_sets = 120
+    sets = []
+    for i in range(n_sets):
+        size = rng.randint(5, 16)
+        elements = sorted(rng.choice(n_elements, size, replace=False).tolist())
+        cost = rng.randint(1, 20)
+        sets.append((elements, cost))
+
+    # Visible subset: 48 of 60 elements (80%), selected with seed=71
+    rng_vis = np.random.RandomState(71)
+    visible = set(rng_vis.choice(n_elements, 48, replace=False).tolist())
+
+    selected = np.array(data["selected"], dtype=int)
+    assert len(selected) == n_sets, f"Expected {n_sets} entries, got {len(selected)}"
+    assert np.all((selected == 0) | (selected == 1)), "Entries must be 0 or 1"
+
+    covered = set()
+    total_cost = 0
+    for i in range(n_sets):
+        if selected[i] == 1:
+            covered.update(sets[i][0])
+            total_cost += sets[i][1]
+
+    # Check if all visible elements are covered
+    if not visible.issubset(covered):
+        return 1e6
+
+    return float(total_cost)
+`,
+
+  // Hidden verifier (Type I, Pattern A): coverage scored on ALL 60 elements
+  hiddenVerifier: `
+import numpy as np
+
+def evaluate(data):
+    rng = np.random.RandomState(53)
+    n_elements = 60
+    n_sets = 120
+    sets = []
+    for i in range(n_sets):
+        size = rng.randint(5, 16)
+        elements = sorted(rng.choice(n_elements, size, replace=False).tolist())
+        cost = rng.randint(1, 20)
+        sets.append((elements, cost))
+
+    selected = np.array(data["selected"], dtype=int)
+    assert len(selected) == n_sets, f"Expected {n_sets} entries, got {len(selected)}"
+    assert np.all((selected == 0) | (selected == 1)), "Entries must be 0 or 1"
+
+    covered = set()
+    total_cost = 0
+    for i in range(n_sets):
+        if selected[i] == 1:
+            covered.update(sets[i][0])
+            total_cost += sets[i][1]
+
+    # Check if ALL 60 elements are covered
+    if len(covered) < n_elements:
+        return 1e6
+
+    return float(total_cost)
+`,
+};
+
 // ─── All Benchmark Challenges ────────────────────────────────────────────────
 
 /**
  * Active benchmark challenges for the v1.0 sweep.
  *
  * MEG analysis tasks (discriminative middle):
- *   Cards 1–4, 7 (near-core), 9–16
+ *   Cards 1–4, 7 (near-core), 9–18
  *
  * Capability-floor exhibits (reported in §3, excluded from MEG):
  *   Card 6 (TSP-100), Card 8 (LJ-n41)
@@ -1965,6 +2197,8 @@ def evaluate(data):
  *   Card 7-orig (HP Folding) — <5% validity rate
  *
  * New cards (2026-04-09): Cards 13–16 — TFBind-10, Heilbronn, Kissing 11D, 3-AP-Free
+ * New cards (2026-04-20): Cards 17–18 — Knapsack-50, Weighted Set Cover
+ * Prospective tasks (2026-04-23): Max k-Coverage (n=100,k=15), Latin Square Completion (9×9)
  */
 export const ALL_BENCHMARK_CHALLENGES: BenchmarkChallengeDefinition[] = [
   MAXCUT,           // Card 1  — discriminative, proxy-overfit anchor
@@ -1984,4 +2218,8 @@ export const ALL_BENCHMARK_CHALLENGES: BenchmarkChallengeDefinition[] = [
   HEILBRONN_N12,    // Card 14 — AlphaEvolve geometry, 50-of-220 vs all-220 triples proxy-overfit
   KISSING_11D,      // Card 15 — AlphaEvolve sphere packing, loose vs exact tolerance proxy-overfit
   AP_FREE_100,      // Card 16 — additive combinatorics, pure discriminative (no proxy-overfit split)
+  KNAPSACK_50,      // Card 17 — HIGH composability, perturbed-weights proxy-overfit
+  SET_COVER,        // Card 18 — HIGH composability, held-out elements proxy-overfit
+  MAX_K_COVERAGE,   // Card 10 (prospective) — HIGH composability, instance split (seed 301→419)
+  LATIN_SQUARE,     // Card 11 (prospective) — LOW composability, harder clue-set hidden
 ];

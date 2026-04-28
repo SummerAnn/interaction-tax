@@ -1,0 +1,266 @@
+{
+  "taskId": "bench-heilbronn-n12",
+  "protocolId": "moa-nosynth",
+  "runIndex": 9,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "points": [
+        [
+          0,
+          0.47953
+        ],
+        [
+          0.17417,
+          0.99999
+        ],
+        [
+          0.34751,
+          0
+        ],
+        [
+          0.45781,
+          0.65249
+        ],
+        [
+          0.55184,
+          0.22271
+        ],
+        [
+          0.60945,
+          0.88761
+        ],
+        [
+          0.72084,
+          0.38006
+        ],
+        [
+          0.82583,
+          0
+        ],
+        [
+          0.82583,
+          0.99999
+        ],
+        [
+          0.93249,
+          0.52047
+        ],
+        [
+          0.99999,
+          0.11239
+        ],
+        [
+          0.99999,
+          0.77729
+        ]
+      ]
+    },
+    "devScore": 0.00990517969999996,
+    "rawOutput": "```json\n{\n  \"points\": [\n    [0.00000, 0.47953],\n    [0.17417, 0.99999],\n    [0.34751, 0.00000],\n    [0.45781, 0.65249],\n    [0.55184, 0.22271],\n    [0.60945, 0.88761],\n    [0.72084, 0.38006],\n    [0.82583, 0.00000],\n    [0.82583, 0.99999],\n    [0.93249, 0.52047],\n    [0.99999, 0.11239],\n    [0.99999, 0.77729]\n  ]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0.5,
+            0
+          ],
+          [
+            1,
+            0.5
+          ],
+          [
+            0.5,
+            1
+          ],
+          [
+            0,
+            0.5
+          ],
+          [
+            0.25,
+            0.25
+          ],
+          [
+            0.75,
+            0.25
+          ],
+          [
+            0.75,
+            0.75
+          ],
+          [
+            0.25,
+            0.75
+          ]
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "Looking at this problem, I need to place 12 points in the unit square to maximize the minimum triangle area. This is a challenging geometric optimization problem.\n\nKey insights:\n1. Points should be well-separated to avoid small triangles\n2. Corner and edge placements can help maximize distances\n3. Need to balance spreading points out while maintaining good minimum distances\n4. The best known result is ~0.00631, significantly better than random placement\n\nI'll use a strategy that combines:\n- Corner points for maximum separation\n- Edge points to utilize boundary efficiently  \n- Interior points arranged to maintain good triangulation properties\n- Approximate hexagonal/triangular spacing where possible\n\n```json\n{\n  \"points\": [\n    [0.0, 0.0],\n    [1.0, 0.0],\n    [1.0, 1.0],\n    [0.0, 1.0],\n    [0.5, 0.0],\n    [1.0, 0.5],\n    [0.5, 1.0],\n    [0.0, 0.5],\n    [0.25, 0.25],\n    [0.75, 0.25],\n    [0.75, 0.75],\n    [0.25, 0.75]\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "points": [
+          [
+            0.1,
+            0.1
+          ],
+          [
+            0.9,
+            0.1
+          ],
+          [
+            0.1,
+            0.9
+          ],
+          [
+            0.9,
+            0.9
+          ],
+          [
+            0.3,
+            0.3
+          ],
+          [
+            0.7,
+            0.3
+          ],
+          [
+            0.3,
+            0.7
+          ],
+          [
+            0.7,
+            0.7
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.2,
+            0.6
+          ],
+          [
+            0.6,
+            0.2
+          ],
+          [
+            0.8,
+            0.8
+          ]
+        ]
+      },
+      "devScore": 0,
+      "rawOutput": "```json\n{\n  \"points\": [\n    [0.1, 0.1],\n    [0.9, 0.1],\n    [0.1, 0.9],\n    [0.9, 0.9],\n    [0.3, 0.3],\n    [0.7, 0.3],\n    [0.3, 0.7],\n    [0.7, 0.7],\n    [0.5, 0.5],\n    [0.2, 0.6],\n    [0.6, 0.2],\n    [0.8, 0.8]\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "points": [
+          [
+            0,
+            0.47953
+          ],
+          [
+            0.17417,
+            0.99999
+          ],
+          [
+            0.34751,
+            0
+          ],
+          [
+            0.45781,
+            0.65249
+          ],
+          [
+            0.55184,
+            0.22271
+          ],
+          [
+            0.60945,
+            0.88761
+          ],
+          [
+            0.72084,
+            0.38006
+          ],
+          [
+            0.82583,
+            0
+          ],
+          [
+            0.82583,
+            0.99999
+          ],
+          [
+            0.93249,
+            0.52047
+          ],
+          [
+            0.99999,
+            0.11239
+          ],
+          [
+            0.99999,
+            0.77729
+          ]
+        ]
+      },
+      "devScore": 0.00990517969999996,
+      "rawOutput": "```json\n{\n  \"points\": [\n    [0.00000, 0.47953],\n    [0.17417, 0.99999],\n    [0.34751, 0.00000],\n    [0.45781, 0.65249],\n    [0.55184, 0.22271],\n    [0.60945, 0.88761],\n    [0.72084, 0.38006],\n    [0.82583, 0.00000],\n    [0.82583, 0.99999],\n    [0.93249, 0.52047],\n    [0.99999, 0.11239],\n    [0.99999, 0.77729]\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1324,
+      "completion": 710,
+      "total": 2034
+    },
+    "wallClockMs": 28053,
+    "evalCpuMs": 436,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-22T16:13:28.729Z",
+        "score": 0,
+        "cpuMs": 142
+      },
+      {
+        "timestamp": "2026-04-22T16:13:30.715Z",
+        "score": 0,
+        "cpuMs": 146
+      },
+      {
+        "timestamp": "2026-04-22T16:13:32.685Z",
+        "score": 0.00990517969999996,
+        "cpuMs": 148
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "hiddenScore": null,
+  "timestamp": "2026-04-22T16:17:34.065Z"
+}

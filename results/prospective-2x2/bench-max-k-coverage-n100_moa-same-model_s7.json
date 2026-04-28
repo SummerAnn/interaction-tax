@@ -1,0 +1,163 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa-same-model",
+  "runIndex": 6,
+  "seed": 7,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        7,
+        23,
+        41,
+        58,
+        72,
+        89,
+        104,
+        121,
+        138,
+        15,
+        34,
+        67,
+        95,
+        112,
+        146
+      ]
+    },
+    "devScore": 55,
+    "rawOutput": "I need to solve the Maximum k-Coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a greedy approach strategy that typically performs well for this type of problem. The greedy algorithm works by:\n\n1. Start with no sets selected\n2. At each step, select the set that covers the most uncovered elements\n3. Repeat until 15 sets are selected\n\nSince I can't see the actual sets, I'll make an educated selection based on typical performance patterns. Good sets for coverage problems are often:\n- Sets that are well-distributed across the index range\n- Sets that might have complementary coverage patterns\n- A mix of early, middle, and late indices to ensure good distribution\n\nBased on typical greedy performance and aiming for good distribution:\n\n```json\n{\"selected\": [7, 23, 41, 58, 72, 89, 104, 121, 138, 15, 34, 67, 95, 112, 146]}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          58,
+          72,
+          89,
+          104,
+          121,
+          138,
+          15,
+          34,
+          67,
+          95,
+          112,
+          146
+        ]
+      },
+      "devScore": 55,
+      "rawOutput": "I need to solve the Maximum k-Coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a greedy approach strategy that typically performs well for this type of problem. The greedy algorithm works by:\n\n1. Start with no sets selected\n2. At each step, select the set that covers the most uncovered elements\n3. Repeat until 15 sets are selected\n\nSince I can't see the actual sets, I'll make an educated selection based on typical performance patterns. Good sets for coverage problems are often:\n- Sets that are well-distributed across the index range\n- Sets that might have complementary coverage patterns\n- A mix of early, middle, and late indices to ensure good distribution\n\nBased on typical greedy performance and aiming for good distribution:\n\n```json\n{\"selected\": [7, 23, 41, 58, 72, 89, 104, 121, 138, 15, 34, 67, 95, 112, 146]}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          59,
+          73,
+          89,
+          107,
+          127,
+          11,
+          29,
+          47,
+          67,
+          83,
+          103,
+          139
+        ]
+      },
+      "devScore": 52,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets for seed=301, I'll use a strategic approach that combines:\n1. Distributed selection across the range to avoid clustering\n2. Prime number spacing to reduce correlation\n3. A mix of early, middle, and late indices to capture potential diversity\n\nMy strategy:\n- Select indices with good distribution across [0,149]\n- Use prime-like spacing (7, 11, 13, 17, 19, 23) to minimize overlap\n- Include some strategic \"anchor\" points\n\nHere's my selection:\n\n```json\n{ \"selected\": [7, 23, 41, 59, 73, 89, 107, 127, 11, 29, 47, 67, 83, 103, 139] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          67,
+          89,
+          12,
+          134,
+          56,
+          98,
+          145,
+          31,
+          78,
+          103,
+          19,
+          126
+        ]
+      },
+      "devScore": 53,
+      "rawOutput": "I need to solve the maximum k-coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a greedy approach strategy that typically performs well for this type of problem. The greedy algorithm iteratively selects the set that covers the most uncovered elements.\n\nFor a good solution, I should:\n1. Start with sets that likely have good coverage\n2. Ensure diversity in the selection to avoid too much overlap\n3. Balance between large sets and sets that fill gaps\n\nBased on typical performance patterns and aiming for a solution that would work well with the greedy approach, I'll select a diverse range of indices that would likely represent a good spread across the 150 available sets.\n\n```json\n{ \"selected\": [7, 23, 41, 67, 89, 12, 134, 56, 98, 145, 31, 78, 103, 19, 126] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          67,
+          89,
+          58,
+          72,
+          104,
+          121,
+          138,
+          15,
+          34,
+          95,
+          112,
+          103
+        ]
+      },
+      "devScore": 53,
+      "rawOutput": "Looking at the three agent solutions, I need to identify the best performing elements and combine them strategically.\n\nAnalysis of the solutions:\n- Agent 1 (score: 55) - highest score\n- Agent 2 (score: 52) \n- Agent 3 (score: 53)\n\nCommon high-performing elements across solutions:\n- Elements 7, 23, 41, 67, 89 appear in all three solutions\n- Element 103 appears in both Agent 2 and Agent 3\n- Agent 1 has the highest score, so I should prioritize more of its unique elements\n\nI'll start with the common core elements and then add the best performing unique elements from Agent 1, supplemented by promising elements from the other agents:\n\n```json\n{\n  \"selected\": [7, 23, 41, 67, 89, 58, 72, 104, 121, 138, 15, 34, 95, 112, 103]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2381,
+      "completion": 929,
+      "total": 3310
+    },
+    "wallClockMs": 22142,
+    "evalCpuMs": 619,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T17:01:37.893Z",
+        "score": 55,
+        "cpuMs": 216
+      },
+      {
+        "timestamp": "2026-04-23T17:01:41.934Z",
+        "score": 52,
+        "cpuMs": 144
+      },
+      {
+        "timestamp": "2026-04-23T17:01:51.408Z",
+        "score": 53,
+        "cpuMs": 128
+      },
+      {
+        "timestamp": "2026-04-23T17:01:55.205Z",
+        "score": 53,
+        "cpuMs": 131
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_qhmz79kvpbthgl5x0of9",
+  "hiddenScore": 58,
+  "timestamp": "2026-04-23T17:01:55.777Z"
+}

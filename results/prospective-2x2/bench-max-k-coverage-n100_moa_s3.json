@@ -1,0 +1,163 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa",
+  "runIndex": 2,
+  "seed": 3,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        2,
+        5,
+        10,
+        14,
+        21,
+        28,
+        35,
+        41,
+        48,
+        56,
+        63,
+        70,
+        77,
+        85,
+        92
+      ]
+    },
+    "devScore": 60,
+    "rawOutput": "```json\n{ \"selected\": [2, 5, 10, 14, 21, 28, 35, 41, 48, 56, 63, 70, 77, 85, 92] }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          59,
+          73,
+          89,
+          107,
+          127,
+          13,
+          37,
+          67,
+          97,
+          3,
+          47,
+          83
+        ]
+      },
+      "devScore": 55,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets from seed=301, I'll use a strategic approach that combines:\n1. Spread selection across the range to avoid clustering\n2. Prime number spacing to reduce overlap patterns\n3. Include some consecutive pairs for potential synergy\n\nMy strategy selects sets at intervals that should provide good coverage distribution while avoiding systematic biases that might cause poor overlap.\n\n```json\n{ \"selected\": [7, 23, 41, 59, 73, 89, 107, 127, 13, 37, 67, 97, 3, 47, 83] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          2,
+          5,
+          10,
+          14,
+          21,
+          28,
+          35,
+          41,
+          48,
+          56,
+          63,
+          70,
+          77,
+          85,
+          92
+        ]
+      },
+      "devScore": 60,
+      "rawOutput": "```json\n{ \"selected\": [2, 5, 10, 14, 21, 28, 35, 41, 48, 56, 63, 70, 77, 85, 92] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          30,
+          13,
+          14,
+          46,
+          98,
+          44,
+          62,
+          114,
+          109,
+          107,
+          115,
+          105,
+          81,
+          77,
+          74
+        ]
+      },
+      "devScore": 57,
+      "rawOutput": "```json\n{\n  \"selected\": [\n    30,\n    13,\n    14,\n    46,\n    98,\n    44,\n    62,\n    114,\n    109,\n    107,\n    115,\n    105,\n    81,\n    77,\n    74\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          1,
+          8,
+          15,
+          22,
+          29,
+          36,
+          43,
+          50,
+          58,
+          65,
+          72,
+          79,
+          86,
+          93,
+          100
+        ]
+      },
+      "devScore": 54,
+      "rawOutput": "Looking at the three agent solutions, I need to synthesize their approaches to find a superior solution for the maximum k-coverage problem.\n\nAgent 2 achieved the highest score (60), followed by Agent 3 (57) and Agent 1 (55). Let me analyze their selection patterns:\n\n- Agent 1 used a more scattered approach with larger gaps between indices\n- Agent 2 used a more systematic spacing approach, which performed best\n- Agent 3 had some clustering in higher indices (105, 107, 109, 114, 115)\n\nThe key insight is that Agent 2's more evenly distributed selection across the index range performed better, likely because it avoided selecting sets that have significant overlap. However, I can potentially improve on this by:\n\n1. Starting with Agent 2's systematic approach as a base\n2. Making slight adjustments to avoid potential overlaps\n3. Ensuring good coverage across the entire range of available sets\n\nBased on this analysis, I'll create a solution that maintains systematic spacing while optimizing the distribution:\n\n```json\n{\n  \"selected\": [1, 8, 15, 22, 29, 36, 43, 50, 58, 65, 72, 79, 86, 93, 100]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2338,
+      "completion": 613,
+      "total": 2951
+    },
+    "wallClockMs": 17592,
+    "evalCpuMs": 560,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T16:48:39.516Z",
+        "score": 55,
+        "cpuMs": 144
+      },
+      {
+        "timestamp": "2026-04-23T16:48:40.768Z",
+        "score": 60,
+        "cpuMs": 122
+      },
+      {
+        "timestamp": "2026-04-23T16:48:48.407Z",
+        "score": 57,
+        "cpuMs": 151
+      },
+      {
+        "timestamp": "2026-04-23T16:48:53.439Z",
+        "score": 54,
+        "cpuMs": 143
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_1jnowhjnfgar8mtbztl7",
+  "hiddenScore": 62,
+  "timestamp": "2026-04-23T16:48:53.903Z"
+}

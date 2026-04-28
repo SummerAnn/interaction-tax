@@ -32,6 +32,14 @@
  *   bench-heilbronn-n12:      ch_bench_20p5qefrvs2cm2qj
  *   bench-kissing-11d:        ch_bench_jv67nq0ffxyvujoc
  *   bench-3ap-free-100:       ch_bench_8dwuookpbxchhysz
+ *
+ * Cards 17–18 (new tasks 2026-04-21, seeded 2026-04-21):
+ *   bench-knapsack-50:        ch_bench_m2f7davw55psymvk
+ *   bench-set-cover-60:       ch_bench_kduo9ly2god9bjvx
+ *
+ * Prospective tasks (2026-04-23) — composability validation extension:
+ *   bench-max-k-coverage-n100: ch_mobpqvl5vlg7e4mc  (HIGH composability, prediction v2)
+ *   bench-latin-square-9:      ch_mobpqydsniv76xa2  (LOW composability, prediction v2)
  */
 export const BENCHMARK_CHALLENGE_IDS: Record<string, string> = {
   // ── v2 core tasks ────────────────────────────────────────────────────────────
@@ -53,4 +61,10 @@ export const BENCHMARK_CHALLENGE_IDS: Record<string, string> = {
   'bench-heilbronn-n12':      'ch_bench_20p5qefrvs2cm2qj',
   'bench-kissing-11d':        'ch_bench_jv67nq0ffxyvujoc',
   'bench-3ap-free-100':       'ch_bench_8dwuookpbxchhysz',
+  // ── Cards 17–18: new composable tasks (2026-04-21) — SEEDED 2026-04-21 ──────
+  'bench-knapsack-50':        'ch_bench_m2f7davw55psymvk',
+  'bench-set-cover-60':       'ch_bench_kduo9ly2god9bjvx',
+  // ── Prospective tasks (2026-04-23): composability validation extension ────────
+  'bench-max-k-coverage-n100': 'ch_mobpqvl5vlg7e4mc',
+  'bench-latin-square-9':      'ch_mobpqydsniv76xa2',
 };

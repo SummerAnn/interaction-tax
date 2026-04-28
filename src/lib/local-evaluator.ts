@@ -4,74 +4,85 @@
  * Runs Python verifiers locally via subprocess, matching the PlatformClient
  * interface so all existing protocol runners work without modification.
  *
- * Used for external validation tasks that don't live on agent4science.org.
+ * Used for offline benchmark runs that don't touch agent4science.org.
  */
 
 import { execSync } from 'child_process';
 import { PlatformClient } from './platform-client.js';
 
-export class LocalEvaluator extends PlatformClient {
-  private verifiers: Map<string, string>;
+/**
+ * Run a Python verifier snippet locally.
+ * The snippet must define `def evaluate(data: dict) -> float`.
+ * Returns the float score on success, throws on verifier error.
+ */
+export async function runPythonVerifier(
+  verifierCode: string,
+  data: Record<string, unknown>,
+): Promise<number> {
+  const script = `
+import json, sys
+${verifierCode}
 
-  constructor(verifiers: Map<string, string>) {
+data = json.loads(sys.stdin.read())
+try:
+    score = evaluate(data)
+    print(json.dumps({"score": float(score)}))
+except Exception as e:
+    print(json.dumps({"error": str(e)}), file=sys.stderr)
+    sys.exit(1)
+`;
+
+  const stdout = execSync(`python3 -c ${shellEscape(script)}`, {
+    input: JSON.stringify(data),
+    encoding: 'utf-8',
+    timeout: 30_000,
+    maxBuffer: 10 * 1024 * 1024,
+  }).trim();
+
+  const result = JSON.parse(stdout) as { score: number };
+  return result.score;
+}
+
+export class LocalEvaluator extends PlatformClient {
+  private devVerifiers: Map<string, string>;
+  private hiddenVerifiers: Map<string, string>;
+
+  constructor(
+    devVerifiers: Map<string, string>,
+    hiddenVerifiers?: Map<string, string>,
+  ) {
     // Pass a dummy secret — we never call the real API
     super('http://localhost:0', 'local-eval-dummy');
-    this.verifiers = verifiers;
+    this.devVerifiers = devVerifiers;
+    this.hiddenVerifiers = hiddenVerifiers ?? new Map();
   }
 
   /**
-   * Override evalDev to run the Python verifier locally via subprocess.
+   * Override evalDev to run the dev verifier locally via subprocess.
    */
   override async evalDev(
     challengeId: string,
     solutionData: Record<string, unknown>,
     _meta?: { protocolId?: string; runIndex?: number; seed?: number },
   ): Promise<{ devScore: number; evalCpuMs: number }> {
-    const verifierCode = this.verifiers.get(challengeId);
+    const verifierCode = this.devVerifiers.get(challengeId);
     if (!verifierCode) {
-      throw new Error(`No local verifier registered for challenge: ${challengeId}`);
+      throw new Error(`No local dev verifier registered for challenge: ${challengeId}`);
     }
 
-    const script = `
-import json, sys, time
-${verifierCode}
-
-data = json.loads(sys.stdin.read())
-t0 = time.monotonic()
-try:
-    score = evaluate(data)
-    cpu_ms = (time.monotonic() - t0) * 1000
-    print(json.dumps({"score": score, "cpu_ms": cpu_ms}))
-except Exception as e:
-    print(json.dumps({"error": str(e)}), file=sys.stderr)
-    sys.exit(1)
-`;
-
-    const inputJson = JSON.stringify(solutionData);
-    const startMs = Date.now();
-
+    const t0 = Date.now();
     try {
-      const stdout = execSync(`python3 -c ${shellEscape(script)}`, {
-        input: inputJson,
-        encoding: 'utf-8',
-        timeout: 30_000,
-        maxBuffer: 10 * 1024 * 1024,
-      }).trim();
-
-      const result = JSON.parse(stdout) as { score: number; cpu_ms: number };
-      return {
-        devScore: result.score,
-        evalCpuMs: result.cpu_ms,
-      };
+      const score = await runPythonVerifier(verifierCode, solutionData);
+      return { devScore: score, evalCpuMs: Date.now() - t0 };
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
-      throw new Error(`Verifier error: ${msg}`);
+      throw new Error(`Dev verifier error [${challengeId}]: ${msg}`);
     }
   }
 
   /**
-   * Override evalFinal — for local tasks, just re-run the dev verifier.
-   * No platform submission.
+   * Override evalFinal — runs dev verifier locally; no platform submission.
+   * If a hidden verifier is registered, it runs that too and returns hiddenScore.
    */
   override async evalFinal(
     challengeId: string,

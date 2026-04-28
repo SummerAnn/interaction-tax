@@ -1,0 +1,135 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa-nosynth",
+  "runIndex": 0,
+  "seed": 1,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        94,
+        142,
+        14,
+        109,
+        124,
+        129,
+        134,
+        104,
+        27,
+        119,
+        102,
+        144,
+        122,
+        115,
+        106
+      ]
+    },
+    "devScore": 63,
+    "rawOutput": "```json\n{\n  \"selected\": [\n    94,\n    142,\n    14,\n    109,\n    124,\n    129,\n    134,\n    104,\n    27,\n    119,\n    102,\n    144,\n    122,\n    115,\n    106\n  ]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          67,
+          89,
+          12,
+          34,
+          56,
+          78,
+          91,
+          15,
+          38,
+          62,
+          85,
+          103
+        ]
+      },
+      "devScore": 53,
+      "rawOutput": "I need to solve the Maximum k-Coverage problem by selecting 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets data for seed=301, I'll use a strategic approach that combines greedy selection with some diversification to likely achieve good coverage.\n\nFor a greedy-inspired approach, I'll select sets that would typically provide good coverage by:\n1. Choosing sets that are likely to be diverse and complementary\n2. Spreading selections across the range to avoid clustering\n3. Using indices that often perform well in combinatorial optimization\n\nBased on the problem structure and typical performance patterns, here's my selection:\n\n```json\n{ \"selected\": [7, 23, 41, 67, 89, 12, 34, 56, 78, 91, 15, 38, 62, 85, 103] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          5,
+          10,
+          23,
+          30,
+          36,
+          45,
+          52,
+          59,
+          64,
+          73,
+          82,
+          91,
+          98,
+          107,
+          114
+        ]
+      },
+      "devScore": 50,
+      "rawOutput": "```json\n{ \"selected\": [5, 10, 23, 30, 36, 45, 52, 59, 64, 73, 82, 91, 98, 107, 114] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          94,
+          142,
+          14,
+          109,
+          124,
+          129,
+          134,
+          104,
+          27,
+          119,
+          102,
+          144,
+          122,
+          115,
+          106
+        ]
+      },
+      "devScore": 63,
+      "rawOutput": "```json\n{\n  \"selected\": [\n    94,\n    142,\n    14,\n    109,\n    124,\n    129,\n    134,\n    104,\n    27,\n    119,\n    102,\n    144,\n    122,\n    115,\n    106\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1535,
+      "completion": 363,
+      "total": 1898
+    },
+    "wallClockMs": 8793,
+    "evalCpuMs": 392,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T17:03:02.979Z",
+        "score": 53,
+        "cpuMs": 124
+      },
+      {
+        "timestamp": "2026-04-23T17:03:05.939Z",
+        "score": 50,
+        "cpuMs": 139
+      },
+      {
+        "timestamp": "2026-04-23T17:03:07.234Z",
+        "score": 63,
+        "cpuMs": 129
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_a6crhnazf5zhhltwgw8w",
+  "hiddenScore": 55,
+  "timestamp": "2026-04-23T17:03:07.972Z"
+}

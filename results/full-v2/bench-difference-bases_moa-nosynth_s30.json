@@ -1,0 +1,179 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "moa-nosynth",
+  "runIndex": 9,
+  "seed": 30,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        4,
+        9,
+        10,
+        12,
+        16,
+        18
+      ]
+    },
+    "devScore": 4.5,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 4, 9, 10, 12, 16, 18]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          13,
+          20,
+          27,
+          31,
+          35,
+          45,
+          51,
+          66,
+          73,
+          81,
+          91,
+          97,
+          103,
+          115,
+          122,
+          135,
+          142,
+          155,
+          167,
+          171,
+          181,
+          193,
+          201,
+          213,
+          223,
+          235,
+          243,
+          253,
+          265,
+          271,
+          283,
+          295,
+          303,
+          315,
+          325,
+          337,
+          345,
+          357,
+          367,
+          379,
+          387,
+          399,
+          409,
+          421,
+          429,
+          441,
+          451,
+          463,
+          471,
+          483,
+          493,
+          505
+        ]
+      },
+      "devScore": 392,
+      "rawOutput": "Looking at this problem, I need to find a set B that minimizes |B|²/v where v is the largest integer such that every integer in {1, 2, ..., v} appears as a pairwise difference.\n\nThis is related to Sidon sets and difference sets. I want to maximize the coverage v while keeping |B| small.\n\nLet me construct a set using a systematic approach. I'll start with a Singer difference set construction and then optimize.\n\nFor a good difference set, I'll use elements that are roughly geometric in progression but adjusted to maximize coverage. Based on known constructions for difference sets, I'll use:\n\n- Start with 0 (automatically included)\n- Use a pattern that creates many distinct differences\n- Focus on small differences first to ensure contiguous coverage\n\nLet me construct a set based on quadratic residues and optimization:\n\n```json\n{\n  \"set\": [0, 1, 3, 6, 13, 20, 27, 31, 35, 45, 51, 66, 73, 81, 91, 97, 103, 115, 122, 135, 142, 155, 167, 171, 181, 193, 201, 213, 223, 235, 243, 253, 265, 271, 283, 295, 303, 315, 325, 337, 345, 357, 367, 379, 387, 399, 409, 421, 429, 441, 451, 463, 471, 483, 493, 505]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          4,
+          9,
+          10,
+          12,
+          16,
+          18
+        ]
+      },
+      "devScore": 4.5,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 4, 9, 10, 12, 16, 18]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          43,
+          59,
+          79,
+          103,
+          132,
+          166,
+          205,
+          250,
+          301,
+          359,
+          424,
+          497,
+          579,
+          670,
+          771,
+          882,
+          1004,
+          1137,
+          1282,
+          1439,
+          1609,
+          1793,
+          1991
+        ]
+      },
+      "devScore": 69.23076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 43, 59, 79, 103, 132, 166, 205, 250, 301, 359, 424, 497, 579, 670, 771, 882, 1004, 1137, 1282, 1439, 1609, 1793, 1991]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1186,
+      "completion": 4659,
+      "total": 5845
+    },
+    "wallClockMs": 31792,
+    "evalCpuMs": 703,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-21T17:32:06.741Z",
+        "score": 392,
+        "cpuMs": 241
+      },
+      {
+        "timestamp": "2026-04-21T17:32:07.948Z",
+        "score": 4.5,
+        "cpuMs": 234
+      },
+      {
+        "timestamp": "2026-04-21T17:32:30.028Z",
+        "score": 69.23076923076923,
+        "cpuMs": 228
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_37bs7qdmc2coanscbkid",
+  "hiddenScore": 4.5,
+  "timestamp": "2026-04-21T17:32:30.990Z"
+}

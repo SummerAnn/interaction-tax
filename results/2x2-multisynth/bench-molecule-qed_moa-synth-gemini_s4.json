@@ -1,0 +1,83 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "moa-synth-gemini",
+  "runIndex": 3,
+  "seed": 4,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "COc1ccc2c(c1)noc2C(=O)NCc1ccccc1"
+    },
+    "devScore": 0.7988168863377214,
+    "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-likeness descriptors including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, and alerts.\n\nBased on the examples provided and knowledge of high-QED molecules, I'll design a compound that balances:\n- Moderate molecular weight (150-350 Da)\n- Good lipophilicity (LogP 1-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Simple, accessible structure\n\nI'll choose a benzisoxazole derivative with a methoxy group and an amide side chain. This scaffold is:\n1. Synthetically accessible\n2. Contains heteroatoms for good drug-like properties\n3. Has moderate complexity without problematic structural alerts\n4. Falls within optimal ranges for QED descriptors\n\n```json\n{ \"smiles\": \"COc1ccc2c(c1)noc2C(=O)NCc1ccccc1\" }\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "COc1ccc2c(c1)noc2C(=O)NCc1ccccc1"
+      },
+      "devScore": 0.7988168863377214,
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers multiple drug-likeness descriptors including molecular weight, lipophilicity, polar surface area, number of rotatable bonds, aromatic rings, and alerts.\n\nBased on the examples provided and knowledge of high-QED molecules, I'll design a compound that balances:\n- Moderate molecular weight (150-350 Da)\n- Good lipophilicity (LogP 1-3)\n- Appropriate polar surface area\n- Limited rotatable bonds\n- Simple, accessible structure\n\nI'll choose a benzisoxazole derivative with a methoxy group and an amide side chain. This scaffold is:\n1. Synthetically accessible\n2. Contains heteroatoms for good drug-like properties\n3. Has moderate complexity without problematic structural alerts\n4. Falls within optimal ranges for QED descriptors\n\n```json\n{ \"smiles\": \"COc1ccc2c(c1)noc2C(=O)NCc1ccccc1\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCn1c(=O)c2c(ncn2C)c(=O)n(C)c1C"
+      },
+      "devScore": -1e+30,
+      "rawOutput": "```json\n{ \"smiles\": \"CCn1c(=O)c2c(ncn2C)c(=O)n(C)c1C\" }\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(=O)NCCC1=CNc2[nH]c(C)cc21"
+      },
+      "devScore": 0.698044960937386,
+      "rawOutput": "```json\n{\n  \"smiles\": \"CC(=O)NCCC1=CNc2[nH]c(C)cc21\"\n}\n```"
+    },
+    {
+      "solutionData": {
+        "smiles": "COc1ccc2c(c1)noc2C(=O)NCc1ccccc1"
+      },
+      "devScore": 0.7988168863377214,
+      "rawOutput": "```json\n{\n  \"smiles\": \"COc1ccc2c(c1)noc2C(=O)NCc1ccccc1\"\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1983,
+      "completion": 350,
+      "total": 2333
+    },
+    "wallClockMs": 8721,
+    "evalCpuMs": 922,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T05:20:35.738Z",
+        "score": 0.7988168863377214,
+        "cpuMs": 221
+      },
+      {
+        "timestamp": "2026-04-23T05:20:36.993Z",
+        "score": -1e+30,
+        "cpuMs": 213
+      },
+      {
+        "timestamp": "2026-04-23T05:20:38.135Z",
+        "score": 0.698044960937386,
+        "cpuMs": 244
+      },
+      {
+        "timestamp": "2026-04-23T05:20:39.570Z",
+        "score": 0.7988168863377214,
+        "cpuMs": 244
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_9vr9hqk7r8zhvj48oj3f",
+  "hiddenScore": 0.7096489775906875,
+  "timestamp": "2026-04-23T05:20:40.799Z"
+}

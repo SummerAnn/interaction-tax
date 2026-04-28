@@ -1,0 +1,163 @@
+{
+  "taskId": "bench-max-k-coverage-n100",
+  "protocolId": "moa",
+  "runIndex": 9,
+  "seed": 10,
+  "bestArtifact": {
+    "solutionData": {
+      "selected": [
+        7,
+        23,
+        41,
+        67,
+        89,
+        113,
+        137,
+        14,
+        44,
+        76,
+        94,
+        108,
+        124,
+        138,
+        145
+      ]
+    },
+    "devScore": 60,
+    "rawOutput": "Looking at the three agent solutions, I need to synthesize their approaches to find a superior combination. Let me analyze the patterns:\n\nAgent 1 (score: 57) used a systematic spacing approach with intervals around 24, which suggests good diversity.\nAgent 2 (score: 48) had more clustered selections.\nAgent 3 (score: 56) mixed high and low indices with some clustering.\n\nThe key insight is that Agent 1's systematic spacing likely achieved better coverage by avoiding overlap. I'll build on this approach while incorporating some high-performing individual sets from the other agents.\n\nI'll use Agent 1's systematic spacing as the foundation but optimize the intervals and incorporate promising sets from other agents that might fill coverage gaps.\n\n```json\n{\n  \"selected\": [7, 23, 41, 67, 89, 113, 137, 14, 44, 76, 94, 108, 124, 138, 145]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          67,
+          89,
+          113,
+          137,
+          19,
+          53,
+          83,
+          107,
+          131,
+          29,
+          71,
+          97
+        ]
+      },
+      "devScore": 57,
+      "rawOutput": "Looking at this maximum k-coverage problem, I need to select 15 sets from 150 available sets to maximize coverage of elements 0-99.\n\nSince I don't have access to the actual sets for seed=301, I'll use a strategic approach that combines:\n1. Spread across the range to avoid clustering\n2. Prime number spacing to reduce correlation\n3. Mix of early, middle, and late indices\n4. Avoid obvious patterns that might lead to overlapping sets\n\nMy selection strategy:\n- Start with well-spaced indices using prime gaps\n- Include some early indices (often diverse in random generation)\n- Include middle range indices \n- Include some later indices\n- Ensure good distribution across the 0-149 range\n\n```json\n{ \"selected\": [7, 23, 41, 67, 89, 113, 137, 19, 53, 83, 107, 131, 29, 71, 97] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          5,
+          12,
+          18,
+          23,
+          27,
+          34,
+          45,
+          52,
+          58,
+          65,
+          71,
+          78,
+          82,
+          93,
+          99
+        ]
+      },
+      "devScore": 48,
+      "rawOutput": "```json\n{ \"selected\": [5, 12, 18, 23, 27, 34, 45, 52, 58, 65, 71, 78, 82, 93, 99] }\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          94,
+          14,
+          142,
+          134,
+          138,
+          44,
+          124,
+          13,
+          145,
+          115,
+          108,
+          11,
+          76,
+          102,
+          109
+        ]
+      },
+      "devScore": 56,
+      "rawOutput": "```json\n{\n  \"selected\": [\n    94,\n    14,\n    142,\n    134,\n    138,\n    44,\n    124,\n    13,\n    145,\n    115,\n    108,\n    11,\n    76,\n    102,\n    109\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "selected": [
+          7,
+          23,
+          41,
+          67,
+          89,
+          113,
+          137,
+          14,
+          44,
+          76,
+          94,
+          108,
+          124,
+          138,
+          145
+        ]
+      },
+      "devScore": 60,
+      "rawOutput": "Looking at the three agent solutions, I need to synthesize their approaches to find a superior combination. Let me analyze the patterns:\n\nAgent 1 (score: 57) used a systematic spacing approach with intervals around 24, which suggests good diversity.\nAgent 2 (score: 48) had more clustered selections.\nAgent 3 (score: 56) mixed high and low indices with some clustering.\n\nThe key insight is that Agent 1's systematic spacing likely achieved better coverage by avoiding overlap. I'll build on this approach while incorporating some high-performing individual sets from the other agents.\n\nI'll use Agent 1's systematic spacing as the foundation but optimize the intervals and incorporate promising sets from other agents that might fill coverage gaps.\n\n```json\n{\n  \"selected\": [7, 23, 41, 67, 89, 113, 137, 14, 44, 76, 94, 108, 124, 138, 145]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 2338,
+      "completion": 595,
+      "total": 2933
+    },
+    "wallClockMs": 11878,
+    "evalCpuMs": 540,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-23T16:50:56.923Z",
+        "score": 57,
+        "cpuMs": 131
+      },
+      {
+        "timestamp": "2026-04-23T16:50:58.135Z",
+        "score": 48,
+        "cpuMs": 142
+      },
+      {
+        "timestamp": "2026-04-23T16:51:00.071Z",
+        "score": 56,
+        "cpuMs": 137
+      },
+      {
+        "timestamp": "2026-04-23T16:51:04.778Z",
+        "score": 60,
+        "cpuMs": 130
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_6ttl1iz6w2b76mbjuq8i",
+  "hiddenScore": 55,
+  "timestamp": "2026-04-23T16:51:05.289Z"
+}
