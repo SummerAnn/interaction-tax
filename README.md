@@ -21,6 +21,7 @@ results/full-v2/    All experiment results (~2,000 JSON files)
 results/2x2-*/      2x2 factorial ablation results (diversity x synthesis)
 tools/evaluate.ts   Verifies saved scores by re-running verifiers locally
 figures/            Generated figures
+PROTOCOLS.md        Exact mechanics of each protocol implementation
 ```
 
 ## Step 1: Install dependencies
@@ -64,6 +65,10 @@ python analysis/analyze_mig.py
 # 2x2 factorial: diversity vs. synthesis coefficients
 # -> results/analysis/2x2_hierarchical.tsv
 python analysis/analyze_2x2_hierarchical.py
+
+# Diversity convergence: fraction of interaction steps that improve dev score
+# -> results/analysis/convergence.tsv  (Table 5 in paper)
+python analysis/analyze_convergence.py
 
 # Robustness checks (jackknife, denominator sensitivity)
 # -> results/analysis/jackknife_meg.tsv, meg_denom_sensitivity.tsv
