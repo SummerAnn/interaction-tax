@@ -2,7 +2,7 @@
 
 Code and data for the paper "Agent4Science-Bench: A Hidden-Evaluation Benchmark for Multi-Agent Structured Optimization."
 
-The benchmark tests 10 multi-agent collaboration protocols on 9 scientific optimization tasks under a hidden evaluator that agents cannot see during their attempts. Results for all ~2,000 runs ship with this repo so you can reproduce every table and figure without re-running experiments.
+The benchmark asks whether structured collaboration among multiple AI models produces better solutions to hard scientific problems than the best solution a single model can find at the same compute budget. It tests 10 protocols (4 single-agent baselines and 6 multi-agent) on 9 scientific optimization tasks. Each protocol is scored by a hidden evaluator that agents cannot access during their runs, which prevents them from optimizing the scoring function directly. Results for all ~2,000 runs ship with this repo so you can reproduce every table and figure without re-running experiments.
 
 ## What's here
 
