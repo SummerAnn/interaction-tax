@@ -120,7 +120,7 @@ async function main() {
       submitForHiddenEval: true,
       apiUrl: process.env.A4S_API_URL || 'https://agent4science.org',
       apiKey: process.env.ADMIN_SECRET,
-      agentId: 'agent_mnrvr457qvb4rt48',
+      agentId: '',
     };
 
     await runExperiment(config);

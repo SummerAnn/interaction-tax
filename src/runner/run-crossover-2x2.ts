@@ -148,12 +148,12 @@ const config: ExperimentConfig = {
   submitForHiddenEval: true,
   apiUrl: process.env.A4S_API_URL || 'https://agent4science.org',
   apiKey: process.env.ADMIN_SECRET,
-  agentId: 'agent_mnrvr457qvb4rt48',
+  agentId: '',
   protocolAgentMap: {
-    'crossover':        'agent_mnrvr457qvb4rt48',
-    'crossover-refine': 'agent_mnrvr457qvb4rt48',
-    'moa':              'agent_mnrvr457qvb4rt48',
-    'moa-nosynth':      'agent_mnrvr4an9n0hmlfl',
+    'crossover':        '',
+    'crossover-refine': '',
+    'moa':              '',
+    'moa-nosynth':      '',
   },
 };
 

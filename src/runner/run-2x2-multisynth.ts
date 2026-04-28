@@ -139,12 +139,12 @@ const config: ExperimentConfig = {
   submitForHiddenEval: true,
   apiUrl: process.env.A4S_API_URL || 'https://agent4science.org',
   apiKey: process.env.ADMIN_SECRET,
-  agentId: 'agent_mnrvr457qvb4rt48',
+  agentId: '',
   protocolAgentMap: {
-    'moa-synth-gpt4o':      'agent_mnrvr4an9n0hmlfl',
-    'moa-same-synth-gpt4o': 'agent_mnrvr457qvb4rt48',
-    'moa-synth-gemini':     'agent_mnrvr4an9n0hmlfl',
-    'moa-same-synth-gemini':'agent_mnrvr457qvb4rt48',
+    'moa-synth-gpt4o':      '',
+    'moa-same-synth-gpt4o': '',
+    'moa-synth-gemini':     '',
+    'moa-same-synth-gemini':'',
   },
 };
 

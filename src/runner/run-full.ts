@@ -454,39 +454,39 @@ const config: ExperimentConfig = {
   submitForHiddenEval: true,
   apiUrl: process.env.A4S_API_URL || 'https://agent4science.org',
   apiKey: process.env.ADMIN_SECRET,
-  agentId: 'agent_mnrvr457qvb4rt48', // Claude Sonnet 4 — fallback for all single-model frontier protocols
+  agentId: '', // Claude Sonnet 4 — fallback for all single-model frontier protocols
   protocolAgentMap: {
     // Frontier single-backbone protocols → Claude Sonnet 4 Solo agent
-    'single-shot':    'agent_mnrvr457qvb4rt48',
-    'best-of-n':      'agent_mnrvr457qvb4rt48',
-    'self-refine':    'agent_mnrvr457qvb4rt48',
-    'vgs':            'agent_mnrvr457qvb4rt48',
-    'homo-chain':     'agent_mnrvr457qvb4rt48',
-    'magicore':       'agent_mnrvr457qvb4rt48',
-    'debate':         'agent_mnrvr457qvb4rt48',
-    'moa':            'agent_mnrvr457qvb4rt48',
-    'hpe':            'agent_mnrvr457qvb4rt48',
-    'best-of-3':      'agent_mnrvr457qvb4rt48',
-    'moa-same-model': 'agent_mnrvr457qvb4rt48',
-    'moa-nosynth':        'agent_mnrvr4an9n0hmlfl',  // diverse models → Frontier Mix agent
-    'best-of-5-diverse':  'agent_mnrvr4an9n0hmlfl',  // 5 diverse models → Frontier Mix agent
+    'single-shot':    '',
+    'best-of-n':      '',
+    'self-refine':    '',
+    'vgs':            '',
+    'homo-chain':     '',
+    'magicore':       '',
+    'debate':         '',
+    'moa':            '',
+    'hpe':            '',
+    'best-of-3':      '',
+    'moa-same-model': '',
+    'moa-nosynth':        '',  // diverse models → Frontier Mix agent
+    'best-of-5-diverse':  '',  // 5 diverse models → Frontier Mix agent
     // Frontier multi-model protocols → Frontier Mix agent (Claude+GPT-4o+Gemini)
-    'cross-chain':    'agent_mnrvr4an9n0hmlfl',
-    'magicore-mixed': 'agent_mnrvr4an9n0hmlfl',
-    'debate-mixed':   'agent_mnrvr4an9n0hmlfl',
-    'hpe-mixed':      'agent_mnrvr4an9n0hmlfl',
+    'cross-chain':    '',
+    'magicore-mixed': '',
+    'debate-mixed':   '',
+    'hpe-mixed':      '',
     // OSS mixed-brain protocols → OSS Mix agent
-    'magicore-mixed-oss': 'agent_mnrvr4f5jbtql279',
-    'debate-mixed-oss':   'agent_mnrvr4f5jbtql279',
-    'hpe-mixed-oss':      'agent_mnrvr4f5jbtql279',
+    'magicore-mixed-oss': '',
+    'debate-mixed-oss':   '',
+    'hpe-mixed-oss':      '',
     // Homogeneous DeepSeek protocols → DeepSeek V3 Solo agent
-    'magicore-deepseek':    'agent_mnrvr4jh94vf09rh',
-    'debate-deepseek':      'agent_mnrvr4jh94vf09rh',
-    'hpe-deepseek':         'agent_mnrvr4jh94vf09rh',
+    'magicore-deepseek':    '',
+    'debate-deepseek':      '',
+    'hpe-deepseek':         '',
     // DeepSeek single-agent controls → DeepSeek V3 Solo agent
-    'self-refine-deepseek': 'agent_mnrvr4jh94vf09rh',
-    'best-of-n-deepseek':   'agent_mnrvr4jh94vf09rh',
-    'vgs-deepseek':         'agent_mnrvr4jh94vf09rh',
+    'self-refine-deepseek': '',
+    'best-of-n-deepseek':   '',
+    'vgs-deepseek':         '',
     // GPT-4o Solo protocols → GPT-4o Solo agent
     'single-shot-gpt4o':  'agent_mnrvsunlm96jmexa',
     'self-refine-gpt4o':  'agent_mnrvsunlm96jmexa',

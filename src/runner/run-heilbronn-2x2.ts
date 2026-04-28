@@ -111,12 +111,12 @@ const config: ExperimentConfig = {
   submitForHiddenEval: true,
   apiUrl: process.env.A4S_API_URL || 'https://agent4science.org',
   apiKey: process.env.ADMIN_SECRET,
-  agentId: 'agent_mnrvr457qvb4rt48',
+  agentId: '',
   protocolAgentMap: {
-    'moa':            'agent_mnrvr457qvb4rt48',
-    'moa-same-model': 'agent_mnrvr457qvb4rt48',
-    'moa-nosynth':    'agent_mnrvr4an9n0hmlfl',
-    'best-of-3':      'agent_mnrvr457qvb4rt48',
+    'moa':            '',
+    'moa-same-model': '',
+    'moa-nosynth':    '',
+    'best-of-3':      '',
   },
 };
 
