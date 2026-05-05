@@ -1,8 +1,8 @@
-# Interaction Erases Diversity: Multi-Agent Protocols Under Hidden Scientific Evaluation
+# Interaction Erases Diversity in Multi-Agent Scientific Optimization
 
-Code and data for the paper "Interaction Erases Diversity: Multi-Agent Protocols Under Hidden Scientific Evaluation."
+Code and data for the paper "Interaction Erases Diversity in Multi-Agent Scientific Optimization."
 
-This paper tests whether structured collaboration among multiple AI models produces better solutions to hard scientific optimization problems than the best solution a single model can find at the same compute budget. We evaluate 10 protocol configurations on 9 scientific optimization tasks. Every answer is scored by a hidden evaluator that agents cannot query during their runs, preventing any form of proxy overfit. Results for all ~2,000 runs ship with this repo so you can reproduce every table and figure without re-running experiments.
+This paper tests whether structured collaboration among multiple AI models produces better solutions to hard scientific optimization problems than the best solution a single model can find at the same compute budget. We evaluate 10 protocol configurations on 9 scientific optimization tasks. Every answer is scored by a hidden evaluator that agents cannot query during their runs, preventing any form of proxy overfit. Results for all ~2,400 runs ship with this repo so you can reproduce every table and figure without re-running experiments.
 
 ## Key findings
 
@@ -148,7 +148,7 @@ Each file in `results/full-v2/` is named `bench-{task}_{protocol}_s{seed}.json`:
 
 ## Citation
 
-Preprint link TBD.
+NeurIPS 2026 Evaluations and Datasets Track (under review). Citation will be added upon acceptance.
 
 ## License
 
