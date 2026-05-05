@@ -15,7 +15,7 @@ import numpy as np
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "full-v2")
+DATA_DIR = "/Users/summerann/Desktop/neurips-experiments/results/full-v2"
 
 TASKS = {
     # task_id: (direction, s_bad, s_ref, sentinel)

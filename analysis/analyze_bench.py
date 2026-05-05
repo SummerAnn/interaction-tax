@@ -15,8 +15,8 @@ Outputs: results/analysis/meg_full.tsv, rank_all.tsv, brain_diversity.tsv
 import json, glob, os, itertools, math
 from collections import defaultdict
 
-RESULTS_DIR      = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "full-v2")
-OUT_DIR          = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "analysis")
+RESULTS_DIR      = "results/full-v2"
+OUT_DIR          = "results/analysis"
 FROZEN_SEEDS     = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}   # seeds 1-5 original + 6-10 extended run (2026-04-16)
 # MoA arms use 10 seeds (paper design); all other protocols use seeds 1-5 only.
 MOA_PROTOCOLS    = {"moa", "moa-same-model", "moa-nosynth"}
@@ -691,6 +691,98 @@ for canon, agg, _ in backbone_comparison:
     print(f"{canon:<16} " + " ".join(cells) + f"  {neg_mark:>6}  {agr_mark:>10}")
 
 # Backbone-invariance: Spearman rank correlation across backbones per task
+# ── Oracle denominator: max(best Claude, GPT-4o, Gemini baseline) per task ─────
+#
+# MEG throughout this script uses the primary-backbone denominator (max of Claude
+# SR/BoN/VGS). For mixed protocols (moa, cross-chain, moa-nosynth) a reviewer can
+# ask: "why not compare against the best single model in the pool?"
+#
+# The oracle denominator answers that question. It takes max(best-of-n hidden Q)
+# across all three backbone families per task, then computes MEG for mixed protocols
+# against that stricter baseline.
+#
+# COMPUTE NOTE: best-of-n uses N=8 calls per model. moa-nosynth uses N=3 total
+# (1 per model). The oracle denominator is NOT compute-matched against moa-nosynth.
+# The matched-compute oracle comparison is in the moa-nosynth-gemini/gpt4o experiment
+# (3 calls per model, same budget) — see analysis_nosynth_ablation.py.
+#
+ORACLE_DENOM_PROTOS = {
+    "claude":  ("self-refine", "best-of-n", "vgs"),
+    "gpt4o":   ("self-refine-gpt4o", "best-of-n-gpt4o", "vgs-gpt4o"),
+    "gemini":  ("self-refine-gemini", "best-of-n-gemini", "vgs-gemini"),
+}
+
+denom_oracle = {}
+denom_per_family = {}   # for reporting which family wins
+for t in task_order:
+    family_best = {}
+    for family, protos_f in ORACLE_DENOM_PROTOS.items():
+        vals = [q_hidden[t][p] for p in protos_f if p in q_hidden[t] and not math.isnan(q_hidden[t][p])]
+        family_best[family] = max(vals) if vals else float("nan")
+    all_vals = [v for v in family_best.values() if not math.isnan(v)]
+    denom_oracle[t] = max(all_vals) if all_vals else float("nan")
+    denom_per_family[t] = family_best
+
+MIXED_PROTOS = ["moa-nosynth", "moa", "cross-chain", "moa-same-model"]
+MIXED_MAX_SEED = {p: 10 if p in MOA_PROTOCOLS else 5 for p in MIXED_PROTOS}
+
+print("\n=== ORACLE MEG — mixed protocols vs best single-model-family baseline ===")
+print("(Oracle = max(best Claude, GPT-4o, Gemini BoN/SR/VGS) per task — NOT compute-matched)")
+print("(Matched-compute oracle is in analysis_nosynth_ablation.py once the 9-task run completes)")
+print()
+
+# Header
+hdr = f"{'Protocol':<22}  {'vs':<6}"
+for t in task_order:
+    hdr += f"  {TASK_LABELS[t]:>8}"
+hdr += f"  {'AGG':>8}  {'oracle-winner':<12}"
+print(hdr)
+print("-" * len(hdr))
+
+# Oracle denom row (shows which family wins per task)
+oracle_row = f"{'oracle-denom':<22}  {'':6}"
+for t in task_order:
+    winner = max(denom_per_family[t], key=lambda k: denom_per_family[t][k]
+                 if not math.isnan(denom_per_family[t].get(k, float("nan"))) else -99)
+    oracle_row += f"  {denom_oracle[t]:>8.4f}"
+print(oracle_row + "  (baseline above)")
+# Show which family wins
+win_row = f"  {'[winner]':<20}  {'':6}"
+for t in task_order:
+    d = denom_per_family[t]
+    valid = {k: v for k, v in d.items() if not math.isnan(v)}
+    w = max(valid, key=valid.get) if valid else "N/A"
+    win_row += f"  {w:>8}"
+print(win_row)
+print()
+
+for proto in MIXED_PROTOS:
+    max_s = MIXED_MAX_SEED.get(proto, 5)
+    # Claude MEG row
+    claude_megs, oracle_megs = [], []
+    c_row = f"{proto:<22}  {'Claude':6}"
+    o_row = f"{'':22}  {'Oracle':6}"
+    for t in task_order:
+        qh = q_hidden[t].get(proto, float("nan"))
+        if not math.isnan(qh):
+            c_meg = qh - denom[t]
+            o_meg = qh - denom_oracle[t] if not math.isnan(denom_oracle[t]) else float("nan")
+            claude_megs.append(c_meg)
+            if not math.isnan(o_meg):
+                oracle_megs.append(o_meg)
+            c_row += f"  {c_meg:>+8.3f}"
+            o_row += f"  {o_meg:>+8.3f}" if not math.isnan(o_meg) else f"  {'N/A':>8}"
+        else:
+            c_row += f"  {'N/A':>8}"
+            o_row += f"  {'N/A':>8}"
+    c_agg = mean(claude_megs) if claude_megs else float("nan")
+    o_agg = mean(oracle_megs) if oracle_megs else float("nan")
+    c_row += f"  {c_agg:>+8.3f}"
+    o_row += f"  {o_agg:>+8.3f}" if not math.isnan(o_agg) else f"  {'N/A':>8}"
+    print(c_row)
+    print(o_row)
+    print()
+
 print()
 print("=== BACKBONE RANK INVARIANCE (per-task Spearman) ===")
 for t in task_order:

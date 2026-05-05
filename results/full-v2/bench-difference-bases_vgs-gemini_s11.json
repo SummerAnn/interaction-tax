@@ -1,0 +1,234 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "vgs-gemini",
+  "runIndex": 5,
+  "seed": 11,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        42
+      ]
+    },
+    "devScore": 4.923076923076923,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          13,
+          21,
+          31,
+          45,
+          66,
+          91,
+          112,
+          137,
+          167,
+          200,
+          240,
+          286,
+          341,
+          400,
+          468
+        ]
+      },
+      "devScore": 28.571428571428573,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    2,\n    4,\n    8,\n    13,\n    21,\n    31,\n    45,\n    66,\n    91,\n    112,\n    137,\n    167,\n    200,\n    240,\n    286,\n    341,\n    400,\n    468\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          43,
+          59,
+          79,
+          100
+        ]
+      },
+      "devScore": 9.307692307692308,
+      "rawOutput": "```json\n{\"set\": [0, 1, 3, 7, 12, 20, 30, 43, 59, 79, 100]}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42,
+          55,
+          70,
+          87,
+          106,
+          127,
+          150,
+          175,
+          202,
+          231,
+          262,
+          295,
+          330,
+          367,
+          406,
+          447,
+          490,
+          535
+        ]
+      },
+      "devScore": 48.07692307692308,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    42,\n    55,\n    70,\n    87,\n    106,\n    127,\n    150,\n    175,\n    202,\n    231,\n    262,\n    295,\n    330,\n    367,\n    406,\n    447,\n    490,\n    535\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          13,
+          21,
+          31,
+          44,
+          59,
+          77,
+          98
+        ]
+      },
+      "devScore": 30.25,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    13,\n    21,\n    31,\n    44,\n    59,\n    77,\n    98\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42,
+          56,
+          72,
+          90,
+          110,
+          132,
+          156
+        ]
+      },
+      "devScore": 14,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    42,\n    56,\n    72,\n    90,\n    110,\n    132,\n    156\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42,
+          56,
+          72
+        ]
+      },
+      "devScore": 7.142857142857143,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    12,\n    20,\n    30,\n    42,\n    56,\n    72\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 3732,
+      "completion": 4671,
+      "total": 8403
+    },
+    "wallClockMs": 26332,
+    "evalCpuMs": 1071,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-30T03:36:49.639Z",
+        "score": 4.923076923076923,
+        "cpuMs": 145
+      },
+      {
+        "timestamp": "2026-04-30T03:36:50.889Z",
+        "score": 28.571428571428573,
+        "cpuMs": 173
+      },
+      {
+        "timestamp": "2026-04-30T03:36:52.356Z",
+        "score": 9.307692307692308,
+        "cpuMs": 153
+      },
+      {
+        "timestamp": "2026-04-30T03:36:54.954Z",
+        "score": 48.07692307692308,
+        "cpuMs": 145
+      },
+      {
+        "timestamp": "2026-04-30T03:36:55.841Z",
+        "score": 30.25,
+        "cpuMs": 157
+      },
+      {
+        "timestamp": "2026-04-30T03:36:56.942Z",
+        "score": 14,
+        "cpuMs": 147
+      },
+      {
+        "timestamp": "2026-04-30T03:36:58.030Z",
+        "score": 7.142857142857143,
+        "cpuMs": 151
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_is0qszbdl4zvznjnm72x",
+  "hiddenScore": 4.923076923076923,
+  "timestamp": "2026-04-30T03:36:58.466Z"
+}

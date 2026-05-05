@@ -24,8 +24,8 @@ import pandas as pd
 from scipy.optimize import minimize
 
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "full-v2")
-OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "analysis")
+DATA_DIR = "/Users/summerann/Desktop/neurips-experiments/results/full-v2"
+OUT_DIR = "/Users/summerann/Desktop/neurips-experiments/results/analysis"
 
 TASKS = {
     # taskId: (direction, s_bad, s_ref)

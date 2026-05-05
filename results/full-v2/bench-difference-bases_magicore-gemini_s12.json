@@ -1,0 +1,107 @@
+{
+  "taskId": "bench-difference-bases",
+  "protocolId": "magicore-gemini",
+  "runIndex": 6,
+  "seed": 12,
+  "bestArtifact": {
+    "solutionData": {
+      "set": [
+        0,
+        1,
+        3,
+        7,
+        12,
+        20,
+        30,
+        42
+      ]
+    },
+    "devScore": 4.923076923076923,
+    "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          12,
+          20,
+          30,
+          42
+        ]
+      },
+      "devScore": 4.923076923076923,
+      "rawOutput": "```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 42]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          7,
+          14,
+          26,
+          42,
+          63
+        ]
+      },
+      "devScore": 16,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    7,\n    14,\n    26,\n    42,\n    63\n  ]\n}\n```"
+    },
+    {
+      "solutionData": {
+        "set": [
+          0,
+          1,
+          3,
+          6,
+          10,
+          15,
+          21,
+          28
+        ]
+      },
+      "devScore": 9.142857142857142,
+      "rawOutput": "```json\n{\n  \"set\": [\n    0,\n    1,\n    3,\n    6,\n    10,\n    15,\n    21,\n    28\n  ]\n}\n```"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 9960,
+      "completion": 8337,
+      "total": 18297
+    },
+    "wallClockMs": 47193,
+    "evalCpuMs": 418,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-30T03:49:13.802Z",
+        "score": 4.923076923076923,
+        "cpuMs": 133
+      },
+      {
+        "timestamp": "2026-04-30T03:49:36.079Z",
+        "score": 16,
+        "cpuMs": 136
+      },
+      {
+        "timestamp": "2026-04-30T03:49:59.865Z",
+        "score": 9.142857142857142,
+        "cpuMs": 149
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_qjfq174ndmtp1ry8gaiz",
+  "hiddenScore": 4.923076923076923,
+  "timestamp": "2026-04-30T03:50:01.622Z"
+}
