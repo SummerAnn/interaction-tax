@@ -1,28 +1,64 @@
 # Interaction Erases Diversity in Multi-Agent Scientific Optimization
 
-Code and data for the paper "Interaction Erases Diversity in Multi-Agent Scientific Optimization."
+Code and data for the paper "Interaction Erases Diversity in Multi-Agent Scientific Optimization," NeurIPS 2026 Evaluations and Datasets Track.
 
-This paper tests whether structured collaboration among multiple AI models produces better solutions to hard scientific optimization problems than the best solution a single model can find at the same compute budget. We evaluate 10 protocol configurations on 9 scientific optimization tasks. Every answer is scored by a hidden evaluator that agents cannot query during their runs, preventing any form of proxy overfit. Results for all ~2,400 runs ship with this repo so you can reproduce every table and figure without re-running experiments.
+We evaluate ten agent protocol configurations on nine scientific optimization tasks at matched compute. Every answer is scored by a hidden evaluator that agents cannot query during search, preventing proxy overfit. All ~2,400 result files are included so every table and figure in the paper can be reproduced without re-running experiments.
 
 ## Key findings
 
-- No conversational multi-agent protocol reliably beats a strong single-agent baseline. Every protocol that uses inter-agent interaction ranks below Self-Refine, a single model critiquing its own output in a loop.
-- Backbone diversity helps (+0.188 OLS coefficient, p < 0.01) but inter-agent interaction erases it. Diverse agents start with genuinely different proposals; once they exchange intermediate work, their outputs converge to the quality of a same-model team.
-- MoA (Mixture-of-Agents) is the only protocol whose confidence interval includes zero. Its proposers never interact, so diversity survives to the synthesis step.
-- The MIG flip: Chain, MAgICoRe, and Debate each show positive Marginal Interaction Gain with same-model agents, but all three flip negative when agents come from different model families. MoA stays positive in both configurations.
+- No protocol achieves positive aggregate MEG. Every protocol where agents exchange intermediate work ranks below Self-Refine ($-0.038$). MoA is the only protocol whose confidence interval includes zero ($-0.022$, CI $[-0.059, +0.015]$).
+- Backbone diversity helps in isolation ($+0.188$ coefficient, CI entirely above zero) but interaction erases it. Once agents exchange outputs, diverse proposals converge to the level of same-model generation. The synthesis step contributes nothing ($-0.010$, CI straddles zero).
+- Chain, MAgICoRe, and Debate each show positive Marginal Interaction Gain with same-model agents but flip negative under diverse backbones. MoA stays positive in both configurations because its proposers generate without seeing each other.
+- Synthesis collapses mean pairwise proposal distance from $0.48$ (diverse, pre-synthesis) to $0.34$, statistically indistinguishable from same-model generation.
+- On constraint satisfaction tasks the pattern reverses. External critique raises feasibility from 0–27% to 47–80% across three tasks; self-refinement with the same single agent produces no improvement.
+
+## Tasks
+
+Nine scientific optimization tasks, each with a visible evaluator (queryable during search) and a stricter hidden evaluator (run once on the final solution):
+
+| Task | Domain | Dir. |
+|------|--------|------|
+| MaxCut $G(200,0.3)$ | Graph | max |
+| Circle Packing $n=20$ | Geometry | max |
+| Difference Bases | Combinatorics | min |
+| Flat Polynomials deg. 50 | Analysis | min |
+| TSP-100 | Routing | min |
+| LJ $n=41$ | Chemistry | min |
+| Erdős Overlap | Analysis | min |
+| Molecule QED | Chemistry | max |
+| TSP-50 | Routing | min |
+
+## Protocols
+
+| Protocol | Type | Description |
+|----------|------|-------------|
+| `single-shot` | Control | One LLM call, no iteration |
+| `best-of-n` | Control | 8 independent samples; return visible-best |
+| `self-refine` | Control | Single model generates, critiques, and revises for 3 rounds |
+| `vgs` | Control | Population-based evolutionary search (pop. 4, gen. 5, elite 2) |
+| `homo-chain` | Multi | 4 same-model agents in sequence; each attempts improvement on prior output |
+| `cross-chain` | Multi | 3-agent chain rotating Claude → GPT-4o → Gemini |
+| `magicore` | Multi | Solver generates; external critic critiques; refiner revises. 2 rounds |
+| `debate` | Multi | 2 agents propose independently, exchange critiques across 2 rounds, synthesizer merges |
+| `hpe` | Multi | Planner decomposes into 3 subproblems; executors solve independently; integrator assembles |
+| `moa` | Multi | 3 proposers (Claude, GPT-4o, Gemini) generate with zero mutual knowledge; 1 synthesizer combines |
+| `moa-same-model` | Ablation | Identical to MoA but all 3 proposers use Claude Sonnet 4 |
+| `moa-nosynth` | Ablation | Identical to MoA (diverse) but returns the best-scoring proposal directly |
+
+Backbones: Claude Sonnet 4 (`anthropic/claude-sonnet-4`), GPT-4o (`openai/gpt-4o`), Gemini 2.5 Flash (`google/gemini-2.5-flash`), all via OpenRouter. Budget per run: 200K tokens, 600s wall clock, 30s evaluator CPU, 25 visible-evaluator calls.
 
 ## What's here
 
 ```
 src/                Protocol and runner code (TypeScript)
-analysis/           Analysis scripts that produce the paper tables and figures (Python)
+analysis/           Analysis scripts that reproduce every paper table (Python)
 scripts/            Figure generation scripts (Python)
-results/full-v2/    All experiment results (~2,400 JSON files, 10 paper tasks)
-results/2x2-multisynth/   2x2 factorial ablation results (diversity x synthesis)
+results/full-v2/    All experiment results (~2,400 JSON files, 9 paper tasks)
+results/2x2-multisynth/   2x2 factorial results (diversity x synthesis, 3 tasks x 120 runs)
 results/prospective-2x2/  Additional 2x2 runs on prospective tasks
-tools/evaluate.ts   Verifies saved scores by re-running verifiers locally
-figures/            Generated figures
-PROTOCOLS.md        Exact mechanics of each protocol implementation
+tools/evaluate.ts   Re-runs verifiers on saved results to confirm scores
+figures/            Generated figures (PDF and PNG)
+PROTOCOLS.md        Full mechanics of each protocol implementation
 ```
 
 ## Step 1: Install dependencies
@@ -37,7 +73,7 @@ No API keys needed for steps 2 and 3.
 
 ## Step 2: Verify the saved scores
 
-Each task has two evaluators. The **dev evaluator** is the one agents can call during their runs to guide search. The **hidden evaluator** is a stricter variant agents never see; all paper results are based on hidden scores. Both are embedded as Python code in `src/tasks/benchmark-challenges.ts` and run locally as subprocesses.
+Each result file contains both the dev score (recorded during the run) and the hidden score (recorded after). Both verifiers are embedded as Python code in `src/tasks/benchmark-challenges.ts` and run as local subprocesses.
 
 ```bash
 # Verify hidden scores for one task (a few minutes)
@@ -50,7 +86,7 @@ npx tsx tools/evaluate.ts --results results/full-v2 --task bench-maxcut-g200 --v
 npx tsx tools/evaluate.ts --results results/full-v2 --verifier both
 ```
 
-The output is a table of recorded vs. recomputed scores. They should match exactly. Any mismatch indicates a verifier version mismatch.
+The output is a table of recorded vs. recomputed scores. They should match exactly.
 
 ## Step 3: Reproduce the paper tables and figures
 
@@ -82,13 +118,13 @@ python analysis/analysis_nosynth_ablation.py
 # Table: Mean pairwise solution distance (Tab. diversity)
 python analysis/analysis_output_similarity.py
 
-# Table: Round-by-round Jaccard distance — Debate (Tab. jaccard)
+# Table: Round-by-round Jaccard distance for Debate (Tab. jaccard)
 python analysis/analysis_diversity_collapse.py
 
 # Table: Feasibility success rates on constraint tasks (Tab. constraint)
 python analysis/analysis_moa_constraint.py
 
-# Step-level improvement fraction across protocols (text, Section 4.1)
+# Step-level improvement fraction across protocols (Section 4.1 text)
 python analysis/analyze_convergence.py
 
 # Figure 1: AggMEG lollipop + MIG quadrant scatter
@@ -113,42 +149,25 @@ npx tsx src/runner/run-offline.ts --task bench-difference-bases --protocol moa -
 npx tsx src/runner/run-offline.ts --dry-run
 ```
 
-Both dev and hidden evaluation run as local Python subprocesses. No platform account needed. Results are written to `results/offline/`.
+Results are written to `results/offline/`.
 
 ## Replication note
 
 The original experiments used a server-side hidden verifier that agents could not query during runs. For replication, both the dev and hidden verifiers are embedded as Python code strings in `src/tasks/benchmark-challenges.ts` and run as local subprocesses. Step 2 above confirms that the saved scores match.
 
-Re-running experiments from scratch (Step 4) will produce numerically similar but not identical results. LLM outputs are stochastic: the same prompt with the same model may return different text across API calls, even at temperature 0, due to non-determinism in serving infrastructure. Aggregate MEG values across 10 seeds are expected to fall within the 95% confidence intervals reported in the paper, but exact point estimates will vary. The saved results in `results/full-v2/` are the canonical numbers the paper reports.
-
-## Protocols
-
-| Protocol | Type | Description |
-|----------|------|-------------|
-| `single-shot` | Single | One LLM call, no iteration |
-| `best-of-n` | Single | N independent samples, best by dev score |
-| `self-refine` | Single | Single model iterates on its own output |
-| `vgs` | Single | Verifier-guided search with a small population |
-| `moa` | Multi | Mixture-of-Agents: diverse models propose, one synthesizes |
-| `debate` | Multi | Two agents argue, one synthesizes |
-| `magicore` | Multi | Solver, reviewer, and refiner in a loop |
-| `hpe` | Multi | Hierarchical planning with parallel executors |
-| `homo-chain` | Multi | Sequential chain with same-model agents |
-| `cross-chain` | Multi | Sequential chain with diverse-model agents |
-
-Backbone suffixes: `-gpt4o`, `-gemini`, `-deepseek` (single backbone), `-mixed` (Claude + GPT-4o + Gemini), `-mixed-oss` (DeepSeek + Llama + Qwen).
+Re-running from scratch (Step 4) will produce numerically similar but not identical results. LLM outputs are stochastic: the same prompt with the same model may return different text across API calls even at temperature 0, due to non-determinism in serving infrastructure. Aggregate MEG values across 10 seeds are expected to fall within the 95% confidence intervals reported in the paper, but exact point estimates will vary. The saved results in `results/full-v2/` are the canonical numbers the paper reports.
 
 ## Key metrics
 
-**MEG (Marginal Epistemic Gain)** measures whether a protocol beats the best single-agent baseline at the same compute budget, computed on hidden-evaluator scores after Q-normalization. The denominator is `max(Self-Refine, Best-of-N, VGS)` per task.
+**MEG (Marginal Epistemic Gain)** — did the protocol beat the best single-agent control? Computed as the protocol's hidden-evaluator Q-score minus `max(Self-Refine, Best-of-N, VGS)` per task, then averaged across tasks with bootstrap confidence intervals.
 
-**MIG (Marginal Interaction Gain)** measures whether the interaction step adds value over running the same agents in parallel without communication.
+**MIG (Marginal Interaction Gain)** — did interaction help? Computed as the protocol's Q-score minus the best single-shot score from the same backbone(s) run without communication. Reported separately for same-model and diverse-backbone configurations.
 
-**Q-normalization** puts scores on a common scale where 0 matches a naive baseline and 1 matches an expert reference solution. For maximize tasks: `(raw - baseline) / (reference - baseline)`. For minimize tasks: `(baseline - raw) / (baseline - reference)`. Scores are clamped to [0, 1].
+**Q-normalization** maps raw scores to $[0,1]$ where 0 = trivial baseline and 1 = best known published result. For maximization: `(raw - baseline) / (reference - baseline)`; for minimization: `(baseline - raw) / (baseline - reference)`. Scores are clipped to $[0,1]$.
 
 ## Result file format
 
-Each file in `results/full-v2/` is named `bench-{task}_{protocol}_s{seed}.json`:
+Each file in `results/full-v2/` is named `{task}_{protocol}_s{seed}.json`:
 
 ```json
 {
