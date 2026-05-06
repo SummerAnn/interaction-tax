@@ -143,7 +143,7 @@ const seeds: number[] = seedsFilter ?? [...BENCHMARK_SEEDS];
 
 const config: ExperimentConfig = {
   id:                 'agent4science-bench-offline',
-  name:               'Agent4Science-Bench (Offline)',
+  name:               'the benchmark (Offline)',
   tasks,
   protocols,
   budget:             BUDGET,
@@ -155,7 +155,7 @@ const config: ExperimentConfig = {
 // ── Dry run ───────────────────────────────────────────────────────────────────
 
 const totalCells = tasks.length * protocols.length * seeds.length;
-console.log('Agent4Science-Bench — Offline Mode');
+console.log('the benchmark — Offline Mode');
 console.log(`Tasks:     ${tasks.map(t => t.id).join(', ')}`);
 console.log(`Protocols: ${protocols.map(p => p.id).join(', ')}`);
 console.log(`Seeds:     ${seeds.join(', ')}`);

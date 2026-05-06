@@ -1,5 +1,5 @@
 /**
- * Frozen protocol prompts for Agent4Science-Bench.
+ * Frozen protocol prompts for the benchmark.
  *
  * Every prompt template used in the 9 protocols is committed here verbatim.
  * Protocol code must import from this file — no inline prompt strings.

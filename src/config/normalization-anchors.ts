@@ -64,7 +64,7 @@ export const NORMALIZATION_ANCHORS: Record<string, NormalizationAnchor> = {
     taskId: 'bench-maxcut-g200',
     direction: 'maximize',
     // Re-computed 2026-04-07 in HIDDEN (full-graph) score space after the
-    // Run-1 salvage exposed dev-space anchors as saturated.
+    // Pilot run exposed dev-space anchors as saturated.
     //
     // Prior frozen values (dev space, retained here for provenance):
     //   sBase=2445  — Phase-1 best of 10 random partitions, dev 80% subset

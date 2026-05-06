@@ -261,7 +261,7 @@ def main():
     report_path = os.path.join(OUT_DIR, "inversion_summary.txt")
     with open(report_path, "w") as f:
         f.write("Dev/Hidden Rank Analysis — Dev vs Hidden Rank Inversions\n")
-        f.write("Agent4Science-Bench (NeurIPS 2026)\n")
+        f.write("the benchmark (NeurIPS 2026)\n")
         f.write("=" * 60 + "\n\n")
         f.write("SUMMARY\n")
         f.write(f"{'Task':<35s}  {'ρ':>6}  {'p':>6}  {'Top-1 inversion?':>20}  {'Top-3 overlap':>13}\n")

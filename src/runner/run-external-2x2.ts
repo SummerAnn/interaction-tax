@@ -5,7 +5,7 @@
  * Runs the same 2×2 factorial (diversity × synthesis) from Finding 2 on
  * external CO-Bench-inspired tasks (TSP, Knapsack, Number Partition) to
  * test whether the coordination-diversity tradeoff replicates outside
- * Agent4Science-Bench.
+ * the benchmark suite.
  *
  * Design (matches Table 2 in the paper):
  *   ┌─────────────┬───────────────┬──────────────────┐

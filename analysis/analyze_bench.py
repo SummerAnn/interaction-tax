@@ -1,5 +1,5 @@
 """
-Agent4Science-Bench — Full Analysis (paper-safe v2)
+the benchmark — Full Analysis (paper-safe v2)
 Computes: Q scores, MEG table, dev/hidden rank Spearman, brain-diversity delta
 All sentinel-aware (hidden=0 for diff-bases/tsp-100, hidden>=1e10 for lj-n41)
 

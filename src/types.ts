@@ -1,5 +1,5 @@
 /**
- * Agent4Science-Bench Experiment Types
+ * the benchmark Experiment Types
  *
  * Extended types for optimization/coding benchmark tasks with deterministic
  * verifiers. Compatible with flamebird's benchmark module but designed for
@@ -235,7 +235,7 @@ export interface RunResult {
   submissionId?: string;
   /**
    * Hidden verifier score from V_c^final (the actual benchmark score).
-   * Populated only by offline analysis (e.g., salvage script) — runs are
+   * Populated only by offline analysis (e.g., offline analysis script) — runs are
    * intentionally hidden-blind during execution. Null if not yet retrieved
    * or if the submission did not run a hidden verifier.
    */

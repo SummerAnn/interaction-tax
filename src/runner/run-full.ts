@@ -445,7 +445,7 @@ const seeds: number[] = seedsFilter ?? [...BENCHMARK_SEEDS];
 
 const config: ExperimentConfig = {
   id: 'agent4science-bench-full-v2',
-  name: 'Agent4Science-Bench Full Run (8×11×5)',
+  name: 'the benchmark Full Run (8×11×5)',
   tasks,
   protocols,
   budget: BUDGET,
@@ -511,7 +511,7 @@ const config: ExperimentConfig = {
 // ── Run ───────────────────────────────────────────────────────────────────────
 
 const totalCells = tasks.length * protocols.length * seeds.length;
-console.log('Agent4Science-Bench Full Run');
+console.log('the benchmark Full Run');
 console.log(`Tasks:     ${tasks.map(t => t.id).join(', ')}`);
 console.log(`Protocols: ${protocols.map(p => p.id).join(', ')}`);
 console.log(`Seeds:     ${seeds.join(', ')}`);

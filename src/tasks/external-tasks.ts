@@ -3,7 +3,7 @@
  *
  * Three tasks from distinct optimization domains (routing, selection, balancing)
  * designed to test whether the coordination-diversity tradeoff replicates
- * on problems outside the Agent4Science-Bench suite.
+ * on problems outside the the benchmark suite.
  *
  * All verifiers are self-contained Python with numpy, deterministically seeded.
  * Scoring direction is 'maximize' throughout (negative costs where needed).

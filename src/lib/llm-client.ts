@@ -144,7 +144,7 @@ async function callOpenRouter(
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${backbone.apiKey}`,
       'HTTP-Referer': 'https://github.com/agent4science/agent4science-bench',
-      'X-Title': 'Agent4Science-Bench',
+      'X-Title': 'the benchmark',
     },
     body: JSON.stringify({
       model: backbone.model,

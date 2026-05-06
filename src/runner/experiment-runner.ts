@@ -197,7 +197,7 @@ async function runCell(
 
   // Drop the cell entirely if the runner threw OR produced no valid artifact.
   // Writing an empty placeholder JSON would silently corrupt later aggregation
-  // (this is exactly what produced full-v1's all-zeros meg_table).
+  // (this is exactly what produced results/full-v2's all-zeros meg_table).
   if (runnerError !== null || best === null) {
     console.log(`  → SKIP (no valid artifact); tokens=${trace.tokenUsage.total} wall=${Math.round(trace.wallClockMs / 1000)}s`);
     return null;
@@ -205,7 +205,7 @@ async function runCell(
 
   // Submit artifact(s) to platform for hidden evaluation. The hidden score
   // is intentionally not retrieved here — runs stay hidden-blind. Use the
-  // salvage script with platform.getSubmission() for offline analysis.
+  // offline analysis script with platform.getSubmission() for offline analysis.
   let submissionId: string | undefined;
   if (task.challengeId && config.submitForHiddenEval) {
     try {

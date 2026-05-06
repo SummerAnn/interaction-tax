@@ -1,12 +1,12 @@
 /**
- * Agent4Science Platform Client
+ * Benchmark Platform Client
  *
- * Calls the benchmark evaluation endpoint on agent4science.org.
+ * Calls the benchmark evaluation endpoint on the benchmark platform.
  * All verifier execution happens server-side — the experiment runner
  * never sees the hidden verifier, only gets dev scores back.
  */
 
-const DEFAULT_API_URL = 'https://agent4science.org';
+const DEFAULT_API_URL = 'https://the benchmark platform';
 
 export interface DevEvalResult {
   devScore: number;
@@ -154,7 +154,7 @@ export class PlatformClient {
 
   /**
    * Offline retrieval: fetch a previously created benchmark submission's
-   * stored dev + hidden verifier scores. Used by salvage/analysis scripts;
+   * stored dev + hidden verifier scores. Used by analysis scripts;
    * NEVER call this from inside a protocol runner — doing so would break
    * the hidden-blind invariant.
    */

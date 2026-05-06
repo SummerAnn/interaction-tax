@@ -1,5 +1,5 @@
 /**
- * Agent4Science-Bench — Benchmark Challenge Definitions
+ * the benchmark — Benchmark Challenge Definitions
  *
  * All 9 benchmark tasks (8 core + Erdős near-core) with dev and hidden verifiers.
  * Parameterizations match benchmark_plan.md exactly.
