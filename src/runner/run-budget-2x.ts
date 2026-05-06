@@ -3,7 +3,7 @@
  * run-budget-2x.ts — Budget-scaling experiment (2× budget)
  *
  * Runs key protocols at 2× the standard budget on discriminative tasks only.
- * Purpose: address M11 reviewer concern — distinguish capability limits
+ * Purpose: run budget-doubled experiments to separate capability limits
  * from budget limits for the negative MEG finding.
  *
  * Budget: 2× standard = (400K tokens, 1200s wall, 60s eval CPU, 50 eval calls)

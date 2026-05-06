@@ -8,15 +8,15 @@ Context:
   is now aggregated over *hidden* scores. For tasks where dev and hidden differ in
   scale (MaxCut: 80% subset vs full graph) or in definition (difference-bases:
   strict vs 95% coverage), the dev anchors produce a saturated or miscalibrated Q,
-  which is why the Run 1 salvage showed MaxCut Q ≡ 1.000 across every cell.
+  which is why the pilot run showed MaxCut Q ≡ 1.000 across every cell.
 
   Each task falls into one of three buckets:
     (a) Pearson ≈ 1.0 between dev and hidden  →  dev anchors are a good
         approximation but may still differ by a small additive offset.
-    (b) Pearson < 1.0 and we have salvaged data  →  recompute directly.
-    (c) Pearson unknown (no salvaged cells)  →  mark provisional.
+    (b) Pearson < 1.0 and we have pilot data  →  recompute directly.
+    (c) Pearson unknown (no pilot cells)  →  mark provisional.
 
-  Run 1 evidence (results/full-v1-salvaged/dev_hidden_divergence_table.tsv):
+  Run 1 evidence (results/full-v2/dev_hidden_divergence_table.tsv):
     maxcut-g200       Pearson=0.897 Spearman=0.843 → recompute
     difference-bases  Pearson=0.344 Spearman=0.663 → recompute
     flat-poly-deg50   Pearson=1.000                → verify (same formula, more points)
@@ -330,18 +330,18 @@ def verify_tsp_anchors_hidden():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 5. Provisional notes for tasks with no salvaged data
+# 5. Provisional notes for tasks with no pilot data
 # ─────────────────────────────────────────────────────────────────────────────
 
 def note_provisional_tasks():
-    section("Provisional (no salvaged data to calibrate against)")
+    section("Provisional (no pilot data to calibrate against)")
     log("  bench-circle-packing-n20: hidden differs only in tolerance (1e-6 → 1e-12).")
     log("    Any solution with comfortable safety margin scores identically.")
     log("    Keep dev anchors; mark any hidden=-inf (tolerance failures) as Q=0.")
     log("")
     log("  bench-hp-folding-48mer: hidden uses a DIFFERENT 48-mer sequence.")
     log("    Dev sRef=-19 was computed on the dev sequence; hidden optimum is unknown.")
-    log("    No salvaged data (n=1). Keep dev anchors as provisional; flag in paper.")
+    log("    No pilot data (n=1). Keep dev anchors as provisional; flag in paper.")
     log("")
     log("  bench-lj-n41: hidden adds Axilrod-Teller three-body correction (nu=0.01).")
     log("    Correction is O(0.01 * C(41,3)) ≈ small relative to LJ energies of -100 to -200.")
@@ -359,7 +359,7 @@ def note_provisional_tasks():
 
 def main():
     log("=" * 72)
-    log("Agent4Science-Bench — Recompute Normalization Anchors (hidden-space)")
+    log("Benchmark — Recompute Normalization Anchors (hidden-space)")
     log("=" * 72)
 
     results = []
@@ -384,7 +384,7 @@ def main():
 
     log("")
     log("Done. Next step: update normalization-anchors.ts with these values,")
-    log("then re-run `npx tsx src/tasks/aggregate-meg.ts --dir results/full-v1-salvaged`.")
+    log("then re-run `npx tsx src/tasks/aggregate-meg.ts --dir results/full-v2`.")
 
 
 if __name__ == "__main__":
