@@ -16,7 +16,7 @@ import numpy as np
 from pathlib import Path
 from itertools import combinations
 
-RESULTS_DIR = Path('/Users/summerann/Desktop/neurips-experiments/results/full-v2')
+RESULTS_DIR = Path("results/full-v2")
 
 INVALID_THRESHOLD = 1e10
 

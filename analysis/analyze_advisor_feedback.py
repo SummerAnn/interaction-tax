@@ -9,7 +9,7 @@ import json, os, glob
 import numpy as np
 from collections import defaultdict
 
-BASE = "/Users/summerann/Desktop/neurips-experiments/results/full-v2"
+BASE = "results/full-v2"
 
 # ─── Distance functions per task ───
 

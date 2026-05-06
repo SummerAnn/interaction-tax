@@ -13,7 +13,7 @@ from pathlib import Path
 from collections import Counter
 from itertools import combinations
 
-RESULTS_DIR = Path('/Users/summerann/Desktop/neurips-experiments/results/full-v2')
+RESULTS_DIR = Path("results/full-v2")
 
 # Normalization anchors (frozen from paper)
 ANCHORS = {

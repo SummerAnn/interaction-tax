@@ -12,7 +12,7 @@ import numpy as np
 from pathlib import Path
 from scipy import stats
 
-RESULTS_DIR = Path('/Users/summerann/Desktop/neurips-experiments/results/full-v2')
+RESULTS_DIR = Path("results/full-v2")
 
 # ── Task definitions ──────────────────────────────────────────────────────────
 

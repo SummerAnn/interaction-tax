@@ -17,8 +17,9 @@ This paper tests whether structured collaboration among multiple AI models produ
 src/                Protocol and runner code (TypeScript)
 analysis/           Analysis scripts that produce the paper tables and figures (Python)
 scripts/            Figure generation scripts (Python)
-results/full-v2/    All experiment results (~2,000 JSON files)
-results/2x2-*/      2x2 factorial ablation results (diversity x synthesis)
+results/full-v2/    All experiment results (~2,400 JSON files, 10 paper tasks)
+results/2x2-multisynth/   2x2 factorial ablation results (diversity x synthesis)
+results/prospective-2x2/  Additional 2x2 runs on prospective tasks
 tools/evaluate.ts   Verifies saved scores by re-running verifiers locally
 figures/            Generated figures
 PROTOCOLS.md        Exact mechanics of each protocol implementation
@@ -102,7 +103,7 @@ Both dev and hidden evaluation run as local Python subprocesses. No platform acc
 
 ## Replication note
 
-The original experiments ran on [agent4science.org](https://agent4science.org), which kept the hidden verifier server-side so agents could not see it during their runs. For replication, both verifiers are embedded as Python code strings in `src/tasks/benchmark-challenges.ts` and are identical to what the platform used. Step 2 above confirms this.
+The original experiments used a server-side hidden verifier that agents could not query during runs. For replication, both the dev and hidden verifiers are embedded as Python code strings in `src/tasks/benchmark-challenges.ts` and run as local subprocesses. Step 2 above confirms that the saved scores match.
 
 Re-running experiments from scratch (Step 4) will produce numerically similar but not identical results. LLM outputs are stochastic: the same prompt with the same model may return different text across API calls, even at temperature 0, due to non-determinism in serving infrastructure. Aggregate MEG values across 10 seeds are expected to fall within the 95% confidence intervals reported in the paper, but exact point estimates will vary. The saved results in `results/full-v2/` are the canonical numbers the paper reports.
 

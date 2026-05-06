@@ -24,8 +24,8 @@ import pandas as pd
 from scipy.optimize import minimize
 
 
-DATA_DIR = "/Users/summerann/Desktop/neurips-experiments/results/full-v2"
-OUT_DIR = "/Users/summerann/Desktop/neurips-experiments/results/analysis"
+DATA_DIR = "results/full-v2"
+OUT_DIR = "results/analysis"
 
 TASKS = {
     # taskId: (direction, s_bad, s_ref)

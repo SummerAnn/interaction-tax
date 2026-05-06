@@ -11,7 +11,7 @@ from scipy import stats
 from scipy.stats import fisher_exact
 import numpy as np
 
-RESULTS_DIR = Path('/Users/summerann/Desktop/neurips-experiments/results/full-v2')
+RESULTS_DIR = Path("results/full-v2")
 
 # Task metadata
 TASK_META = {

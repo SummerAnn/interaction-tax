@@ -22,8 +22,8 @@ import json
 import os
 import numpy as np
 
-DATA_DIR_ORIG = "/Users/summerann/Desktop/neurips-experiments/results/full-v2"
-DATA_DIR_NEW  = "/Users/summerann/Desktop/neurips-experiments/results/2x2-multisynth"
+DATA_DIR_ORIG = "results/full-v2"
+DATA_DIR_NEW  = "results/2x2-multisynth"
 
 TASKS = {
     "bench-difference-bases": ("minimize", 14.0, 1.0),
