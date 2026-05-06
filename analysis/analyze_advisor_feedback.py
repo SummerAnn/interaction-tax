@@ -1,5 +1,5 @@
 """
-Analyses requested by advisor:
+Supplementary diversity analyses (Section 4 / Appendix):
 1. Step-by-step diversity tracking across interaction rounds
 2. Per-model error correlation (do models make different mistakes?)
 3. Qualitative comparison: Erdős (diversity helps) vs MolQED (diversity doesn't)

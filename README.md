@@ -55,32 +55,46 @@ The output is a table of recorded vs. recomputed scores. They should match exact
 ## Step 3: Reproduce the paper tables and figures
 
 ```bash
-# AggMEG table and per-task MEG table
-# -> results/analysis/meg_full.tsv
+# Table: Aggregate MEG and per-task MEG (Tab. aggmeg, Tab. pertask)
 python analysis/analyze_bench.py
 
-# MIG (Marginal Interaction Gain) by protocol and backbone configuration
-# -> results/analysis/mig_extended.tsv
+# Table: MIG by protocol family, same-model vs diverse (Tab. mig)
 python analysis/analyze_mig.py
 
-# 2x2 factorial: diversity vs. synthesis coefficients
-# -> results/analysis/2x2_hierarchical.tsv
+# Table: 2x2 factorial estimates — diversity vs synthesis (Tab. 2x2)
 python analysis/analyze_2x2_hierarchical.py
 
-# Diversity convergence: fraction of interaction steps that improve dev score
-# -> results/analysis/convergence.tsv  (Table 5 in paper)
-python analysis/analyze_convergence.py
+# Table: Per-task 2x2 cell means (Tab. 2x2cells)
+python analysis/analyze_2x2_matched.py
 
-# Robustness checks (jackknife, denominator sensitivity)
-# -> results/analysis/jackknife_meg.tsv, meg_denom_sensitivity.tsv
+# Table: LOO sensitivity of diversity coefficient (Tab. loo)
 python analysis/analyze_robustness.py
 
+# Table: Per-round visible scores for Debate (Tab. traj_scores)
+python analysis/analysis_trajectory.py
+
+# Table: Initial proposal quality vs final hidden score (Tab. initfinal)
+python analysis/analysis_final_within_backbone.py
+
+# Table: Synthesis decision quality relative to best proposer (Tab. synthesis_decisions)
+python analysis/analysis_nosynth_ablation.py
+
+# Table: Mean pairwise solution distance (Tab. diversity)
+python analysis/analysis_output_similarity.py
+
+# Table: Round-by-round Jaccard distance — Debate (Tab. jaccard)
+python analysis/analysis_diversity_collapse.py
+
+# Table: Feasibility success rates on constraint tasks (Tab. constraint)
+python analysis/analysis_moa_constraint.py
+
+# Step-level improvement fraction across protocols (text, Section 4.1)
+python analysis/analyze_convergence.py
+
 # Figure 1: AggMEG lollipop + MIG quadrant scatter
-# -> figures/paper_fig1_combined.{pdf,png}
 python scripts/make_paper_fig1_combined.py
 
 # Figure 2: 2x2 coefficients + per-synthesizer robustness
-# -> figures/paper_fig2_mechanism.{pdf,png}
 python scripts/make_paper_figures.py
 ```
 
