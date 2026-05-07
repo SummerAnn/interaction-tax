@@ -1,10 +1,10 @@
-# Protocol Implementations
+# Agent Configurations
 
-This document describes the exact mechanics of each protocol implemented in
-`src/protocols/`. All protocols share the same budget vector (T=200K tokens,
+This document describes the exact mechanics of each agent configuration implemented in
+`src/protocols/`. All configurations share the same budget vector (T=200K tokens,
 W=600s wall clock, K=25 evaluator calls) and the same task prompt. The
 selection rule is: the artifact with the highest dev score among all artifacts
-produced by a protocol is submitted for hidden evaluation.
+produced by a configuration is submitted for hidden evaluation.
 
 ---
 
@@ -23,7 +23,7 @@ introduces sample diversity without changing the prompt. All eight artifacts
 are scored by the dev evaluator; the highest-scoring one is submitted.
 Source: `src/protocols/baselines.ts → runBestOfN`.
 
-This is the primary MEG denominator. Multi-agent protocols must beat this
+This is the primary MEG denominator. Multi-agent configurations must beat this
 to demonstrate that their collaboration mechanism, not repeated sampling,
 is responsible for any performance gain.
 
@@ -136,7 +136,7 @@ combines the results.
 
 ## Retry Behavior
 
-All protocols share a common retry mechanism for parse failures and verifier
+All configurations share a common retry mechanism for parse failures and verifier
 rejections. If the LLM produces malformed JSON or a solution the verifier
 rejects (e.g., wrong array length), the verifier error message is appended to
 the next call so the model can self-correct. Generation steps allow up to 5
@@ -151,7 +151,7 @@ produces no artifacts and is excluded from aggregate MEG computation.
 Every LLM call and every evaluator call is routed through a shared
 `BudgetEnforcer` instance. The enforcer tracks cumulative token usage, wall
 clock time, and evaluator call count. Any call that would exceed a cap is
-silently dropped and returns null; the protocol handles null returns by
-terminating early. This ensures all protocols operate under identical resource
+silently dropped and returns null; the configuration handles null returns by
+terminating early. This ensures all configurations operate under identical resource
 constraints regardless of how many agents they employ.
 Source: `src/budget/budget-vector.ts`.

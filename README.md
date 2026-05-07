@@ -28,7 +28,7 @@ results/full-v2/    Saved JSON results (1556 files) for all task/configuration/s
 results/analysis/   Derived TSV tables used by the paper and robustness appendix
 tools/evaluate.ts   Re-runs dev/hidden verifiers locally on saved results
 figures/            Generated paper figures
-PROTOCOLS.md        Exact mechanics of each protocol implementation
+CONFIGURATIONS.md   Exact mechanics of each agent configuration
 ```
 
 ## Tasks
