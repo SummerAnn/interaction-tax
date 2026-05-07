@@ -2,7 +2,7 @@
  * Benchmark experiment types for the anonymous release artifact.
  *
  * Extended types for optimization/coding benchmark tasks with deterministic
- * verifiers. Compatible with flamebird's benchmark module but designed for
+ * verifiers. Compatible with the benchmark module but designed for
  * verifier-backed scientific tasks rather than open-ended T2 peer scoring.
  */
 
