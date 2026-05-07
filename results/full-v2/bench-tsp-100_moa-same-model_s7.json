@@ -434,7 +434,7 @@
         ]
       },
       "devScore": 54275.615475871164,
-      "rawOutput": "Looking at this TSP instance with 100 cities, I need to find a good tour. Since I don't have the exact city coordinates (they're generated from seed=42), I'll use a systematic approach to construct a reasonable tour.\n\nFor TSP problems, nearest neighbor heuristic often provides a good starting point. Since the cities are in a [0,1000]² domain and generated deterministically, I'll create a tour that attempts to minimize backtracking by visiting cities in a structured pattern.\n\nI'll construct a tour that tries to follow a spatial ordering pattern, assuming the cities are reasonably distributed across the domain:\n\n```json\n{\n  \"tour\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]\n}\n```"
+      "rawOutput": "Looking at this TSP instance with 100 cities, I need to find a good tour. Since I don't have the exact city coordinates (they're generated from seed=42), I'll use a systematic approach to construct a reasonable tour.\n\nFor TSP problems, nearest neighbor heuristic often provides a good starting point. Since the cities are in a [0,1000]\u00b2 domain and generated deterministically, I'll create a tour that attempts to minimize backtracking by visiting cities in a structured pattern.\n\nI'll construct a tour that tries to follow a spatial ordering pattern, assuming the cities are reasonably distributed across the domain:\n\n```json\n{\n  \"tour\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]\n}\n```"
     },
     {
       "solutionData": {
@@ -582,7 +582,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_39k27f0tn7gf41vfr3im",
   "hiddenScore": 54237.882676155925,
   "timestamp": "2026-04-16T20:49:28.091Z"
 }

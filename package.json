@@ -2,7 +2,7 @@
   "name": "neurips-bench",
   "version": "0.1.0",
   "private": true,
-  "description": "the benchmark experiment runner for NeurIPS 2026",
+  "description": "Anonymous benchmark artifact for the NeurIPS 2026 paper release",
   "type": "module",
   "scripts": {
     "build": "tsc",

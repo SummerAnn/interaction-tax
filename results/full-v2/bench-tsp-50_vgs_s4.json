@@ -350,7 +350,7 @@
         ]
       },
       "devScore": 24357.441009375812,
-      "rawOutput": "Looking at the top solutions, I notice they have very similar scores and share common subsequences. The best two candidates (scores 24357.44) are actually reverse tours of each other, which makes sense since TSP tours have the same length in both directions.\n\nI'll analyze the common patterns and try to improve by making strategic local optimizations. I notice several promising subsequences that appear in the best solutions:\n\n- Cities 39→15→31→45→18→37→29→38→44 form a strong chain\n- The sequence 33→11→24→10→40→9→7→22→5→16→47→32→13→2→35→12→8→34→20→1→48→25→17→6→19→4→42 appears to be well-optimized\n\nI'll create a variant that preserves these good subsequences while making small adjustments to potentially improve connections between segments.\n\n```json\n{\n  \"tour\": [\n    0,\n    39,\n    15,\n    31,\n    45,\n    18,\n    37,\n    29,\n    38,\n    44,\n    23,\n    14,\n    27,\n    36,\n    28,\n    46,\n    43,\n    21,\n    26,\n    49,\n    41,\n    30,\n    3,\n    33,\n    11,\n    24,\n    10,\n    40,\n    9,\n    7,\n    22,\n    5,\n    16,\n    47,\n    32,\n    13,\n    2,\n    35,\n    12,\n    8,\n    34,\n    20,\n    1,\n    48,\n    25,\n    17,\n    6,\n    19,\n    4,\n    42\n  ]\n}\n```"
+      "rawOutput": "Looking at the top solutions, I notice they have very similar scores and share common subsequences. The best two candidates (scores 24357.44) are actually reverse tours of each other, which makes sense since TSP tours have the same length in both directions.\n\nI'll analyze the common patterns and try to improve by making strategic local optimizations. I notice several promising subsequences that appear in the best solutions:\n\n- Cities 39\u219215\u219231\u219245\u219218\u219237\u219229\u219238\u219244 form a strong chain\n- The sequence 33\u219211\u219224\u219210\u219240\u21929\u21927\u219222\u21925\u219216\u219247\u219232\u219213\u21922\u219235\u219212\u21928\u219234\u219220\u21921\u219248\u219225\u219217\u21926\u219219\u21924\u219242 appears to be well-optimized\n\nI'll create a variant that preserves these good subsequences while making small adjustments to potentially improve connections between segments.\n\n```json\n{\n  \"tour\": [\n    0,\n    39,\n    15,\n    31,\n    45,\n    18,\n    37,\n    29,\n    38,\n    44,\n    23,\n    14,\n    27,\n    36,\n    28,\n    46,\n    43,\n    21,\n    26,\n    49,\n    41,\n    30,\n    3,\n    33,\n    11,\n    24,\n    10,\n    40,\n    9,\n    7,\n    22,\n    5,\n    16,\n    47,\n    32,\n    13,\n    2,\n    35,\n    12,\n    8,\n    34,\n    20,\n    1,\n    48,\n    25,\n    17,\n    6,\n    19,\n    4,\n    42\n  ]\n}\n```"
     },
     {
       "solutionData": {
@@ -458,7 +458,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_v0y5jn0l95oeizy0p46k",
   "hiddenScore": 24353.919705521308,
   "timestamp": "2026-04-17T20:16:43.130Z"
 }

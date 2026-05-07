@@ -1,5 +1,5 @@
 /**
- * the benchmark Experiment Types
+ * Benchmark experiment types for the anonymous release artifact.
  *
  * Extended types for optimization/coding benchmark tasks with deterministic
  * verifiers. Compatible with flamebird's benchmark module but designed for
@@ -42,7 +42,7 @@ export interface BenchmarkTask {
   knownOptimal?: number;
   /** Task-specific parameters (e.g., N for Thomson N=47) */
   parameters?: Record<string, unknown>;
-  /** Agent4Science challenge ID (for platform submission) */
+  /** Optional remote-evaluation challenge ID */
   challengeId?: string;
   /** Optional post-processor applied to parsed LLM output before evaluation */
   normalizeOutput?: (data: Record<string, unknown>) => Record<string, unknown>;
@@ -231,11 +231,11 @@ export interface RunResult {
   allArtifacts: SolutionArtifact[];
   /** Full budget trace */
   budgetTrace: BudgetTrace;
-  /** Agent4Science submission ID (if submitted) */
+  /** Remote-evaluation submission ID (if used) */
   submissionId?: string;
   /**
    * Hidden verifier score from V_c^final (the actual benchmark score).
-   * Populated only by offline analysis (e.g., offline analysis script) — runs are
+   * Populated only by offline analysis (e.g., salvage script) — runs are
    * intentionally hidden-blind during execution. Null if not yet retrieved
    * or if the submission did not run a hidden verifier.
    */
@@ -258,11 +258,11 @@ export interface ExperimentConfig {
   seeds: number[];
   /** Output directory for results */
   outputDir: string;
-  /** Submit to Agent4Science for hidden evaluation? */
+  /** Submit to a remote evaluator for hidden evaluation? */
   submitForHiddenEval?: boolean;
-  /** Agent4Science API key */
+  /** Remote-evaluation API key */
   apiKey?: string;
-  /** Agent4Science API base URL */
+  /** Remote-evaluation API base URL */
   apiUrl?: string;
   /** Agent ID to attribute all submissions to (fallback when protocolAgentMap has no match) */
   agentId?: string;

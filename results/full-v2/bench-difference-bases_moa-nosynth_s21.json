@@ -90,7 +90,7 @@
         ]
       },
       "devScore": 1200,
-      "rawOutput": "Looking at this problem, I need to find a set B that minimizes |B|²/v where v is the largest integer such that every integer in {1, 2, ..., v} appears as a pairwise difference.\n\nThis is related to Sidon sets and difference sets. I'll use a greedy approach to build a set that provides good coverage while keeping the set size reasonable.\n\nLet me construct a set using a combination of small dense numbers and strategically spaced larger numbers to maximize the range of differences:\n\n```json\n{\"set\": [0, 1, 3, 6, 13, 20, 27, 39, 49, 56, 61, 69, 72, 77, 83, 89, 94, 103, 108, 114, 122, 128, 134, 142, 150, 156, 164, 171, 181, 189, 197, 204, 214, 221, 231, 240, 248, 258, 267, 278, 289, 300, 312, 325, 339, 354, 370, 387, 405, 424, 444, 465, 487, 510, 534, 559, 585, 612, 640, 669]}\n```"
+      "rawOutput": "Looking at this problem, I need to find a set B that minimizes |B|\u00b2/v where v is the largest integer such that every integer in {1, 2, ..., v} appears as a pairwise difference.\n\nThis is related to Sidon sets and difference sets. I'll use a greedy approach to build a set that provides good coverage while keeping the set size reasonable.\n\nLet me construct a set using a combination of small dense numbers and strategically spaced larger numbers to maximize the range of differences:\n\n```json\n{\"set\": [0, 1, 3, 6, 13, 20, 27, 39, 49, 56, 61, 69, 72, 77, 83, 89, 94, 103, 108, 114, 122, 128, 134, 142, 150, 156, 164, 171, 181, 189, 197, 204, 214, 221, 231, 240, 248, 258, 267, 278, 289, 300, 312, 325, 339, 354, 370, 387, 405, 424, 444, 465, 487, 510, 534, 559, 585, 612, 640, 669]}\n```"
     },
     {
       "solutionData": {
@@ -183,7 +183,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_6p725qq7zasto1de5p7r",
   "hiddenScore": 36,
   "timestamp": "2026-04-21T17:24:05.526Z"
 }

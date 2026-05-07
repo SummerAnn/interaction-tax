@@ -197,7 +197,7 @@ async function runCell(
 
   // Drop the cell entirely if the runner threw OR produced no valid artifact.
   // Writing an empty placeholder JSON would silently corrupt later aggregation
-  // (this is exactly what produced results/full-v2's all-zeros meg_table).
+  // (this is exactly what produced full-v1's all-zeros meg_table).
   if (runnerError !== null || best === null) {
     console.log(`  → SKIP (no valid artifact); tokens=${trace.tokenUsage.total} wall=${Math.round(trace.wallClockMs / 1000)}s`);
     return null;
@@ -205,7 +205,7 @@ async function runCell(
 
   // Submit artifact(s) to platform for hidden evaluation. The hidden score
   // is intentionally not retrieved here — runs stay hidden-blind. Use the
-  // offline analysis script with platform.getSubmission() for offline analysis.
+  // salvage script with platform.getSubmission() for offline analysis.
   let submissionId: string | undefined;
   if (task.challengeId && config.submitForHiddenEval) {
     try {
@@ -261,10 +261,13 @@ export async function runExperiment(
   // Tests may pass an instrumented instance (e.g., one that captures every
   // submissionId written via evalFinal) via platformOverride.
   const platform = platformOverride ?? new PlatformClient(config.apiUrl, config.apiKey);
+  const platformLabel = config.submitForHiddenEval
+    ? (config.apiUrl || 'configured remote endpoint')
+    : 'local hidden evaluation';
 
   const totalCells = config.tasks.length * config.protocols.length * config.seeds.length;
   console.log(`\n=== Experiment: ${config.name} ===`);
-  console.log(`Platform: ${config.apiUrl || 'https://agent4science.org'}`);
+  console.log(`Platform: ${platformLabel}`);
   console.log(`Tasks: ${config.tasks.length}, Protocols: ${config.protocols.length}, Seeds: ${config.seeds.length}`);
   console.log(`Total cells: ${totalCells}`);
   console.log(`Budget: T=${config.budget.tokenCap} W=${config.budget.wallClockSeconds}s C=${config.budget.evalCpuSeconds}s K=${config.budget.evalCallCap}\n`);
@@ -329,7 +332,7 @@ export async function runExperiment(
   // Save full results
   writeFileSync(
     join(config.outputDir, 'results.json'),
-    JSON.stringify(results, null, 2)
+    JSON.stringify({ ...results, config: sanitizeConfigForExport(config) }, null, 2)
   );
 
   // Save MEG table as TSV for easy viewing
@@ -341,6 +344,18 @@ export async function runExperiment(
   printMEGSummary(meg, aggregateMEG);
 
   return results;
+}
+
+function sanitizeConfigForExport(config: ExperimentConfig): Record<string, unknown> {
+  const { apiKey: _apiKey, apiUrl: _apiUrl, agentId: _agentId, protocolAgentMap: _protocolAgentMap, ...rest } = config;
+  return {
+    ...rest,
+    tasks: config.tasks.map(({ challengeId: _challengeId, ...task }) => task),
+    protocols: config.protocols.map(({ backbones, ...protocol }) => ({
+      ...protocol,
+      backbones: backbones.map(({ apiKey: _bbApiKey, ...backbone }) => backbone),
+    })),
+  };
 }
 
 // ── MEG Computation ──

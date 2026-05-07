@@ -1,13 +1,11 @@
 /**
- * the benchmark — Benchmark Challenge Definitions
+ * Benchmark challenge definitions for the anonymous release artifact.
  *
  * All 9 benchmark tasks (8 core + Erdős near-core) with dev and hidden verifiers.
  * Parameterizations match benchmark_plan.md exactly.
  *
- * Hidden verifiers are stored server-side and never returned to the experiment runner.
+ * Hidden verifiers are embedded in this release for local reproducibility.
  */
-
-import { MAX_K_COVERAGE, LATIN_SQUARE } from './prospective-tasks.js';
 
 export interface BenchmarkChallengeDefinition {
   id: string;
@@ -2184,42 +2182,29 @@ def evaluate(data):
 // ─── All Benchmark Challenges ────────────────────────────────────────────────
 
 /**
- * Active benchmark challenges for the v1.0 sweep.
+ * Paper-scoped benchmark challenges for the final NeurIPS 2026 release.
  *
- * MEG analysis tasks (discriminative middle):
- *   Cards 1–4, 7 (near-core), 9–18
+ * Included task suite:
+ *   9 optimization tasks:
+ *     MaxCut, Circle Packing, Difference Bases, Flat Polynomials, TSP-100,
+ *     LJ-n41, Erdos Overlap, Molecule QED, TSP-50
+ *   2 constraint tasks:
+ *     Knapsack-50, 3AP-Free-100
  *
- * Capability-floor exhibits (reported in §3, excluded from MEG):
- *   Card 6 (TSP-100), Card 8 (LJ-n41)
- *
- * Dropped (data exists but excluded entirely):
- *   Card 5 (Thomson) — representation mismatch
- *   Card 7-orig (HP Folding) — <5% validity rate
- *
- * New cards (2026-04-09): Cards 13–16 — TFBind-10, Heilbronn, Kissing 11D, 3-AP-Free
- * New cards (2026-04-20): Cards 17–18 — Knapsack-50, Weighted Set Cover
- * Prospective tasks (2026-04-23): Max k-Coverage (n=100,k=15), Latin Square Completion (9×9)
+ * Older exploratory, prospective, and off-paper tasks are intentionally
+ * omitted from the release artifact to keep the repository aligned with the
+ * final manuscript.
  */
 export const ALL_BENCHMARK_CHALLENGES: BenchmarkChallengeDefinition[] = [
-  MAXCUT,           // Card 1  — discriminative, proxy-overfit anchor
-  CIRCLE_PACKING,   // Card 2  — discriminative, possible dev ceiling
-  DIFFERENCE_BASES, // Card 3  — discriminative, brute-force / sample-friendly
-  FLAT_POLYNOMIALS, // Card 4  — discriminative, VGS-friendly
-  // THOMSON dropped — Card 5 — representation mismatch
-  TSP_100,          // Card 6  — capability-floor exhibit (all Q=0 on dev)
-  // HP_FOLDING dropped — Card 7-orig — <5% validity rate across all protocols
-  LENNARD_JONES,    // Card 8  — capability-floor exhibit (all Q=0 on dev, OSS broken)
-  ERDOS_OVERLAP,    // Near-core — discriminative, possible dev saturation
-  MAXCUT_SEED99,    // Card 9  — contamination probe (fresh G(200,0.3) instance)
-  GRAPH_COLORING,   // Card 10 — interaction-friendly, repair cycle, proxy-overfit trap
-  TSP_50,           // Card 11 — mid-difficulty TSP (agents above floor at n=50)
-  MOLECULE_QED,     // Card 12 — real CADD task, Type II hidden (QED × SA_Score proxy-overfit)
-  TFBIND_10,        // Card 13 — genomics task, 8-mer vs 10-mer proxy-overfit (seeding pending calibration)
-  HEILBRONN_N12,    // Card 14 — AlphaEvolve geometry, 50-of-220 vs all-220 triples proxy-overfit
-  KISSING_11D,      // Card 15 — AlphaEvolve sphere packing, loose vs exact tolerance proxy-overfit
-  AP_FREE_100,      // Card 16 — additive combinatorics, pure discriminative (no proxy-overfit split)
-  KNAPSACK_50,      // Card 17 — HIGH composability, perturbed-weights proxy-overfit
-  SET_COVER,        // Card 18 — HIGH composability, held-out elements proxy-overfit
-  MAX_K_COVERAGE,   // Card 10 (prospective) — HIGH composability, instance split (seed 301→419)
-  LATIN_SQUARE,     // Card 11 (prospective) — LOW composability, harder clue-set hidden
+  MAXCUT,
+  CIRCLE_PACKING,
+  DIFFERENCE_BASES,
+  FLAT_POLYNOMIALS,
+  TSP_100,
+  LENNARD_JONES,
+  ERDOS_OVERLAP,
+  TSP_50,
+  MOLECULE_QED,
+  AP_FREE_100,
+  KNAPSACK_50,
 ];

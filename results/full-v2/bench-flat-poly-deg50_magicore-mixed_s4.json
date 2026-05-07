@@ -120,7 +120,7 @@
         ]
       },
       "devScore": 4.633865637268433,
-      "rawOutput": "Looking at this optimization problem, I need to find a polynomial with ±1 coefficients that minimizes the peak-to-RMS ratio on the unit circle. This is a classic problem in harmonic analysis.\n\nFor Littlewood polynomials, there are several known construction methods that tend to produce good results. One effective approach is to use patterns based on quadratic residues or other number-theoretic constructions that help distribute the polynomial's values more evenly on the unit circle.\n\nGiven the degree 50, I'll use a construction that alternates signs in a structured way, incorporating some randomness while maintaining certain symmetries that are known to help with the peak-to-RMS ratio.\n\n{ \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1] }"
+      "rawOutput": "Looking at this optimization problem, I need to find a polynomial with \u00b11 coefficients that minimizes the peak-to-RMS ratio on the unit circle. This is a classic problem in harmonic analysis.\n\nFor Littlewood polynomials, there are several known construction methods that tend to produce good results. One effective approach is to use patterns based on quadratic residues or other number-theoretic constructions that help distribute the polynomial's values more evenly on the unit circle.\n\nGiven the degree 50, I'll use a construction that alternates signs in a structured way, incorporating some randomness while maintaining certain symmetries that are known to help with the peak-to-RMS ratio.\n\n{ \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1] }"
     },
     {
       "solutionData": {
@@ -273,7 +273,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_g0wfxi8ltfcb5wnotrck",
   "hiddenScore": 2.3077027901973883,
   "timestamp": "2026-04-08T18:01:00.667Z"
 }

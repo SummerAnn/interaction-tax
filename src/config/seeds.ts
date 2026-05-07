@@ -1,7 +1,9 @@
 /**
  * Frozen Seed List — FROZEN 2026-04-06
  *
- * 5 seeds per (task, protocol) cell → 8 tasks × 9 protocols × 5 seeds = 360 runs total.
+ * The core benchmark uses five seeds per (task, configuration) cell.
+ * Some appendix-only follow-up analyses use larger seed counts and are stored
+ * directly in results/full-v2 rather than being implied by this constant.
  *
  * Seeds are used as run indices that:
  * 1. Label each run uniquely in output filenames and logs
@@ -16,14 +18,14 @@
  * If a run fails, re-run with the exact same seed and log the failure reason.
  */
 
-/** Five seeds used for every (task, protocol) cell in the full benchmark run. */
+/** Five seeds used for each core benchmark cell. */
 export const BENCHMARK_SEEDS: readonly number[] = [1, 2, 3, 4, 5] as const;
 
 /**
- * Total cells: tasks × protocols × seeds.
- * 8 tasks × 9 protocols × 5 seeds = 360 runs.
+ * Core benchmark cell count for the main paper sweep.
+ * 11 tasks × 10 core configurations × 5 seeds = 550 cells.
  */
-export const TOTAL_CELLS = 8 * 9 * 5; // 360
+export const TOTAL_CELLS = 11 * 10 * 5; // 550
 
 /**
  * Returns the temperature for a given seed within a Best-of-N or VGS run.

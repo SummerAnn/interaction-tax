@@ -360,7 +360,7 @@ if __name__ == '__main__':
     random.seed(0)
 
     print("=" * 70)
-    print("the benchmark — Normalization Anchor Calibration")
+    print("Benchmark Release — Normalization Anchor Calibration")
     print("=" * 70)
 
     # 1. MaxCut

@@ -120,7 +120,7 @@
         ]
       },
       "devScore": 3.894004153262027,
-      "rawOutput": "Looking at this problem, I need to find a polynomial with ±1 coefficients that minimizes the peak-to-RMS ratio on the unit circle. This is related to the Littlewood conjecture and requires finding coefficients that create as flat a frequency response as possible.\n\nFor degree 50 polynomials, research has shown that certain patterns tend to work well. I'll use a combination of techniques:\n\n1. Start with alternating patterns which often provide good baseline performance\n2. Apply some strategic modifications based on known good constructions\n3. Focus on avoiding large peaks in the frequency domain\n\nLet me construct a solution using a modified Barker-like sequence approach with some optimizations:\n\n{\n  \"coefficients\": [1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1]\n}"
+      "rawOutput": "Looking at this problem, I need to find a polynomial with \u00b11 coefficients that minimizes the peak-to-RMS ratio on the unit circle. This is related to the Littlewood conjecture and requires finding coefficients that create as flat a frequency response as possible.\n\nFor degree 50 polynomials, research has shown that certain patterns tend to work well. I'll use a combination of techniques:\n\n1. Start with alternating patterns which often provide good baseline performance\n2. Apply some strategic modifications based on known good constructions\n3. Focus on avoiding large peaks in the frequency domain\n\nLet me construct a solution using a modified Barker-like sequence approach with some optimizations:\n\n{\n  \"coefficients\": [1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1]\n}"
     },
     {
       "solutionData": {
@@ -273,7 +273,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_0pyb18scm3dqt2lkebe6",
   "hiddenScore": 1.8821459112006822,
   "timestamp": "2026-04-08T18:01:39.342Z"
 }

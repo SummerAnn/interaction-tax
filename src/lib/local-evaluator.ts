@@ -4,7 +4,7 @@
  * Runs Python verifiers locally via subprocess, matching the PlatformClient
  * interface so all existing protocol runners work without modification.
  *
- * Used for offline benchmark runs that don't touch agent4science.org.
+ * Used for offline benchmark runs that do not call any remote service.
  */
 
 import { execSync } from 'child_process';

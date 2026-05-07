@@ -238,7 +238,7 @@
         ]
       },
       "devScore": 3.0116017831347643,
-      "rawOutput": "Looking at the current solution with score 1.952986444644975, I need to find a better arrangement of ±1 coefficients that minimizes the peak-to-RMS ratio.\n\nFor Littlewood polynomials, better solutions often have more balanced patterns and avoid long runs of the same sign. Let me try a different arrangement that incorporates some known good patterns for flat polynomials:\n\n```json\n{\n  \"coefficients\": [\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    -1\n  ]\n}\n```"
+      "rawOutput": "Looking at the current solution with score 1.952986444644975, I need to find a better arrangement of \u00b11 coefficients that minimizes the peak-to-RMS ratio.\n\nFor Littlewood polynomials, better solutions often have more balanced patterns and avoid long runs of the same sign. Let me try a different arrangement that incorporates some known good patterns for flat polynomials:\n\n```json\n{\n  \"coefficients\": [\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    -1,\n    1,\n    1,\n    -1,\n    1,\n    -1,\n    -1,\n    1,\n    -1,\n    1,\n    -1\n  ]\n}\n```"
     },
     {
       "solutionData": {
@@ -337,7 +337,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_4o7d3449pf3ep38ga289",
   "hiddenScore": 1.9529864579126064,
   "timestamp": "2026-04-08T05:33:29.952Z"
 }

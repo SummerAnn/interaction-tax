@@ -37,7 +37,7 @@
         "smiles": "COc1ccc(CCN(C)C)cc1F"
       },
       "devScore": 0.7310337076681598,
-      "rawOutput": "Looking at the current solution with QED score 0.8247, I need to identify what makes a molecule more drug-like according to QED parameters while maintaining synthetic accessibility.\n\nQED considers:\n- Molecular weight (optimal ~300-400 Da)\n- LogP (optimal ~2-3)\n- HBA/HBD counts (moderate values preferred)\n- PSA (optimal ~60-90 Ų)\n- Rotatable bonds (fewer is better)\n- Aromatic rings (1-2 preferred)\n- Alerts (structural flags to avoid)\n\nThe current molecule has good properties but I can optimize further by:\n1. Adding a heterocycle (pyridine) which is common in drugs\n2. Including a strategically placed fluorine (common in pharmaceuticals, improves metabolic stability)\n3. Maintaining moderate molecular weight and good balance of properties\n4. Ensuring synthetic accessibility with simple, well-known structural motifs\n\n```json\n{\n  \"smiles\": \"COc1ccc(CCN(C)C)cc1F\"\n}\n```"
+      "rawOutput": "Looking at the current solution with QED score 0.8247, I need to identify what makes a molecule more drug-like according to QED parameters while maintaining synthetic accessibility.\n\nQED considers:\n- Molecular weight (optimal ~300-400 Da)\n- LogP (optimal ~2-3)\n- HBA/HBD counts (moderate values preferred)\n- PSA (optimal ~60-90 \u0172)\n- Rotatable bonds (fewer is better)\n- Aromatic rings (1-2 preferred)\n- Alerts (structural flags to avoid)\n\nThe current molecule has good properties but I can optimize further by:\n1. Adding a heterocycle (pyridine) which is common in drugs\n2. Including a strategically placed fluorine (common in pharmaceuticals, improves metabolic stability)\n3. Maintaining moderate molecular weight and good balance of properties\n4. Ensuring synthetic accessibility with simple, well-known structural motifs\n\n```json\n{\n  \"smiles\": \"COc1ccc(CCN(C)C)cc1F\"\n}\n```"
     }
   ],
   "budgetTrace": {
@@ -77,7 +77,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_1yyhf1muaxdh4b3vo0xs",
   "hiddenScore": 0.7054226955885624,
   "timestamp": "2026-04-14T02:27:32.538Z"
 }

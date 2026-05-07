@@ -4,12 +4,12 @@
  *
  * Re-uses computeMEG / computeAggregateMEG / writeMEGTable from
  * experiment-runner.ts so the aggregation logic matches what a live run
- * would produce. Aggregates MEG from a directory of per-run JSON result files.
+ * would produce. Intended to run on the salvaged Run 1 data, but works on
  * any directory of per-cell JSONs conforming to RunResult.
  *
  * Usage:
- *   npx tsx src/tasks/aggregate-meg.ts --dir results/full-v2
- *   npx tsx src/tasks/aggregate-meg.ts --dir results/full-v2 --out results/full-v2
+ *   npx tsx src/tasks/aggregate-meg.ts --dir results/full-v1-salvaged
+ *   npx tsx src/tasks/aggregate-meg.ts --dir results/full-v1-salvaged --out results/full-v1-salvaged
  *
  * Missing cells are silently dropped from MEG math (no back-fill).
  * Cells with hiddenScore == null are also dropped by computeMEG itself.
@@ -42,7 +42,7 @@ function argVal(flag: string): string | undefined {
   return i >= 0 && i + 1 < args.length ? args[i + 1] : undefined;
 }
 
-const dir = resolve(argVal('--dir') ?? resolve(__dirname, '../../results/full-v2'));
+const dir = resolve(argVal('--dir') ?? resolve(__dirname, '../../results/full-v1-salvaged'));
 const outDir = resolve(argVal('--out') ?? dir);
 
 // ── Load cells ──
@@ -52,7 +52,7 @@ function loadRunResults(d: string): RunResult[] {
     console.error(`Directory not found: ${d}`);
     process.exit(1);
   }
-  const files = readdirSync(d).filter(f => f.endsWith('.json') && f !== 'index.json' && f !== 'results.json');
+  const files = readdirSync(d).filter(f => f.endsWith('.json') && f !== 'salvage-index.json' && f !== 'results.json');
   const runs: RunResult[] = [];
   for (const f of files) {
     try {
@@ -107,8 +107,8 @@ function buildConfig(runs: RunResult[]): ExperimentConfig {
   };
 
   return {
-    id: 'meg-aggregation',
-    name: 'Benchmark MEG Aggregation',
+    id: 'salvage-aggregation',
+    name: 'Benchmark Salvage Aggregation',
     tasks,
     protocols,
     budget,
@@ -120,7 +120,7 @@ function buildConfig(runs: RunResult[]): ExperimentConfig {
 // ── Main ──
 
 function main() {
-  console.log('Benchmark — Aggregate MEG from result directory');
+  console.log('Benchmark Release — Aggregate MEG from Salvaged Cells');
   console.log(`Input dir:  ${dir}`);
   console.log(`Output dir: ${outDir}`);
   console.log('---');

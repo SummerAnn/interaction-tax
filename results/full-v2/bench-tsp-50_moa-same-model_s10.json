@@ -234,7 +234,7 @@
         ]
       },
       "devScore": 26316.358657875666,
-      "rawOutput": "I need to solve a 50-city TSP with cities generated from seed=7 in the [0,1000]² domain.\n\nSince I don't have the exact city coordinates, I'll use a heuristic approach based on typical TSP solving strategies. For a 50-city problem, I'll construct a tour that attempts to minimize backtracking by creating a roughly circular path.\n\nLet me generate a tour using a nearest-neighbor-inspired approach with some 2-opt-like improvements:\n\n```json\n{\n  \"tour\": [0, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2]\n}\n```"
+      "rawOutput": "I need to solve a 50-city TSP with cities generated from seed=7 in the [0,1000]\u00b2 domain.\n\nSince I don't have the exact city coordinates, I'll use a heuristic approach based on typical TSP solving strategies. For a 50-city problem, I'll construct a tour that attempts to minimize backtracking by creating a roughly circular path.\n\nLet me generate a tour using a nearest-neighbor-inspired approach with some 2-opt-like improvements:\n\n```json\n{\n  \"tour\": [0, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2]\n}\n```"
     },
     {
       "solutionData": {
@@ -332,7 +332,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_p55xl03rrpemrhv5bmo2",
   "hiddenScore": 22895.066557449834,
   "timestamp": "2026-04-21T21:22:12.563Z"
 }

@@ -1,12 +1,12 @@
 /**
- * Benchmark Platform Client
+ * Remote benchmark platform client.
  *
- * Calls the benchmark evaluation endpoint on the benchmark platform.
+ * Calls a remote benchmark evaluation endpoint.
  * All verifier execution happens server-side — the experiment runner
  * never sees the hidden verifier, only gets dev scores back.
  */
 
-const DEFAULT_API_URL = 'https://the benchmark platform';
+const DEFAULT_API_URL = 'https://benchmark.invalid';
 
 export interface DevEvalResult {
   devScore: number;
@@ -45,10 +45,10 @@ export class PlatformClient {
   private adminSecret: string;
 
   constructor(apiUrl?: string, adminSecret?: string) {
-    this.apiUrl = (apiUrl || process.env.A4S_API_URL || DEFAULT_API_URL).replace(/\/$/, '');
-    this.adminSecret = adminSecret || process.env.ADMIN_SECRET || '';
+    this.apiUrl = (apiUrl || process.env.BENCHMARK_API_URL || DEFAULT_API_URL).replace(/\/$/, '');
+    this.adminSecret = adminSecret || process.env.BENCHMARK_API_KEY || '';
     if (!this.adminSecret) {
-      throw new Error('ADMIN_SECRET is required for benchmark evaluation');
+      throw new Error('BENCHMARK_API_KEY is required for remote benchmark evaluation');
     }
   }
 
@@ -154,7 +154,7 @@ export class PlatformClient {
 
   /**
    * Offline retrieval: fetch a previously created benchmark submission's
-   * stored dev + hidden verifier scores. Used by analysis scripts;
+   * stored dev + hidden verifier scores. Used by salvage/analysis scripts;
    * NEVER call this from inside a protocol runner — doing so would break
    * the hidden-blind invariant.
    */

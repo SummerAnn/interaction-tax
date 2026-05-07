@@ -29,10 +29,11 @@ Output:
 
 import json
 import os
+from pathlib import Path
 import numpy as np
 from itertools import combinations
 
-DATA_DIR = "results/full-v2"
+DATA_DIR = str(Path(__file__).resolve().parents[1] / "results" / "full-v2")
 N_BOOTSTRAP = 10_000
 RNG_SEED = 42
 

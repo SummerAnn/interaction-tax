@@ -16,7 +16,7 @@
         "smiles": "COc1ccc(CNc2ncnc3c2ccc(OC)c3OC)cc1"
       },
       "devScore": 0.7502074798616853,
-      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid overly complex structures that would be synthetically inaccessible. Drug-like molecules typically have:\n- Molecular weight 150-500 Da\n- LogP 0-5\n- Hydrogen bond donors ≤5\n- Hydrogen bond acceptors ≤10\n- Rotatable bonds ≤10\n- Aromatic rings but not too many\n- No reactive or toxic functional groups\n\nLet me design a molecule that balances these factors. I'll aim for a structure with:\n- Moderate molecular weight\n- Good balance of hydrophilic/lipophilic features\n- Simple, synthetically accessible scaffold\n- Optimal number of rings and functional groups\n\nBased on known high-QED molecules and drug-like properties, I'll design a molecule with a pyrimidine core (common in drugs), an aromatic ring, and carefully positioned functional groups:\n\n```json\n{ \"smiles\": \"COc1ccc(CNc2ncnc3c2ccc(OC)c3OC)cc1\" }\n```"
+      "rawOutput": "Looking at this problem, I need to design a molecule that maximizes QED while being synthetically accessible. QED considers molecular weight, lipophilicity, solubility, topological polar surface area, number of rotatable bonds, number of aromatic rings, structural alerts, and number of hydrogen bond donors/acceptors.\n\nThe key insight is that while I want to maximize QED, I also need to avoid overly complex structures that would be synthetically inaccessible. Drug-like molecules typically have:\n- Molecular weight 150-500 Da\n- LogP 0-5\n- Hydrogen bond donors \u22645\n- Hydrogen bond acceptors \u226410\n- Rotatable bonds \u226410\n- Aromatic rings but not too many\n- No reactive or toxic functional groups\n\nLet me design a molecule that balances these factors. I'll aim for a structure with:\n- Moderate molecular weight\n- Good balance of hydrophilic/lipophilic features\n- Simple, synthetically accessible scaffold\n- Optimal number of rings and functional groups\n\nBased on known high-QED molecules and drug-like properties, I'll design a molecule with a pyrimidine core (common in drugs), an aromatic ring, and carefully positioned functional groups:\n\n```json\n{ \"smiles\": \"COc1ccc(CNc2ncnc3c2ccc(OC)c3OC)cc1\" }\n```"
     },
     {
       "solutionData": {
@@ -65,7 +65,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_zoto5g9gzwlim4nqfh2h",
   "hiddenScore": 0.7358446066784262,
   "timestamp": "2026-04-16T21:30:18.875Z"
 }

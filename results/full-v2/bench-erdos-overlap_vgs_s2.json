@@ -1534,7 +1534,7 @@
         ]
       },
       "devScore": 0.4772202998846597,
-      "rawOutput": "Looking at the top solutions, I can see that:\n\n1. Candidates 1 and 2 use block structures with alternating regions of 1s and 0s, achieving scores around 0.489-0.495\n2. Candidate 3 uses a regular sparse pattern (1 every 4 positions) but scores much worse at 0.667\n\nThe block structure approach seems most promising. I notice that Candidate 1 has two blocks of 25 ones separated by 25 zeros each, while Candidate 2 has a 50-50-50 pattern. \n\nTo minimize overlap, I want to create a function where translates have minimal intersection. Let me try a different block arrangement - using three separate blocks of equal size with gaps between them. This should reduce the maximum overlap when the function is translated.\n\nI'll use three blocks of 17 ones each (51 total) separated by gaps, ensuring the integral constraint is met (51/100 ≈ 0.5 for a 100-point discretization, scaling appropriately for 1000 points).\n\n```json\n{\n  \"values\": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n}\n```"
+      "rawOutput": "Looking at the top solutions, I can see that:\n\n1. Candidates 1 and 2 use block structures with alternating regions of 1s and 0s, achieving scores around 0.489-0.495\n2. Candidate 3 uses a regular sparse pattern (1 every 4 positions) but scores much worse at 0.667\n\nThe block structure approach seems most promising. I notice that Candidate 1 has two blocks of 25 ones separated by 25 zeros each, while Candidate 2 has a 50-50-50 pattern. \n\nTo minimize overlap, I want to create a function where translates have minimal intersection. Let me try a different block arrangement - using three separate blocks of equal size with gaps between them. This should reduce the maximum overlap when the function is translated.\n\nI'll use three blocks of 17 ones each (51 total) separated by gaps, ensuring the integral constraint is met (51/100 \u2248 0.5 for a 100-point discretization, scaling appropriately for 1000 points).\n\n```json\n{\n  \"values\": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n}\n```"
     },
     {
       "solutionData": {
@@ -2491,7 +2491,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_18fa8xdhw7w66cr3q160",
   "hiddenScore": 0.3802076079991838,
   "timestamp": "2026-04-14T17:06:05.943Z"
 }

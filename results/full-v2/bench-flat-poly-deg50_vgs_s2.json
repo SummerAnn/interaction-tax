@@ -179,7 +179,7 @@
         ]
       },
       "devScore": 4.030463893730773,
-      "rawOutput": "Looking at this optimization problem, I need to find a Littlewood polynomial (coefficients ±1) of degree 50 that minimizes the peak-to-RMS ratio on the unit circle.\n\nThis is a challenging combinatorial optimization problem. The key insight is that I want to find coefficients that make the polynomial's magnitude as uniform as possible on the unit circle, which will minimize the ratio of maximum to RMS values.\n\nFor Littlewood polynomials, there are known constructions and heuristics that tend to work well. One approach is to use patterns that create good autocorrelation properties. Another is to use constructions based on quadratic residues or other number-theoretic patterns.\n\nLet me construct a solution using a pattern that alternates signs in a structured way, combined with some optimization principles:\n\n```json\n{\n  \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1]\n}\n```"
+      "rawOutput": "Looking at this optimization problem, I need to find a Littlewood polynomial (coefficients \u00b11) of degree 50 that minimizes the peak-to-RMS ratio on the unit circle.\n\nThis is a challenging combinatorial optimization problem. The key insight is that I want to find coefficients that make the polynomial's magnitude as uniform as possible on the unit circle, which will minimize the ratio of maximum to RMS values.\n\nFor Littlewood polynomials, there are known constructions and heuristics that tend to work well. One approach is to use patterns that create good autocorrelation properties. Another is to use constructions based on quadratic residues or other number-theoretic patterns.\n\nLet me construct a solution using a pattern that alternates signs in a structured way, combined with some optimization principles:\n\n```json\n{\n  \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1]\n}\n```"
     },
     {
       "solutionData": {
@@ -238,7 +238,7 @@
         ]
       },
       "devScore": 3.983160354653664,
-      "rawOutput": "Looking at this problem, I need to find a polynomial of degree 50 with ±1 coefficients that minimizes the peak-to-RMS ratio on the unit circle.\n\nThe peak-to-RMS ratio is max|P(z)| / √51 where P(z) = Σ(k=0 to 50) c_k * z^k and the coefficients c_k ∈ {-1, +1}.\n\nFor Littlewood polynomials, there are known constructions that perform well. One effective approach is to use patterns based on quadratic residues or cyclotomic polynomials. Another is to use constructions that create destructive interference at many points on the unit circle.\n\nI'll use a construction based on a known good pattern for degree 50. This uses a combination of cyclotomic-inspired coefficients and optimization heuristics that have been found to work well for similar degrees.\n\n```json\n{\n  \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1]\n}\n```"
+      "rawOutput": "Looking at this problem, I need to find a polynomial of degree 50 with \u00b11 coefficients that minimizes the peak-to-RMS ratio on the unit circle.\n\nThe peak-to-RMS ratio is max|P(z)| / \u221a51 where P(z) = \u03a3(k=0 to 50) c_k * z^k and the coefficients c_k \u2208 {-1, +1}.\n\nFor Littlewood polynomials, there are known constructions that perform well. One effective approach is to use patterns based on quadratic residues or cyclotomic polynomials. Another is to use constructions that create destructive interference at many points on the unit circle.\n\nI'll use a construction based on a known good pattern for degree 50. This uses a combination of cyclotomic-inspired coefficients and optimization heuristics that have been found to work well for similar degrees.\n\n```json\n{\n  \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1]\n}\n```"
     },
     {
       "solutionData": {
@@ -977,7 +977,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_22k3n1ye84rs2p7f37z6",
   "hiddenScore": 2.7134537545550246,
   "timestamp": "2026-04-08T05:42:34.054Z"
 }

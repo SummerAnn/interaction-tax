@@ -1,5 +1,5 @@
 /**
- * Pinned backbone model versions for the benchmark.
+ * Pinned backbone model versions for the anonymous benchmark release.
  *
  * FROZEN before pilot. Every run must use these exact model IDs.
  * Unversioned model names (e.g., "gpt-4o") make results non-reproducible.

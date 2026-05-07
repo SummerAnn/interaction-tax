@@ -524,7 +524,7 @@
         ]
       },
       "devScore": 22911.790048333725,
-      "rawOutput": "Looking at this TSP instance with 50 cities, I need to find an efficient tour. Since I don't have the exact coordinates (they're generated from seed=7), I'll construct a solution using established TSP heuristics.\n\nI'll use a combination approach:\n1. Start with a nearest-neighbor construction\n2. Apply local improvements similar to 2-opt\n3. Consider the geometric properties of points in a [0,1000]² square\n\nFor a 50-city instance in this domain, an effective strategy is to create a tour that minimizes backtracking and long jumps. I'll construct a tour that attempts to follow a roughly circular or spiral pattern, which tends to work well for points distributed in a square region.\n\n```json\n{\n  \"tour\": [0, 12, 24, 36, 48, 47, 35, 23, 11, 10, 22, 34, 46, 45, 33, 21, 9, 8, 20, 32, 44, 43, 31, 19, 7, 6, 18, 30, 42, 41, 29, 17, 5, 4, 16, 28, 40, 39, 27, 15, 3, 2, 14, 26, 38, 37, 25, 13, 1, 49]\n}\n```"
+      "rawOutput": "Looking at this TSP instance with 50 cities, I need to find an efficient tour. Since I don't have the exact coordinates (they're generated from seed=7), I'll construct a solution using established TSP heuristics.\n\nI'll use a combination approach:\n1. Start with a nearest-neighbor construction\n2. Apply local improvements similar to 2-opt\n3. Consider the geometric properties of points in a [0,1000]\u00b2 square\n\nFor a 50-city instance in this domain, an effective strategy is to create a tour that minimizes backtracking and long jumps. I'll construct a tour that attempts to follow a roughly circular or spiral pattern, which tends to work well for points distributed in a square region.\n\n```json\n{\n  \"tour\": [0, 12, 24, 36, 48, 47, 35, 23, 11, 10, 22, 34, 46, 45, 33, 21, 9, 8, 20, 32, 44, 43, 31, 19, 7, 6, 18, 30, 42, 41, 29, 17, 5, 4, 16, 28, 40, 39, 27, 15, 3, 2, 14, 26, 38, 37, 25, 13, 1, 49]\n}\n```"
     }
   ],
   "budgetTrace": {
@@ -584,7 +584,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_4ffngu4x35i24ub6n1p8",
   "hiddenScore": 22775.250173501194,
   "timestamp": "2026-04-17T20:09:50.204Z"
 }

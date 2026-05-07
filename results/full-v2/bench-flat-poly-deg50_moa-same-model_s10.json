@@ -120,7 +120,7 @@
         ]
       },
       "devScore": 4.03046389373077,
-      "rawOutput": "Looking at this problem, I need to find a degree 50 polynomial with ±1 coefficients that minimizes the peak-to-RMS ratio on the unit circle.\n\nFor Littlewood polynomials, there are several known construction methods that tend to produce good results. One effective approach is to use constructions based on quadratic residues or systematic patterns that help balance the polynomial's behavior on the unit circle.\n\nI'll use a construction that alternates signs in a structured way, incorporating some randomness guided by number-theoretic properties. This approach has been successful for similar problems.\n\n```json\n{\n  \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1]\n}\n```"
+      "rawOutput": "Looking at this problem, I need to find a degree 50 polynomial with \u00b11 coefficients that minimizes the peak-to-RMS ratio on the unit circle.\n\nFor Littlewood polynomials, there are several known construction methods that tend to produce good results. One effective approach is to use constructions based on quadratic residues or systematic patterns that help balance the polynomial's behavior on the unit circle.\n\nI'll use a construction that alternates signs in a structured way, incorporating some randomness guided by number-theoretic properties. This approach has been successful for similar problems.\n\n```json\n{\n  \"coefficients\": [1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1]\n}\n```"
     },
     {
       "solutionData": {
@@ -179,7 +179,7 @@
         ]
       },
       "devScore": 2.677603968231854,
-      "rawOutput": "Looking at this problem, I need to find a degree-50 polynomial with ±1 coefficients that minimizes the peak-to-RMS ratio on the unit circle.\n\nThe peak-to-RMS ratio is max|P(z)| / √51, where P(z) = Σ(a_k * z^k) and each a_k ∈ {-1, +1}.\n\nFor Littlewood polynomials, there are known constructions that perform well. One approach is to use patterns based on quadratic residues or other number-theoretic constructions. Another is to use alternating patterns with strategic modifications.\n\nLet me construct a polynomial using a pattern that tends to distribute the roots well and minimize large peaks. I'll use a construction based on the Rudin-Shapiro sequence, which is known to have good properties for this type of problem.\n\nThe Rudin-Shapiro construction alternates signs in a way that controls the growth of partial sums. For degree 50, I'll adapt this approach:\n\n```json\n{\n  \"coefficients\": [1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, -1]\n}\n```"
+      "rawOutput": "Looking at this problem, I need to find a degree-50 polynomial with \u00b11 coefficients that minimizes the peak-to-RMS ratio on the unit circle.\n\nThe peak-to-RMS ratio is max|P(z)| / \u221a51, where P(z) = \u03a3(a_k * z^k) and each a_k \u2208 {-1, +1}.\n\nFor Littlewood polynomials, there are known constructions that perform well. One approach is to use patterns based on quadratic residues or other number-theoretic constructions. Another is to use alternating patterns with strategic modifications.\n\nLet me construct a polynomial using a pattern that tends to distribute the roots well and minimize large peaks. I'll use a construction based on the Rudin-Shapiro sequence, which is known to have good properties for this type of problem.\n\nThe Rudin-Shapiro construction alternates signs in a way that controls the growth of partial sums. For degree 50, I'll adapt this approach:\n\n```json\n{\n  \"coefficients\": [1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, -1]\n}\n```"
     },
     {
       "solutionData": {
@@ -337,7 +337,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_46nz2518sgwwhrz899h0",
   "hiddenScore": 2.5664288979286285,
   "timestamp": "2026-04-16T20:45:02.359Z"
 }

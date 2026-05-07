@@ -2,17 +2,17 @@
 /**
  * run-offline.ts — Fully offline benchmark entrypoint
  *
- * Runs the complete benchmark without touching agent4science.org.
+ * Runs the complete benchmark without calling any remote platform.
  * Dev evaluation and hidden evaluation both run as local Python subprocesses.
- * No ADMIN_SECRET required — only LLM API keys.
+ * No remote-evaluation credentials required — only LLM API keys.
  *
  * Hidden scores are written directly into each result JSON (no backfill step).
  *
  * Usage:
- *   ANTHROPIC_API_KEY=xxx npx tsx src/runner/run-offline.ts
- *   ANTHROPIC_API_KEY=xxx npx tsx src/runner/run-offline.ts --task bench-maxcut-g200
- *   ANTHROPIC_API_KEY=xxx npx tsx src/runner/run-offline.ts --protocol single-shot --seeds 1,2,3
- *   ANTHROPIC_API_KEY=xxx npx tsx src/runner/run-offline.ts --dry-run
+ *   OPENROUTER_API_KEY=xxx npx tsx src/runner/run-offline.ts
+ *   OPENROUTER_API_KEY=xxx npx tsx src/runner/run-offline.ts --task bench-maxcut-g200
+ *   OPENROUTER_API_KEY=xxx npx tsx src/runner/run-offline.ts --protocol single-shot --seeds 1,2,3
+ *   OPENROUTER_API_KEY=xxx npx tsx src/runner/run-offline.ts --dry-run
  *
  * Required env vars:
  *   OPENROUTER_API_KEY   all models route through OpenRouter (Claude, GPT-4o, Gemini, etc.)
@@ -23,8 +23,7 @@ import { runExperiment } from './experiment-runner.js';
 import { BENCHMARK_SEEDS } from '../config/seeds.js';
 import {
   primaryBackbone, crossChainBackbones, moaBackbones, moaBackbonesSameModel,
-  gpt4oBackbone, geminiBackbone, deepseekBackbone, crossChainOSSBackbones,
-  fiveDiverseBackbones,
+  gpt4oBackbone, geminiBackbone,
 } from '../config/models.js';
 import { ALL_BENCHMARK_CHALLENGES } from '../tasks/benchmark-challenges.js';
 import { BENCHMARK_CHALLENGE_IDS } from '../tasks/challenge-ids.js';
@@ -142,8 +141,8 @@ const seeds: number[] = seedsFilter ?? [...BENCHMARK_SEEDS];
 // ── Experiment config ─────────────────────────────────────────────────────────
 
 const config: ExperimentConfig = {
-  id:                 'agent4science-bench-offline',
-  name:               'the benchmark (Offline)',
+  id:                 'benchmark-offline-release',
+  name:               'Benchmark Release (Offline)',
   tasks,
   protocols,
   budget:             BUDGET,
@@ -155,13 +154,13 @@ const config: ExperimentConfig = {
 // ── Dry run ───────────────────────────────────────────────────────────────────
 
 const totalCells = tasks.length * protocols.length * seeds.length;
-console.log('the benchmark — Offline Mode');
+console.log('Benchmark Release — Offline Mode');
 console.log(`Tasks:     ${tasks.map(t => t.id).join(', ')}`);
 console.log(`Protocols: ${protocols.map(p => p.id).join(', ')}`);
 console.log(`Seeds:     ${seeds.join(', ')}`);
 console.log(`Budget:    T=${BUDGET.tokenCap} W=${BUDGET.wallClockSeconds}s C=${BUDGET.evalCpuSeconds}s K=${BUDGET.evalCallCap}`);
 console.log(`Total:     ${totalCells} cells`);
-console.log(`Platform:  local (no ADMIN_SECRET required)`);
+console.log('Platform:  local only (no remote-evaluation credentials required)');
 console.log();
 
 if (dryRun) {

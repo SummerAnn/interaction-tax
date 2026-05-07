@@ -23,7 +23,7 @@
         "smiles": "COc1ccc2nc(C(=O)NCCc3ccccc3)sc2c1"
       },
       "devScore": 0.7863898967796658,
-      "rawOutput": "I need to design a molecule that maximizes QED while maintaining synthetic accessibility. Let me analyze the QED components and design systematically.\n\nQED incorporates 8 molecular descriptors:\n- Molecular weight (MW): optimal ~300-500 Da\n- LogP: optimal ~1-3\n- HBD (hydrogen bond donors): optimal 0-5\n- HBA (hydrogen bond acceptors): optimal 2-10\n- PSA (polar surface area): optimal 20-130 Ų\n- ROTB (rotatable bonds): optimal 0-9\n- AROM (aromatic rings): optimal 1-4\n- ALERTS (structural alerts): minimize\n\nStrategy: Design a molecule with:\n1. Moderate MW (~350-450 Da)\n2. Balanced LogP (~2-3)\n3. Optimal HBD/HBA counts\n4. Appropriate PSA\n5. Limited rotatable bonds\n6. 1-2 aromatic rings\n7. No problematic structural alerts\n8. High synthetic accessibility\n\nBased on successful drug scaffolds, I'll design around a benzothiazole core with optimized substituents:\n\n```json\n{ \"smiles\": \"COc1ccc2nc(C(=O)NCCc3ccccc3)sc2c1\" }\n```\n\nThis molecule features:\n- Benzothiazole core (drug-like, synthetically accessible)\n- Methoxy group (improves solubility)\n- Amide linker (H-bonding, metabolically stable)\n- Phenethyl group (optimal lipophilicity)\n- MW ≈ 342 Da (optimal range)\n- Predicted LogP ≈ 2.8\n- HBD: 1, HBA: 4 (optimal)\n- Two aromatic rings\n- Synthetically accessible via standard coupling reactions"
+      "rawOutput": "I need to design a molecule that maximizes QED while maintaining synthetic accessibility. Let me analyze the QED components and design systematically.\n\nQED incorporates 8 molecular descriptors:\n- Molecular weight (MW): optimal ~300-500 Da\n- LogP: optimal ~1-3\n- HBD (hydrogen bond donors): optimal 0-5\n- HBA (hydrogen bond acceptors): optimal 2-10\n- PSA (polar surface area): optimal 20-130 \u0172\n- ROTB (rotatable bonds): optimal 0-9\n- AROM (aromatic rings): optimal 1-4\n- ALERTS (structural alerts): minimize\n\nStrategy: Design a molecule with:\n1. Moderate MW (~350-450 Da)\n2. Balanced LogP (~2-3)\n3. Optimal HBD/HBA counts\n4. Appropriate PSA\n5. Limited rotatable bonds\n6. 1-2 aromatic rings\n7. No problematic structural alerts\n8. High synthetic accessibility\n\nBased on successful drug scaffolds, I'll design around a benzothiazole core with optimized substituents:\n\n```json\n{ \"smiles\": \"COc1ccc2nc(C(=O)NCCc3ccccc3)sc2c1\" }\n```\n\nThis molecule features:\n- Benzothiazole core (drug-like, synthetically accessible)\n- Methoxy group (improves solubility)\n- Amide linker (H-bonding, metabolically stable)\n- Phenethyl group (optimal lipophilicity)\n- MW \u2248 342 Da (optimal range)\n- Predicted LogP \u2248 2.8\n- HBD: 1, HBA: 4 (optimal)\n- Two aromatic rings\n- Synthetically accessible via standard coupling reactions"
     },
     {
       "solutionData": {
@@ -65,7 +65,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_us9zlc4o52cuocvzt6nv",
   "hiddenScore": 0.7994368472185617,
   "timestamp": "2026-04-14T02:46:18.546Z"
 }

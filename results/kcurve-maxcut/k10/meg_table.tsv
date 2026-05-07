@@ -1,6 +1,0 @@
-task	protocol	MEG	CI_lower	CI_upper	p_value	mean_Q	baseline_Q	best_baseline	mean_hidden_raw	baseline_hidden_raw	n_cells
-bench-maxcut-g200	vgs	0.0000	0.0000	0.0000	1.0000	0.0000	0.0000	vgs	3077.0000	3077.0000	5
-
-# Aggregate MEG
-protocol	MEG	CI_lower	CI_upper
-vgs	0.0000	0.0000	0.0000

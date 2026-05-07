@@ -418,7 +418,7 @@
         ]
       },
       "devScore": 2374,
-      "rawOutput": "Looking at this MaxCut problem on an Erdős–Rényi random graph G(200, 0.3) with seed=17, I need to find a partition that maximizes the number of edges crossing between the two sets.\n\nSince I need to work with the specific graph instance, I'll generate it using the given parameters and apply a greedy local search heuristic to find a good partition.\n\nLet me implement a solution approach:\n\n1. Generate the G(200, 0.3) graph with seed=17\n2. Start with a random partition\n3. Use local search to improve the cut by flipping vertices that increase the cut size\n4. Apply multiple restarts to avoid local optima\n\n```json\n{\n  \"partition\": [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0]\n}\n```"
+      "rawOutput": "Looking at this MaxCut problem on an Erd\u0151s\u2013R\u00e9nyi random graph G(200, 0.3) with seed=17, I need to find a partition that maximizes the number of edges crossing between the two sets.\n\nSince I need to work with the specific graph instance, I'll generate it using the given parameters and apply a greedy local search heuristic to find a good partition.\n\nLet me implement a solution approach:\n\n1. Generate the G(200, 0.3) graph with seed=17\n2. Start with a random partition\n3. Use local search to improve the cut by flipping vertices that increase the cut size\n4. Apply multiple restarts to avoid local optima\n\n```json\n{\n  \"partition\": [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0]\n}\n```"
     },
     {
       "solutionData": {
@@ -869,7 +869,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_cyk6t8c9rcoqg9xw0vvd",
   "hiddenScore": 3066,
   "timestamp": "2026-04-16T20:05:13.292Z"
 }

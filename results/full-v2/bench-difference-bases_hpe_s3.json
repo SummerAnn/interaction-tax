@@ -34,7 +34,7 @@
       ]
     },
     "devScore": 29.761904761904763,
-    "rawOutput": "Looking at the three executor contributions, I need to synthesize the best overall solution by comparing the efficiency scores (|B|²/v) across different scales:\n\n- Executor 1 (small-scale): |B| = 25, estimated ratio ≈ 1.04\n- Executor 2 (medium-scale): |B| = 127, ratio = 2.016  \n- Executor 3 (large-scale): |B| ≈ 800, estimated ratio ≈ 0.78\n\nThe large-scale solution from Executor 3 shows the best theoretical efficiency, but the contribution lacks the complete explicit set. Executor 1's small-scale solution provides a complete, well-constructed base with strong theoretical foundations and a very competitive ratio of 1.04.\n\nGiven that Executor 1 provides a complete, verified construction with excellent efficiency for its size, and considering the theoretical soundness of the Singer difference set approach, I'll select the small-scale optimal base as the final solution.\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96, 108, 120, 135, 156, 177, 201, 204, 215, 231, 252, 290, 316, 397, 480]\n}\n```"
+    "rawOutput": "Looking at the three executor contributions, I need to synthesize the best overall solution by comparing the efficiency scores (|B|\u00b2/v) across different scales:\n\n- Executor 1 (small-scale): |B| = 25, estimated ratio \u2248 1.04\n- Executor 2 (medium-scale): |B| = 127, ratio = 2.016  \n- Executor 3 (large-scale): |B| \u2248 800, estimated ratio \u2248 0.78\n\nThe large-scale solution from Executor 3 shows the best theoretical efficiency, but the contribution lacks the complete explicit set. Executor 1's small-scale solution provides a complete, well-constructed base with strong theoretical foundations and a very competitive ratio of 1.04.\n\nGiven that Executor 1 provides a complete, verified construction with excellent efficiency for its size, and considering the theoretical soundness of the Singer difference set approach, I'll select the small-scale optimal base as the final solution.\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96, 108, 120, 135, 156, 177, 201, 204, 215, 231, 252, 290, 316, 397, 480]\n}\n```"
   },
   "allArtifacts": [
     {
@@ -68,7 +68,7 @@
         ]
       },
       "devScore": 29.761904761904763,
-      "rawOutput": "Looking at the three executor contributions, I need to synthesize the best overall solution by comparing the efficiency scores (|B|²/v) across different scales:\n\n- Executor 1 (small-scale): |B| = 25, estimated ratio ≈ 1.04\n- Executor 2 (medium-scale): |B| = 127, ratio = 2.016  \n- Executor 3 (large-scale): |B| ≈ 800, estimated ratio ≈ 0.78\n\nThe large-scale solution from Executor 3 shows the best theoretical efficiency, but the contribution lacks the complete explicit set. Executor 1's small-scale solution provides a complete, well-constructed base with strong theoretical foundations and a very competitive ratio of 1.04.\n\nGiven that Executor 1 provides a complete, verified construction with excellent efficiency for its size, and considering the theoretical soundness of the Singer difference set approach, I'll select the small-scale optimal base as the final solution.\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96, 108, 120, 135, 156, 177, 201, 204, 215, 231, 252, 290, 316, 397, 480]\n}\n```"
+      "rawOutput": "Looking at the three executor contributions, I need to synthesize the best overall solution by comparing the efficiency scores (|B|\u00b2/v) across different scales:\n\n- Executor 1 (small-scale): |B| = 25, estimated ratio \u2248 1.04\n- Executor 2 (medium-scale): |B| = 127, ratio = 2.016  \n- Executor 3 (large-scale): |B| \u2248 800, estimated ratio \u2248 0.78\n\nThe large-scale solution from Executor 3 shows the best theoretical efficiency, but the contribution lacks the complete explicit set. Executor 1's small-scale solution provides a complete, well-constructed base with strong theoretical foundations and a very competitive ratio of 1.04.\n\nGiven that Executor 1 provides a complete, verified construction with excellent efficiency for its size, and considering the theoretical soundness of the Singer difference set approach, I'll select the small-scale optimal base as the final solution.\n\n```json\n{\n  \"set\": [0, 1, 3, 7, 12, 20, 30, 44, 65, 80, 96, 108, 120, 135, 156, 177, 201, 204, 215, 231, 252, 290, 316, 397, 480]\n}\n```"
     },
     {
       "solutionData": {
@@ -153,7 +153,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_hyk6h4wwyywrsaq2ubpl",
   "hiddenScore": 26.041666666666668,
   "timestamp": "2026-04-08T05:09:29.475Z"
 }

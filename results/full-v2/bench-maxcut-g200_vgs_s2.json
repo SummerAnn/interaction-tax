@@ -626,7 +626,7 @@
         ]
       },
       "devScore": 2321,
-      "rawOutput": "Looking at this MaxCut problem on an Erdős–Rényi random graph G(200, 0.3), I need to find a partition that maximizes the number of edges crossing between the two sets.\n\nI'll use a greedy local search approach starting from a random partition and iteratively improving it by flipping vertices that increase the cut size.\n\nLet me implement this strategy:\n\n1. Generate the same G(200, 0.3) graph with seed=17\n2. Start with a random partition\n3. Use local search to improve the cut by flipping vertices\n4. Apply multiple restarts to avoid local optima\n\n```json\n{\n  \"partition\": [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0]\n}\n```"
+      "rawOutput": "Looking at this MaxCut problem on an Erd\u0151s\u2013R\u00e9nyi random graph G(200, 0.3), I need to find a partition that maximizes the number of edges crossing between the two sets.\n\nI'll use a greedy local search approach starting from a random partition and iteratively improving it by flipping vertices that increase the cut size.\n\nLet me implement this strategy:\n\n1. Generate the same G(200, 0.3) graph with seed=17\n2. Start with a random partition\n3. Use local search to improve the cut by flipping vertices\n4. Apply multiple restarts to avoid local optima\n\n```json\n{\n  \"partition\": [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0]\n}\n```"
     },
     {
       "solutionData": {
@@ -834,7 +834,7 @@
         ]
       },
       "devScore": 2406,
-      "rawOutput": "Looking at this MaxCut problem on an Erdős–Rényi random graph G(200, 0.3), I need to find a partition that maximizes the number of edges crossing between the two parts.\n\nLet me implement a greedy local search approach:\n\n1. Start with a random partition\n2. For each vertex, check if moving it to the other partition increases the cut size\n3. Make beneficial moves until no improvement is possible\n4. Try multiple random starts to avoid local optima\n\nHere's my solution:\n\n```json\n{\n  \"partition\": [1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0]\n}\n```"
+      "rawOutput": "Looking at this MaxCut problem on an Erd\u0151s\u2013R\u00e9nyi random graph G(200, 0.3), I need to find a partition that maximizes the number of edges crossing between the two parts.\n\nLet me implement a greedy local search approach:\n\n1. Start with a random partition\n2. For each vertex, check if moving it to the other partition increases the cut size\n3. Make beneficial moves until no improvement is possible\n4. Try multiple random starts to avoid local optima\n\nHere's my solution:\n\n```json\n{\n  \"partition\": [1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0]\n}\n```"
     },
     {
       "solutionData": {
@@ -2999,7 +2999,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_wkodawr4vlwyly6uiaoj",
   "hiddenScore": 3113,
   "timestamp": "2026-04-08T02:07:27.204Z"
 }

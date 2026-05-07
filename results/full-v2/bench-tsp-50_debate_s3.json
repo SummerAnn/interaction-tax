@@ -118,7 +118,7 @@
         ]
       },
       "devScore": 25091.665177356936,
-      "rawOutput": "Looking at this TSP instance, I'll use an exploratory approach combining geometric insights with creative heuristics.\n\nFirst, let me generate the city coordinates from seed=7 to understand the spatial distribution, then apply a multi-phase strategy:\n\n1. **Geometric Clustering**: Identify natural city clusters in the 1000×1000 space\n2. **Spiral Construction**: Build tour using a spiral pattern from center outward\n3. **Edge-Length Optimization**: Prioritize short connections while maintaining tour connectivity\n\nLet me construct this systematically:\n\nStarting from a central reference point, I'll create a tour that follows geometric patterns while avoiding obvious crossing paths. I'll use a combination of:\n- Radial sorting from geometric center\n- Angular positioning to create smooth transitions\n- Local optimization to minimize backtracking\n\nBased on the deterministic seed=7 generation and applying geometric heuristics with creative edge selection:\n\n```json\n{\n  \"tour\": [0, 23, 41, 15, 32, 7, 28, 11, 39, 4, 22, 35, 18, 46, 9, 31, 14, 37, 2, 25, 48, 6, 29, 12, 40, 3, 24, 47, 10, 33, 16, 43, 1, 26, 49, 8, 30, 13, 36, 19, 42, 5, 27, 44, 17, 38, 21, 45, 20, 34]\n}\n```"
+      "rawOutput": "Looking at this TSP instance, I'll use an exploratory approach combining geometric insights with creative heuristics.\n\nFirst, let me generate the city coordinates from seed=7 to understand the spatial distribution, then apply a multi-phase strategy:\n\n1. **Geometric Clustering**: Identify natural city clusters in the 1000\u00d71000 space\n2. **Spiral Construction**: Build tour using a spiral pattern from center outward\n3. **Edge-Length Optimization**: Prioritize short connections while maintaining tour connectivity\n\nLet me construct this systematically:\n\nStarting from a central reference point, I'll create a tour that follows geometric patterns while avoiding obvious crossing paths. I'll use a combination of:\n- Radial sorting from geometric center\n- Angular positioning to create smooth transitions\n- Local optimization to minimize backtracking\n\nBased on the deterministic seed=7 generation and applying geometric heuristics with creative edge selection:\n\n```json\n{\n  \"tour\": [0, 23, 41, 15, 32, 7, 28, 11, 39, 4, 22, 35, 18, 46, 9, 31, 14, 37, 2, 25, 48, 6, 29, 12, 40, 3, 24, 47, 10, 33, 16, 43, 1, 26, 49, 8, 30, 13, 36, 19, 42, 5, 27, 44, 17, 38, 21, 45, 20, 34]\n}\n```"
     },
     {
       "solutionData": {
@@ -269,7 +269,6 @@
       "evalCalls": false
     }
   },
-  "submissionId": "sub_aw25vfbfbjroudionozy",
   "hiddenScore": 23553.76102398287,
   "timestamp": "2026-04-17T20:25:48.612Z"
 }

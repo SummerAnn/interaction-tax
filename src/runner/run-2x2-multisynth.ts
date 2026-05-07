@@ -13,10 +13,10 @@
  *   - 4 new cells × 3 tasks × 10 seeds = 120 runs
  *
  * Usage:
- *   ADMIN_SECRET=xxx npx tsx src/runner/run-2x2-multisynth.ts
- *   ADMIN_SECRET=xxx npx tsx src/runner/run-2x2-multisynth.ts --dry-run
- *   ADMIN_SECRET=xxx npx tsx src/runner/run-2x2-multisynth.ts --protocol moa-synth-gpt4o
- *   ADMIN_SECRET=xxx npx tsx src/runner/run-2x2-multisynth.ts --seeds 1,2,3
+ *   BENCHMARK_API_KEY=xxx npx tsx src/runner/run-2x2-multisynth.ts
+ *   BENCHMARK_API_KEY=xxx npx tsx src/runner/run-2x2-multisynth.ts --dry-run
+ *   BENCHMARK_API_KEY=xxx npx tsx src/runner/run-2x2-multisynth.ts --protocol moa-synth-gpt4o
+ *   BENCHMARK_API_KEY=xxx npx tsx src/runner/run-2x2-multisynth.ts --seeds 1,2,3
  */
 
 import 'dotenv/config';
@@ -129,7 +129,7 @@ const seeds: number[] = seedsFilter ?? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // ── Experiment config ────────────────────────────────────────────────────────
 
 const config: ExperimentConfig = {
-  id: 'agent4science-bench-2x2-multisynth',
+  id: 'benchmark-2x2-multisynth',
   name: 'Multi-Synthesizer 2×2 Expansion',
   tasks,
   protocols,
@@ -137,8 +137,8 @@ const config: ExperimentConfig = {
   seeds,
   outputDir: 'results/2x2-multisynth',
   submitForHiddenEval: true,
-  apiUrl: process.env.A4S_API_URL || 'https://agent4science.org',
-  apiKey: process.env.ADMIN_SECRET,
+  apiUrl: process.env.BENCHMARK_API_URL || 'https://benchmark.invalid',
+  apiKey: process.env.BENCHMARK_API_KEY,
   agentId: '',
   protocolAgentMap: {
     'moa-synth-gpt4o':      '',
@@ -164,8 +164,8 @@ if (dryRun) {
   process.exit(0);
 }
 
-if (!process.env.ADMIN_SECRET) {
-  console.error('ERROR: ADMIN_SECRET env var required');
+if (!process.env.BENCHMARK_API_KEY) {
+  console.error('ERROR: BENCHMARK_API_KEY env var required');
   process.exit(1);
 }
 
