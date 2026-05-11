@@ -1,6 +1,6 @@
 # The Interaction Tax: How Communication Erases Diversity in Multi-Agent Teams
 
-Code and data artifact for the NeurIPS 2026 submission.
+Code and data artifact for the 2026 submission.
 
 This is an empirical study, not a benchmark release. We use a frozen testbed of eleven scientific optimization and constraint satisfaction tasks to investigate when multi-agent interaction helps or hurts. Ten configurations (four single-model baselines and six multi-agent systems) are built from three model families (Claude Sonnet 4, GPT-4o, Gemini 2.5 Flash) and evaluated under hidden scoring where agents never see the final evaluator. All configurations share identical budget caps (200k tokens, 600s wall-clock, 25 visible-evaluator calls). Each (task, configuration) cell runs 5 seeds; the 2x2 factorial uses N=120 runs. This repository contains the testbed code, all saved results, and the analysis scripts needed to reproduce every table and figure in the paper.
 
