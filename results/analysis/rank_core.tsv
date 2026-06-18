@@ -7,5 +7,4 @@ bench-tsp-100	10	1.0000	0.0000	vgs	vgs	False	3/3
 bench-lj-n41	10	1.0000	0.0000	vgs	vgs	False	3/3
 bench-erdos-overlap	10	1.0000	0.0000	self-refine	self-refine	False	3/3
 bench-molecule-qed	10	0.9515	0.0057	debate	debate	False	3/3
-bench-graph-coloring-g80	10	1.0000	0.0000	moa	moa	False	3/3
 bench-tsp-50	10	1.0000	0.0000	vgs	vgs	False	3/3

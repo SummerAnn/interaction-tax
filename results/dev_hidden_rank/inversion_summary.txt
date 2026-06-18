@@ -1,0 +1,151 @@
+Dev/Hidden Rank Analysis — Dev vs Hidden Rank Inversions
+Anonymous benchmark release (NeurIPS 2026)
+============================================================
+
+SUMMARY
+Task                                      ρ       p      Top-1 inversion?  Top-3 overlap
+------------------------------------------------------------------------------------------
+bench-maxcut-g200                     0.927   0.000      *** INVERTED ***      2/3
+bench-circle-packing-n20              1.000   0.000                stable      3/3
+bench-difference-bases                0.855   0.000      *** INVERTED ***      2/3
+bench-flat-poly-deg50                 1.000   0.000                stable      3/3
+bench-tsp-100                         1.000   0.000                stable      3/3
+bench-lj-n41                          1.000   0.000                stable      3/3
+bench-erdos-overlap                   1.000   0.000                stable      3/3
+bench-molecule-qed                    0.952   0.000                stable      3/3
+
+
+============================================================
+bench-maxcut-g200  (direction=maximize, n=10, ρ=0.927, p=0.000)
+  Top-1 dev:    vgs  (score=2469.1667)
+  Top-1 hidden: cross-chain  (score=3098.2000)  [INVERTED]
+  Top-3 overlap: 2/3
+  Full ranking (dev rank → hidden rank):
+    # 1 vgs                     dev= 2469.1667  hid= 3096.0000  → # 2 (▼1)
+    # 2 best-of-n               dev= 2464.6000  hid= 3089.4000  → # 3 (▼1)
+    # 3 magicore                dev= 2460.4000  hid= 3076.4000  → # 4 (▼1)
+    # 4 cross-chain             dev= 2459.6000  hid= 3098.2000  → # 1 (▲3)
+    # 5 debate                  dev= 2450.0000  hid= 3075.0000  → # 5 (  =)
+    # 6 moa                     dev= 2448.9000  hid= 3073.9000  → # 6 (  =)
+    # 7 self-refine             dev= 2443.3000  hid= 3062.2000  → # 7 (  =)
+    # 8 homo-chain              dev= 2435.4000  hid= 3057.2000  → # 8 (  =)
+    # 9 hpe                     dev= 2429.0000  hid= 3055.2000  → # 9 (  =)
+    #10 single-shot             dev= 2411.0000  hid= 3044.0000  → #10 (  =)
+
+============================================================
+bench-circle-packing-n20  (direction=maximize, n=9, ρ=1.000, p=0.000)
+  Top-1 dev:    vgs  (score=2.0800)
+  Top-1 hidden: vgs  (score=2.0800)  [stable]
+  Top-3 overlap: 3/3
+  Full ranking (dev rank → hidden rank):
+    # 1 vgs                     dev=    2.0800  hid=    2.0800  → # 1 (  =)
+    # 2 single-shot             dev=    2.0000  hid=    2.0000  → # 2 (  =)
+    # 3 best-of-n               dev=    2.0000  hid=    2.0000  → # 3 (  =)
+    # 4 homo-chain              dev=    2.0000  hid=    2.0000  → # 4 (  =)
+    # 5 magicore                dev=    2.0000  hid=    2.0000  → # 5 (  =)
+    # 6 self-refine             dev=    1.9680  hid=    1.9680  → # 6 (  =)
+    # 7 cross-chain             dev=    1.9600  hid=    1.9600  → # 7 (  =)
+    # 8 debate                  dev=    1.6970  hid=    1.6970  → # 8 (  =)
+    # 9 moa                     dev=    1.6438  hid=    1.6438  → # 9 (  =)
+
+============================================================
+bench-difference-bases  (direction=minimize, n=10, ρ=0.855, p=0.000)
+  Top-1 dev:    best-of-n  (score=20.0804)
+  Top-1 hidden: debate  (score=13.2348)  [INVERTED]
+  Top-3 overlap: 2/3
+  Full ranking (dev rank → hidden rank):
+    # 1 best-of-n               dev=   20.0804  hid=   15.3678  → # 2 (▼1)
+    # 2 debate                  dev=   21.6390  hid=   13.2348  → # 1 (▲1)
+    # 3 self-refine             dev=   23.7814  hid=   16.9798  → # 4 (▼1)
+    # 4 magicore                dev=   32.2773  hid=   19.8942  → # 5 (▼1)
+    # 5 hpe                     dev=   35.7349  hid=   33.8973  → # 6 (▼1)
+    # 6 homo-chain              dev=   37.2312  hid=   35.4282  → # 7 (▼1)
+    # 7 vgs                     dev=   37.9974  hid=   15.7878  → # 3 (▲4)
+    # 8 moa                     dev=   46.2552  hid=   38.2157  → # 8 (  =)
+    # 9 single-shot             dev=  119.4456  hid=  107.9548  → #10 (▼1)
+    #10 cross-chain             dev= 3066.5701  hid=   44.0080  → # 9 (▲1)
+
+============================================================
+bench-flat-poly-deg50  (direction=minimize, n=10, ρ=1.000, p=0.000)
+  Top-1 dev:    vgs  (score=2.2453)
+  Top-1 hidden: vgs  (score=2.2453)  [stable]
+  Top-3 overlap: 3/3
+  Full ranking (dev rank → hidden rank):
+    # 1 vgs                     dev=    2.2453  hid=    2.2453  → # 1 (  =)
+    # 2 moa                     dev=    2.2772  hid=    2.2772  → # 2 (  =)
+    # 3 self-refine             dev=    2.4787  hid=    2.4787  → # 3 (  =)
+    # 4 magicore                dev=    2.5064  hid=    2.5064  → # 4 (  =)
+    # 5 cross-chain             dev=    2.6223  hid=    2.6223  → # 5 (  =)
+    # 6 hpe                     dev=    2.9260  hid=    2.9260  → # 6 (  =)
+    # 7 best-of-n               dev=    2.9683  hid=    2.9683  → # 7 (  =)
+    # 8 debate                  dev=    3.0287  hid=    3.0287  → # 8 (  =)
+    # 9 homo-chain              dev=    3.3747  hid=    3.3747  → # 9 (  =)
+    #10 single-shot             dev=    3.6737  hid=    3.6737  → #10 (  =)
+
+============================================================
+bench-tsp-100  (direction=minimize, n=10, ρ=1.000, p=0.000)
+  Top-1 dev:    vgs  (score=50478.8840)
+  Top-1 hidden: vgs  (score=50508.4930)  [stable]
+  Top-3 overlap: 3/3
+  Full ranking (dev rank → hidden rank):
+    # 1 vgs                     dev=50478.8840  hid=50508.4930  → # 1 (  =)
+    # 2 cross-chain             dev=50628.0714  hid=50661.4112  → # 2 (  =)
+    # 3 best-of-n               dev=50861.7105  hid=50927.0260  → # 3 (  =)
+    # 4 single-shot             dev=52050.5982  hid=52135.1235  → # 4 (  =)
+    # 5 moa                     dev=52266.5729  hid=52318.6035  → # 5 (  =)
+    # 6 magicore                dev=52687.0232  hid=52718.2135  → # 6 (  =)
+    # 7 self-refine             dev=52702.2570  hid=52748.4600  → # 7 (  =)
+    # 8 hpe                     dev=53685.5382  hid=53756.4314  → # 8 (  =)
+    # 9 homo-chain              dev=53812.5889  hid=53848.6183  → # 9 (  =)
+    #10 debate                  dev=53881.8622  hid=53945.0856  → #10 (  =)
+
+============================================================
+bench-lj-n41  (direction=minimize, n=10, ρ=1.000, p=0.000)
+  Top-1 dev:    vgs  (score=-87.3406)
+  Top-1 hidden: vgs  (score=-87.0887)  [stable]
+  Top-3 overlap: 3/3
+  Full ranking (dev rank → hidden rank):
+    # 1 vgs                     dev=  -87.3406  hid=  -87.0887  → # 1 (  =)
+    # 2 best-of-n               dev=  -87.2678  hid=  -87.0592  → # 2 (  =)
+    # 3 debate                  dev=  -28.8381  hid=  -28.6821  → # 3 (  =)
+    # 4 hpe                     dev=  589.0011  hid=  589.6058  → # 4 (  =)
+    # 5 magicore                dev= 1568.9004  hid= 1569.7534  → # 5 (  =)
+    # 6 self-refine             dev= 1579.6672  hid= 1580.3669  → # 6 (  =)
+    # 7 moa                     dev= 2304.1399  hid= 2304.7680  → # 7 (  =)
+    # 8 single-shot             dev= 2639.1458  hid= 2639.6611  → # 8 (  =)
+    # 9 homo-chain              dev= 3135.2224  hid= 3136.0033  → # 9 (  =)
+    #10 cross-chain             dev= 4496.1505  hid= 4497.0771  → #10 (  =)
+
+============================================================
+bench-erdos-overlap  (direction=minimize, n=10, ρ=1.000, p=0.000)
+  Top-1 dev:    homo-chain  (score=0.2667)
+  Top-1 hidden: homo-chain  (score=0.2674)  [stable]
+  Top-3 overlap: 3/3
+  Full ranking (dev rank → hidden rank):
+    # 1 homo-chain              dev=    0.2667  hid=    0.2674  → # 1 (  =)
+    # 2 self-refine             dev=    0.2769  hid=    0.2779  → # 2 (  =)
+    # 3 moa                     dev=    0.2955  hid=    0.2955  → # 3 (  =)
+    # 4 magicore                dev=    0.3426  hid=    0.3424  → # 4 (  =)
+    # 5 best-of-n               dev=    0.3453  hid=    0.3457  → # 5 (  =)
+    # 6 cross-chain             dev=    0.4028  hid=    0.4029  → # 6 (  =)
+    # 7 vgs                     dev=    0.4223  hid=    0.4232  → # 7 (  =)
+    # 8 hpe                     dev=    0.5201  hid=    0.5243  → # 8 (  =)
+    # 9 debate                  dev=    0.7033  hid=    0.7038  → # 9 (  =)
+    #10 single-shot             dev=    0.8557  hid=    0.8627  → #10 (  =)
+
+============================================================
+bench-molecule-qed  (direction=maximize, n=10, ρ=0.952, p=0.000)
+  Top-1 dev:    debate  (score=0.8836)
+  Top-1 hidden: debate  (score=0.7895)  [stable]
+  Top-3 overlap: 3/3
+  Full ranking (dev rank → hidden rank):
+    # 1 debate                  dev=    0.8836  hid=    0.7895  → # 1 (  =)
+    # 2 vgs                     dev=    0.8598  hid=    0.7717  → # 3 (▼1)
+    # 3 moa                     dev=    0.8577  hid=    0.7748  → # 2 (▲1)
+    # 4 self-refine             dev=    0.8446  hid=    0.7553  → # 5 (▼1)
+    # 5 best-of-n               dev=    0.8411  hid=    0.7607  → # 4 (▲1)
+    # 6 single-shot             dev=    0.8336  hid=    0.7358  → # 7 (▼1)
+    # 7 cross-chain             dev=    0.8264  hid=    0.7391  → # 6 (▲1)
+    # 8 magicore                dev=    0.8243  hid=    0.7252  → # 9 (▼1)
+    # 9 homo-chain              dev=    0.7965  hid=    0.7310  → # 8 (▲1)
+    #10 hpe                     dev=    0.7454  hid=    0.6792  → #10 (  =)

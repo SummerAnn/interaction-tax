@@ -1,0 +1,9 @@
+task	n_protocols	rho	p_value	top1_dev	top1_hidden	top1_inverted	top3_overlap
+bench-maxcut-g200	10	0.9273	0.0000	vgs	cross-chain	True	2
+bench-circle-packing-n20	9	1.0000	0.0000	vgs	vgs	False	3
+bench-difference-bases	10	0.8545	0.0001	best-of-n	debate	True	2
+bench-flat-poly-deg50	10	1.0000	0.0000	vgs	vgs	False	3
+bench-tsp-100	10	1.0000	0.0000	vgs	vgs	False	3
+bench-lj-n41	10	1.0000	0.0000	vgs	vgs	False	3
+bench-erdos-overlap	10	1.0000	0.0000	homo-chain	homo-chain	False	3
+bench-molecule-qed	10	0.9515	0.0000	debate	debate	False	3

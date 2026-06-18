@@ -1,0 +1,71 @@
+{
+  "taskId": "bench-molecule-qed",
+  "protocolId": "best-of-3",
+  "runIndex": 5,
+  "seed": 6,
+  "bestArtifact": {
+    "solutionData": {
+      "smiles": "CC(C)Cc1ccc(C(C)(C)c2ccc(O)cc2)cc1"
+    },
+    "devScore": 0.8343976069762555,
+    "rawOutput": "{ \"smiles\": \"CC(C)Cc1ccc(C(C)(C)c2ccc(O)cc2)cc1\" }"
+  },
+  "allArtifacts": [
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCNC(=O)c1cc(C)on1"
+      },
+      "devScore": 0.7859913561327613,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCNC(=O)c1cc(C)on1\"}"
+    },
+    {
+      "solutionData": {
+        "smiles": "CC(C)Cc1ccc(C(C)(C)c2ccc(O)cc2)cc1"
+      },
+      "devScore": 0.8343976069762555,
+      "rawOutput": "{ \"smiles\": \"CC(C)Cc1ccc(C(C)(C)c2ccc(O)cc2)cc1\" }"
+    },
+    {
+      "solutionData": {
+        "smiles": "CCN(CC)CCOC(=O)C1CCN(CC1)c2ccc(F)cc2"
+      },
+      "devScore": 0.7227530290444569,
+      "rawOutput": "{\"smiles\": \"CCN(CC)CCOC(=O)C1CCN(CC1)c2ccc(F)cc2\"}"
+    }
+  ],
+  "budgetTrace": {
+    "tokenUsage": {
+      "prompt": 1593,
+      "completion": 107,
+      "total": 1700
+    },
+    "wallClockMs": 5601,
+    "evalCpuMs": 778,
+    "evalCalls": [
+      {
+        "timestamp": "2026-04-18T07:39:35.939Z",
+        "score": 0.7859913561327613,
+        "cpuMs": 255
+      },
+      {
+        "timestamp": "2026-04-18T07:39:38.304Z",
+        "score": 0.8343976069762555,
+        "cpuMs": 248
+      },
+      {
+        "timestamp": "2026-04-18T07:39:40.051Z",
+        "score": 0.7227530290444569,
+        "cpuMs": 275
+      }
+    ],
+    "exhausted": {
+      "tokens": false,
+      "wallClock": false,
+      "evalCpu": false,
+      "evalCalls": false
+    }
+  },
+  "submissionId": "sub_v9vpfel2a5kol73vz882",
+  "hiddenScore": 0.7513820089366837,
+  "timestamp": "2026-04-18T07:39:41.413Z"
+}

@@ -2,9 +2,14 @@
 
 This document describes the exact mechanics of each agent configuration implemented in
 `src/protocols/`. All configurations share the same budget vector (T=200K tokens,
-W=600s wall clock, K=25 evaluator calls) and the same task prompt. The
-selection rule is: the artifact with the highest dev score among all artifacts
-produced by a configuration is submitted for hidden evaluation.
+W=600s wall clock, C=30s per call, K=25 evaluator calls) and the same task prompt.
+The selection rule is: the artifact with the best dev score under the task's score
+direction is submitted for hidden evaluation.
+
+All models are accessed via OpenRouter: Claude Sonnet 4 (`anthropic/claude-sonnet-4`),
+GPT-4o (`openai/gpt-4o`), Gemini 2.5 Flash (`google/gemini-2.5-flash`). Model IDs
+are pinned in `src/config/models.ts`. Proposer calls use temperature 0.7; critique
+and synthesis calls use 0.3-0.5, consistent across backbones.
 
 ---
 
@@ -26,6 +31,16 @@ Source: `src/protocols/baselines.ts → runBestOfN`.
 This is the primary MEG denominator. Multi-agent configurations must beat this
 to demonstrate that their collaboration mechanism, not repeated sampling,
 is responsible for any performance gain.
+
+---
+
+## Best-of-3
+
+Same as Best-of-N but with N=3 same-model proposals. Used as the
+same-backbone + selection arm in the 2x2 diversity x synthesis factorial
+(Section 4 of the paper). Three independent calls with the same backbone
+at temperature 0.7; the highest-scoring proposal is submitted.
+Source: `src/protocols/baselines.ts → runBestOfN` (with N=3).
 
 ---
 
@@ -80,7 +95,7 @@ it without producing a new solution, Refiner improves the solution using the
 critique. Two rounds of review and refinement run within the budget.
 In the homogeneous variant all three roles use the same backbone. In the
 diverse variant, Solver is Claude, Reviewer is GPT-4o, and Refiner is Gemini.
-Implements the MAgICoRe architecture (Zhang et al. 2024).
+Implements the MAgICoRe architecture (Chen et al. 2025).
 Source: `src/protocols/multi-agent.ts → runMAgICoRe`.
 
 ---
@@ -107,7 +122,7 @@ all three proposals together with their dev scores and produces a synthesized
 final solution. The aggregator uses Claude by default in all variants.
 In the diverse variant, the three proposers are Claude, GPT-4o, and Gemini.
 In the same-model variant, all three proposers are Claude.
-Implements the MoA architecture (Wang et al. 2024).
+Implements the MoA architecture (Wang et al. 2025).
 Source: `src/protocols/multi-agent.ts → runMoA`.
 
 Note: the aggregator prompt includes the dev score of each proposal. This
@@ -128,9 +143,14 @@ Source: `src/protocols/multi-agent.ts → runMoANoSynth`.
 
 ## HPE (Hierarchical Planning and Execution)
 
-Described in `src/protocols/hpe.ts`. A planner decomposes the problem into
-subgoals, executor agents tackle each subgoal, and a final aggregation step
-combines the results.
+A planner decomposes the problem into sub-foci for parallel executors. Each
+executor works only on its assigned focus and produces a partial contribution
+(free-form text, not a complete solution). An integrator assembles the
+contributions into one schema-valid solution. Multiple rounds give the planner
+score feedback. The planner output is structured JSON with a strategy summary
+and a list of complementary subtasks.
+In the diverse variant, planner, executors, and integrator use different backbones.
+Source: `src/protocols/hpe.ts → runHPE`.
 
 ---
 

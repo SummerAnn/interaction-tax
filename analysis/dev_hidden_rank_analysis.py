@@ -16,8 +16,8 @@ import os
 import math
 from collections import defaultdict
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "../../results/full-v2")
-OUT_DIR = os.path.join(os.path.dirname(__file__), "../../results/dev_hidden_rank")
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "../results/full-v2")
+OUT_DIR = os.path.join(os.path.dirname(__file__), "../results/dev_hidden_rank")
 
 # Scoring direction per task (maximize = higher raw score is better)
 SCORING_DIRECTION = {
